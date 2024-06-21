@@ -11,12 +11,6 @@ updates:
     schedule:
       interval: "weekly"
 
-  # Update yarn dependencies (if you are using Yarn)
-  - package-ecosystem: "yarn"
-    directory: "/" # Location of package.json
-    schedule:
-      interval: "weekly"
-
   # Update GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/" # Location of GitHub Actions workflows
