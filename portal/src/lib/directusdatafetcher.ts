@@ -1,5 +1,5 @@
 import { createDirectus, graphql, DirectusClient } from '@directus/sdk';
-import { getPortalConfig } from '../portalconfig';
+import { getPortalConfig } from './portalconfig';
 
 
 interface DirectusSchema {
@@ -10,9 +10,7 @@ interface DirectusSchema {
 const portalConfig = getPortalConfig();
 
 
-export abstract class DataFetcher {
+export class DirectusDataFetcher {
 
     protected static directusClient : DirectusClient<DirectusSchema> = createDirectus<DirectusSchema>(portalConfig.directusUrl).with(graphql());
-
-    abstract fetch<T>(): T;
 }

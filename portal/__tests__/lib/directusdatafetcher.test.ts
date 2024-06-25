@@ -3,7 +3,7 @@ jest.mock('@directus/sdk', () => ({
     createDirectus: jest.fn(),
     graphql: jest.fn(),
 }));
-jest.mock('../../src/portalconfig', () => ({
+jest.mock('../../src/lib/portalconfig', () => ({
     getPortalConfig: jest.fn(),
 }));
 
@@ -18,7 +18,7 @@ describe('DataFetcher', () => {
         jest.clearAllMocks();
 
         // Mock the getPortalConfig function
-        const { getPortalConfig } = require('../../src/portalconfig');
+        const { getPortalConfig } = require('../../src/lib/portalconfig');
         (getPortalConfig as jest.Mock).mockReturnValue(mockPortalConfig);
 
         // Mock the createDirectus function
@@ -31,10 +31,10 @@ describe('DataFetcher', () => {
 
     it('should initialize Directus client with the correct URL from portalConfig', () => {
         // Dynamically import the DataFetcher class after mocks have been set up
-        const { DataFetcher } = require('../../src/datafetchers/datafetcher');
+        const { DirectusDataFetcher } = require('../../src/lib/directusdatafetcher');
         
         // Concrete subclass for testing
-        class TestFetcher extends DataFetcher {
+        class TestFetcher extends DirectusDataFetcher {
             fetch<T>(): T {
                 // Simulate fetching data
                 return {} as T;
@@ -49,10 +49,10 @@ describe('DataFetcher', () => {
 
     it('should call fetch method', () => {
         // Dynamically import the DataFetcher class after mocks have been set up
-        const { DataFetcher } = require('../../src/datafetchers/datafetcher');
+        const { DirectusDataFetcher } = require('../../src/lib/directusdatafetcher');
         
         // Concrete subclass for testing
-        class TestFetcher extends DataFetcher {
+        class TestFetcher extends DirectusDataFetcher {
             fetch<T>(): T {
                 // Simulate fetching data
                 return {} as T;
