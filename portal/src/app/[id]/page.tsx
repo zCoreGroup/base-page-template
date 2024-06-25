@@ -1,8 +1,11 @@
 import React from 'react';
 import LandingPageDataFetcher from './datafetcher';
 import { LandingPageData, LandingPageQuery } from './types';
+import Header from '../../components/header/header';
+import HeaderDataFetcher from '@/components/header/datafetcher';
 
-const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher();
+const headerFetcher = new HeaderDataFetcher();
+const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher(headerFetcher);
 
 const LandingPage = async ({ params }: { params: { id: string } }) => {
 
@@ -10,12 +13,11 @@ const LandingPage = async ({ params }: { params: { id: string } }) => {
     id: params.id
   } as LandingPageQuery
 
-  const data: LandingPageData = fetcher.fetch(query);
+  const data: LandingPageData = await fetcher.fetch(query);
 
   return (
     <div>
-      <h1>{data.title}</h1>
-      <p>{data.content}</p>
+        <Header data={data.header}/>
     </div>
   );
 };

@@ -1,6 +1,7 @@
+import { HeaderData } from "@/components/header/types";
+
 export type LandingPageData = {
-    title: string;
-    content: string;
+    header: HeaderData
 }
 
 export type LandingPageQuery = {

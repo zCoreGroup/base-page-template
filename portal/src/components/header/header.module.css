@@ -1,0 +1,65 @@
+/* components/Header.module.css */
+
+.header {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.logo {
+  width: 80px; /* Adjust the size as needed */
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleSection h1 {
+  margin: 0;
+  font-size: 20px; /* Adjusted font size */
+}
+
+.titleSection p {
+  margin: 0;
+  font-size: 14px; /* Adjusted font size */
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 40px; /* Added margin to create space between sections */
+}
+
+.mission, .vision {
+  margin-left: 20px; /* Adjust margin as needed */
+  text-align: left;
+  max-width: 300px;
+}
+
+.mission h2, .vision h2 {
+  color: #e74c3c;
+  margin: 0;
+  font-size: 18px;
+}
+
+.mission p, .vision p {
+  margin: 0;
+  font-size: 14px;
+}
