@@ -14,6 +14,12 @@ yarn build
 ```
 
 ### Development Mode
+
+Create a `.env.local` that looks like the following:
+```
+DIRECTUS_URL=http://placeholder
+```
+Then run
 ```bash
 yarn dev
 ```

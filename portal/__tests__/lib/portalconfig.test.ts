@@ -1,4 +1,4 @@
-import { getPortalConfig } from '../src/portalconfig';
+import { getPortalConfig } from '../../src/lib/portalconfig';
 
 describe('getPortalConfig', () => {
     beforeAll(() => {
