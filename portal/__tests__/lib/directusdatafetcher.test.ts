@@ -1,7 +1,8 @@
 // Mock the necessary modules
 jest.mock('@directus/sdk', () => ({
     createDirectus: jest.fn(),
-    graphql: jest.fn(),
+    rest: jest.fn(),
+    staticToken: jest.fn()
 }));
 jest.mock('../../src/lib/portalconfig', () => ({
     getPortalConfig: jest.fn(),
@@ -10,6 +11,7 @@ jest.mock('../../src/lib/portalconfig', () => ({
 describe('DataFetcher', () => {
     const mockPortalConfig = {
         directusUrl: 'http://mocked-url.com',
+        directusStaticToken: 'test-token'
     };
 
     beforeEach(() => {
@@ -42,9 +44,10 @@ describe('DataFetcher', () => {
         }
 
         const fetcher = new TestFetcher();
-        const { createDirectus, graphql } = require('@directus/sdk');
+        const { createDirectus, rest, staticToken } = require('@directus/sdk');
         expect(createDirectus).toHaveBeenCalledWith(mockPortalConfig.directusUrl);
-        expect((createDirectus(mockPortalConfig.directusUrl) as any).with).toHaveBeenCalledWith(graphql());
+        expect((createDirectus(mockPortalConfig.directusUrl) as any).with).toHaveBeenCalledWith(rest())
+        expect((createDirectus(mockPortalConfig.directusUrl) as any).with).toHaveBeenCalledWith(staticToken(mockPortalConfig.directusStaticToken));
     });
 
     it('should call fetch method', () => {

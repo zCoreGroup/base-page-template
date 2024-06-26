@@ -13,6 +13,7 @@ describe('getPortalConfig', () => {
     it('should return the correct URL from environment variables', () => {
         const config = getPortalConfig();
         expect(config.directusUrl).toBe('http://mocked-directus.com');
+        expect(config.directusStaticToken).toBe('mock-static-stoken');
     });
 
     it('should exit the process if DIRECTUS_URL is not set', () => {
