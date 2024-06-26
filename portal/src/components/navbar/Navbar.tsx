@@ -1,6 +1,5 @@
 // portal/src/components/navbar/Navbar.tsx
 import React from 'react';
-import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -9,9 +8,9 @@ import {
   IconButton,
   Badge,
 } from "@mui/material";
-// import NotificationsIcon from "@mui/icons-material/Notifications";
-// import SearchIcon from "@mui/icons-material/Search";
-// import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import SearchIcon from "@mui/icons-material/Search";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Navbar: React.FC = () => {
   return (
