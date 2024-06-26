@@ -1,7 +1,7 @@
 // components/Footer.tsx
 import React from 'react';
 import { Grid, Typography, Box, Container, Link } from '@mui/material';
-// import { Facebook, Twitter, Instagram, YouTube } from '@mui/icons-material';
+import { Facebook, Twitter, Instagram, YouTube } from '@mui/icons-material';
 import { FooterData } from './types';
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
@@ -60,7 +60,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
           Got Connected
           </Typography>
           <Box sx={{ display: 'flex', gap: 1 }}>
-          {/* <Link href="#" color="inherit">
+          <Link href="#" color="inherit">
               <Facebook />
             </Link>
             <Link href="#" color="inherit">
@@ -71,7 +71,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
             </Link>
             <Link href="#" color="inherit">
               <YouTube />
-            </Link> */}
+            </Link>
           </Box>
         </Grid>
       </Grid>
