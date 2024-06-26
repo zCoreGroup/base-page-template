@@ -18,6 +18,7 @@ yarn build
 Create a `.env.local` that looks like the following:
 ```
 DIRECTUS_URL=http://placeholder
+DIRECTUS_STATIC_TOKEN=your-static-token
 ```
 Then run
 ```bash
