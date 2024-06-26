@@ -8,10 +8,8 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   return (
     <Box sx={{ width: "100%", height: "auto",  paddingTop: "1rem", paddingBottom: "1rem", backgroundColor: '#1a1a1a', padding: '20px', color: '#ffffff',  position: 'fixed',
       bottom: 0, justifyContent: 'space-between' }}>
-     <Container maxWidth="xl">
-      <Grid container direction="row">
-
-        <Grid item xs={12} sm={3}>
+      <Grid container rowSpacing={1} direction="row">
+        <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
             {/* {data.title1} */}
             Contact
@@ -28,13 +26,8 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
           <Typography variant="body2" sx={{ fontSize: '14px' }}>
             SLD30.PA.WOrkflow@us.af.mil
           </Typography>
-
-
         </Grid>
-
-        
-        <Grid item xs={12} sm={3}>
-
+        <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
             Hours of Operations
           </Typography>
@@ -47,33 +40,22 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
           <Typography variant="body2" sx={{ fontSize: '14px' }}>
           Sun: 10am-4pm
           </Typography>
-          
           <Typography variant="body2" sx={{ fontSize: '14px' }}>
           Holiday Closures: Thanksgiving Day and Christmas Day
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '14px' }}>
           After Hour Passes: Visitors needing a visitor pass after hours can receive a 24 hour pass at the Santa Maria gate, (located on California Bivd. at the intersection with HWY1)
           </Typography>
-
         </Grid>
-        
-
-      
-        <Grid item xs={12} sm={3}>
-
+        <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
           Got feedback?
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '14px' }}>
           For any feedback or suggestions, please reach out to us at: feedback@guardianone.us Your insights help us improve!
           </Typography>
-
         </Grid>
-
-
-   
-        <Grid item xs={12} sm={3}>
-
+        <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
           Got Connected
           </Typography>
@@ -91,11 +73,8 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
               <YouTube />
             </Link> */}
           </Box>
-
         </Grid>
-
       </Grid>
-     </Container>
     </Box>
   );
 };
