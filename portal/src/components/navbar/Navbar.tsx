@@ -1,4 +1,3 @@
-// portal/src/components/navbar/Navbar.tsx
 import React from "react";
 import {
   AppBar,
@@ -19,14 +18,14 @@ const Navbar: React.FC = () => {
       position="static"
       sx={{ backgroundColor: "#303030", height: "72px" }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
           <Image
             src="/assets/guardian_one_logo_wordMark.png"
             alt="Logo"
             width={280.7}
             height={24}
-            style={{ marginRight: "20px" }}
+            style={{ margin: "auto" }}
           />
         </Box>
         <Box sx={{ display: "flex", alignItems: "center" }}>
