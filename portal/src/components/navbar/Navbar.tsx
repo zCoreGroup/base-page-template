@@ -1,68 +1,140 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   AppBar,
   Toolbar,
-  Typography,
   Box,
   IconButton,
   Badge,
+  Typography,
 } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const useMediaQuery = dynamic(
+  () => import("@mui/material/useMediaQuery").then((mod) => mod.default),
+  { ssr: false }
+);
 
 const Navbar: React.FC = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 960px)");
+    setIsSmallScreen(mediaQuery.matches);
+
+    const handleResize = (event: MediaQueryListEvent) => {
+      setIsSmallScreen(event.matches);
+    };
+
+    mediaQuery.addListener(handleResize);
+    return () => mediaQuery.removeListener(handleResize);
+  }, []);
+
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#303030", height: "72px" }}
+      sx={{
+        backgroundColor: "#303030",
+        height: "48px",
+      }}
     >
-      <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
-        <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          height: "100%",
+          padding: "0 24px",
+          maxWidth: "1920px",
+          margin: "0 auto",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "24px",
+            flex: isSmallScreen ? 0 : 1,
+            minWidth: isSmallScreen ? "auto" : "25%",
+          }}
+        >
+          <Typography
+            variant="body2"
+            sx={{ color: "#e4e2e3", fontSize: "12px", whiteSpace: "nowrap" }}
+          >
+            Doctrine
+          </Typography>
+          {!isSmallScreen && (
+            <Typography
+              variant="body2"
+              sx={{ color: "#e4e2e3", fontSize: "12px", whiteSpace: "nowrap" }}
+            >
+              News
+            </Typography>
+          )}
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flex: 2,
+            margin: "0 24px",
+          }}
+        >
           <Image
             src="/assets/guardian_one_logo_wordMark.png"
             alt="Logo"
             width={280.7}
             height={24}
-            style={{ margin: "auto" }}
           />
         </Box>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Typography
-            variant="body1"
-            sx={{ color: "#e4e2e3", marginRight: "24px", fontSize: "14px" }}
-          >
-            Doctrine
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{ color: "#e4e2e3", marginRight: "24px", fontSize: "14px" }}
-          >
-            News
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{ color: "#e4e2e3", marginRight: "24px", fontSize: "14px" }}
-          >
-            CSO Corner
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{ color: "#e4e2e3", marginRight: "24px", fontSize: "14px" }}
-          >
-            Multimedia
-          </Typography>
-          <IconButton sx={{ color: "#e4e2e3", marginRight: "8px" }}>
-            <SearchIcon />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "24px",
+            flex: isSmallScreen ? 0 : 1,
+            minWidth: isSmallScreen ? "auto" : "25%",
+            justifyContent: "flex-end",
+          }}
+        >
+          {!isSmallScreen && (
+            <>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#e4e2e3",
+                  fontSize: "12px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                CSO Corner
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#e4e2e3",
+                  fontSize: "12px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Multimedia
+              </Typography>
+            </>
+          )}
+          <IconButton size="small" sx={{ color: "#e4e2e3", padding: 0 }}>
+            <SearchIcon fontSize="small" />
           </IconButton>
-          <IconButton sx={{ color: "#e4e2e3", marginRight: "8px" }}>
+          <IconButton size="small" sx={{ color: "#e4e2e3", padding: 0 }}>
             <Badge badgeContent={4} color="error">
-              <NotificationsIcon />
+              <NotificationsIcon fontSize="small" />
             </Badge>
           </IconButton>
-          <IconButton sx={{ color: "#e4e2e3" }}>
-            <AccountCircleIcon />
+          <IconButton size="small" sx={{ color: "#e4e2e3", padding: 0 }}>
+            <AccountCircleIcon fontSize="small" />
           </IconButton>
         </Box>
       </Toolbar>
