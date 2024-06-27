@@ -1,3 +1,4 @@
+// portal/src/components/navbar/Navbar.tsx
 import React from "react";
 import {
   AppBar,
@@ -10,6 +11,7 @@ import {
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   return (
@@ -19,24 +21,14 @@ const Navbar: React.FC = () => {
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <img
+          <Image
             src="/assets/guardian_one_logo_wordMark.png"
             alt="Logo"
-            style={{ width: "280.7px", height: "24px", marginRight: "20px" }}
+            width={280.7}
+            height={24}
+            style={{ marginRight: "20px" }}
           />
         </Box>
-        <Typography
-          variant="h6"
-          sx={{
-            color: "#e74c3c",
-            fontWeight: "bold",
-            fontSize: "28px",
-            textAlign: "center",
-            flexGrow: 1,
-          }}
-        >
-          GUARDIAN ONE
-        </Typography>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography
             variant="body1"
