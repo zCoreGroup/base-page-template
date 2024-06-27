@@ -5,6 +5,9 @@ import Header from '../../components/header/header';
 import HeaderDataFetcher from '@/components/header/datafetcher';
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
+import Navbar from '@/components/navbar/Navbar'; // wip
+
+
 
 const headerFetcher = new HeaderDataFetcher();
 const featuredLinksFetcher = new FeaturedLinksDataFetcher();
@@ -20,6 +23,7 @@ const LandingPage = async ({ params }: { params: { id: string } }) => {
 
   return (
     <div>
+        <Navbar data={data.navbar}/>
         <Header data={data.header}/>
         <FeaturedLinks data={data.featuredLinks}/>
     </div>
