@@ -1,4 +1,4 @@
-import { createDirectus, DirectusClient, rest, staticToken } from '@directus/sdk';
+import { createDirectus, rest, RestClient, staticToken } from '@directus/sdk';
 import { getPortalConfig } from './portalconfig';
 
 
@@ -12,9 +12,11 @@ const portalConfig = getPortalConfig();
 
 export class DirectusDataFetcher {
 
-    protected static directusClient : DirectusClient<DirectusSchema> =
-        createDirectus<DirectusSchema>(portalConfig.directusUrl)
+    private static directusClient = createDirectus<DirectusSchema>(portalConfig.directusUrl)
         .with(staticToken(portalConfig.directusStaticToken))
         .with(rest());
 
+    get client(): RestClient<DirectusSchema> {
+        return DirectusDataFetcher.directusClient;
+    }
 }
