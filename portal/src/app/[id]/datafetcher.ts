@@ -27,12 +27,12 @@ export default class LandingPageDataFetcher {
 
         const headerData = await this.headerFetcher.fetch(headerQuery);
         const featuredLinksData = await this.featuredLinksFetcher.fetch(featuredLinksQuery);
-        const footerData = await this.headerFetcher.fetch(footerQuery);
+        const footerData = await this.footerFetcher.fetch(footerQuery);
 
         return {
             header: headerData,
             featuredLinks: featuredLinksData,
             footer: footerData,
-        } as unknown as LandingPageData;
+        } as LandingPageData;
     }
 }
