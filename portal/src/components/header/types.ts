@@ -1,12 +1,14 @@
+import { landing_page } from "@/lib/directusdatafetcher";
+
 export type HeaderData = {
     logoSrc: string;
     logoAlt: string;
     title: string;
-    subtitle: string;
+    tagline: string;
     missionText: string;
     visionText: string;
 };
 
 export type HeaderQuery = {
-    landingPageId: string
+    landingPage: landing_page
 }

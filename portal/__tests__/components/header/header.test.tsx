@@ -8,7 +8,7 @@ describe('Header', () => {
     logoSrc: '/path/to/logo.png',
     logoAlt: 'Vandenberg Space Base Logo',
     title: 'Vandenberg Space Base',
-    subtitle: 'Capacity - Agility - Responsiveness - Resilience',
+    tagline: 'Capacity - Agility - Responsiveness - Resilience',
     missionText: 'Provide agile responsive and resilient spaceport, test range, and installation capabilities for the nation',
     visionText: 'Unconstrained space launch and test event capacity from the Department of the Air Force’s base of choice'
   };
@@ -22,7 +22,7 @@ describe('Header', () => {
   it('renders the title and subtitle correctly', () => {
     const { getByText } = render(<Header data={data} />);
     expect(getByText(data.title)).toBeInTheDocument();
-    expect(getByText(data.subtitle)).toBeInTheDocument();
+    expect(getByText(data.tagline)).toBeInTheDocument();
   });
 
   it('renders the mission and vision correctly', () => {

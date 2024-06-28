@@ -14,7 +14,7 @@ const Header: React.FC<{ data: HeaderData }> = ({ data }) => {
               {data.title}
             </Typography>
             <Typography variant="subtitle1" sx={{ color: '#cccccc', fontSize: '16px' }}>
-              {data.subtitle}
+              {data.tagline}
             </Typography>
           </Box>
         </Grid>
