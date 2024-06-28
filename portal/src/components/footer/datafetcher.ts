@@ -19,10 +19,10 @@ export default class HeaderDataFetcher extends DirectusDataFetcher {
             title3: "Got feedback?",
             feedback: "For any feedback or suggestions, please reach out to us at: feedback@guardianone.us /n Your insights help us improve!",
             title4: "Get Connected",
-            linkFb: "#",
-            linkX: "#",
-            linkIG: "#",
-            linkYT: "#"
+            linkFB: "https://www.facebook.com/SLD30/",
+            linkX: "https://x.com/sldelta30",
+            linkIG: "https://www.instagram.com/vandenberg_sfb/",
+            linkYT: "https://www.youtube.com/user/30SWVandenberg"
         }
     }
 }

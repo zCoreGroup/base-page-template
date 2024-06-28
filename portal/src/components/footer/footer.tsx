@@ -59,7 +59,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
           {data.title4}
           </Typography>
           <Box sx={{ display: 'flex', gap: 1 }}>
-          <Link href={data.linkFb} color="inherit">
+          <Link href={data.linkFB} color="inherit">
               <Facebook />
             </Link>
             <Link href={data.linkX} color="inherit">

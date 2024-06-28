@@ -19,7 +19,7 @@ describe('Footer', () => {
         title3: "Got feedback?",
         feedback: "For any feedback or suggestions, please reach out to us at: feedback@guardianone.us /n Your insights help us improve!",
         title4: "Get Connected",
-        linkFb: "#",
+        linkFB: "#",
         linkX: "#",
         linkIG: "#",
         linkYT: "#"
@@ -41,7 +41,7 @@ describe('Footer', () => {
         expect(getByText(data.title3)).toBeInTheDocument();
         expect(getByText(data.feedback)).toBeInTheDocument();
         expect(getByText(data.title4)).toBeInTheDocument();
-        expect(getByText(data.linkFb)).toBeInTheDocument();
+        expect(getByText(data.linkFB)).toBeInTheDocument();
         expect(getByText(data.linkX)).toBeInTheDocument();
         expect(getByText(data.linkIG)).toBeInTheDocument();
         expect(getByText(data.linkYT)).toBeInTheDocument();

@@ -13,7 +13,7 @@ export type FooterData = {
     title3: string;
     feedback: string;
     title4: string;
-    linkFb: string;
+    linkFB: string;
     linkX: string;
     linkIG: string;
     linkYT: string;
