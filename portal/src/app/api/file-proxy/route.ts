@@ -5,7 +5,7 @@ import { readAssetRaw, readFile } from '@directus/sdk';
 
 const directusDataFetcher = new DirectusDataFetcher();
 
-export async function requestHandler(req: NextRequest): Promise<NextResponse> {
+export async function GET(req: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(req.url);
   const uuid = searchParams.get('uuid');
 
@@ -23,5 +23,3 @@ export async function requestHandler(req: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: 'Failed to fetch the file' }, { status: 500 });
   }
 }
-
-export { requestHandler as GET };

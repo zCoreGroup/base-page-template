@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { DirectusDataFetcher, DirectusSchema } from '@/lib/directusdatafetcher';
 import { RestClient, readAssetRaw, readFile } from '@directus/sdk';
-import { requestHandler } from '@/app/api/file-proxy/route'; // Replace with the actual path
+import { GET } from '@/app/api/file-proxy/route';
 
 jest.mock('../../../../src/lib/directusdatafetcher', () => {
     return {
@@ -79,7 +79,7 @@ describe('requestHandler', () => {
 
     it('should return 400 if UUID is missing', async () => {
         req.url = 'https://example.com/api'; // No UUID in query params
-        const response = await requestHandler(req as NextRequest);
+        const response = await GET(req as NextRequest);
         const jsonResponse = await response.json();
 
         expect(response.status).toBe(400);
@@ -89,7 +89,7 @@ describe('requestHandler', () => {
     it('should return 500 if fetching the file fails', async () => {
         fetcherInstance.client.request.mockRejectedValue(new Error('Fetch failed'));
 
-        const response = await requestHandler(req as NextRequest);
+        const response = await GET(req as NextRequest);
         const jsonResponse = await response.json();
 
         expect(response.status).toBe(500);
