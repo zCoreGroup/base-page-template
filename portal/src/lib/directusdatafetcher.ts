@@ -20,7 +20,7 @@ export interface landing_page {
     documentation: number[];
   }
 
-interface DirectusSchema {
+export interface DirectusSchema {
     landing_page: landing_page[]
 }
 
