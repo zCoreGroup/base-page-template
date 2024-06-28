@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import {
   AppBar,
@@ -11,77 +13,46 @@ import {
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import dynamic from "next/dynamic";
-
-const useMediaQuery = dynamic(
-  () => import("@mui/material/useMediaQuery").then((mod) => mod.default),
-  { ssr: false }
-);
 
 const Navbar: React.FC = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 960px)");
-    setIsSmallScreen(mediaQuery.matches);
-
-    const handleResize = (event: MediaQueryListEvent) => {
-      setIsSmallScreen(event.matches);
-    };
-
-    mediaQuery.addListener(handleResize);
-    return () => mediaQuery.removeListener(handleResize);
-  }, []);
-
   return (
     <AppBar
       position="static"
-      sx={{
-        backgroundColor: "#303030",
-        height: "48px",
-      }}
+      sx={{ backgroundColor: "#303030", height: "72px" }}
     >
       <Toolbar
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          height: "100%",
-          padding: "0 24px",
-          maxWidth: "1920px",
-          margin: "0 auto",
+          padding: "0 24px", // Add some padding to the left and right
         }}
       >
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: "24px",
-            flex: isSmallScreen ? 0 : 1,
-            minWidth: isSmallScreen ? "auto" : "25%",
+            gap: "48px",
           }}
         >
           <Typography
-            variant="body2"
-            sx={{ color: "#e4e2e3", fontSize: "12px", whiteSpace: "nowrap" }}
+            variant="body1"
+            sx={{ color: "#e4e2e3", fontSize: "14px" }}
           >
             Doctrine
           </Typography>
-          {!isSmallScreen && (
-            <Typography
-              variant="body2"
-              sx={{ color: "#e4e2e3", fontSize: "12px", whiteSpace: "nowrap" }}
-            >
-              News
-            </Typography>
-          )}
+          <Typography
+            variant="body1"
+            sx={{ color: "#e4e2e3", fontSize: "14px" }}
+          >
+            News
+          </Typography>
         </Box>
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            flex: 2,
-            margin: "0 24px",
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)",
           }}
         >
           <Image
@@ -95,46 +66,31 @@ const Navbar: React.FC = () => {
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: "24px",
-            flex: isSmallScreen ? 0 : 1,
-            minWidth: isSmallScreen ? "auto" : "25%",
-            justifyContent: "flex-end",
+            gap: "48px",
           }}
         >
-          {!isSmallScreen && (
-            <>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "#e4e2e3",
-                  fontSize: "12px",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                CSO Corner
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "#e4e2e3",
-                  fontSize: "12px",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Multimedia
-              </Typography>
-            </>
-          )}
-          <IconButton size="small" sx={{ color: "#e4e2e3", padding: 0 }}>
-            <SearchIcon fontSize="small" />
+          <Typography
+            variant="body1"
+            sx={{ color: "#e4e2e3", fontSize: "14px" }}
+          >
+            CSO Corner
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ color: "#e4e2e3", fontSize: "14px" }}
+          >
+            Multimedia
+          </Typography>
+          <IconButton sx={{ color: "#e4e2e3" }}>
+            <SearchIcon />
           </IconButton>
-          <IconButton size="small" sx={{ color: "#e4e2e3", padding: 0 }}>
+          <IconButton sx={{ color: "#e4e2e3" }}>
             <Badge badgeContent={4} color="error">
-              <NotificationsIcon fontSize="small" />
+              <NotificationsIcon />
             </Badge>
           </IconButton>
-          <IconButton size="small" sx={{ color: "#e4e2e3", padding: 0 }}>
-            <AccountCircleIcon fontSize="small" />
+          <IconButton sx={{ color: "#e4e2e3" }}>
+            <AccountCircleIcon />
           </IconButton>
         </Box>
       </Toolbar>
