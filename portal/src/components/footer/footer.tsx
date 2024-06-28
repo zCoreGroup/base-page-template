@@ -1,7 +1,7 @@
 // components/Footer.tsx
 import React from 'react';
 import { Grid, Typography, Box, Container, Link } from '@mui/material';
-import { Facebook, Twitter, Instagram, YouTube } from '@mui/icons-material';
+import { Facebook, X, Instagram, YouTube } from '@mui/icons-material';
 import { FooterData } from './types';
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
@@ -11,65 +11,64 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
       <Grid container rowSpacing={1} direction="row">
         <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
-            {/* {data.title1} */}
-            Contact
+            {data.title1}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-            {/* {data.address} */}
-            1234 Elm Street
-            Springfield, IL 62704 
-            USA
+            {data.streetAddress}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-            +1(805)606-1110
+            {data.cityState}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-            SLD30.PA.WOrkflow@us.af.mil
+            {data.phone}
+          </Typography>
+          <Typography variant="body2" sx={{ fontSize: '12px' }}>
+            {data.email}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
-            Hours of Operations
+            {data.title2}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-          Mon-Fri: 6am-6pm
+            {data.hoursMon}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-          Sat: 8am-4pm
+            {data.hoursSat}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-          Sun: 10am-4pm
+            {data.hoursSun}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-          Holiday Closures: Thanksgiving Day and Christmas Day
+            {data.hours2}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-          After Hour Passes: Visitors needing a visitor pass after hours can receive a 24 hour pass at the Santa Maria gate, (located on California Bivd. at the intersection with HWY1)
+            {data.hours3}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
-          Got feedback?
+          {data.title3}
           </Typography>
           <Typography variant="body2" sx={{ fontSize: '12px' }}>
-          For any feedback or suggestions, please reach out to us at: feedback@guardianone.us Your insights help us improve!
+          {data.feedback}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
-          Got Connected
+          {data.title4}
           </Typography>
           <Box sx={{ display: 'flex', gap: 1 }}>
-          <Link href="#" color="inherit">
+          <Link href={data.linkFb} color="inherit">
               <Facebook />
             </Link>
-            <Link href="#" color="inherit">
-              <Twitter />
+            <Link href={data.linkX} color="inherit">
+              <X />
             </Link>
-            <Link href="#" color="inherit">
+            <Link href={data.linkIG} color="inherit">
               <Instagram />
             </Link>
-            <Link href="#" color="inherit">
+            <Link href={data.linkYT} color="inherit">
               <YouTube />
             </Link>
           </Box>
