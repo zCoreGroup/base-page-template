@@ -4,6 +4,8 @@ export type FooterData = {
     cityState: string;
     phone: string;
     email: string;
+    phone1: string;
+    email1: string;
     title2: string;
     hoursMon: string;
     hoursSat: string;
