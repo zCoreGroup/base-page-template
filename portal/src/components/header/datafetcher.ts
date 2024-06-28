@@ -4,7 +4,7 @@ import { HeaderData, HeaderQuery } from "./types";
 export default class HeaderDataFetcher extends DirectusDataFetcher {
 
     async fetch(query: HeaderQuery): Promise<HeaderData> {
-        const { title, tagline, logo, slug } = query.landingPage;
+        const { title, tagline, logo } = query.landingPage;
         const logoSrc = `/api/file-proxy/?uuid=${logo}`;
 
         return {
