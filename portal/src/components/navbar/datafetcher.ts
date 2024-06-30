@@ -6,11 +6,17 @@ export default class NavbarDataFetcher extends DirectusDataFetcher {
     return {
       logo: "/assets/guardian_one_logo_wordMark.png",
       logoAlt: "Logo",
-      doctrine: "Doctrine",
-      news: "News",
-      csoCorner: "CSO Corner",
-      multimedia: "Multimedia",
       notificationsCount: 4,
+      links: [
+        { name: 'Doctrine', url: "https://www.starcom.spaceforce.mil/" },
+        { name: 'News', url: "https://www.spaceforce.mil/News/" },
+        { name: 'CSO Corner', url: "https://www.spaceforce.mil/About-Us/CSO-Leadership-Library/" },
+        { name: 'Multimedia', url: "https://www.youtube.com/watch?v=xvFZjo5PgG0" },
+      ],
+      user: {
+        name: "User Name",
+        avatarUrl: "/assets/avatar.png",
+      }
     };
   }
 }

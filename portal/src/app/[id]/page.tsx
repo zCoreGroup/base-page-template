@@ -4,15 +4,12 @@ import { LandingPageData, LandingPageQuery } from './types';
 import Header from '../../components/header/header';
 import HeaderDataFetcher from '@/components/header/datafetcher';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
-<<<<<<< HEAD
 import Navbar from '@/components/navbar/Navbar'; // wip
 
-
-=======
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher';
 import Footer from '../../components/footer/footer';
 import FooterDataFetcher from '@/components/footer/datafetcher';
->>>>>>> fc966d5f0395f591719845c325ed2d89d0595f58
+
 
 const headerFetcher = new HeaderDataFetcher();
 const footerFetcher = new FooterDataFetcher();

@@ -10,7 +10,13 @@ export type NavbarData = {
     user: {
         name: string;
         avatarUrl: string;
-    }
+    };
+    logo: string;
+    logoAlt: string;
+    doctrine: string;
+    news: string;
+    csoCorner: string;
+    multimedia: string;
 }
 
 export type NavbarQuery = {
