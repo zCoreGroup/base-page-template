@@ -9,10 +9,10 @@ import {
   IconButton,
   Badge,
   Typography,
+  Avatar,
 } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle"; // Import the desired icon
 import NavbarDataFetcher from "./datafetcher";
 import { NavbarData, NavbarQuery } from "./types";
 import { getPortalConfig } from "@/lib/portalconfig";
@@ -110,9 +110,7 @@ const Navbar: React.FC<{ query: NavbarQuery }> = ({ query }) => {
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <IconButton sx={{ color: "#e4e2e3" }}>
-            <AccountCircleIcon />
-          </IconButton>
+          <Avatar alt={data.user.name} src={data.user.avatarUrl} />
         </Box>
       </Toolbar>
     </AppBar>
