@@ -9,14 +9,13 @@ import {
   IconButton,
   Badge,
   Typography,
-  Avatar,
+  Grid,
 } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NavbarDataFetcher from "./datafetcher";
 import { NavbarData, NavbarQuery } from "./types";
-import { getPortalConfig } from "@/lib/portalconfig";
 
 const Navbar: React.FC<{ query: NavbarQuery }> = ({ query }) => {
   const [data, setData] = useState<NavbarData | null>(null);
@@ -55,64 +54,66 @@ const Navbar: React.FC<{ query: NavbarQuery }> = ({ query }) => {
       position="static"
       sx={{ backgroundColor: "#303030", height: "72px" }}
     >
-      <Toolbar
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "0 24px",
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", gap: "48px" }}>
-          {leftLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              style={{ color: "inherit", textDecoration: "none" }}
-            >
-              <Typography
-                variant="body1"
-                sx={{ color: "#e4e2e3", fontSize: "14px" }}
-              >
-                {link.name}
-              </Typography>
-            </a>
-          ))}
-        </Box>
-        <Box
-          sx={{
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
-          }}
-        >
-          <Image src={data.logo} alt={data.logoAlt} width={280.7} height={24} />
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: "48px" }}>
-          {rightLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              style={{ color: "inherit", textDecoration: "none" }}
-            >
-              <Typography
-                variant="body1"
-                sx={{ color: "#e4e2e3", fontSize: "14px" }}
-              >
-                {link.name}
-              </Typography>
-            </a>
-          ))}
-          <IconButton sx={{ color: "#e4e2e3" }}>
-            <SearchIcon />
-          </IconButton>
-          <IconButton sx={{ color: "#e4e2e3" }}>
-            <Badge badgeContent={data.notificationsCount} color="error">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <AccountCircleIcon alt={data.user.name} src={data.user.avatarUrl} />
-        </Box>
+      <Toolbar>
+        <Grid container alignItems="center">
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "center", gap: "48px" }}>
+              {leftLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  <Typography
+                    variant="body1"
+                    sx={{ color: "#e4e2e3", fontSize: "14px" }}
+                  >
+                    {link.name}
+                  </Typography>
+                </a>
+              ))}
+            </Box>
+          </Grid>
+          <Grid item xs>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Image
+                src={data.logo}
+                alt={data.logoAlt}
+                width={280.7}
+                height={24}
+              />
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "center", gap: "48px" }}>
+              {rightLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  <Typography
+                    variant="body1"
+                    sx={{ color: "#e4e2e3", fontSize: "14px" }}
+                  >
+                    {link.name}
+                  </Typography>
+                </a>
+              ))}
+              <IconButton sx={{ color: "#e4e2e3" }}>
+                <SearchIcon />
+              </IconButton>
+              <IconButton sx={{ color: "#e4e2e3" }}>
+                <Badge badgeContent={data.notificationsCount} color="error">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+              <IconButton sx={{ color: "#e4e2e3" }}>
+                <AccountCircleIcon />
+              </IconButton>
+            </Box>
+          </Grid>
+        </Grid>
       </Toolbar>
     </AppBar>
   );
