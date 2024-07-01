@@ -9,5 +9,5 @@ export type LandingPageData = {
 }
 
 export type LandingPageQuery = {
-    id: string;
+    slug: string;
 }

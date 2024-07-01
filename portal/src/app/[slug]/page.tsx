@@ -16,10 +16,10 @@ const footerFetcher = new FooterDataFetcher();
 const featuredLinksFetcher = new FeaturedLinksDataFetcher();
 const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher(headerFetcher, featuredLinksFetcher, footerFetcher);
 
-const LandingPage = async ({ params }: { params: { id: string } }) => {
+const LandingPage = async ({ params }: { params: { slug: string } }) => {
 
   const query = {
-    id: params.id
+    slug: params.slug
   } as LandingPageQuery
 
   const data: LandingPageData = await fetcher.fetch(query);
