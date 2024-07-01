@@ -21,7 +21,7 @@ export default class FeaturedLinksDataFetcher extends DirectusDataFetcher {
     };
   }
 
-  async findLinkIds(ids : number[]) : Promise<number[]> {
+  private async findLinkIds(ids : number[]) : Promise<number[]> {
     const result = await this.client.request(readItems('landing_page_links', {
       filter: {
         id: {
@@ -33,7 +33,7 @@ export default class FeaturedLinksDataFetcher extends DirectusDataFetcher {
     return result.map((joinRow) => joinRow.links_id);
   }
 
-  async findLinksByIds(ids: number[]): Promise<link[]> {
+  private async findLinksByIds(ids: number[]): Promise<link[]> {
     const result = await this.client.request(readItems('links', {
       filter: {
         id: {
