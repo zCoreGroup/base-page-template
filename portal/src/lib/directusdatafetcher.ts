@@ -3,7 +3,7 @@ import { getPortalConfig } from './portalconfig';
 
 
 
-export interface landing_page {
+export type landing_page = {
     id: number;
     status: string;
     user_created: string;
@@ -15,15 +15,27 @@ export interface landing_page {
     description: string;
     slug: string;
     tagline: string | null;
-    announcements: number[];
+    announcements: link[];
     featured: number[];
     documentation: number[];
-  }
-
-export interface DirectusSchema {
-    landing_page: landing_page[]
 }
 
+export type link = {
+    id: number;
+    user_created: string;
+    date_created: string;
+    user_updated: string;
+    date_updated: string;
+    name: string;
+    url: string;
+    description: string;
+    image: string;
+};
+
+export type DirectusSchema = {
+    landing_page: landing_page[]
+    links: link[]
+}
 
 const portalConfig = getPortalConfig();
 
@@ -35,5 +47,9 @@ export class DirectusDataFetcher {
 
     get client(): RestClient<DirectusSchema> {
         return DirectusDataFetcher.directusClient;
+    }
+
+    getFileUrl(uuid: string): string {
+        return `/api/file-proxy/?uuid=${uuid}`;
     }
 }
