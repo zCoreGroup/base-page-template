@@ -11,7 +11,7 @@ export default class NavbarDataFetcher extends DirectusDataFetcher {
         { name: 'Doctrine', url: "https://www.starcom.spaceforce.mil/" },
         { name: 'News', url: "https://www.spaceforce.mil/News/" },
         { name: 'CSO Corner', url: "https://www.spaceforce.mil/About-Us/CSO-Leadership-Library/" },
-        { name: 'Multimedia', url: "https://www.youtube.com/watch?v=xvFZjo5PgG0" },
+        { name: 'Multimedia', url: "https://www.youtube.com/" },
       ],
       user: {
         name: "User Name",
