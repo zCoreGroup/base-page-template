@@ -1,25 +1,25 @@
 type PortalConfig = {
-    directusUrl: string;
-    directusStaticToken: string;
-}
+  directusUrl: string;
+  directusStaticToken: string;
+};
 
 export const getPortalConfig = (): PortalConfig => {
-    const directusUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL ?? "";
-    console.log("NEXT_PUBLIC_DIRECTUS_URL:", directusUrl);
+  const directusUrl = process.env.DIRECTUS_URL ?? "";
+  console.log("DIRECTUS_URL in portalconfig:", directusUrl);
 
-    if (directusUrl === "") {
-        console.error("NEXT_PUBLIC_DIRECTUS_URL environment variable not set. Using fallback value.");
-    }
+  if (directusUrl === "") {
+    throw new Error("DIRECTUS_URL environment variable not set");
+  }
 
-    const directusStaticToken = process.env.NEXT_PUBLIC_DIRECTUS_STATIC_TOKEN ?? "";
-    console.log("NEXT_PUBLIC_DIRECTUS_STATIC_TOKEN:", directusStaticToken);
+  const directusStaticToken = process.env.DIRECTUS_STATIC_TOKEN ?? "";
+  console.log("DIRECTUS_STATIC_TOKEN in portalconfig:", directusStaticToken);
 
-    if (directusStaticToken === "") {
-        console.error("NEXT_PUBLIC_DIRECTUS_STATIC_TOKEN environment variable not set. Using fallback value.");
-    }
+  if (directusStaticToken === "") {
+    throw new Error("DIRECTUS_STATIC_TOKEN environment variable not set");
+  }
 
-    return {
-        directusUrl: directusUrl || 'http://fallback-directus-url.com',
-        directusStaticToken: directusStaticToken || 'fallback-static-token'
-    } as PortalConfig;
-}
+  return {
+    directusUrl: directusUrl,
+    directusStaticToken: directusStaticToken,
+  } as PortalConfig;
+};
