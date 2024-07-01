@@ -34,7 +34,7 @@ export type link = {
 
 export type DirectusSchema = {
     landing_page: landing_page[]
-    link: link[]
+    links: link[]
 }
 
 const portalConfig = getPortalConfig();
@@ -47,5 +47,9 @@ export class DirectusDataFetcher {
 
     get client(): RestClient<DirectusSchema> {
         return DirectusDataFetcher.directusClient;
+    }
+
+    getFileUrl(uuid: string): string {
+        return `/api/file-proxy/?uuid=${uuid}`;
     }
 }
