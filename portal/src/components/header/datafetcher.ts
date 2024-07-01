@@ -1,10 +1,10 @@
-import { DirectusDataFetcher } from "@/lib/directusdatafetcher";
-import { HeaderData, HeaderQuery } from "./types";
+import { landing_page } from "@/lib/directusdatafetcher";
+import { HeaderData } from "./types";
 
-export default class HeaderDataFetcher extends DirectusDataFetcher {
+export default class HeaderDataFetcher {
 
-    async fetch(query: HeaderQuery): Promise<HeaderData> {
-        const { title, tagline, logo } = query.landingPage;
+    async fetch(query: landing_page): Promise<HeaderData> {
+        const { title, tagline, logo } = query;
         const logoSrc = `/api/file-proxy/?uuid=${logo}`;
 
         return {

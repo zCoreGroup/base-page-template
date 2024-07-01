@@ -3,11 +3,9 @@ import { FooterQuery } from "@/components/footer/types";
 import HeaderDataFetcher from "@/components/header/datafetcher";
 import FooterDataFetcher from "@/components/footer/datafetcher";
 import FeaturedLinksDataFetcher from "@/components/featuredlinks/datafetcher";
-import { FeaturedLinkQuery } from "@/components/featuredlinks/types";
 import { DirectusDataFetcher, landing_page } from "@/lib/directusdatafetcher";
 import { readItems } from "@directus/sdk";
 import { DuplicateLandingPage, LandingPageNotFound } from "@/lib/errors";
-import { HeaderQuery } from "@/components/header/types";
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
@@ -25,12 +23,10 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     async fetch(query: LandingPageQuery): Promise<LandingPageData> {
 
         const landingPage = await this.findLandingPageBySlug(query.slug);
-        const headerQuery = {landingPage: landingPage} as HeaderQuery;
-        const featuredLinksQuery = {landingPageId: query.slug} as FeaturedLinkQuery;
         const footerQuery = {landingPageId: query.slug} as FooterQuery;
 
-        const headerData = await this.headerFetcher.fetch(headerQuery);
-        const featuredLinksData = await this.featuredLinksFetcher.fetch(featuredLinksQuery);
+        const headerData = await this.headerFetcher.fetch(landingPage);
+        const featuredLinksData = await this.featuredLinksFetcher.fetch(landingPage);
         const footerData = await this.footerFetcher.fetch(footerQuery);
         return {
             header: headerData,
