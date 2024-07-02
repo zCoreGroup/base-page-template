@@ -7,7 +7,3 @@ export type FeaturedLink = {
 export type FeaturedLinksData = {
     links: FeaturedLink[]
 }
-
-export type FeaturedLinkQuery = {
-    landingPageId: string
-}
