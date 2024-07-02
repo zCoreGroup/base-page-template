@@ -3,9 +3,8 @@ import { HeaderData } from "./types";
 
 export default class HeaderDataFetcher extends DirectusDataFetcher {
 
-
-    async fetch(query: landing_page): Promise<HeaderData> {
-        const { title, tagline, logo } = query;
+    async fetch(landingPage: landing_page): Promise<HeaderData> {
+        const { title, tagline, logo, mission, vision } = landingPage;
         const logoSrc = this.getFileUrl(logo);
 
         return {
@@ -13,8 +12,8 @@ export default class HeaderDataFetcher extends DirectusDataFetcher {
             logoAlt: title,
             title: title,
             tagline: tagline ?? "",
-            missionText: "Provide agile responsive and resilient spaceport, test range, and installation capabilities for the nation",
-            visionText: "Unconstrained space launch and test event capacity from the Department of the Air Force’s base of choice"
+            missionText: mission,
+            visionText: vision
         }
     }
 }
