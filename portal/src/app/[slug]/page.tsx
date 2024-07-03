@@ -10,7 +10,7 @@ import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher';
 import Footer from '../../components/footer/footer';
 import FooterDataFetcher from '@/components/footer/datafetcher';
 import NavbarDataFetcher from '@/components/navbar/datafetcher';
-import Navbar from '@/components/navbar/navbar';
+import Navbar from '../../components/navbar/navbar';
 
 
 const navbarFetcher = new NavbarDataFetcher();
