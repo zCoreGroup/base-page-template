@@ -1,5 +1,6 @@
 import { LandingPageData, LandingPageQuery } from "./types";
 import { FooterQuery } from "@/components/footer/types";
+import NavbarDataFetcher from "@/components/navbar/datafetcher";
 import HeaderDataFetcher from "@/components/header/datafetcher";
 import FooterDataFetcher from "@/components/footer/datafetcher";
 import FeaturedLinksDataFetcher from "@/components/featuredlinks/datafetcher";
@@ -10,17 +11,19 @@ import AnnouncementsDataFetcher from "@/components/announcements/datafetcher";
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
+    private navbarFetcher: NavbarDataFetcher;
     private headerFetcher: HeaderDataFetcher;
     private featuredLinksFetcher: FeaturedLinksDataFetcher;
     private announcementsFetcher: AnnouncementsDataFetcher;
     private footerFetcher: FooterDataFetcher;
 
-    constructor(headerFetcher: HeaderDataFetcher, featuredLinksFetcher: FeaturedLinksDataFetcher, announcementsFetcher: AnnouncementsDataFetcher, footerFetcher: FooterDataFetcher) {
+    constructor(navbarFetcher: NavbarDataFetcher, headerFetcher: HeaderDataFetcher, featuredLinksFetcher: FeaturedLinksDataFetcher, announcementsFetcher: AnnouncementsDataFetcher, footerFetcher: FooterDataFetcher) {
         super()
         this.headerFetcher = headerFetcher;
         this.featuredLinksFetcher = featuredLinksFetcher;
         this.announcementsFetcher = announcementsFetcher;
         this.footerFetcher = footerFetcher;
+        this.navbarFetcher = navbarFetcher;
     }
 
     async fetch(query: LandingPageQuery): Promise<LandingPageData> {
@@ -28,11 +31,13 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
         const landingPage = await this.findLandingPageBySlug(query.slug);
         const footerQuery = {landingPageId: query.slug} as FooterQuery;
 
+        const navbarData = await this.navbarFetcher.fetch(landingPage);
         const headerData = await this.headerFetcher.fetch(landingPage);
         const featuredLinksData = await this.featuredLinksFetcher.fetch(landingPage);
         const announcementsData = await this.announcementsFetcher.fetch(landingPage);
         const footerData = await this.footerFetcher.fetch(footerQuery);
         return {
+            navbar: navbarData,
             header: headerData,
             featuredLinks: featuredLinksData,
             announcements: announcementsData,

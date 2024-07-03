@@ -9,13 +9,17 @@ import AnnouncementsDataFetcher from '@/components/announcements/datafetcher';
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher';
 import Footer from '../../components/footer/footer';
 import FooterDataFetcher from '@/components/footer/datafetcher';
+import NavbarDataFetcher from '@/components/navbar/datafetcher';
+import Navbar from '../../components/navbar/Navbar';
 
+
+const navbarFetcher = new NavbarDataFetcher();
 const headerFetcher = new HeaderDataFetcher();
 const footerFetcher = new FooterDataFetcher();
 const featuredLinksFetcher = new FeaturedLinksDataFetcher();
 const announcementsFetcher = new AnnouncementsDataFetcher();
 
-const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher(headerFetcher, featuredLinksFetcher, announcementsFetcher, footerFetcher);
+const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, footerFetcher);
 
 const LandingPage = async ({ params }: { params: { slug: string } }) => {
 
@@ -27,6 +31,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div>
+        <Navbar data={data.navbar}/>
         <Header data={data.header}/>
         <FeaturedLinks data={data.featuredLinks} />
         <Announcements data={data.announcements} />
