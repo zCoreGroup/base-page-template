@@ -1,15 +1,10 @@
 
 export type Announcement = {
-  name: string
+  title: string
   description: string
-  imageSrc: string
+  image: string
 }
 
 export type AnnouncementsData = {
-  name: string
-  items: Announcement[]
-}
-
-export type AnnouncementsQuery = {
-  landingPageId: string
+  announcements: Announcement[]
 }

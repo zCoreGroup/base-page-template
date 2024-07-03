@@ -17,7 +17,7 @@ export type landing_page = {
     mission: string;
     vision: string;
     tagline: string | null;
-    announcements: link[];
+    announcements: number[];
     featured: number[];
     documentation: number[];
 }
@@ -40,10 +40,33 @@ export type landing_page_links = {
     links_id : number;
 }
 
+export type announcement = {
+    id: number;
+    landing_page_id : number;
+    announcements_id : number;
+    user_created: string;
+    date_created: string;
+    user_updated: string;
+    date_updated: string;
+    title: string;
+    description: string;
+    status: string;
+    image: string;
+    body: string;
+}
+
+export type landing_page_announcements = {
+    id: number;
+    landing_page_id : number;
+    announcements_id : number;
+}
+
 export type DirectusSchema = {
     landing_page: landing_page[];
     links: link[];
     landing_page_links: landing_page_links[];
+    announcements: announcement[];
+    landing_page_announcements: landing_page_announcements[];
 }
 
 const portalConfig = getPortalConfig();

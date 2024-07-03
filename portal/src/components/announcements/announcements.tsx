@@ -1,4 +1,4 @@
-// components/Announcement.tsx
+// components/announcements.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -17,7 +17,7 @@ const Item: React.FC<ItemProps> = ({ item }) => {
       <CardMedia
         component="img"
         height="400"
-        image={item.imageSrc}
+        image={item.image}
         alt={item.description}
       />
       <CardContent sx={{ 
@@ -36,7 +36,7 @@ const Item: React.FC<ItemProps> = ({ item }) => {
           transition: 'opacity 0.3s' 
         }}
       >
-        <Typography variant="h6">{item.name}</Typography>
+        <Typography variant="h6">{item.title}</Typography>
         <Typography variant="body2">{item.description}</Typography>
       </CardContent>
     </Card>
@@ -77,12 +77,12 @@ const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
           margin: "auto",
         }}
       >
-        {data.items.map((item, i) => (
+        {data.announcements.map((item, i) => (
           <Item key={i} item={item} />
         ))}
       </Carousel>
       <CustomIndicator
-        length={data.items.length}
+        length={data.announcements.length}
         activeIndex={activeIndex}
         onClick={handleIndicatorClick}
       />

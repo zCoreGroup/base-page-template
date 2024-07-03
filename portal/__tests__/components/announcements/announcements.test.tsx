@@ -5,17 +5,16 @@ import Announcements from '@/components/announcements/announcements';
 import { AnnouncementsData } from '@/components/announcements/types';
 
 const mockData: AnnouncementsData = {
-  name: 'Announcements',
-  items: [
+  announcements: [
     {
-      name: 'Test Announcement 1',
+      title: 'Test Announcement 1',
       description: 'Description for test announcement 1',
-      imageSrc: 'https://via.placeholder.com/150',
+      image: 'https://via.placeholder.com/150',
     },
     {
-      name: 'Test Announcement 2',
+      title: 'Test Announcement 2',
       description: 'Description for test announcement 2',
-      imageSrc: 'https://via.placeholder.com/150',
+      image: 'https://via.placeholder.com/150',
     },
   ],
 };
@@ -35,7 +34,7 @@ describe('Announcements Component', () => {
     const { container } = render(<Announcements data={mockData} />);
     
     const indicators = container.querySelectorAll('.MuiButton-text');
-    expect(indicators.length).toBe(mockData.items.length);
+    expect(indicators.length).toBe(mockData.announcements.length);
     
     fireEvent.click(indicators[1]);
     expect(screen.getByText('Test Announcement 2')).toBeTruthy();
@@ -59,6 +58,6 @@ describe('Announcements Component', () => {
     
     const slides = container.querySelectorAll('.MuiBox-root');
     // console.log(slides);
-    expect(slides.length).toBe(mockData.items.length);
+    expect(slides.length).toBe(mockData.announcements.length);
   });
 });
