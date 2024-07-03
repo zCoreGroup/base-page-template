@@ -4,17 +4,16 @@ export type NavbarLink = {
     url: string;
 }
 
+export type User = {
+    name: string;
+    avatarUrl: string
+}
+
 export type NavbarData = {
-    links: NavbarLink[];
-    notificationsCount: number;
-    user: {
-        name: string;
-        avatarUrl: string;
-    };
+    leftLinks: NavbarLink[];
+    rightLinks: NavbarLink[];
     logo: string;
     logoAlt: string;
-    doctrine: string;
-    news: string;
-    csoCorner: string;
-    multimedia: string;
+    notificationsCount: number;
+    user: User;
 }

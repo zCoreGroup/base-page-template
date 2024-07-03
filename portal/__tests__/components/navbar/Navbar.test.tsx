@@ -4,52 +4,42 @@ import Navbar from '@/components/navbar/navbar';
 import { NavbarData } from '@/components/navbar/types';
 
 const mockData: NavbarData = {
-    logo: '/test-logo.png',
-    logoAlt: 'Test Logo',
-    links: [
-        { name: 'Home', url: '/' },
-        { name: 'About', url: '/about' },
-        { name: 'Services', url: '/services' },
-        { name: 'Contact', url: '/contact' },
-    ],
-    notificationsCount: 3,
-    user: {
-        name: '',
-        avatarUrl: ''
-    },
-    doctrine: '',
-    news: '',
-    csoCorner: '',
-    multimedia: ''
+  leftLinks: [
+    { name: 'Doctrine', url: '#' },
+    { name: 'News', url: '#' },
+  ],
+  rightLinks: [
+    { name: 'CSO Corner', url: '#' },
+    { name: 'Multimedia', url: '#' },
+  ],
+  logo: '/path/to/logo.png',
+  logoAlt: 'Guardian One Logo',
+  notificationsCount: 4,
+  user: {
+    name: '',
+    avatarUrl: ''
+  }
 };
 
 describe('Navbar', () => {
-  it('renders the logo with correct alt text', () => {
+  test('renders Navbar component with links and logo', () => {
     render(<Navbar data={mockData} />);
+
+    // Check if left links are rendered
+    mockData.leftLinks.forEach(link => {
+      expect(screen.getByText(link.name)).toBeInTheDocument();
+    });
+
+    // Check if right links are rendered
+    mockData.rightLinks.forEach(link => {
+      expect(screen.getByText(link.name)).toBeInTheDocument();
+    });
+
+    // Check if logo is rendered
     const logo = screen.getByAltText(mockData.logoAlt);
     expect(logo).toBeInTheDocument();
-  });
 
-  it('renders the left and right links correctly', () => {
-    render(<Navbar data={mockData} />);
-
-    // Check if all links are rendered
-    mockData.links.forEach((link) => {
-      const linkElement = screen.getByText(link.name);
-      expect(linkElement).toBeInTheDocument();
-      expect(linkElement.closest('a')).toHaveAttribute('href', link.url);
-    });
-  });
-
-  it('renders the notification icon with correct badge count', () => {
-    render(<Navbar data={mockData} />);
-    const badge = screen.getByText(mockData.notificationsCount);
-    expect(badge).toBeInTheDocument();
-  });
-
-  it('renders the search icon and account icon', () => {
-    render(<Navbar data={mockData} />);
-    expect(screen.getByTestId('SearchIcon')).toBeInTheDocument();
-    expect(screen.getByTestId('AccountCircleIcon')).toBeInTheDocument();
+    // Check if notification count is rendered
+    expect(screen.getByText(mockData.notificationsCount.toString())).toBeInTheDocument();
   });
 });

@@ -13,16 +13,26 @@ export default class NavbarDataFetcher extends DirectusDataFetcher {
         name: "User Name",
         avatarUrl: "/assets/avatar.png",
       },
-      links : [
+      leftLinks: [
         {
-          name: "Space Force",
+          name: "Doctrine",
+          url: "https://spaceforce.mil"
+        },
+        {
+          name: "News",
           url: "https://spaceforce.mil"
         }
       ],
-      doctrine: "Doctrine",
-      news: "News",
-      csoCorner: "CSO Corner",
-      multimedia: "Multimedia"
+      rightLinks: [
+        {
+          name: "CSO Corner",
+          url: "https://spaceforce.mil"
+        },
+        {
+          name: "Multimedia",
+          url: "https://spaceforce.mil"
+        }
+      ]
     };
   }
 }

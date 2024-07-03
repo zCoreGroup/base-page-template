@@ -15,20 +15,19 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { NavbarData } from "./types";
 
 const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
-  // Split the links into two groups
-  const leftLinks = data.links.slice(0, Math.ceil(data.links.length / 2));
-  const rightLinks = data.links.slice(Math.ceil(data.links.length / 2));
-
   return (
     <AppBar
       position="static"
       sx={{ backgroundColor: "#303030", height: "72px" }}
     >
       <Toolbar>
-        <Grid container alignItems="center">
-          <Grid item xs={3}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "48px" }}>
-              {leftLinks.map((link, index) => (
+        <Grid container alignItems="center" justifyContent="space-between">
+          <Grid item xs={2}>
+            {/* Empty grid item to push the center box to the middle */}
+          </Grid>
+          <Grid item xs={8}>
+            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "24px" }}>
+              {data.leftLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.url}
@@ -42,21 +41,13 @@ const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
                   </Typography>
                 </a>
               ))}
-            </Box>
-          </Grid>
-          <Grid item xs={6}>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Image
                 src={data.logo}
                 alt={data.logoAlt}
                 width={280.7}
                 height={24}
               />
-            </Box>
-          </Grid>
-          <Grid item xs={3}>
-            <Box sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "24px" }}>
-              {rightLinks.map((link, index) => (
+              {data.rightLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.url}
@@ -70,6 +61,10 @@ const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
                   </Typography>
                 </a>
               ))}
+            </Box>
+          </Grid>
+          <Grid item xs={2}>
+            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "24px" }}>
               <IconButton sx={{ color: "#e4e2e3" }}>
                 <SearchIcon />
               </IconButton>
