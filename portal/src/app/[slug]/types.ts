@@ -16,3 +16,8 @@ export type LandingPageQuery = {
     slug: string;
 }
 
+export type LandingPageShort = {
+    slug: string;
+    title: string;
+}
+

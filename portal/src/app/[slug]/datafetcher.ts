@@ -1,4 +1,4 @@
-import { LandingPageData, LandingPageQuery } from "./types";
+import { LandingPageData, LandingPageQuery, LandingPageShort } from "./types";
 import { FooterQuery } from "@/components/footer/types";
 import NavbarDataFetcher from "@/components/navbar/datafetcher";
 import HeaderDataFetcher from "@/components/header/datafetcher";
@@ -47,6 +47,15 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
         } as LandingPageData;
     }
 
+    async getAllShort(): Promise<LandingPageShort[]> {
+        const result = await this.client.request(readItems('landing_page'));
+        const short = {}
+        return result.map((landingPage) => ({
+            slug: landingPage.slug,
+            title: landingPage.title
+        } as LandingPageShort));
+    }
+
     async findLandingPageBySlug(slug: string): Promise<landing_page> {
         const result = await this.client.request(readItems('landing_page', {
             filter: {
@@ -74,6 +83,6 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
             LandingPageDataFetcher.instance = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, footerFetcher);
         }
-        return LandingPageDataFetcher.instance
+        return LandingPageDataFetcher.instance;
     }
 }
