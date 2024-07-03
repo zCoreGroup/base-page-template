@@ -9,12 +9,14 @@ import Navbar from '@/components/navbar/Navbar'; // wip
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher';
 import Footer from '../../components/footer/footer';
 import FooterDataFetcher from '@/components/footer/datafetcher';
+import NavbarDataFetcher from '@/components/navbar/datafetcher';
 
 
+const navbarFetcher = new NavbarDataFetcher();
 const headerFetcher = new HeaderDataFetcher();
 const footerFetcher = new FooterDataFetcher();
 const featuredLinksFetcher = new FeaturedLinksDataFetcher();
-const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher(headerFetcher, featuredLinksFetcher, footerFetcher);
+const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher(headerFetcher, featuredLinksFetcher, footerFetcher, navbarFetcher);
 
 const LandingPage = async ({ params }: { params: { slug: string } }) => {
 

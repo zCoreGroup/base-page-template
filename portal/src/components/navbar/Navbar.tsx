@@ -15,35 +15,9 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NavbarDataFetcher from "./datafetcher";
-import { NavbarData, NavbarQuery } from "./types";
+import { NavbarData } from "./types";
 
-const Navbar: React.FC<{ query: NavbarQuery }> = ({ query }) => {
-  const [data, setData] = useState<NavbarData | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const dataFetcher = new NavbarDataFetcher();
-      try {
-        const result = await dataFetcher.fetch(query);
-        setData(result);
-      } catch (error) {
-        console.error("Error fetching navbar data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [query]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!data) {
-    return <div>Error loading data</div>;
-  }
+const Navbar: React.FC<{data: NavbarData}> = ({ data }) => {
 
   // Split the links into two groups
   const leftLinks = data.links.slice(0, Math.ceil(data.links.length / 2));

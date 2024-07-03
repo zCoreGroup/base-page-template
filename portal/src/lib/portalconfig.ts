@@ -1,25 +1,26 @@
 type PortalConfig = {
-  directusUrl: string;
-  directusStaticToken: string;
-};
+    directusUrl: string;
+    directusStaticToken: string;
+}
 
 export const getPortalConfig = (): PortalConfig => {
-  const directusUrl = process.env.DIRECTUS_URL ?? "";
-  console.log("DIRECTUS_URL in portalconfig:", directusUrl);
 
-  if (directusUrl === "") {
-    throw new Error("DIRECTUS_URL environment variable not set");
-  }
+    const directusUrl = process.env.DIRECTUS_URL ?? "";
 
-  const directusStaticToken = process.env.DIRECTUS_STATIC_TOKEN ?? "";
-  console.log("DIRECTUS_STATIC_TOKEN in portalconfig:", directusStaticToken);
+    if (directusUrl === "") {
+        console.error("DIRECTUS_URL environment variable not set");
+        process.exit(1);
+    }
 
-  if (directusStaticToken === "") {
-    throw new Error("DIRECTUS_STATIC_TOKEN environment variable not set");
-  }
+    const directusStaticToken = process.env.DIRECTUS_STATIC_TOKEN;
+    if (directusStaticToken === "") {
+        console.error("DIRECTUS_STATIC_TOKEN environment variable not set");
+        process.exit(1);
+    }
 
-  return {
-    directusUrl: directusUrl,
-    directusStaticToken: directusStaticToken,
-  } as PortalConfig;
-};
+    return {
+        directusUrl: directusUrl,
+        directusStaticToken: directusStaticToken
+    } as PortalConfig;
+}
+

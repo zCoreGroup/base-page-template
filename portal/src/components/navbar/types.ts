@@ -18,7 +18,3 @@ export type NavbarData = {
     csoCorner: string;
     multimedia: string;
 }
-
-export type NavbarQuery = {
-    landingPageId: string;
-}
