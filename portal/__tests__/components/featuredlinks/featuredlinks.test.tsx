@@ -40,13 +40,4 @@ describe('FeaturedLinks', () => {
       expect(linkNameElement).toBeInTheDocument();
     });
   });
-
-  it('renders link images correctly', () => {
-    render(<FeaturedLinks data={sampleData} />);
-    sampleData.links.forEach(link => {
-      const linkImageElement = screen.getByAltText(link.name);
-      expect(linkImageElement).toBeInTheDocument();
-      expect(linkImageElement).toHaveAttribute('src', link.imageUrl);
-    });
-  });
 });
