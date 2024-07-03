@@ -1,16 +1,16 @@
 import React from 'react';
 import { Box } from '@mui/material';
 
-const HexagonImageOverlay: React.FC<HexagonImageOverlayData> = ({ imageUrl, altText }) => {
+const HexagonImageOverlay: React.FC<HexagonImageOverlayData>  = ({ imageUrl, altText }) => {
     return (
         <Box
             sx={{
                 position: 'relative',
                 width: '100px',
-                height: '100px',
+                height: '86.6px', // Adjusted height to maintain hexagon shape
                 margin: '20px auto',
                 backgroundColor: '#1a1a1a',
-                clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)', // Hexagon with bottom edge oriented
+                clipPath: 'polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)', // Adjusted clip-path for hexagon with flat bottom edge
             }}
         >
             <Box
@@ -39,4 +39,5 @@ const HexagonImageOverlay: React.FC<HexagonImageOverlayData> = ({ imageUrl, altT
         </Box>
     );
 };
+
 export default HexagonImageOverlay;

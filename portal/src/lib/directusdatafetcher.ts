@@ -14,6 +14,8 @@ export type landing_page = {
     title: string;
     description: string;
     slug: string;
+    mission: string;
+    vision: string;
     tagline: string | null;
     announcements: link[];
     featured: number[];

@@ -52,7 +52,9 @@ describe("FeaturedLinksDataFetcher", () => {
             slug: "",
             tagline: null,
             announcements: [],
-            documentation: []
+            documentation: [],
+            mission: "",
+            vision: ""
         };
 
         const mockRawLinks: link[] = [
