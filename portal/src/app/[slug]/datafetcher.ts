@@ -1,4 +1,4 @@
-import { LandingPageData, LandingPageQuery } from "./types";
+import { LandingPageData, LandingPageQuery, LandingPageShort } from "./types";
 import { FooterQuery } from "@/components/footer/types";
 import NavbarDataFetcher from "@/components/navbar/datafetcher";
 import HeaderDataFetcher from "@/components/header/datafetcher";
@@ -10,6 +10,8 @@ import { DuplicateLandingPage, LandingPageNotFound } from "@/lib/errors";
 import AnnouncementsDataFetcher from "@/components/announcements/datafetcher";
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
+
+    static instance: LandingPageDataFetcher;
 
     private navbarFetcher: NavbarDataFetcher;
     private headerFetcher: HeaderDataFetcher;
@@ -29,7 +31,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     async fetch(query: LandingPageQuery): Promise<LandingPageData> {
 
         const landingPage = await this.findLandingPageBySlug(query.slug);
-        const footerQuery = {landingPageId: query.slug} as FooterQuery;
+        const footerQuery = { landingPageId: query.slug } as FooterQuery;
 
         const navbarData = await this.navbarFetcher.fetch(landingPage);
         const headerData = await this.headerFetcher.fetch(landingPage);
@@ -43,6 +45,15 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
             announcements: announcementsData,
             footer: footerData,
         } as LandingPageData;
+    }
+
+    async getAllShort(): Promise<LandingPageShort[]> {
+        const result = await this.client.request(readItems('landing_page'));
+        const short = {}
+        return result.map((landingPage) => ({
+            slug: landingPage.slug,
+            title: landingPage.title
+        } as LandingPageShort));
     }
 
     async findLandingPageBySlug(slug: string): Promise<landing_page> {
@@ -60,5 +71,18 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
             throw new DuplicateLandingPage();
         }
         return result[0];
+    }
+
+    static getInstance(): LandingPageDataFetcher {
+        if (LandingPageDataFetcher.instance === undefined) {
+            const navbarFetcher = new NavbarDataFetcher();
+            const headerFetcher = new HeaderDataFetcher();
+            const footerFetcher = new FooterDataFetcher();
+            const featuredLinksFetcher = new FeaturedLinksDataFetcher();
+            const announcementsFetcher = new AnnouncementsDataFetcher();
+
+            LandingPageDataFetcher.instance = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, footerFetcher);
+        }
+        return LandingPageDataFetcher.instance;
     }
 }
