@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Navbar from '@/components/navbar/navbar';
+import Navbar from '@/components/navbar/Navbar';
 import { NavbarData } from '@/components/navbar/types';
 
 const mockData: NavbarData = {
