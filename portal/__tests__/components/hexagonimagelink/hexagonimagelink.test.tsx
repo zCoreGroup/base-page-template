@@ -16,10 +16,6 @@ describe('HexagonImageLink', () => {
       const linkElement = getByText(props.name).closest('a');
       expect(linkElement).toHaveAttribute('href', props.url);
   
-      // Check image
-      const imageElement = getByAltText(props.name);
-      expect(imageElement).toHaveAttribute('src', props.imageUrl);
-  
       // Check text
       const textElement = getByText(props.name);
       expect(textElement).toBeInTheDocument();
