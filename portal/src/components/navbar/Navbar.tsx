@@ -12,7 +12,6 @@ import {
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import NavbarDataFetcher from "./datafetcher";
 import { NavbarData } from "./types";
 
 const Navbar: React.FC<{data: NavbarData}> = ({ data }) => {
