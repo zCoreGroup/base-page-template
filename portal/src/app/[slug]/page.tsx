@@ -4,19 +4,22 @@ import { LandingPageData, LandingPageQuery } from './types';
 import Header from '../../components/header/header';
 import HeaderDataFetcher from '@/components/header/datafetcher';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
-import Navbar from '@/components/navbar/navbar'; // wip
-
+import Announcements from '@/components/announcements/announcements';
+import AnnouncementsDataFetcher from '@/components/announcements/datafetcher';
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher';
 import Footer from '../../components/footer/footer';
 import FooterDataFetcher from '@/components/footer/datafetcher';
 import NavbarDataFetcher from '@/components/navbar/datafetcher';
+import Navbar from '@/components/navbar/navbar';
 
 
 const navbarFetcher = new NavbarDataFetcher();
 const headerFetcher = new HeaderDataFetcher();
 const footerFetcher = new FooterDataFetcher();
 const featuredLinksFetcher = new FeaturedLinksDataFetcher();
-const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher(headerFetcher, featuredLinksFetcher, footerFetcher, navbarFetcher);
+const announcementsFetcher = new AnnouncementsDataFetcher();
+
+const fetcher: LandingPageDataFetcher = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, footerFetcher);
 
 const LandingPage = async ({ params }: { params: { slug: string } }) => {
 
@@ -30,7 +33,8 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
     <div>
         <Navbar data={data.navbar}/>
         <Header data={data.header}/>
-        <FeaturedLinks data={data.featuredLinks}/>
+        <FeaturedLinks data={data.featuredLinks} />
+        <Announcements data={data.announcements} />
         <Footer data={data.footer}/>
     </div>
   );

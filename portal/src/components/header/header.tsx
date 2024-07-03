@@ -22,7 +22,7 @@ const Header: React.FC<{ data: HeaderData }> = ({ data }) => {
         <Grid item xs={12} md={8}>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Box sx={{ maxWidth: '242px', paddingLeft: 2, marginRight: 4 }}>
-              <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
+              <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '20px' }}>
                 Our Mission
               </Typography>
               <Typography variant="body2" sx={{ fontSize: '14px' }}>
@@ -30,7 +30,7 @@ const Header: React.FC<{ data: HeaderData }> = ({ data }) => {
               </Typography>
             </Box>
             <Box sx={{ maxWidth: '242px', paddingLeft: 2 }}>
-              <Typography variant="h6" sx={{ color: '#e74c3c', fontWeight: 'bold', fontSize: '20px' }}>
+              <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '20px' }}>
                 Our Vision
               </Typography>
               <Typography variant="body2" sx={{ fontSize: '14px' }}>
