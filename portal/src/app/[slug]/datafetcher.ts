@@ -6,17 +6,20 @@ import FeaturedLinksDataFetcher from "@/components/featuredlinks/datafetcher";
 import { DirectusDataFetcher, landing_page } from "@/lib/directusdatafetcher";
 import { readItems } from "@directus/sdk";
 import { DuplicateLandingPage, LandingPageNotFound } from "@/lib/errors";
+import AnnouncementsDataFetcher from "@/components/announcements/datafetcher";
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
     private headerFetcher: HeaderDataFetcher;
     private featuredLinksFetcher: FeaturedLinksDataFetcher;
+    private announcementsFetcher: AnnouncementsDataFetcher;
     private footerFetcher: FooterDataFetcher;
 
-    constructor(headerFetcher: HeaderDataFetcher, featuredLinksFetcher: FeaturedLinksDataFetcher, footerFetcher: FooterDataFetcher) {
+    constructor(headerFetcher: HeaderDataFetcher, featuredLinksFetcher: FeaturedLinksDataFetcher, announcementsFetcher: AnnouncementsDataFetcher, footerFetcher: FooterDataFetcher) {
         super()
         this.headerFetcher = headerFetcher;
         this.featuredLinksFetcher = featuredLinksFetcher;
+        this.announcementsFetcher = announcementsFetcher;
         this.footerFetcher = footerFetcher;
     }
 
@@ -27,10 +30,12 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
         const headerData = await this.headerFetcher.fetch(landingPage);
         const featuredLinksData = await this.featuredLinksFetcher.fetch(landingPage);
+        const announcementsData = await this.announcementsFetcher.fetch(landingPage);
         const footerData = await this.footerFetcher.fetch(footerQuery);
         return {
             header: headerData,
             featuredLinks: featuredLinksData,
+            announcements: announcementsData,
             footer: footerData,
         } as LandingPageData;
     }
