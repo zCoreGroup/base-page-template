@@ -30,9 +30,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
         const headerData = await this.headerFetcher.fetch(landingPage);
         const featuredLinksData = await this.featuredLinksFetcher.fetch(landingPage);
-        const announcementsData = await this.announcementsFetcher.fetch({
-            landingPageId: query.slug
-          })
+        const announcementsData = await this.announcementsFetcher.fetch(landingPage);
         const footerData = await this.footerFetcher.fetch(footerQuery);
         return {
             header: headerData,
