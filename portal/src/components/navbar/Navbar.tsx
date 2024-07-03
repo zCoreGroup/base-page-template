@@ -14,8 +14,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { NavbarData } from "./types";
 
-const Navbar: React.FC<{data: NavbarData}> = ({ data }) => {
-
+const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
   // Split the links into two groups
   const leftLinks = data.links.slice(0, Math.ceil(data.links.length / 2));
   const rightLinks = data.links.slice(Math.ceil(data.links.length / 2));
@@ -27,7 +26,7 @@ const Navbar: React.FC<{data: NavbarData}> = ({ data }) => {
     >
       <Toolbar>
         <Grid container alignItems="center">
-          <Grid item>
+          <Grid item xs={3}>
             <Box sx={{ display: "flex", alignItems: "center", gap: "48px" }}>
               {leftLinks.map((link, index) => (
                 <a
@@ -45,18 +44,15 @@ const Navbar: React.FC<{data: NavbarData}> = ({ data }) => {
               ))}
             </Box>
           </Grid>
-          <Grid item xs>
+          <Grid item xs={6}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Image
-                src={data.logo}
-                alt={data.logoAlt}
-                width={280.7}
-                height={24}
-              />
+              <Typography variant="h6" sx={{ color: "#e4e2e3", fontSize: "24px" }}>
+                GUARDIAN ONE
+              </Typography>
             </Box>
           </Grid>
-          <Grid item>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "48px" }}>
+          <Grid item xs={3}>
+            <Box sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "24px" }}>
               {rightLinks.map((link, index) => (
                 <a
                   key={index}
