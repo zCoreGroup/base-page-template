@@ -11,6 +11,8 @@ import AnnouncementsDataFetcher from "@/components/announcements/datafetcher";
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
+    static instance: LandingPageDataFetcher;
+
     private navbarFetcher: NavbarDataFetcher;
     private headerFetcher: HeaderDataFetcher;
     private featuredLinksFetcher: FeaturedLinksDataFetcher;
@@ -29,7 +31,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     async fetch(query: LandingPageQuery): Promise<LandingPageData> {
 
         const landingPage = await this.findLandingPageBySlug(query.slug);
-        const footerQuery = {landingPageId: query.slug} as FooterQuery;
+        const footerQuery = { landingPageId: query.slug } as FooterQuery;
 
         const navbarData = await this.navbarFetcher.fetch(landingPage);
         const headerData = await this.headerFetcher.fetch(landingPage);
@@ -60,5 +62,18 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
             throw new DuplicateLandingPage();
         }
         return result[0];
+    }
+
+    static getInstance(): LandingPageDataFetcher {
+        if (LandingPageDataFetcher.instance === undefined) {
+            const navbarFetcher = new NavbarDataFetcher();
+            const headerFetcher = new HeaderDataFetcher();
+            const footerFetcher = new FooterDataFetcher();
+            const featuredLinksFetcher = new FeaturedLinksDataFetcher();
+            const announcementsFetcher = new AnnouncementsDataFetcher();
+
+            LandingPageDataFetcher.instance = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, footerFetcher);
+        }
+        return LandingPageDataFetcher.instance
     }
 }
