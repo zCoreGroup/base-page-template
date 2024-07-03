@@ -4,7 +4,7 @@ import { LandingPageData, LandingPageQuery } from './types';
 import Header from '../../components/header/header';
 import HeaderDataFetcher from '@/components/header/datafetcher';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
-import Navbar from '@/components/navbar/Navbar'; // wip
+import Navbar from '@/components/navbar/navbar'; // wip
 
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher';
 import Footer from '../../components/footer/footer';
