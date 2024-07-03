@@ -46,9 +46,12 @@ const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
           </Grid>
           <Grid item xs={6}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Typography variant="h6" sx={{ color: "#e4e2e3", fontSize: "24px" }}>
-                GUARDIAN ONE
-              </Typography>
+              <Image
+                src={data.logo}
+                alt={data.logoAlt}
+                width={280.7}
+                height={24}
+              />
             </Box>
           </Grid>
           <Grid item xs={3}>
