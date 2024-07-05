@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="manifest" href="/favicon/csite.webmanifest" />
         <link rel="icon" href="/favicon/favicon.ico" />
       </head>
-      <body className={libreFranklin.className}>
+      <body className={libreFranklin.className} style={{ background: 'black'}}>
         <ThemeProvider>
           <div className="content">{children}</div>
         </ThemeProvider>

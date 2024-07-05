@@ -81,8 +81,7 @@ const HexagonImageOverlay: React.FC<HexagonImageOverlayData> = ({ imageUrl, altT
             height={sideLength * 2 + 2} // Slightly increase height of the bounding box
             style={{
                 display: 'block',
-                margin: '20px auto',
-                backgroundColor: '#1a1a1a', // Background color
+                margin: '20px auto'
             }}
             aria-label={altText}
             data-testid="hexagon-canvas"
