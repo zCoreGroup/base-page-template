@@ -5,7 +5,7 @@ import { readAssetRaw, readFile } from '@directus/sdk';
 
 const directusDataFetcher = new DirectusDataFetcher();
 // tell to browser to cache for one month
-const browserCacheTime = 2592000000; 
+const browserCacheTime = 2592000000;
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(req.url);
