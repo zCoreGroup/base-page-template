@@ -6,6 +6,7 @@ import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
 import Announcements from '@/components/announcements/announcements';
 import Footer from '../../components/footer/footer';
 import Navbar from '../../components/navbar/Navbar';
+import { Container } from '@mui/material';
 
 
 const fetcher = LandingPageDataFetcher.getInstance();
@@ -19,12 +20,14 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
   const data: LandingPageData = await fetcher.fetch(query);
 
   return (
-    <div>
-        <Navbar data={data.navbar}/>
+    <div style={{ backgroundColor: '#1a1a1a'}}>
+      <Navbar data={data.navbar}/>
+      <Container>
         <Header data={data.header}/>
         <FeaturedLinks data={data.featuredLinks} />
         <Announcements data={data.announcements} />
-        <Footer data={data.footer}/>
+      </Container>
+      <Footer data={data.footer}/>
     </div>
   );
 };

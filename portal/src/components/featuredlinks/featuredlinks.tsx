@@ -6,7 +6,7 @@ import HexagonImageLink from '../hexagonimagelink/hexagonimagelink';
 
 const FeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
   return (
-    <Box sx={{ backgroundColor: '#1a1a1a', padding: '20px' }}>
+    <Box sx={{ padding: '20px' }}>
       <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '28px' }}>
         Featured Links
       </Typography>
