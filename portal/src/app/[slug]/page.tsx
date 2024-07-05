@@ -20,14 +20,19 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
   const data: LandingPageData = await fetcher.fetch(query);
 
   return (
-    <div style={{ backgroundColor: '#1a1a1a'}}>
-      <Navbar data={data.navbar}/>
-      <Container>
-        <Header data={data.header}/>
-        <FeaturedLinks data={data.featuredLinks} />
-        <Announcements data={data.announcements} />
+    <div>
+      <Navbar data={data.navbar} />
+      <div style={{ backgroundColor: '#1a1a1a' }}>
+
+        <Container>
+          <Header data={data.header} />
+          <FeaturedLinks data={data.featuredLinks} />
+          <Announcements data={data.announcements} />
+        </Container>
+      </div>
+      <Container style={{ backgroundColor: 'black' }}>
+        <Footer data={data.footer} />
       </Container>
-      <Footer data={data.footer}/>
     </div>
   );
 };

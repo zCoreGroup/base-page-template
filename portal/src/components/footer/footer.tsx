@@ -5,7 +5,7 @@ import { FooterData } from './types';
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   return (
-    <Box sx={{ width: "100%", paddingTop: "1rem", paddingBottom: "1rem", backgroundColor: 'black', padding: '20px', color: '#ffffff' }}>
+    <Box sx={{ width: "100%", paddingTop: "1rem", paddingBottom: "1rem", padding: '20px', color: '#ffffff' }}>
       <Grid container spacing={4} direction="row" justifyContent="center" alignItems="flex-start" sx={{ width: '90%', maxWidth: '1800px' }}>
         
         <Grid item xs={12} sm={6} md={3}>
