@@ -4,7 +4,8 @@ import { readAssetRaw, readFile } from '@directus/sdk';
 
 
 const directusDataFetcher = new DirectusDataFetcher();
-const cacheTime = 2592000000; // one month
+// tell to browser to cache for one month
+const browserCacheTime = 2592000000; 
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(req.url);
@@ -20,7 +21,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     return new NextResponse(fileData, {
       headers: {
         'Content-Type': file.type ?? "",
-        'Cache-Control' : `max-age=${cacheTime}, public`
+        'Cache-Control' : `max-age=${browserCacheTime}, public`
       },
     });
   } catch (error) {
