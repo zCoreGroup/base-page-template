@@ -4,6 +4,7 @@ import { readAssetRaw, readFile } from '@directus/sdk';
 
 
 const directusDataFetcher = new DirectusDataFetcher();
+const cacheTime = 2592000000; // one month
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(req.url);
@@ -17,7 +18,10 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     const file = await directusDataFetcher.client.request(readFile(uuid));
     const fileData = await directusDataFetcher.client.request(readAssetRaw(uuid));
     return new NextResponse(fileData, {
-      headers: { 'Content-Type': file.type ?? "" },
+      headers: {
+        'Content-Type': file.type ?? "",
+        'Cache-Control' : `max-age=${cacheTime}, public`
+      },
     });
   } catch (error) {
     return NextResponse.json({ error: 'Failed to fetch the file' }, { status: 500 });
