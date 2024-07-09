@@ -1,0 +1,373 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Announcement": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "image"
+      ],
+      "type": "object"
+    },
+    "AnnouncementsData": {
+      "additionalProperties": false,
+      "properties": {
+        "announcements": {
+          "items": {
+            "$ref": "#/components/schemas/Announcement"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "announcements"
+      ],
+      "type": "object"
+    },
+    "FeaturedLink": {
+      "additionalProperties": false,
+      "properties": {
+        "imageUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "imageUrl"
+      ],
+      "type": "object"
+    },
+    "FeaturedLinksData": {
+      "additionalProperties": false,
+      "properties": {
+        "links": {
+          "items": {
+            "$ref": "#/components/schemas/FeaturedLink"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "links"
+      ],
+      "type": "object"
+    },
+    "FooterData": {
+      "additionalProperties": false,
+      "properties": {
+        "cityState": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "email1": {
+          "type": "string"
+        },
+        "feedback": {
+          "type": "string"
+        },
+        "hours2": {
+          "type": "string"
+        },
+        "hours3": {
+          "type": "string"
+        },
+        "hoursMon": {
+          "type": "string"
+        },
+        "hoursSat": {
+          "type": "string"
+        },
+        "hoursSun": {
+          "type": "string"
+        },
+        "linkFB": {
+          "type": "string"
+        },
+        "linkIG": {
+          "type": "string"
+        },
+        "linkX": {
+          "type": "string"
+        },
+        "linkYT": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "phone1": {
+          "type": "string"
+        },
+        "streetAddress": {
+          "type": "string"
+        },
+        "title1": {
+          "type": "string"
+        },
+        "title2": {
+          "type": "string"
+        },
+        "title3": {
+          "type": "string"
+        },
+        "title4": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title1",
+        "streetAddress",
+        "cityState",
+        "phone",
+        "email",
+        "phone1",
+        "email1",
+        "title2",
+        "hoursMon",
+        "hoursSat",
+        "hoursSun",
+        "hours2",
+        "hours3",
+        "title3",
+        "feedback",
+        "title4",
+        "linkFB",
+        "linkX",
+        "linkIG",
+        "linkYT"
+      ],
+      "type": "object"
+    },
+    "FooterQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "landingPageId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "landingPageId"
+      ],
+      "type": "object"
+    },
+    "HeaderData": {
+      "additionalProperties": false,
+      "properties": {
+        "logoAlt": {
+          "type": "string"
+        },
+        "logoSrc": {
+          "type": "string"
+        },
+        "missionText": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "visionText": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "logoSrc",
+        "logoAlt",
+        "title",
+        "tagline",
+        "missionText",
+        "visionText"
+      ],
+      "type": "object"
+    },
+    "HexagonImageLinkData": {
+      "additionalProperties": false,
+      "properties": {
+        "imageUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "imageUrl",
+        "name"
+      ],
+      "type": "object"
+    },
+    "HexagonImageOverlayData": {
+      "additionalProperties": false,
+      "properties": {
+        "altText": {
+          "type": "string"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "sideLength": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "imageUrl",
+        "altText",
+        "sideLength"
+      ],
+      "type": "object"
+    },
+    "LandingPageData": {
+      "additionalProperties": false,
+      "properties": {
+        "announcements": {
+          "$ref": "#/components/schemas/AnnouncementsData"
+        },
+        "featuredLinks": {
+          "$ref": "#/components/schemas/FeaturedLinksData"
+        },
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "header": {
+          "$ref": "#/components/schemas/HeaderData"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        }
+      },
+      "required": [
+        "header",
+        "featuredLinks",
+        "announcements",
+        "footer",
+        "navbar"
+      ],
+      "type": "object"
+    },
+    "LandingPageQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug"
+      ],
+      "type": "object"
+    },
+    "LandingPageShort": {
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug",
+        "title"
+      ],
+      "type": "object"
+    },
+    "NavbarData": {
+      "additionalProperties": false,
+      "properties": {
+        "leftLinks": {
+          "items": {
+            "$ref": "#/components/schemas/NavbarLink"
+          },
+          "type": "array"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "logoAlt": {
+          "type": "string"
+        },
+        "notificationsCount": {
+          "type": "number"
+        },
+        "rightLinks": {
+          "items": {
+            "$ref": "#/components/schemas/NavbarLink"
+          },
+          "type": "array"
+        },
+        "user": {
+          "$ref": "#/components/schemas/User"
+        }
+      },
+      "required": [
+        "leftLinks",
+        "rightLinks",
+        "logo",
+        "logoAlt",
+        "notificationsCount",
+        "user"
+      ],
+      "type": "object"
+    },
+    "NavbarLink": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url"
+      ],
+      "type": "object"
+    },
+    "User": {
+      "additionalProperties": false,
+      "properties": {
+        "avatarUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "avatarUrl"
+      ],
+      "type": "object"
+    }
+  }
+}

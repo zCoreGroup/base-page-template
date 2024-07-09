@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Header from '@/components/header/header';
-import { HeaderData } from '@/components/header/types';
+import { HeaderData } from "@/types";
 
 describe('Header', () => {
   const data: HeaderData = {

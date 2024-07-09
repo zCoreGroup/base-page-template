@@ -1,4 +1,5 @@
 "use client"
+import { HexagonImageOverlayData } from '@/types';
 import React, { useEffect, useRef } from 'react';
 
 const HexagonImageOverlay: React.FC<HexagonImageOverlayData> = ({ imageUrl, altText, sideLength }) => {

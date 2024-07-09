@@ -35,4 +35,12 @@ yarn test
 yarn lint
 ```
 
+## API Docs
+API docs can be viewed by navigating to `/docs`.
 
+The schema must be regenerated everytime a change to `src/types.js` is made otherwise the docs will not be accurate.
+
+The following command can be run:
+```bash
+yarn generate:schema
+```

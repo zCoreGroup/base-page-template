@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Footer from '@/components/footer/footer';
-import { FooterData } from '@/components/footer/types';
+import { FooterData } from "@/types";
 
 describe('Footer', () => {
     const data: FooterData = {

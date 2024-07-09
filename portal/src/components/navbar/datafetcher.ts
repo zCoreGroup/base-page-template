@@ -1,5 +1,5 @@
 import { DirectusDataFetcher, landing_page } from "@/lib/directusdatafetcher";
-import { NavbarData } from "./types";
+import { NavbarData } from "@/types";
 
 
 export default class NavbarDataFetcher extends DirectusDataFetcher {

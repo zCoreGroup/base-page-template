@@ -1,5 +1,5 @@
-import { LandingPageData, LandingPageQuery, LandingPageShort } from "./types";
-import { FooterQuery } from "@/components/footer/types";
+import { LandingPageData, LandingPageQuery, LandingPageShort } from "../../types";
+import { FooterQuery } from "@/types";
 import NavbarDataFetcher from "@/components/navbar/datafetcher";
 import HeaderDataFetcher from "@/components/header/datafetcher";
 import FooterDataFetcher from "@/components/footer/datafetcher";

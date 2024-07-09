@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Typography, Box, Link } from '@mui/material';
 import { Facebook, X, Instagram, YouTube } from '@mui/icons-material';
-import { FooterData } from './types';
+import { FooterData } from "@/types";
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   return (

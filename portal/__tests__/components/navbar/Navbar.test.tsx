@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Navbar from '@/components/navbar/Navbar';
-import { NavbarData } from '@/components/navbar/types';
+import { NavbarData } from "@/types";
 
 const mockData: NavbarData = {
   leftLinks: [

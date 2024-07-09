@@ -1,6 +1,6 @@
 import React from 'react';
 import LandingPageDataFetcher from './datafetcher';
-import { LandingPageData, LandingPageQuery } from './types';
+import { LandingPageData, LandingPageQuery } from '../../types';
 import Header from '../../components/header/header';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
 import Announcements from '@/components/announcements/announcements';
