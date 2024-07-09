@@ -1,7 +1,7 @@
 // components/Header.tsx
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import { HeaderData } from './types';
+import { HeaderData } from "@/types";
 
 const Header: React.FC<{ data: HeaderData }> = ({ data }) => {
   return (

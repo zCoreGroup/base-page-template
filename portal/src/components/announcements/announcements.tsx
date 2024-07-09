@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
-import { AnnouncementsData, Announcement as AnnouncementsItem } from './types';
+import { AnnouncementsData, Announcement as AnnouncementsItem } from "@/types";
 import CustomIndicator from './customindicator';
 
 interface ItemProps {

@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
-import { FeaturedLinksData } from '@/components/featuredlinks/types';
+import { FeaturedLinksData } from "@/types";
 
 // Sample data for testing
 const sampleData: FeaturedLinksData = {

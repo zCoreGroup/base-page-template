@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import HexagonImageOverlay from '../hexagonimageoverlay/hexagonimageoverlay';
+import {HexagonImageLinkData} from '@/types';
 
 const HexagonImageLink: React.FC<HexagonImageLinkData> = ({ url, imageUrl, name }) => {
     return (

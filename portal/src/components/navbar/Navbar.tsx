@@ -12,7 +12,7 @@ import {
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { NavbarData } from "./types";
+import { NavbarData } from "@/types";
 
 const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
   return (

@@ -1,7 +1,7 @@
 // components/FeaturedLinks.tsx
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import { FeaturedLinksData } from './types';
+import { FeaturedLinksData } from "@/types";
 import HexagonImageLink from '../hexagonimagelink/hexagonimagelink';
 
 const FeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
