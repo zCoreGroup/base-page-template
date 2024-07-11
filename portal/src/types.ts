@@ -4,6 +4,7 @@ export type LandingPageData = {
     announcements: AnnouncementsData
     footer: FooterData
     navbar: NavbarData
+    services: ServicesData
 }
 
 export type LandingPageQuery = {
@@ -93,4 +94,14 @@ export type NavbarData = {
     notificationsCount: number;
     user: User;
 };
+
+export type ServicesLinkData = {
+    name: string,
+    url: string,
+    imageUrl: string
+}
+
+export type ServicesData = {
+    links: ServicesLinkData[]
+}
 

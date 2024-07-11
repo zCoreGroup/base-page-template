@@ -256,6 +256,9 @@
         },
         "navbar": {
           "$ref": "#/components/schemas/NavbarData"
+        },
+        "services": {
+          "$ref": "#/components/schemas/ServicesData"
         }
       },
       "required": [
@@ -263,7 +266,8 @@
         "featuredLinks",
         "announcements",
         "footer",
-        "navbar"
+        "navbar",
+        "services"
       ],
       "type": "object"
     },
@@ -346,6 +350,41 @@
       "required": [
         "name",
         "url"
+      ],
+      "type": "object"
+    },
+    "ServicesData": {
+      "additionalProperties": false,
+      "properties": {
+        "links": {
+          "items": {
+            "$ref": "#/components/schemas/ServicesLinkData"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "links"
+      ],
+      "type": "object"
+    },
+    "ServicesLinkData": {
+      "additionalProperties": false,
+      "properties": {
+        "imageUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "imageUrl"
       ],
       "type": "object"
     },
