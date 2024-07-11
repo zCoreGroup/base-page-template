@@ -3,6 +3,7 @@ import { HeaderData } from "@/components/header/types";
 import { AnnouncementsData } from "@/components/announcements/types";
 import { FooterData } from "@/components/footer/types";
 import { NavbarData } from "@/components/navbar/types";
+import { ServicesData } from "@/components/services/types";
 
 export type LandingPageData = {
     header: HeaderData
@@ -10,6 +11,7 @@ export type LandingPageData = {
     announcements: AnnouncementsData
     footer: FooterData
     navbar: NavbarData
+    services: ServicesData
 }
 
 export type LandingPageQuery = {

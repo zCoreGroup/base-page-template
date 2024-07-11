@@ -12,7 +12,7 @@ const FeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
       </Typography>
       <Grid container spacing={2} sx={{ marginTop: '10px' }}>
         {data.links.map((link, index) => (
-          <Grid item xs={12} sm={6} md={2} lg={2} key={index}>
+          <Grid item xs={6} sm={2} md={2} lg={2} key={index}>
             <HexagonImageLink url={link.url} imageUrl={link.imageUrl} name={link.name}/>
           </Grid>
         ))}

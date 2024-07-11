@@ -72,7 +72,7 @@ const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
         index={activeIndex}
         onChange={handleCarouselChange}
         sx={{
-          maxWidth: "50%",
+          maxWidth: "100%",
           flexGrow: 1,
           margin: "auto",
         }}

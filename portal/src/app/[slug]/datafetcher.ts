@@ -3,6 +3,7 @@ import { FooterQuery } from "@/components/footer/types";
 import NavbarDataFetcher from "@/components/navbar/datafetcher";
 import HeaderDataFetcher from "@/components/header/datafetcher";
 import FooterDataFetcher from "@/components/footer/datafetcher";
+import ServicesDataFetcher from "@/components/services/datafetcher";
 import FeaturedLinksDataFetcher from "@/components/featuredlinks/datafetcher";
 import { DirectusDataFetcher, landing_page } from "@/lib/directusdatafetcher";
 import { readItems } from "@directus/sdk";
@@ -18,13 +19,15 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     private featuredLinksFetcher: FeaturedLinksDataFetcher;
     private announcementsFetcher: AnnouncementsDataFetcher;
     private footerFetcher: FooterDataFetcher;
+    private servicesFetcher: ServicesDataFetcher;
 
-    constructor(navbarFetcher: NavbarDataFetcher, headerFetcher: HeaderDataFetcher, featuredLinksFetcher: FeaturedLinksDataFetcher, announcementsFetcher: AnnouncementsDataFetcher, footerFetcher: FooterDataFetcher) {
+    constructor(navbarFetcher: NavbarDataFetcher, headerFetcher: HeaderDataFetcher, featuredLinksFetcher: FeaturedLinksDataFetcher, announcementsFetcher: AnnouncementsDataFetcher, footerFetcher: FooterDataFetcher, servicesFetcher: ServicesDataFetcher) {
         super()
         this.headerFetcher = headerFetcher;
         this.featuredLinksFetcher = featuredLinksFetcher;
         this.announcementsFetcher = announcementsFetcher;
         this.footerFetcher = footerFetcher;
+        this.servicesFetcher = servicesFetcher;
         this.navbarFetcher = navbarFetcher;
     }
 
@@ -33,12 +36,13 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
         const landingPage = await this.findLandingPageBySlug(query.slug);
         const footerQuery = { landingPageId: query.slug } as FooterQuery;
 
-        const [navbarData, headerData, featuredLinksData, announcementsData, footerData] = await Promise.all([
+        const [navbarData, headerData, featuredLinksData, announcementsData, servicesData, footerData,] = await Promise.all([
             this.navbarFetcher.fetch(landingPage),
             this.headerFetcher.fetch(landingPage),
             this.featuredLinksFetcher.fetch(landingPage),
             this.announcementsFetcher.fetch(landingPage),
-            this.footerFetcher.fetch(footerQuery)
+            this.servicesFetcher.fetch(landingPage),
+            this.footerFetcher.fetch(footerQuery),
         ]);
 
         return {
@@ -47,6 +51,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
             featuredLinks: featuredLinksData,
             announcements: announcementsData,
             footer: footerData,
+            services: servicesData,
         } as LandingPageData;
     }
 
@@ -81,10 +86,11 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
             const navbarFetcher = new NavbarDataFetcher();
             const headerFetcher = new HeaderDataFetcher();
             const footerFetcher = new FooterDataFetcher();
+            const servicesFetcher = new ServicesDataFetcher();
             const featuredLinksFetcher = new FeaturedLinksDataFetcher();
             const announcementsFetcher = new AnnouncementsDataFetcher();
 
-            LandingPageDataFetcher.instance = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, footerFetcher);
+            LandingPageDataFetcher.instance = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, footerFetcher, servicesFetcher);
         }
         return LandingPageDataFetcher.instance;
     }
