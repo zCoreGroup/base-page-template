@@ -20,6 +20,7 @@ export type landing_page = {
     announcements: number[];
     featured: number[];
     documentation: number[];
+    base_events: number[];
 }
 
 export type link = {
@@ -61,12 +62,32 @@ export type landing_page_announcements = {
     announcements_id : number;
 }
 
+export type base_event = {
+    id: number;
+    landing_page_id : number;
+    base_events_id : number;
+    user_created: string;
+    date_created: string;
+    user_updated: string;
+    date_updated: string;
+    title: string;
+    description: string;
+}
+
+export type landing_page_base_events = {
+    id: number;
+    landing_page_id : number;
+    base_events_id : number;
+}
+
 export type DirectusSchema = {
     landing_page: landing_page[];
     links: link[];
     landing_page_links: landing_page_links[];
     announcements: announcement[];
     landing_page_announcements: landing_page_announcements[];
+    base_events: base_event[];
+    landing_page_base_events: landing_page_base_events[];
 }
 
 const portalConfig = getPortalConfig();

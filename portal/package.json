@@ -17,7 +17,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.20",
-    "@mui/material": "^5.15.20",
+    "@mui/material": "^5.16.0",
     "@testing-library/dom": "^10.2.0",
     "@types/jest": "^29.5.12",
     "dotenv": "^16.4.5",
@@ -25,7 +25,9 @@
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-material-ui-carousel": "^3.4.2"
+    "react-material-ui-carousel": "^3.4.2",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "1.6.0",
