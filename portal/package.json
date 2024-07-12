@@ -12,8 +12,6 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate:schema": "ts-json-schema-generator -p 'src/types.ts' --type '*' --out 'src/schemas.json' && node scripts/updateRefs.js"
-    "build-storybook": "storybook build",
-    "generate:schema": "ts-json-schema-generator -p 'src/types.ts' --type '*' --out 'src/schemas.json' && node scripts/updateRefs.js"
   },
   "dependencies": {
     "@directus/sdk": "^16.1.0",
