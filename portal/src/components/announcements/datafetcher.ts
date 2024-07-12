@@ -1,5 +1,5 @@
 import { DirectusDataFetcher, landing_page, announcement } from "@/lib/directusdatafetcher";
-import { Announcement, AnnouncementsData } from "./types";
+import { Announcement, AnnouncementsData } from "@/types";
 import { readItems } from "@directus/sdk";
 
 export default class AnnouncementsDataFetcher extends DirectusDataFetcher {

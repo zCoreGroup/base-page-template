@@ -1,5 +1,5 @@
 import { DirectusDataFetcher, landing_page } from "@/lib/directusdatafetcher";
-import { HeaderData } from "./types";
+import { HeaderData } from "@/types";
 
 export default class HeaderDataFetcher extends DirectusDataFetcher {
 

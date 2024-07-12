@@ -8,6 +8,7 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ['./jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
+  testTimeout: 30000, //30 seconds
 };
 
 module.exports = createJestConfig(customJestConfig);

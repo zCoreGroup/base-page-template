@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
-import { AnnouncementsData, Announcement as AnnouncementsItem } from './types';
+import { AnnouncementsData, Announcement as AnnouncementsItem } from "@/types";
 import CustomIndicator from './customindicator';
 
 interface ItemProps {
@@ -61,7 +61,7 @@ const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
   };
 
   return (
-    <Box sx={{ backgroundColor: '#1a1a1a', padding: '20px' }}>
+    <Box sx={{ padding: '20px' }}>
       <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '28px', textAlign: 'left', marginBottom: '20px' }}>
         Announcements
       </Typography>

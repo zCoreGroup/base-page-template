@@ -1,5 +1,5 @@
 import { DirectusDataFetcher, landing_page, link } from "@/lib/directusdatafetcher";
-import { FeaturedLinksData } from "./types";
+import { FeaturedLinksData } from "@/types";
 import { readItems } from "@directus/sdk";
 
 export default class FeaturedLinksDataFetcher extends DirectusDataFetcher {

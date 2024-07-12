@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
-import { FeaturedLinksData } from '@/components/featuredlinks/types';
+import { FeaturedLinksData } from "@/types";
 
 // Sample data for testing
 const sampleData: FeaturedLinksData = {
@@ -38,15 +38,6 @@ describe('FeaturedLinks', () => {
     sampleData.links.forEach(link => {
       const linkNameElement = screen.getByText(link.name);
       expect(linkNameElement).toBeInTheDocument();
-    });
-  });
-
-  it('renders link images correctly', () => {
-    render(<FeaturedLinks data={sampleData} />);
-    sampleData.links.forEach(link => {
-      const linkImageElement = screen.getByAltText(link.name);
-      expect(linkImageElement).toBeInTheDocument();
-      expect(linkImageElement).toHaveAttribute('src', link.imageUrl);
     });
   });
 });

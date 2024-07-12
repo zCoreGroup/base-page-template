@@ -1,6 +1,6 @@
 import HeaderDataFetcher from "@/components/header/datafetcher";
 import { landing_page } from "@/lib/directusdatafetcher";
-import { HeaderData } from "@/components/header/types";
+import { HeaderData } from "@/types";
 
 jest.mock("../../../src/lib/directusdatafetcher");
 

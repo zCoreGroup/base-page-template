@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Announcements from '@/components/announcements/announcements';
-import { AnnouncementsData } from '@/components/announcements/types';
+import { AnnouncementsData } from "@/types";
 
 const mockData: AnnouncementsData = {
   announcements: [

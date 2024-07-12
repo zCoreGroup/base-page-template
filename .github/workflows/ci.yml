@@ -36,6 +36,7 @@ jobs:
         run: yarn build
         env:
           DIRECTUS_URL: http://placeholder
+          DIRECTUS_STATIC_TOKEN: placeholder
 
       - name: Run tests
         run: yarn test

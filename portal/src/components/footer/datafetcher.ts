@@ -1,5 +1,5 @@
 import { DirectusDataFetcher } from "@/lib/directusdatafetcher";
-import { FooterData, FooterQuery } from "./types";
+import { FooterData, FooterQuery } from "@/types";
 
 export default class HeaderDataFetcher extends DirectusDataFetcher {
 

@@ -1,42 +1,92 @@
-import React from 'react';
-import { Box } from '@mui/material';
+"use client"
+import { HexagonImageOverlayData } from '@/types';
+import React, { useEffect, useRef } from 'react';
 
-const HexagonImageOverlay: React.FC<HexagonImageOverlayData>  = ({ imageUrl, altText }) => {
+const HexagonImageOverlay: React.FC<HexagonImageOverlayData> = ({ imageUrl, altText, sideLength }) => {
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (canvas) {
+            const context = canvas.getContext('2d');
+            if (context) {
+                const width = sideLength * Math.sqrt(3);
+                const height = sideLength * 2;
+
+                // Define hexagon points
+                const hexagon = [
+                    { x: width / 2, y: 0 },
+                    { x: width, y: sideLength / 2 },
+                    { x: width, y: sideLength * 1.5 },
+                    { x: width / 2, y: height },
+                    { x: 0, y: sideLength * 1.5 },
+                    { x: 0, y: sideLength / 2 },
+                ];
+
+                // Load the image
+                const image = new Image();
+                image.src = imageUrl;
+                image.onload = () => {
+                    // Clear the canvas
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+
+                    // Create hexagon path
+                    context.beginPath();
+                    context.moveTo(hexagon[0].x, hexagon[0].y);
+                    for (let i = 1; i < hexagon.length; i++) {
+                        context.lineTo(hexagon[i].x, hexagon[i].y);
+                    }
+                    context.closePath();
+
+                    // Clip to hexagon
+                    context.clip();
+
+                    // Calculate aspect ratio
+                    const aspectRatio = image.width / image.height;
+                    const canvasAspectRatio = width / height;
+
+                    let drawWidth, drawHeight;
+                    if (aspectRatio > canvasAspectRatio) {
+                        drawWidth = width;
+                        drawHeight = width / aspectRatio;
+                    } else {
+                        drawHeight = height;
+                        drawWidth = height * aspectRatio;
+                    }
+
+                    const drawX = (width - drawWidth) / 2;
+                    const drawY = (height - drawHeight) / 2;
+
+                    // Draw the image centered within the hexagon
+                    context.drawImage(image, drawX, drawY, drawWidth, drawHeight);
+
+                    // Reset the clip to draw the hexagon border
+                    context.beginPath();
+                    context.moveTo(hexagon[0].x, hexagon[0].y);
+                    for (let i = 1; i < hexagon.length; i++) {
+                        context.lineTo(hexagon[i].x, hexagon[i].y);
+                    }
+                    context.closePath();
+                    context.strokeStyle = 'white';
+                    context.lineWidth = 1; // 1 pixel border
+                    context.stroke();
+                };
+            }
+        }
+    }, [imageUrl]);
+
     return (
-        <Box
-            sx={{
-                position: 'relative',
-                width: '100px',
-                height: '86.6px', // Adjusted height to maintain hexagon shape
-                margin: '20px auto',
-                backgroundColor: '#1a1a1a',
-                clipPath: 'polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%)', // Adjusted clip-path for hexagon with flat bottom edge
+        <canvas
+            ref={canvasRef}
+            width={sideLength * Math.sqrt(3) + 2} // Slightly increase width of the bounding box
+            height={sideLength * 2 + 2} // Slightly increase height of the bounding box
+            style={{
+                display: 'block',
+                margin: '20px auto'
             }}
-        >
-            <Box
-                component="img"
-                src={imageUrl}
-                alt={altText}
-                sx={{
-                    width: '100%',
-                    height: '100%',
-                    clipPath: 'inherit',
-                    objectFit: 'cover', // Ensures the image covers the entire hexagon
-                }}
-            />
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    border: '3px solid rgba(255, 255, 255, 0.7)', // Border for the hexagon
-                    clipPath: 'inherit',
-                    boxSizing: 'border-box',
-                }}
-            />
-        </Box>
+            aria-label={altText}
+            data-testid="hexagon-canvas"
+        />
     );
 };
 

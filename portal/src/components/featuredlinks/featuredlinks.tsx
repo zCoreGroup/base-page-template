@@ -1,12 +1,12 @@
 // components/FeaturedLinks.tsx
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import { FeaturedLinksData } from './types';
+import { FeaturedLinksData } from "@/types";
 import HexagonImageLink from '../hexagonimagelink/hexagonimagelink';
 
 const FeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
   return (
-    <Box sx={{ backgroundColor: '#1a1a1a', padding: '20px' }}>
+    <Box sx={{ padding: '20px' }}>
       <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '28px' }}>
         Featured Links
       </Typography>
