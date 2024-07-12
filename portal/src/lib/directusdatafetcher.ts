@@ -16,10 +16,47 @@ export type landing_page = {
     slug: string;
     mission: string;
     vision: string;
+    footer: string
     tagline: string | null;
     announcements: number[];
     featured: number[];
     documentation: number[];
+}
+
+export type Footer_page = {
+    id: string;
+    user_created: string;
+    date_created: string;
+    user_updated: string;
+    date_updated: string;
+    hours: string;
+    feedback: string;
+    twitter: string;
+    facebook: string;
+    instagram: string;
+    youtube: string;
+    linkedin: string;
+    title: 1;
+    location: number;
+    flicker: string;
+};
+
+export type location_page = {
+    id: number,
+    sort: string,
+    user_created: string
+    date_created: string,
+    user_updated: string,
+    date_updated: string,
+    name: string,
+    address: string,
+    coordinates: object
+    city: string,
+    zip: number,
+    state: string,
+    phone: string,
+    email: string,
+
 }
 
 export type link = {
@@ -67,6 +104,8 @@ export type DirectusSchema = {
     landing_page_links: landing_page_links[];
     announcements: announcement[];
     landing_page_announcements: landing_page_announcements[];
+    footer: Footer_page[];
+    locations: location_page[];
 }
 
 const portalConfig = getPortalConfig();

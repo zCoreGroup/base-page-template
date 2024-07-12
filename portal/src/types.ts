@@ -6,6 +6,43 @@ export type LandingPageData = {
     navbar: NavbarData
 }
 
+export type FooterData = {
+    id: string;
+    user_created: string;
+    date_created: string;
+    user_updated: string;
+    date_updated: string;
+    hours: string;
+    feedback: string;
+    twitter: string;
+    facebook: string;
+    instagram: string;
+    youtube: string;
+    linkedin: string;
+    title: 1;
+    location: number;
+    flicker: string;
+
+};
+
+export type LocationData = {
+    id: number;
+    sort: string;
+    user_created: string;
+    date_created: string;
+    user_updated: string;
+    date_updated: string;
+    name: string;
+    address: string;
+    coordinates: object;
+    city: string;
+    zip: number;
+    state: string;
+    phone: string;
+    email: string;
+
+}
+
 export type LandingPageQuery = {
     slug: string;
 }
@@ -32,28 +69,7 @@ export type FeaturedLink = {
 export type FeaturedLinksData = {
     links: FeaturedLink[]
 }
-export type FooterData = {
-    title1: string;
-    streetAddress: string;
-    cityState: string;
-    phone: string;
-    email: string;
-    phone1: string;
-    email1: string;
-    title2: string;
-    hoursMon: string;
-    hoursSat: string;
-    hoursSun: string;
-    hours2: string;
-    hours3: string;
-    title3: string;
-    feedback: string;
-    title4: string;
-    linkFB: string;
-    linkX: string;
-    linkIG: string;
-    linkYT: string;
-};
+
 
 export type FooterQuery = {
     landingPageId: string;

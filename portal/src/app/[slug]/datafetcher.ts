@@ -1,5 +1,4 @@
 import { LandingPageData, LandingPageQuery, LandingPageShort } from "../../types";
-import { FooterQuery } from "@/types";
 import NavbarDataFetcher from "@/components/navbar/datafetcher";
 import HeaderDataFetcher from "@/components/header/datafetcher";
 import FooterDataFetcher from "@/components/footer/datafetcher";
@@ -31,14 +30,14 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     async fetch(query: LandingPageQuery): Promise<LandingPageData> {
 
         const landingPage = await this.findLandingPageBySlug(query.slug);
-        const footerQuery = { landingPageId: query.slug } as FooterQuery;
+
 
         const [navbarData, headerData, featuredLinksData, announcementsData, footerData] = await Promise.all([
             this.navbarFetcher.fetch(landingPage),
             this.headerFetcher.fetch(landingPage),
             this.featuredLinksFetcher.fetch(landingPage),
             this.announcementsFetcher.fetch(landingPage),
-            this.footerFetcher.fetch(footerQuery)
+            this.footerFetcher.fetch(landingPage)
         ]);
 
         return {

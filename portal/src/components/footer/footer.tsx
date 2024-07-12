@@ -7,7 +7,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   return (
     <Box sx={{ width: "100%", paddingTop: "1rem", paddingBottom: "1rem", padding: '20px', color: '#ffffff' }}>
       <Grid container spacing={4} direction="row" justifyContent="center" alignItems="flex-start" sx={{ width: '90%', maxWidth: '1800px' }}>
-        
+
         <Grid item xs={12} sm={6} md={3}>
           <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
             <Typography variant="h6" gutterBottom sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '20px' }}>
@@ -28,7 +28,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
             </Link>
           </Box>
         </Grid>
-        
+
         <Grid item xs={12} sm={6} md={3}>
           <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
             <Typography variant="h6" gutterBottom sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '20px'}}>
