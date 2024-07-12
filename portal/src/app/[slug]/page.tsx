@@ -4,6 +4,7 @@ import { LandingPageData, LandingPageQuery } from '../../types';
 import Header from '../../components/header/header';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
 import Announcements from '@/components/announcements/announcements';
+import BaseEvents from '@/components/baseevents/baseevents';
 import Footer from '../../components/footer/footer';
 import Navbar from '../../components/navbar/Navbar';
 import { Container } from '@mui/material';
@@ -28,6 +29,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
           <Header data={data.header} />
           <FeaturedLinks data={data.featuredLinks} />
           <Announcements data={data.announcements} />
+          <BaseEvents data={data.baseEvents} />
         </Container>
       </div>
       <Container style={{ backgroundColor: 'black' }}>

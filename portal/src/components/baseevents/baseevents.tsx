@@ -1,93 +1,52 @@
-// components/announcements.tsx
+// components/baseevents.tsx
 'use client';
-
 import React, { useState } from 'react';
-import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
-import Carousel from 'react-material-ui-carousel';
-import { AnnouncementsData, Announcement as AnnouncementsItem } from './types';
-import CustomIndicator from './customindicator';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Typography, Pagination } from '@mui/material';
+import { BaseEventsData, BaseEvent as BaseEventsItem } from "@/types";
 
-interface ItemProps {
-  item: AnnouncementsItem;
+interface BaseEventsProps {
+  data: BaseEventsData;
 }
 
-const Item: React.FC<ItemProps> = ({ item }) => {
-  return (
-    <Card sx={{ position: 'relative', backgroundColor: '#333' }}>
-      <CardMedia
-        component="img"
-        height="400"
-        image={item.image}
-        alt={item.description}
-      />
-      <CardContent sx={{ 
-          position: 'absolute', 
-          bottom: 0, 
-          left: 0, 
-          width: '100%', 
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-          color: 'white', 
-          display: 'flex', 
-          flexDirection: 'column', 
-          justifyContent: 'flex-start', 
-          alignItems: 'flex-start', 
-          textAlign: 'left', 
-          padding: '10px',
-          transition: 'opacity 0.3s' 
-        }}
-      >
-        <Typography variant="h6">{item.title}</Typography>
-        <Typography variant="body2">{item.description}</Typography>
-      </CardContent>
-    </Card>
-  );
-};
+const BaseEvents: React.FC<BaseEventsProps> = ({ data }) => {
+  const [page, setPage] = useState(1);
+  const cardsPerPage = 3; // Adjust this number based on your layout and preference
 
-interface AnnouncementsProps {
-  data: AnnouncementsData;
-}
-
-const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handleIndicatorClick = (index: number) => {
-    setActiveIndex(index);
+  const handleChange = (_: any, value: number) => {
+    setPage(value);
   };
 
-  const handleCarouselChange = (now?: number | undefined, previous?: number | undefined) => {
-    if (typeof now === 'number' && !isNaN(now)) {
-      setActiveIndex(now);
-    }
-  };
+  const indexOfLastCard = page * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = data.baseEvents.slice(indexOfFirstCard, indexOfLastCard);
 
   return (
-    <Box sx={{ backgroundColor: '#1a1a1a', padding: '20px' }}>
-      <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '28px', textAlign: 'left', marginBottom: '20px' }}>
-        Announcements
-      </Typography>
-      <Carousel
-        animation="slide"
-        indicators={false}
-        navButtonsAlwaysVisible={true}
-        index={activeIndex}
-        onChange={handleCarouselChange}
-        sx={{
-          maxWidth: "50%",
-          flexGrow: 1,
-          margin: "auto",
-        }}
-      >
-        {data.announcements.map((item, i) => (
-          <Item key={i} item={item} />
+    <Box sx={{ width: '100%', textAlign: 'center' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {currentCards.map((card, index) => (
+          <Card key={index} sx={{ maxWidth: 345, margin: 2 }}>
+            <CardActionArea href={card.link} target="_blank" rel="noopener noreferrer">
+              <CardMedia component="img" height="140" image={card.image} alt={card.title} />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {card.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {card.description}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         ))}
-      </Carousel>
-      <CustomIndicator
-        length={data.announcements.length}
-        activeIndex={activeIndex}
-        onClick={handleIndicatorClick}
+      </Box>
+      <Pagination
+        count={Math.ceil(data.baseEvents.length / cardsPerPage)}
+        page={page}
+        onChange={handleChange}
+        sx={{ marginTop: 2 }}
       />
     </Box>
   );
 };
 
-export default Announcements;
+export default BaseEvents;
