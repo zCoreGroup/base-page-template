@@ -21,7 +21,7 @@ export default class AnnouncementsDataFetcher extends DirectusDataFetcher {
     };
   }
 
-  private async findAnnouncementIds(ids : number[]) : Promise<number[]> {
+  async findAnnouncementIds(ids : number[]) : Promise<number[]> {
     const result = await this.client.request(readItems('landing_page_announcements', {
       filter: {
         id: {
@@ -33,7 +33,7 @@ export default class AnnouncementsDataFetcher extends DirectusDataFetcher {
     return result.map((joinRow) => joinRow.announcements_id);
   }
 
-  private async findAnnouncementsByIds(ids: number[]): Promise<announcement[]> {
+  async findAnnouncementsByIds(ids: number[]): Promise<announcement[]> {
     const result = await this.client.request(readItems('announcements', {
       filter: {
         id: {
