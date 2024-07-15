@@ -25,6 +25,27 @@ export type FooterData = {
 
 };
 
+export type CombinedFooterData = {
+    name: string;
+    address: string;
+    coordinates: object;
+    city: string;
+    zip: number;
+    state: string;
+    phone: string;
+    email: string;
+    hours: string;
+    feedback: string;
+    twitter: string;
+    facebook: string;
+    instagram: string;
+    youtube: string;
+    linkedin: string;
+    //title: string;
+    //location: string;
+    flicker: string;
+}
+
 export type LocationData = {
     id: number;
     sort: string;
