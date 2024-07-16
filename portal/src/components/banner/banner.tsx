@@ -1,9 +1,9 @@
 // components/Header.tsx
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import { HeaderData } from "@/types";
+import { BannerData } from "@/types";
 
-const Header: React.FC<{ data: HeaderData }> = ({ data }) => {
+const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
   return (
     <Box sx={{ padding: '20px', color: '#ffffff' }}>
       <Grid container alignItems="center">
@@ -44,4 +44,4 @@ const Header: React.FC<{ data: HeaderData }> = ({ data }) => {
   );
 };
 
-export default Header;
+export default Banner;

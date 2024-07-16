@@ -1,17 +1,17 @@
-import HeaderDataFetcher from "@/components/header/datafetcher";
+import BannerDataFetcher from "@/components/banner/datafetcher";
 import { landing_page } from "@/lib/directusdatafetcher";
-import { HeaderData } from "@/types";
+import { BannerData } from "@/types";
 
 jest.mock("../../../src/lib/directusdatafetcher");
 
-describe("HeaderDataFetcher", () => {
-    let headerDataFetcher: HeaderDataFetcher;
+describe("BannerDataFetcher", () => {
+    let bannerDataFetcher: BannerDataFetcher;
 
     beforeEach(() => {
-        headerDataFetcher = new HeaderDataFetcher();
+        bannerDataFetcher = new BannerDataFetcher();
     });
 
-    it("should fetch header data correctly", async () => {
+    it("should fetch banner data correctly", async () => {
         const mockLandingPage: landing_page = {
             title: "Test Title",
             tagline: "Test Tagline",
@@ -31,7 +31,7 @@ describe("HeaderDataFetcher", () => {
             documentation: []
         };
 
-        const expectedHeaderData: HeaderData = {
+        const expectedBannerData: BannerData = {
             logoSrc: "mock-url/logo-id",
             logoAlt: "Test Title",
             title: "Test Title",
@@ -40,12 +40,12 @@ describe("HeaderDataFetcher", () => {
             visionText: "Test Vision",
         };
 
-        (headerDataFetcher.getFileUrl as jest.Mock).mockReturnValue("mock-url/logo-id");
+        (bannerDataFetcher.getFileUrl as jest.Mock).mockReturnValue("mock-url/logo-id");
 
-        const result = await headerDataFetcher.fetch(mockLandingPage);
+        const result = await bannerDataFetcher.fetch(mockLandingPage);
 
-        expect(result).toEqual(expectedHeaderData);
-        expect(headerDataFetcher.getFileUrl).toHaveBeenCalledWith("logo-id");
+        expect(result).toEqual(expectedBannerData);
+        expect(bannerDataFetcher.getFileUrl).toHaveBeenCalledWith("logo-id");
     });
 
     it("should handle missing tagline", async () => {
@@ -68,7 +68,7 @@ describe("HeaderDataFetcher", () => {
             documentation: []
         };
 
-        const expectedHeaderData: HeaderData = {
+        const expectedBannerData: BannerData = {
             logoSrc: "mock-url/logo-id",
             logoAlt: "Test Title",
             title: "Test Title",
@@ -77,11 +77,11 @@ describe("HeaderDataFetcher", () => {
             visionText: "Test Vision",
         };
 
-        (headerDataFetcher.getFileUrl as jest.Mock).mockReturnValue("mock-url/logo-id");
+        (bannerDataFetcher.getFileUrl as jest.Mock).mockReturnValue("mock-url/logo-id");
 
-        const result = await headerDataFetcher.fetch(mockLandingPage);
+        const result = await bannerDataFetcher.fetch(mockLandingPage);
 
-        expect(result).toEqual(expectedHeaderData);
-        expect(headerDataFetcher.getFileUrl).toHaveBeenCalledWith("logo-id");
+        expect(result).toEqual(expectedBannerData);
+        expect(bannerDataFetcher.getFileUrl).toHaveBeenCalledWith("logo-id");
     });
 });
