@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { Libre_Franklin } from "next/font/google";
 import ThemeProvider from "../components/themeprovider/themeprovider";
 import "./globals.css";
+import '@fontsource/roboto'; // Defaults to weight 400
+import '@fontsource/roboto/400.css'; // Weight 400 with normal style
+import '@fontsource/roboto/700.css'; // Weight 700 with normal style
+
+import '@fontsource/ibm-plex-mono'; // Defaults to weight 400
+import '@fontsource/ibm-plex-mono/400.css'; // Weight 400 with normal style
+import '@fontsource/ibm-plex-mono/700.css'; // Weight 700 with normal style
 import { ReactNode } from "react";
 
 const libreFranklin = Libre_Franklin({ subsets: ["latin"], weight: "400" });

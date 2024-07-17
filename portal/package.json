@@ -17,6 +17,8 @@
     "@directus/sdk": "^16.1.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@fontsource/ibm-plex-mono": "^5.0.13",
+    "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
     "@testing-library/dom": "^10.2.0",

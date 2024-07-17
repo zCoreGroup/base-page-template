@@ -1,7 +1,7 @@
 import { LandingPageData, LandingPageQuery, LandingPageShort } from "../../types";
 import { FooterQuery } from "@/types";
 import NavbarDataFetcher from "@/components/navbar/datafetcher";
-import HeaderDataFetcher from "@/components/header/datafetcher";
+import BannerDataFetcher from "@/components/banner/datafetcher";
 import FooterDataFetcher from "@/components/footer/datafetcher";
 import FeaturedLinksDataFetcher from "@/components/featuredlinks/datafetcher";
 import { DirectusDataFetcher, landing_page } from "@/lib/directusdatafetcher";
@@ -14,12 +14,12 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     static instance: LandingPageDataFetcher;
 
     private navbarFetcher: NavbarDataFetcher;
-    private headerFetcher: HeaderDataFetcher;
+    private headerFetcher: BannerDataFetcher;
     private featuredLinksFetcher: FeaturedLinksDataFetcher;
     private announcementsFetcher: AnnouncementsDataFetcher;
     private footerFetcher: FooterDataFetcher;
 
-    constructor(navbarFetcher: NavbarDataFetcher, headerFetcher: HeaderDataFetcher, featuredLinksFetcher: FeaturedLinksDataFetcher, announcementsFetcher: AnnouncementsDataFetcher, footerFetcher: FooterDataFetcher) {
+    constructor(navbarFetcher: NavbarDataFetcher, headerFetcher: BannerDataFetcher, featuredLinksFetcher: FeaturedLinksDataFetcher, announcementsFetcher: AnnouncementsDataFetcher, footerFetcher: FooterDataFetcher) {
         super()
         this.headerFetcher = headerFetcher;
         this.featuredLinksFetcher = featuredLinksFetcher;
@@ -79,7 +79,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     static getInstance(): LandingPageDataFetcher {
         if (LandingPageDataFetcher.instance === undefined) {
             const navbarFetcher = new NavbarDataFetcher();
-            const headerFetcher = new HeaderDataFetcher();
+            const headerFetcher = new BannerDataFetcher();
             const footerFetcher = new FooterDataFetcher();
             const featuredLinksFetcher = new FeaturedLinksDataFetcher();
             const announcementsFetcher = new AnnouncementsDataFetcher();
