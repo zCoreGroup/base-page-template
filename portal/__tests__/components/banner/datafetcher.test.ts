@@ -34,7 +34,7 @@ describe("BannerDataFetcher", () => {
         const expectedBannerData: BannerData = {
             logoSrc: "mock-url/logo-id",
             logoAlt: "Test Title",
-            title: "Test Title",
+            title: "TEST TITLE",
             tagline: "Test Tagline",
             missionText: "Test Mission",
             visionText: "Test Vision",
@@ -71,7 +71,7 @@ describe("BannerDataFetcher", () => {
         const expectedBannerData: BannerData = {
             logoSrc: "mock-url/logo-id",
             logoAlt: "Test Title",
-            title: "Test Title",
+            title: "TEST TITLE",
             tagline: "",
             missionText: "Test Mission",
             visionText: "Test Vision",

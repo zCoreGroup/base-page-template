@@ -10,7 +10,7 @@ export default class BannerDataFetcher extends DirectusDataFetcher {
         return {
             logoSrc: logoSrc,
             logoAlt: title,
-            title: title,
+            title: title.toUpperCase(),
             tagline: tagline ?? "",
             missionText: mission,
             visionText: vision
