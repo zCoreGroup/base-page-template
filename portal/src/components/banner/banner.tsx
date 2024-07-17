@@ -1,4 +1,3 @@
-// components/Header.tsx
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
 import { BannerData } from "@/types";
