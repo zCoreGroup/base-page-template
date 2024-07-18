@@ -1,4 +1,5 @@
 import React from 'react';
+import validator from 'validator';
 import { Grid, Typography, Box } from '@mui/material';
 import { BannerData } from "@/types";
 import { 
@@ -12,6 +13,9 @@ import {
 from './styles';
 
 const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
+  const missionEmpty = !data.missionText || validator.isEmpty(data.missionText);
+  const visionEmpty = !data.visionText || validator.isEmpty(data.visionText);
+
   return (
     <Box sx={{ padding: '20px', color: '#ffffff' }}>
       <Grid container alignItems="center">
@@ -27,25 +31,30 @@ const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
           </Box>
         </Grid>
 
-
-        <Grid item xs={12} md={4} sx={subFields}>
-          <Box sx={{ ...bannerSubFieldBox, marginRight: { sm: 4, xs: 0 }, marginBottom: { xs: 2, sm: 0 } }}>
-            <Typography variant="h6" sx={bannerSubFieldTitle}>
-              Our Mission
-            </Typography>
-            <Typography variant="body2" sx={bannerSubFieldText}>
-              {data.missionText}
-            </Typography>
-          </Box>
-          <Box sx={bannerSubFieldBox}>
-            <Typography variant="h6" sx={bannerSubFieldTitle}>
-              Our Vision
-            </Typography>
-            <Typography variant="body2" sx={bannerSubFieldText}>
-              {data.visionText}
-            </Typography>
-          </Box>
-        </Grid>
+        {!missionEmpty || !visionEmpty ? (
+          <Grid item xs={12} md={4} sx={subFields}>
+            {!missionEmpty && (
+              <Box sx={bannerSubFieldBox}>
+                <Typography variant="h6" sx={bannerSubFieldTitle}>
+                  Our Mission
+                </Typography>
+                <Typography variant="body2" sx={bannerSubFieldText}>
+                  {data.missionText}
+                </Typography>
+              </Box>
+            )}
+            {!visionEmpty && (
+              <Box sx={bannerSubFieldBox}>
+                <Typography variant="h6" sx={bannerSubFieldTitle}>
+                  Our Vision
+                </Typography>
+                <Typography variant="body2" sx={bannerSubFieldText}>
+                  {data.visionText}
+                </Typography>
+              </Box>
+            )}
+          </Grid>
+        ) : null}
       </Grid>
     </Box>
   );
