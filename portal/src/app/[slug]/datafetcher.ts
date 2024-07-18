@@ -8,7 +8,7 @@ import { DirectusDataFetcher, landing_page } from "@/lib/directusdatafetcher";
 import { readItems } from "@directus/sdk";
 import { DuplicateLandingPage, LandingPageNotFound } from "@/lib/errors";
 import AnnouncementsDataFetcher from "@/components/announcements/datafetcher";
-import BaseEventsDataFetcher from "@/components/baseevents/datafetcher";
+import EventsDataFetcher from "@/components/events/datafetcher";
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
@@ -18,7 +18,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     private headerFetcher: HeaderDataFetcher;
     private featuredLinksFetcher: FeaturedLinksDataFetcher;
     private announcementsFetcher: AnnouncementsDataFetcher;
-    private baseEventsFetcher: BaseEventsDataFetcher;
+    private eventsFetcher: EventsDataFetcher;
     private footerFetcher: FooterDataFetcher;
 
     constructor(
@@ -26,13 +26,13 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
         headerFetcher: HeaderDataFetcher,
         featuredLinksFetcher: FeaturedLinksDataFetcher,
         announcementsFetcher: AnnouncementsDataFetcher,
-        baseEventsFetcher: BaseEventsDataFetcher,
+        eventsFetcher: EventsDataFetcher,
         footerFetcher: FooterDataFetcher) {
         super()
         this.headerFetcher = headerFetcher;
         this.featuredLinksFetcher = featuredLinksFetcher;
         this.announcementsFetcher = announcementsFetcher;
-        this.baseEventsFetcher = baseEventsFetcher;
+        this.eventsFetcher = eventsFetcher;
         this.footerFetcher = footerFetcher;
         this.navbarFetcher = navbarFetcher;
     }
@@ -42,12 +42,12 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
         const landingPage = await this.findLandingPageBySlug(query.slug);
         const footerQuery = { landingPageId: query.slug } as FooterQuery;
 
-        const [navbarData, headerData, featuredLinksData, announcementsData, baseEventsData, footerData] = await Promise.all([
+        const [navbarData, headerData, featuredLinksData, announcementsData, eventsData, footerData] = await Promise.all([
             this.navbarFetcher.fetch(landingPage),
             this.headerFetcher.fetch(landingPage),
             this.featuredLinksFetcher.fetch(landingPage),
             this.announcementsFetcher.fetch(landingPage),
-            this.baseEventsFetcher.fetch(landingPage),
+            this.eventsFetcher.fetch(landingPage),
             this.footerFetcher.fetch(footerQuery)
         ]);
 
@@ -56,7 +56,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
             header: headerData,
             featuredLinks: featuredLinksData,
             announcements: announcementsData,
-            baseEvents: baseEventsData,
+            events: eventsData,
             footer: footerData,
         } as LandingPageData;
     }
@@ -78,6 +78,9 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
                 }
             }
         }));
+        console.log('>>>> slug:' + slug)
+        console.log(result);
+        console.log('>>>>')
 
         if (result.length === 0) {
             throw new LandingPageNotFound();
@@ -94,9 +97,9 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
             const footerFetcher = new FooterDataFetcher();
             const featuredLinksFetcher = new FeaturedLinksDataFetcher();
             const announcementsFetcher = new AnnouncementsDataFetcher();
-            const baseEventsFetcher = new BaseEventsDataFetcher();
+            const eventsFetcher = new EventsDataFetcher();
 
-            LandingPageDataFetcher.instance = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, baseEventsFetcher, footerFetcher);
+            LandingPageDataFetcher.instance = new LandingPageDataFetcher(navbarFetcher, headerFetcher, featuredLinksFetcher, announcementsFetcher, eventsFetcher, footerFetcher);
         }
         return LandingPageDataFetcher.instance;
     }

@@ -2,7 +2,7 @@ export type LandingPageData = {
     header: HeaderData
     featuredLinks: FeaturedLinksData
     announcements: AnnouncementsData
-    baseEvents: BaseEventsData
+    events: EventsData
     footer: FooterData
     navbar: NavbarData
 }
@@ -25,15 +25,30 @@ export type AnnouncementsData = {
   announcements: Announcement[]
 }
 
-export type BaseEvent = {
-  title: string
-  description: string
-  image: string
-  link: string
+export type Schedule = {
+    label: string;
+    startTime: string;
+};
+
+export type Event = {
+    id: string;
+    status: string;
+    userCreated: string;
+    dateCreated: string;
+    userUpdated: string;
+    dateUpdated: string;
+    title: string;
+    description: string;
+    image: string;
+    schedule: Schedule;
+    startDate: string;
+    endDate: string;
+    slug: string;
+    labels: number[];
 }
 
-export type BaseEventsData = {
-  baseEvents: BaseEvent[]
+export type EventsData = {
+  events: Event[]
 }
 
 export type FeaturedLink = {

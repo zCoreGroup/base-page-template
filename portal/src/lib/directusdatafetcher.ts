@@ -20,7 +20,8 @@ export type landing_page = {
     announcements: number[];
     featured: number[];
     documentation: number[];
-    base_events: number[];
+    events: number[];
+    labels: number[];
 }
 
 export type link = {
@@ -39,7 +40,7 @@ export type landing_page_links = {
     id: number;
     landing_page_id : number;
     links_id : number;
-}
+};
 
 export type announcement = {
     id: number;
@@ -54,31 +55,58 @@ export type announcement = {
     status: string;
     image: string;
     body: string;
-}
+};
 
 export type landing_page_announcements = {
     id: number;
     landing_page_id : number;
     announcements_id : number;
-}
+};
 
-export type base_event = {
-    id: number;
-    landing_page_id : number;
-    base_events_id : number;
+export type label = {
+    id: string;
+    name: string;
+};
+
+export type schedule = {
+    label: string;
+    start_time: string;
+};
+
+export type event = {
+    id: string;
+    status: string;
     user_created: string;
     date_created: string;
     user_updated: string;
     date_updated: string;
     title: string;
     description: string;
-}
+    image: string;
+    schedule: schedule;
+    start_date: string;
+    end_date: string;
+    slug: string;
+    labels: number[];
+};
 
-export type landing_page_base_events = {
+export type events_labels = {
+    id: number;
+    labels_id : string;
+    events_id : string;
+};
+
+export type landing_page_labels = {
     id: number;
     landing_page_id : number;
-    base_events_id : number;
-}
+    labels_id : string;
+};
+
+export type landing_page_events = {
+    id: number;
+    item : string;
+    landing_page_id : number;
+};
 
 export type DirectusSchema = {
     landing_page: landing_page[];
@@ -86,14 +114,16 @@ export type DirectusSchema = {
     landing_page_links: landing_page_links[];
     announcements: announcement[];
     landing_page_announcements: landing_page_announcements[];
-    base_events: base_event[];
-    landing_page_base_events: landing_page_base_events[];
-}
+    events: event[];
+    landing_page_events_1: landing_page_events[];
+    labels: label[];
+    events_labels: events_labels[];
+    landing_page_labels: landing_page_labels[];
+};
 
 const portalConfig = getPortalConfig();
 
 export class DirectusDataFetcher {
-
     private static directusClient = createDirectus<DirectusSchema>(portalConfig.directusUrl)
         .with(staticToken(portalConfig.directusStaticToken))
         .with(rest());
@@ -105,4 +135,4 @@ export class DirectusDataFetcher {
     getFileUrl(uuid: string): string {
         return `/api/file-proxy/?uuid=${uuid}`;
     }
-}
+};
