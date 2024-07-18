@@ -1,3 +1,10 @@
+export const container = {
+    backgroundColor: '#303032',
+    color: 'white',
+    paddingRight: '26px',
+    paddingLeft: '26px',
+    marginBottom: '24px'
+}
 export const logo = { 
     height: 80, 
     marginRight: 2, 

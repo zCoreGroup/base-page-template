@@ -11769,6 +11769,11 @@ typed-array-length@^1.0.6:
     is-typed-array "^1.1.13"
     possible-typed-array-names "^1.0.0"
 
+typeface-libre-franklin@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-libre-franklin/-/typeface-libre-franklin-1.1.13.tgz#d71d73cc58178476c63c085e225acc329aeb7a15"
+  integrity sha512-9S1Ja3ojZltMM1rBu2Sf98xjxR5lyqILY0VWQEvrKJgq3bjzZyhej2tXTIPt2c9Sr4Yl35eNb/UeZZkRQ7HRKA==
+
 types-ramda@^0.30.1:
   version "0.30.1"
   resolved "https://registry.yarnpkg.com/types-ramda/-/types-ramda-0.30.1.tgz#03d255128e3696aeaac76281ca19949e01dddc78"

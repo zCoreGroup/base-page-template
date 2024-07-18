@@ -71,9 +71,6 @@
     "FeaturedLink": {
       "additionalProperties": false,
       "properties": {
-        "imageUrl": {
-          "type": "string"
-        },
         "name": {
           "type": "string"
         },
@@ -83,8 +80,7 @@
       },
       "required": [
         "name",
-        "url",
-        "imageUrl"
+        "url"
       ],
       "type": "object"
     },

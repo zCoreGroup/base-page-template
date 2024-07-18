@@ -9,7 +9,8 @@ import {
   bannerTitle, 
   tagLine, 
   logo, 
-  subFields} 
+  subFields,
+  container} 
 from './styles';
 
 const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
@@ -17,7 +18,7 @@ const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
   const visionEmpty = !data.visionText || validator.isEmpty(data.visionText);
 
   return (
-    <Box sx={{ padding: '20px', color: '#ffffff' }}>
+    <Box sx={container}>
       <Grid container alignItems="center">
         <Grid item xs={12} md={8} sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
           <Box component="img" src={data.logoSrc} alt={data.logoAlt} sx={logo} />
