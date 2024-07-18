@@ -39,4 +39,4 @@ jobs:
           DIRECTUS_STATIC_TOKEN: placeholder
 
       - name: Run tests
-        run: yarn test
+        run: yarn test:unit
