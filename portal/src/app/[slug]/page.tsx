@@ -22,7 +22,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
   return (
     <div>
       <Navbar data={data.navbar} />
-      <div style={{ backgroundColor: '#1a1a1a' }}>
+      <div style={{ backgroundColor: '#ebebeb' }}>
 
         <Container>
           <Banner data={data.header} />
