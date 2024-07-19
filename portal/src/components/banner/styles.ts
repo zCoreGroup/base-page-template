@@ -1,6 +1,6 @@
 export const container = {
-    backgroundColor: '#303032',
-    color: 'white',
+    backgroundColor: 'white',
+    color: 'black',
     paddingRight: '26px',
     paddingLeft: '26px',
     marginBottom: '24px'

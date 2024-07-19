@@ -10,7 +10,7 @@ const FeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
       <Typography variant="h6" sx={title}>
         Featured Links
       </Typography>
-      <Grid container sx={{ marginTop: '24px' }}>
+      <Grid container sx={{ marginTop: '24px', justifyContent: 'center' }}>
         {data.links.map((link, index) => (
             <Chip label={link.name} component="a" href={link.url} clickable sx={chip} key={index}/>
         ))}
