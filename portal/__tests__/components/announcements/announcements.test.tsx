@@ -57,7 +57,6 @@ describe('Announcements Component', () => {
     const { container } = render(<Announcements data={mockData} />);
     
     const slides = container.querySelectorAll('.MuiBox-root');
-    // console.log(slides);
     expect(slides.length).toBe(mockData.announcements.length);
   });
 });

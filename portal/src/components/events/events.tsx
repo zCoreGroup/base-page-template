@@ -1,12 +1,18 @@
 // components/events.tsx
 'use client';
 import React, { useState } from 'react';
-import { Box, Card, CardActionArea, CardContent, CardMedia, Typography, Pagination } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import CustomIndicator from '@/components/announcements/customindicator';
 import { EventsData } from "@/types";
 
 interface EventsProps {
   data: EventsData;
 }
+
+// Function to remove HTML tags from a string
+const stripHtmlTags = (text: string) => {
+  return (text || '').replace(/<[^>]*>/g, '');
+};
 
 const Events: React.FC<EventsProps> = ({ data }) => {
   const [page, setPage] = useState(1);
@@ -35,21 +41,17 @@ const Events: React.FC<EventsProps> = ({ data }) => {
                   {card.title}
                 </Typography>
                 <Typography variant="body2" sx={{ color: '#999' }}>
-                  {card.description}
-                </Typography>
-                <Typography variant="body2" sx={{ color: '#e9542f', marginTop: '10px' }}>
-                  <a href="#" style={{ color: '#e9542f', textDecoration: 'none' }}>CALL TO ACTION</a>
+                  {stripHtmlTags(card.description)}
                 </Typography>
               </CardContent>
             </CardActionArea>
           </Card>
         ))}
       </Box>
-      <Pagination
-        count={Math.ceil(data.events.length / cardsPerPage)}
-        page={page}
-        onChange={handleChange}
-        sx={{ marginTop: 2, '& .MuiPaginationItem-root': { color: '#fff' } }}
+      <CustomIndicator
+        length={Math.ceil(data.events.length / cardsPerPage)}
+        activeIndex={page}
+        onClick={(index) => handleChange(undefined, index)}
       />
     </Box>
   );

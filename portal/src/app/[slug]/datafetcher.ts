@@ -78,9 +78,6 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
                 }
             }
         }));
-        console.log('>>>> slug:' + slug)
-        console.log(result);
-        console.log('>>>>')
 
         if (result.length === 0) {
             throw new LandingPageNotFound();
