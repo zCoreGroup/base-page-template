@@ -6,8 +6,8 @@ import { CssBaseline } from '@mui/material';
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Libre Franklin, Arial, sans-serif',
-  },
+    fontFamily: 'Roboto, IBM Plex Mono, Arial',
+  }
 });
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {

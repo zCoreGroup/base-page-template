@@ -36,12 +36,41 @@
       ],
       "type": "object"
     },
+    "BannerData": {
+      "additionalProperties": false,
+      "properties": {
+        "logoAlt": {
+          "type": "string"
+        },
+        "logoSrc": {
+          "type": "string"
+        },
+        "missionText": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "visionText": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "logoSrc",
+        "logoAlt",
+        "title",
+        "tagline",
+        "missionText",
+        "visionText"
+      ],
+      "type": "object"
+    },
     "FeaturedLink": {
       "additionalProperties": false,
       "properties": {
-        "imageUrl": {
-          "type": "string"
-        },
         "name": {
           "type": "string"
         },
@@ -51,8 +80,7 @@
       },
       "required": [
         "name",
-        "url",
-        "imageUrl"
+        "url"
       ],
       "type": "object"
     },
@@ -171,38 +199,6 @@
       ],
       "type": "object"
     },
-    "HeaderData": {
-      "additionalProperties": false,
-      "properties": {
-        "logoAlt": {
-          "type": "string"
-        },
-        "logoSrc": {
-          "type": "string"
-        },
-        "missionText": {
-          "type": "string"
-        },
-        "tagline": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "visionText": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "logoSrc",
-        "logoAlt",
-        "title",
-        "tagline",
-        "missionText",
-        "visionText"
-      ],
-      "type": "object"
-    },
     "HexagonImageLinkData": {
       "additionalProperties": false,
       "properties": {
@@ -256,7 +252,7 @@
           "$ref": "#/components/schemas/FooterData"
         },
         "header": {
-          "$ref": "#/components/schemas/HeaderData"
+          "$ref": "#/components/schemas/BannerData"
         },
         "navbar": {
           "$ref": "#/components/schemas/NavbarData"

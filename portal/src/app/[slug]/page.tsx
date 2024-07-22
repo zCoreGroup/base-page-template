@@ -1,7 +1,7 @@
 import React from 'react';
 import LandingPageDataFetcher from './datafetcher';
 import { LandingPageData, LandingPageQuery } from '../../types';
-import Header from '../../components/header/header';
+import Banner from '../../components/banner/banner';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
 import Announcements from '@/components/announcements/announcements';
 import Events from '@/components/events/events';
@@ -23,10 +23,10 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
   return (
     <div>
       <Navbar data={data.navbar} />
-      <div style={{ backgroundColor: '#1a1a1a' }}>
+      <div style={{ backgroundColor: '#ebebeb' }}>
 
         <Container>
-          <Header data={data.header} />
+          <Banner data={data.banner} />
           <FeaturedLinks data={data.featuredLinks} />
           <Announcements data={data.announcements} />
           <Events data={data.events} />

@@ -1,5 +1,5 @@
 export type LandingPageData = {
-    header: HeaderData
+    banner: BannerData
     featuredLinks: FeaturedLinksData
     announcements: AnnouncementsData
     events: EventsData
@@ -54,7 +54,6 @@ export type EventsData = {
 export type FeaturedLink = {
     name: string
     url: string
-    imageUrl: string
 }
 
 export type FeaturedLinksData = {
@@ -86,7 +85,7 @@ export type FooterData = {
 export type FooterQuery = {
     landingPageId: string;
 };
-export type HeaderData = {
+export type BannerData = {
     logoSrc: string;
     logoAlt: string;
     title: string;
