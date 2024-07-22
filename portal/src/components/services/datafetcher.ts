@@ -1,5 +1,5 @@
 import { DirectusDataFetcher, landing_page } from "@/lib/directusdatafetcher";
-import { ServicesData } from "./types";
+import { ServicesData } from "@/types";
 import { readItems } from "@directus/sdk";
 
 
