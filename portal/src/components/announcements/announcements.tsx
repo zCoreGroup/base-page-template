@@ -18,7 +18,7 @@ const Item: React.FC<ItemProps> = ({ item }) => {
         component="img"
         height="400"
         image={item.image}
-        alt={item.description}
+        alt={item.body}
       />
       <CardContent sx={{ 
           position: 'absolute', 
@@ -37,7 +37,7 @@ const Item: React.FC<ItemProps> = ({ item }) => {
         }}
       >
         <Typography variant="h6">{item.title}</Typography>
-        <Typography variant="body2">{item.description}</Typography>
+        <Typography variant="body2">{item.body}</Typography>
       </CardContent>
     </Card>
   );
@@ -77,12 +77,12 @@ const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
           margin: "auto",
         }}
       >
-        {data.announcements.map((item, i) => (
+        {data.articles.map((item, i) => (
           <Item key={i} item={item} />
         ))}
       </Carousel>
       <CustomIndicator
-        length={data.announcements.length}
+        length={data.articles.length}
         activeIndex={activeIndex}
         onClick={handleIndicatorClick}
       />

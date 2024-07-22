@@ -17,7 +17,7 @@ export type landing_page = {
     mission: string;
     vision: string;
     tagline: string | null;
-    announcements: number[];
+    articles: number[];
     featured: number[];
     documentation: number[];
     events: number[];
@@ -42,25 +42,28 @@ export type landing_page_links = {
     links_id : number;
 };
 
-export type announcement = {
+export type article = {
     id: number;
-    landing_page_id : number;
-    announcements_id : number;
+    status: string;
+    sort: number | null;
     user_created: string;
     date_created: string;
     user_updated: string;
-    date_updated: string;
+    category: string;
     title: string;
-    description: string;
-    status: string;
-    image: string;
     body: string;
+    published_date: string;
+    slug: string;
+    image: string | null;
+    document: number;
+    labels: string;
+    comments: number[];
 };
 
-export type landing_page_announcements = {
+export type landing_page_articles = {
     id: number;
     landing_page_id : number;
-    announcements_id : number;
+    articles_id : number;
 };
 
 export type label = {
@@ -112,8 +115,8 @@ export type DirectusSchema = {
     landing_page: landing_page[];
     links: link[];
     landing_page_links: landing_page_links[];
-    announcements: announcement[];
-    landing_page_announcements: landing_page_announcements[];
+    articles: article[];
+    landing_page_articles: landing_page_articles[];
     events: event[];
     landing_page_events_1: landing_page_events[];
     labels: label[];

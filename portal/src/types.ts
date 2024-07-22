@@ -17,12 +17,12 @@ export type LandingPageShort = {
 }
 export type Announcement = {
   title: string
-  description: string
+  body: string
   image: string
 }
 
 export type AnnouncementsData = {
-  announcements: Announcement[]
+  articles: Announcement[]
 }
 
 export type Schedule = {
