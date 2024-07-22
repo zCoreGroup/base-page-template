@@ -14,7 +14,7 @@
     "build-storybook": "storybook build",
     "generate:schema": "ts-json-schema-generator -p 'src/types.ts' --type '*' --out 'src/schemas.json' && node scripts/updateRefs.js",
     "clean": "rm -rf node_modules && rm -rf .next && yarn cache clean",
-    "chromatic": "npx chromatic --project-token=chpt_1950b490eb02538"
+    "chromatic": "chromatic --exit-zero-on changes"
   },
   "dependencies": {
     "@directus/sdk": "^16.1.0",
