@@ -15,8 +15,7 @@ lint:
     - yarn install
   script:
     - yarn lint
-  only:
-    - development
+
 
 build:
   stage: build
@@ -26,8 +25,7 @@ build:
     - yarn install
   script:
     - yarn build
-  only:
-    - development
+
 
 test:
   stage: test
@@ -37,5 +35,3 @@ test:
     - yarn install
   script:
     - yarn test
-  only:
-    - development
