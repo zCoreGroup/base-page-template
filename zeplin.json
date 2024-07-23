@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "projects": ["669aa99836c7f2ad93ce967a"],
+      "storybook": {
+        "url": "http://localhost:9009"
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "plugins": [
+    {
+      "name": "@zeplin/cli-connect-storybook-plugin",
+      "config": {
+        "url": "http://localhost:9009/",
+        "format": "new"
+      }
+    }
+  ],
+  "styleguides": [
+    "66145d15010eec6db9f79e7e"
+  ],
+  "components": [
+    {
+      "path": "stories/Button.jsx",
+      "zeplinIds": [
+        "66198cf750a22355a61158dd",
+        "66198cf8bd3195a6617f4d21",
+        "66198cf427b01e1244532e39",
+        "66198cf415bd7003d221f419",
+        "66198cf6fb49aef7129a5d8f",
+        "66198cf61090714fc019f590",
+        "66198cf36ab60a678e0ce09b",
+        "66198cf9116bcf954cbd14b8",
+        "66198cf765997b89ef618e8b",
+        "66198cf6010eec6db9732b73",
+        "66198cf57ad8bbc107e593ed",
+        "66198cf5c45d88441842c037",
+        "66198cf8d12c23a45fb36b04",
+        "66198cf895cda7cac4193103",
+        "66198cf44a9c28266311316d",
+        "66198cf54f764fe5475059bc",
+        "66198cf77ad8bbc107e5998c",
+        "66198cf732422f6ec3a12db6",
+        "66198cf8fdeb5b4e470d7229",
+        "66198cf9d30578420ac7ac85",
+        "66198cf40c16b8c9ec29d71f",
+        "66198cf592841d464377b104",
+        "66198cf6d12c23a45fb36559",
+        "66198cf8fb49aef7129a6338"
+      ]
+    }
+  ],
+  "github": {
+    "repository": "zCoreGroup/base-page-template"
+  }
+}

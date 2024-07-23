@@ -1,0 +1,55 @@
+{
+  "name": "base-page-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 9009",
+    "build-storybook": "storybook build",
+    "zeplin-connect": "zeplin connect",
+    "zeplin-connect-dev-mode": "zeplin connect --dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zCoreGroup/base-page-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zCoreGroup/base-page-template/issues"
+  },
+  "homepage": "https://github.com/zCoreGroup/base-page-template#readme",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.5",
+    "@storybook/addon-interactions": "^8.2.5",
+    "@storybook/addon-links": "^8.2.5",
+    "@storybook/addon-onboarding": "^8.2.5",
+    "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.4",
+    "@storybook/blocks": "^8.2.5",
+    "@storybook/react": "^8.2.5",
+    "@storybook/react-webpack5": "^8.2.5",
+    "@storybook/test": "^8.2.5",
+    "@zeplin/cli": "^2.0.2",
+    "@zeplin/cli-connect-storybook-plugin": "^2.0.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.2.5"
+  },
+  "dependencies": {
+    "@mui/material": "^5.16.4",
+    "@storybook/addon-actions": "^8.2.5",
+    "@storybook/preset-create-react-app": "^8.2.5",
+    "@types/react": "^18.3.3",
+    "browserify-zlib": "^0.2.0",
+    "https-browserify": "^1.0.0",
+    "next": "^14.2.5",
+    "os-browserify": "^0.3.0",
+    "querystring-es3": "^0.2.1",
+    "react-material-ui-carousel": "^3.4.2",
+    "stream-http": "^3.2.0",
+    "validator": "^13.12.0"
+  }
+}
