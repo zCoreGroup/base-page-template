@@ -1,4 +1,12 @@
 {
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin",
+            "config": {
+                "tsDocgen": "react-docgen-typescript"
+            }
+        }
+    ],
     "projects": [
         "6643d679098ea9b2ca3a7f94"
     ],
