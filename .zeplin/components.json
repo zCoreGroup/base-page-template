@@ -3,7 +3,8 @@
         {
             "name": "@zeplin/cli-connect-react-plugin",
             "config": {
-                "tsDocgen": "react-docgen-typescript"
+                "tsDocgen": "react-docgen-typescript",
+                "tsConfigPath": "./tsconfig.json"
             }
         }
     ],
