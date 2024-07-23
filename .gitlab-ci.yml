@@ -36,6 +36,6 @@ test:
     - cd portal
     - yarn install
   script:
-    - yarn test || true
+    - yarn test
   only:
     - development
