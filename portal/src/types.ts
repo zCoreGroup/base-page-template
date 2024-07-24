@@ -19,6 +19,7 @@ export type Announcement = {
   title: string
   body: string
   image: string
+  dateCreated: string
 }
 
 export type AnnouncementsData = {

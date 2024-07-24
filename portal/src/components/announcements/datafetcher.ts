@@ -13,6 +13,7 @@ export default class AnnouncementsDataFetcher extends DirectusDataFetcher {
         title: rawAnnouncement.title,
         body: rawAnnouncement.body,
         image: !!rawAnnouncement.image ? this.getFileUrl(rawAnnouncement.image) : '',
+        dateCreated: rawAnnouncement.date_created
       } as Announcement;
     });
 
