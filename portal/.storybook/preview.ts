@@ -8,12 +8,9 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    zeplinLink: "https://app.zeplin.io/project/669aa99836c7f2ad93ce967a",
   },
   tags: ['autodocs'],
-};
-
-export const parameters = {
-  zeplinlink: "https://app.zeplin.io/project/669aa99836c7f2ad93ce967a",
 };
 
 export default preview;
