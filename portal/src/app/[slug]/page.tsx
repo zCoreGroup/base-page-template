@@ -4,6 +4,7 @@ import { LandingPageData, LandingPageQuery } from '../../types';
 import Banner from '../../components/banner/banner';
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks';
 import Announcements from '@/components/announcements/announcements';
+import Events from '@/components/events/events';
 import Footer from '../../components/footer/footer';
 import Navbar from '../../components/navbar/Navbar';
 import { Container } from '@mui/material';
@@ -25,9 +26,10 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
       <div style={{ backgroundColor: '#ebebeb' }}>
 
         <Container>
-          <Banner data={data.header} />
+          <Banner data={data.banner} />
           <FeaturedLinks data={data.featuredLinks} />
           <Announcements data={data.announcements} />
+          <Events data={data.events} />
         </Container>
       </div>
       <Container style={{ backgroundColor: 'black' }}>
