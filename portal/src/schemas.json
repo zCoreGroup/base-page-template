@@ -36,39 +36,7 @@
       ],
       "type": "object"
     },
-    "BannerData": {
-      "additionalProperties": false,
-      "properties": {
-        "logoAlt": {
-          "type": "string"
-        },
-        "logoSrc": {
-          "type": "string"
-        },
-        "missionText": {
-          "type": "string"
-        },
-        "tagline": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "visionText": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "logoSrc",
-        "logoAlt",
-        "title",
-        "tagline",
-        "missionText",
-        "visionText"
-      ],
-      "type": "object"
-    },
-    "Event": {
+    "Article": {
       "additionalProperties": false,
       "properties": {
         "dateCreated": {
@@ -84,7 +52,7 @@
           "type": "string"
         },
         "id": {
-          "type": "string"
+          "type": "number"
         },
         "image": {
           "type": "string"
@@ -135,12 +103,44 @@
       ],
       "type": "object"
     },
+    "BannerData": {
+      "additionalProperties": false,
+      "properties": {
+        "logoAlt": {
+          "type": "string"
+        },
+        "logoSrc": {
+          "type": "string"
+        },
+        "missionText": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "visionText": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "logoSrc",
+        "logoAlt",
+        "title",
+        "tagline",
+        "missionText",
+        "visionText"
+      ],
+      "type": "object"
+    },
     "EventsData": {
       "additionalProperties": false,
       "properties": {
         "events": {
           "items": {
-            "$ref": "#/components/schemas/Event"
+            "$ref": "#/components/schemas/Article"
           },
           "type": "array"
         }
