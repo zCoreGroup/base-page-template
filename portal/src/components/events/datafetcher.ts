@@ -5,7 +5,7 @@ import { readItems } from "@directus/sdk";
 // src/events/datafetcher.ts
 export default class EventsDataFetcher extends DirectusDataFetcher {
   async fetch(query: landing_page): Promise<EventsData> {
-		const articles = await this.findEventsBySlug(query.slug)
+		const articles = await this.findEventsByLandingPageId(query.id)
     return {
       events: articles.map((rawArticle) => {
 				return {
@@ -22,11 +22,11 @@ export default class EventsDataFetcher extends DirectusDataFetcher {
     };
   }
 
-  private async findEventsBySlug(slug: string): Promise<article[]> {
+  private async findEventsByLandingPageId(id: number): Promise<article[]> {
     const result = await this.client.request(readItems('articles', {
       filter: {
-        slug: {
-          _eq: slug,
+        landing_page: {
+          _eq: id,
         },
       }
     }));

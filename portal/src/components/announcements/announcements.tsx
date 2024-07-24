@@ -5,6 +5,7 @@ import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import { AnnouncementsData, Announcement as AnnouncementsItem } from "@/types";
 import CustomIndicator from './customindicator';
+import { chip, containerStyles, title } from './styles';
 
 interface ItemProps {
   item: AnnouncementsItem;
@@ -80,8 +81,8 @@ const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
   };
 
   return (
-    <Box sx={{ padding: '20px' }}>
-      <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '28px', textAlign: 'left', marginBottom: '20px' }}>
+    <Box sx={{ padding: '0px' }}>
+      <Typography variant="h6" sx={title}>
         Announcements
       </Typography>
       <Carousel

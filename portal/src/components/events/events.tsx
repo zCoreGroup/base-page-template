@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import CustomIndicator from '@/components/announcements/customindicator';
 import { EventsData } from "@/types";
+import { title } from '@/components/globalstyles';
 
 interface EventsProps {
   data: EventsData;
@@ -27,8 +28,8 @@ const Events: React.FC<EventsProps> = ({ data }) => {
   const currentCards = data.events.slice(indexOfFirstCard, indexOfLastCard);
 
   return (
-    <Box sx={{ width: '100%', textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '28px', textAlign: 'left', marginBottom: '20px' }}>
+    <Box sx={{ padding: '0px' }}>
+      <Typography variant="h6" sx={title}>
         Base Events
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
