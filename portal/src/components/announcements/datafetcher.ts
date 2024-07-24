@@ -5,8 +5,7 @@ import { readItems } from "@directus/sdk";
 export default class AnnouncementsDataFetcher extends DirectusDataFetcher {
   async fetch(query: landing_page): Promise<AnnouncementsData> {
 
-    const linkIds = await this.findAnnouncementIds(query.articles);
-    const rawAnnouncements = await this.findAnnouncementsByIds(linkIds);
+    const rawAnnouncements = await this.findAnnouncementsLandingPageId(query.id);
 
     const articles = rawAnnouncements.map((rawAnnouncement) => {
 
@@ -22,24 +21,15 @@ export default class AnnouncementsDataFetcher extends DirectusDataFetcher {
     };
   }
 
-  async findAnnouncementIds(ids : number[]) : Promise<number[]> {
-    const result = await this.client.request(readItems('landing_page_articles', {
-      filter: {
-        id: {
-          _in: ids
-        }
-      }
-    }));
-
-    return result.map((joinRow) => joinRow.articles_id);
-  }
-
-  async findAnnouncementsByIds(ids: number[]): Promise<article[]> {
+  async findAnnouncementsLandingPageId(id: number): Promise<article[]> {
     const result = await this.client.request(readItems('articles', {
       filter: {
-        id: {
-          _in: ids
-        }
+        landing_page: {
+          _eq: id,
+        },
+        category: {
+          _eq: "Announcements",
+        },
       }
     }));
 

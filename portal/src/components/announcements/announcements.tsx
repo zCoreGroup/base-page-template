@@ -1,4 +1,3 @@
-// components/announcements.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -11,14 +10,23 @@ interface ItemProps {
   item: AnnouncementsItem;
 }
 
+const stripHtml = (html: string): string => {
+  return html.replace(/<\/?[^>]+(>|$)/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
 const Item: React.FC<ItemProps> = ({ item }) => {
+  const bodyStripped = stripHtml(item.body)
   return (
     <Card sx={{ position: 'relative', backgroundColor: '#333' }}>
       <CardMedia
         component="img"
         height="400"
         image={item.image}
-        alt={item.body}
+        alt={stripHtml(bodyStripped)}
       />
       <CardContent sx={{ 
           position: 'absolute', 
@@ -37,7 +45,18 @@ const Item: React.FC<ItemProps> = ({ item }) => {
         }}
       >
         <Typography variant="h6">{item.title}</Typography>
-        <Typography variant="body2">{item.body}</Typography>
+        <Typography 
+          variant="body2" 
+          sx={{
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 3, // Limits to 3 lines
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }}
+        >
+          {bodyStripped}
+        </Typography>
       </CardContent>
     </Card>
   );

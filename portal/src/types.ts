@@ -30,8 +30,8 @@ export type Schedule = {
     startTime: string;
 };
 
-export type Event = {
-    id: string;
+export type Article = {
+    id: number;
     status: string;
     userCreated: string;
     dateCreated: string;
@@ -48,7 +48,7 @@ export type Event = {
 }
 
 export type EventsData = {
-  events: Event[]
+  events: Article[]
 }
 
 export type FeaturedLink = {

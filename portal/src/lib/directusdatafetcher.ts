@@ -1,7 +1,15 @@
 import { createDirectus, rest, RestClient, staticToken } from '@directus/sdk';
 import { getPortalConfig } from './portalconfig';
+import { camelCase, mapKeys } from 'lodash';
 
-
+const toCamelCase = (obj: any): any => {
+  if (Array.isArray(obj)) {
+    return obj.map(v => toCamelCase(v));
+  } else if (obj !== null && obj.constructor === Object) {
+    return mapKeys(obj, (_, key) => camelCase(key));
+  }
+  return obj;
+}
 
 export type landing_page = {
     id: number;
@@ -54,43 +62,15 @@ export type article = {
     body: string;
     published_date: string;
     slug: string;
-    image: string | null;
-    document: number;
-    labels: string;
+    image: string;
+    document: number | null;
+    landing_page: number;
     comments: number[];
-};
-
-export type landing_page_articles = {
-    id: number;
-    landing_page_id : number;
-    articles_id : number;
 };
 
 export type label = {
     id: string;
     name: string;
-};
-
-export type schedule = {
-    label: string;
-    start_time: string;
-};
-
-export type event = {
-    id: string;
-    status: string;
-    user_created: string;
-    date_created: string;
-    user_updated: string;
-    date_updated: string;
-    title: string;
-    description: string;
-    image: string;
-    schedule: schedule;
-    start_date: string;
-    end_date: string;
-    slug: string;
-    labels: number[];
 };
 
 export type events_labels = {
@@ -105,20 +85,11 @@ export type landing_page_labels = {
     labels_id : string;
 };
 
-export type landing_page_events = {
-    id: number;
-    item : string;
-    landing_page_id : number;
-};
-
 export type DirectusSchema = {
     landing_page: landing_page[];
     links: link[];
     landing_page_links: landing_page_links[];
     articles: article[];
-    landing_page_articles: landing_page_articles[];
-    events: event[];
-    landing_page_events_1: landing_page_events[];
     labels: label[];
     events_labels: events_labels[];
     landing_page_labels: landing_page_labels[];
