@@ -20,4 +20,3 @@ function updateRefs(obj) {
 updateRefs(schema);
 
 fs.writeFileSync(schemaPath, JSON.stringify(schema, null, 2), 'utf-8');
-console.log('Schema references updated successfully.');

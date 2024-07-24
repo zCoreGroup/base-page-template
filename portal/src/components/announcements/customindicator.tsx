@@ -14,10 +14,10 @@ const CustomIndicator: React.FC<CustomIndicatorProps> = ({ length, activeIndex, 
       {Array.from({ length }).map((_, index) => (
         <Button
           key={index}
-          onClick={() => onClick(index)}
+          onClick={() => onClick(index + 1)}
           sx={{
-            backgroundColor: activeIndex === index ? '#e74c3c' : '#fff',
-            color: activeIndex === index ? '#fff' : '#000',
+            backgroundColor: activeIndex === index + 1 ? '#e74c3c' : '#fff',
+            color: activeIndex === index + 1 ? '#fff' : '#000',
             borderRadius: '50%',
             width: '30px',
             height: '30px',
