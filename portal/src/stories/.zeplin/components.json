@@ -14,5 +14,543 @@
     "styleguides": [
         "662a7cb7cdce0eb321be4f68"
     ],
-    "components": []
+    "components":
+    [
+    {
+        "id": "669aa998063bad3e8ebd9846",
+        "name": "     Portal Footer / Footer",
+        "created": 1721411992,
+        "updated": 1721345877,
+        "image": {
+        "width": 1920,
+        "height": 377,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/015db960-f019-4d54-98d9-5b1c6add7986.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/015db960-f019-4d54-98d9-5b1c6add7986.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8wMTVkYjk2MC1mMDE5LTRkNTQtOThkOS01YjFjNmFkZDc5ODYucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.xmRMjMgaDrqigw53Dr7rOSzcfJxrsgy8h3cSyic8wuE&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/015db960-f019-4d54-98d9-5b1c6add7986.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8wMTVkYjk2MC1mMDE5LTRkNTQtOThkOS01YjFjNmFkZDc5ODYucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.vVb_ERxM1GE6OmCyL3OvBDzZpYC4ByAcy8IFxoH7Qec&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/015db960-f019-4d54-98d9-5b1c6add7986.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8wMTVkYjk2MC1mMDE5LTRkNTQtOThkOS01YjFjNmFkZDc5ODYucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.PxjErqRgzbPha-PIlwDq2zZsptLgnWd2cihbny09_4w&w=1024"
+        }
+        },
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9848",
+        "name": "Sub_Page_Menu",
+        "created": 1721411992,
+        "updated": 1721007171,
+        "image": {
+        "width": 247,
+        "height": 792,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/3e092c78-cdf3-471f-b5e1-4518f740c9bf.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/3e092c78-cdf3-471f-b5e1-4518f740c9bf.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8zZTA5MmM3OC1jZGYzLTQ3MWYtYjVlMS00NTE4Zjc0MGM5YmYucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.bhngM5K_ZNgHrbY83k1PQPd71wgzUHEs6pQgfqXS0No&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/3e092c78-cdf3-471f-b5e1-4518f740c9bf.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8zZTA5MmM3OC1jZGYzLTQ3MWYtYjVlMS00NTE4Zjc0MGM5YmYucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.tlJ4s3SvoSbKxQXmqev8VOzWI5YSWaWnUVqI8AhlGcQ&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/3e092c78-cdf3-471f-b5e1-4518f740c9bf.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8zZTA5MmM3OC1jZGYzLTQ3MWYtYjVlMS00NTE4Zjc0MGM5YmYucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0._6oq2pmvrfqg8CCrNFF50pb_nmbpyhy5rh814ZsWDbY&w=1024"
+        }
+        },
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd984a",
+        "name": "Hero Banner",
+        "created": 1721411992,
+        "updated": 1721074819,
+        "image": {
+        "width": 1920,
+        "height": 1000,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/b3830d51-6376-4fe0-8220-8d883563619a.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/b3830d51-6376-4fe0-8220-8d883563619a.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9iMzgzMGQ1MS02Mzc2LTRmZTAtODIyMC04ZDg4MzU2MzYxOWEucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.ko_UlSeGDmUh0c5pFafmpkqRpSb9XPGwMsg7hn7VT9c&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/b3830d51-6376-4fe0-8220-8d883563619a.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9iMzgzMGQ1MS02Mzc2LTRmZTAtODIyMC04ZDg4MzU2MzYxOWEucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.MWNNvgwZvdNldtUN_ez19O9R0cm5iahvF6eMY6hLDKg&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/b3830d51-6376-4fe0-8220-8d883563619a.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9iMzgzMGQ1MS02Mzc2LTRmZTAtODIyMC04ZDg4MzU2MzYxOWEucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.ecKTusjRRRymcmx48Uojh7v3PHPNuYCUHx8aiZqFcOY&w=1024"
+        }
+        },
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd984c",
+        "name": "Maintenance Banner",
+        "created": 1721411992,
+        "updated": 1721092064,
+        "image": {
+        "width": 1074,
+        "height": 445,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/987d816f-e73c-4cc1-9da6-a9d44f557f8d.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/987d816f-e73c-4cc1-9da6-a9d44f557f8d.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy85ODdkODE2Zi1lNzNjLTRjYzEtOWRhNi1hOWQ0NGY1NTdmOGQucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.UOmHRxzKtewnfwgQ0n7EZibsy8-lJ6GfbbMNPmAkkYo&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/987d816f-e73c-4cc1-9da6-a9d44f557f8d.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy85ODdkODE2Zi1lNzNjLTRjYzEtOWRhNi1hOWQ0NGY1NTdmOGQucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.jKJYLwMUhcA65SPmlF7lPNBUJrs2B8RehtwGSX8ecUc&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/987d816f-e73c-4cc1-9da6-a9d44f557f8d.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy85ODdkODE2Zi1lNzNjLTRjYzEtOWRhNi1hOWQ0NGY1NTdmOGQucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.91hqIkrY_0p-gmw-zbfZa0sriGyFc8k3UriHRB-biQY&w=1024"
+        }
+        },
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd984e",
+        "name": "Menu / Default",
+        "created": 1721411992,
+        "updated": 1721275759,
+        "image": {
+        "width": 1920,
+        "height": 120,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/733bfee8-187e-4f88-b619-2be533031ba7.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/733bfee8-187e-4f88-b619-2be533031ba7.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy83MzNiZmVlOC0xODdlLTRmODgtYjYxOS0yYmU1MzMwMzFiYTcucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.haaHkTjctmzoeKgVwcEKf2Sk8PoZMl4uVYcLxzlgqpw&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/733bfee8-187e-4f88-b619-2be533031ba7.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy83MzNiZmVlOC0xODdlLTRmODgtYjYxOS0yYmU1MzMwMzFiYTcucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.ugvFl7F9a8hpqHWvJ5M9Ub-E2ViowUjLM258SW8JsNU&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/733bfee8-187e-4f88-b619-2be533031ba7.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy83MzNiZmVlOC0xODdlLTRmODgtYjYxOS0yYmU1MzMwMzFiYTcucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.w2CMMrdihUp1KAvufRM297lIPW0x7OEK__Mg1jixrP4&w=1024"
+        }
+        },
+        "section": {
+        "id": "6698956bbe9971ce0bbc5c68"
+        },
+        "variant_properties": [
+        {
+            "id": "6698956bbe9971ce0bbc5c67",
+            "name": "Property 1",
+            "value": "Default"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9850",
+        "name": "Menu / stacked",
+        "created": 1721411992,
+        "updated": 1721275759,
+        "image": {
+        "width": 1111,
+        "height": 82,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/a02b0857-fdfc-490d-b42a-36be6be02de7.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/a02b0857-fdfc-490d-b42a-36be6be02de7.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9hMDJiMDg1Ny1mZGZjLTQ5MGQtYjQyYS0zNmJlNmJlMDJkZTcucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.bYEmeVHROAeGqmYOGEjJ_5ETlnBMjRWeqDLscs4AT88&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/a02b0857-fdfc-490d-b42a-36be6be02de7.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9hMDJiMDg1Ny1mZGZjLTQ5MGQtYjQyYS0zNmJlNmJlMDJkZTcucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.UMEPqYtbMrAqdr4I06to50uxfwIYrWuW_anHpv9s2Mw&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/a02b0857-fdfc-490d-b42a-36be6be02de7.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9hMDJiMDg1Ny1mZGZjLTQ5MGQtYjQyYS0zNmJlNmJlMDJkZTcucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.OXZqXbnfsBoiuPxAXADphos0uEkmWC148ysKHKvXwUs&w=1024"
+        }
+        },
+        "section": {
+        "id": "6698956bbe9971ce0bbc5c68"
+        },
+        "variant_properties": [
+        {
+            "id": "6698956bbe9971ce0bbc5c67",
+            "name": "Property 1",
+            "value": "stacked"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9852",
+        "name": "Beacon Banner / Wide-Banner",
+        "created": 1721411992,
+        "updated": 1721146186,
+        "image": {
+        "width": 1920,
+        "height": 127,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/a07541f4-383d-40e6-b5d4-bc49fb7450ac.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/a07541f4-383d-40e6-b5d4-bc49fb7450ac.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9hMDc1NDFmNC0zODNkLTQwZTYtYjVkNC1iYzQ5ZmI3NDUwYWMucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.XurR5ZqraeuTBKeg_BTUdDiGp-WapwfC6Jvl-aQ5na0&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/a07541f4-383d-40e6-b5d4-bc49fb7450ac.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9hMDc1NDFmNC0zODNkLTQwZTYtYjVkNC1iYzQ5ZmI3NDUwYWMucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.PJhPTLsuv8BwC18wtUj4sazgtDtoYAXCtnWXg8EUPug&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/a07541f4-383d-40e6-b5d4-bc49fb7450ac.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9hMDc1NDFmNC0zODNkLTQwZTYtYjVkNC1iYzQ5ZmI3NDUwYWMucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.Y6HANmeEmkgax5nHB6bAHwOnNtwqRt4jAzBaPF-41bI&w=1024"
+        }
+        },
+        "section": {
+        "id": "66969a5394cd48a0fc8c5d8f"
+        },
+        "variant_properties": [
+        {
+            "id": "66969b483ac905e54f0254c5",
+            "name": "Property 1",
+            "value": "Wide-Banner"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9854",
+        "name": "Beacon Banner / Stacked Banner",
+        "created": 1721411992,
+        "updated": 1721146186,
+        "image": {
+        "width": 659,
+        "height": 237,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/c2366e6b-6f64-467e-a2db-19138dcecdef.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/c2366e6b-6f64-467e-a2db-19138dcecdef.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9jMjM2NmU2Yi02ZjY0LTQ2N2UtYTJkYi0xOTEzOGRjZWNkZWYucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.Bzjpyga6FDTKrVjA2sDw9YlL-tL58CRZoECv7T_-Cc0&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/c2366e6b-6f64-467e-a2db-19138dcecdef.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9jMjM2NmU2Yi02ZjY0LTQ2N2UtYTJkYi0xOTEzOGRjZWNkZWYucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.vkAOqYISjvediTNBfsFLx1gd7vpz1qr2BXcoslyD8ro&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/c2366e6b-6f64-467e-a2db-19138dcecdef.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9jMjM2NmU2Yi02ZjY0LTQ2N2UtYTJkYi0xOTEzOGRjZWNkZWYucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.cnaA3PFHlPgSIbIq3Ko0hNvmxE4OKajFwwkbMNA6Lyc&w=1024"
+        }
+        },
+        "section": {
+        "id": "66969a5394cd48a0fc8c5d8f"
+        },
+        "variant_properties": [
+        {
+            "id": "66969b483ac905e54f0254c5",
+            "name": "Property 1",
+            "value": "Stacked Banner"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9856",
+        "name": "Beacon Banner / wo-logo",
+        "created": 1721411992,
+        "updated": 1721146186,
+        "image": {
+        "width": 1920,
+        "height": 127,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/8732f169-da34-48c8-bf53-8af9d06b1fe0.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/8732f169-da34-48c8-bf53-8af9d06b1fe0.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy84NzMyZjE2OS1kYTM0LTQ4YzgtYmY1My04YWY5ZDA2YjFmZTAucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.dsUBtdf8WOesjYAMt6CouUA9kIldjCKhMLLRw2hquU0&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/8732f169-da34-48c8-bf53-8af9d06b1fe0.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy84NzMyZjE2OS1kYTM0LTQ4YzgtYmY1My04YWY5ZDA2YjFmZTAucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.NsIOaDQlyI-oHdwJcimg5WQ88vb6U5eqyEVwgDkpp38&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/8732f169-da34-48c8-bf53-8af9d06b1fe0.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy84NzMyZjE2OS1kYTM0LTQ4YzgtYmY1My04YWY5ZDA2YjFmZTAucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.JIt3UCgV8t9eFlxwGd_r_KSePk6ziNpow869O_07Ozs&w=1024"
+        }
+        },
+        "section": {
+        "id": "66969a5394cd48a0fc8c5d8f"
+        },
+        "variant_properties": [
+        {
+            "id": "66969b483ac905e54f0254c5",
+            "name": "Property 1",
+            "value": "wo-logo"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9858",
+        "name": "Beacon Banner / Mission-wo-vision",
+        "created": 1721411992,
+        "updated": 1721146187,
+        "image": {
+        "width": 1920,
+        "height": 127,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/4029bc1c-d9b9-4d2f-8087-d12e05ac0b98.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/4029bc1c-d9b9-4d2f-8087-d12e05ac0b98.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy80MDI5YmMxYy1kOWI5LTRkMmYtODA4Ny1kMTJlMDVhYzBiOTgucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.IvrQ9PwyYWMYxXxoRAMwCaC1zDiixv302V_GEBFsFN0&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/4029bc1c-d9b9-4d2f-8087-d12e05ac0b98.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy80MDI5YmMxYy1kOWI5LTRkMmYtODA4Ny1kMTJlMDVhYzBiOTgucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.bsfwzz8pt7rQNJrc5fzHck50o2bKXV3Kzk3M64ckbTk&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/4029bc1c-d9b9-4d2f-8087-d12e05ac0b98.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy80MDI5YmMxYy1kOWI5LTRkMmYtODA4Ny1kMTJlMDVhYzBiOTgucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.sMWG_Knzmexg90cf60vGCtZVLggd3hFiVKuVO4W4ao0&w=1024"
+        }
+        },
+        "section": {
+        "id": "66969a5394cd48a0fc8c5d8f"
+        },
+        "variant_properties": [
+        {
+            "id": "66969b483ac905e54f0254c5",
+            "name": "Property 1",
+            "value": "Mission-wo-vision"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd985a",
+        "name": "Beacon Banner / Vision-wo-mission",
+        "created": 1721411992,
+        "updated": 1721146186,
+        "image": {
+        "width": 1920,
+        "height": 127,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/3d02eafa-b1dc-4b92-a78c-391053599201.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/3d02eafa-b1dc-4b92-a78c-391053599201.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8zZDAyZWFmYS1iMWRjLTRiOTItYTc4Yy0zOTEwNTM1OTkyMDEucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.On_orLOCcLMXffiEuGiN7_1GjUnRpCOTVeGe3-2P-AI&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/3d02eafa-b1dc-4b92-a78c-391053599201.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8zZDAyZWFmYS1iMWRjLTRiOTItYTc4Yy0zOTEwNTM1OTkyMDEucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.GYqNF92pbzzdUnkJtnvEruhT_w9oxA4fkZNkd8adyyI&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/3d02eafa-b1dc-4b92-a78c-391053599201.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8zZDAyZWFmYS1iMWRjLTRiOTItYTc4Yy0zOTEwNTM1OTkyMDEucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.SEzRwd0ZkWPV7l7ahZX9SJJ1rnsAEyZxru2KMy3omw8&w=1024"
+        }
+        },
+        "section": {
+        "id": "66969a5394cd48a0fc8c5d8f"
+        },
+        "variant_properties": [
+        {
+            "id": "66969b483ac905e54f0254c5",
+            "name": "Property 1",
+            "value": "Vision-wo-mission"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd985c",
+        "name": "Tabs / Tabs_New / Four",
+        "created": 1721411992,
+        "updated": 1719805330,
+        "image": {
+        "width": 395,
+        "height": 50,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/97527081-bc80-4f00-8c87-f52c71a437aa.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/97527081-bc80-4f00-8c87-f52c71a437aa.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy85NzUyNzA4MS1iYzgwLTRmMDAtOGM4Ny1mNTJjNzFhNDM3YWEucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.IH1JU5XG7q0axrR8gzx-I6wrqwK1W1QuZZAxoiEfuvI&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/97527081-bc80-4f00-8c87-f52c71a437aa.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy85NzUyNzA4MS1iYzgwLTRmMDAtOGM4Ny1mNTJjNzFhNDM3YWEucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.g82IJTrt4jOzOO4O5bMCzCaHhzUf_1scNOO0N19axMI&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/97527081-bc80-4f00-8c87-f52c71a437aa.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy85NzUyNzA4MS1iYzgwLTRmMDAtOGM4Ny1mNTJjNzFhNDM3YWEucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.kEiyig0ykc7KTUUc_BRPs5DpYWd-2MG4Pg7TLnsMG3w&w=1024"
+        }
+        },
+        "section": {
+        "id": "66822591fe8b0edd2723157b"
+        },
+        "variant_properties": [
+        {
+            "id": "66822591fe8b0edd2723157a",
+            "name": "Property 1",
+            "value": "Four"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd985e",
+        "name": "Tabs / Tabs_New / Three",
+        "created": 1721411992,
+        "updated": 1719805331,
+        "image": {
+        "width": 296,
+        "height": 50,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/dcd6c3d6-c0ed-4544-ac92-d2934e6a4cb3.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/dcd6c3d6-c0ed-4544-ac92-d2934e6a4cb3.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9kY2Q2YzNkNi1jMGVkLTQ1NDQtYWM5Mi1kMjkzNGU2YTRjYjMucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.RNms1GQtQMGomgqI6GJUeMV25KT4RtWWouHt6gsCBrc&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/dcd6c3d6-c0ed-4544-ac92-d2934e6a4cb3.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9kY2Q2YzNkNi1jMGVkLTQ1NDQtYWM5Mi1kMjkzNGU2YTRjYjMucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.Bimua1CQj67U-laPCq25VXP8Avm0UgzZHPVdFOi54p0&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/dcd6c3d6-c0ed-4544-ac92-d2934e6a4cb3.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9kY2Q2YzNkNi1jMGVkLTQ1NDQtYWM5Mi1kMjkzNGU2YTRjYjMucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.t9vY4EUlT6wkrJwjRLsMEXfdPc2GFMpipXYVsV1Iv5U&w=1024"
+        }
+        },
+        "section": {
+        "id": "66822591fe8b0edd2723157b"
+        },
+        "variant_properties": [
+        {
+            "id": "66822591fe8b0edd2723157a",
+            "name": "Property 1",
+            "value": "Three"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9860",
+        "name": "Tabs / Tabs_New / Double",
+        "created": 1721411992,
+        "updated": 1719805331,
+        "image": {
+        "width": 198,
+        "height": 50,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/1596486e-d40b-41bd-ba37-feb22d7efec4.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/1596486e-d40b-41bd-ba37-feb22d7efec4.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8xNTk2NDg2ZS1kNDBiLTQxYmQtYmEzNy1mZWIyMmQ3ZWZlYzQucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.AeEtiYkXRPAmWEmq8yMNaYX2IbRd9oimPBgP0ptq-b4&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/1596486e-d40b-41bd-ba37-feb22d7efec4.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8xNTk2NDg2ZS1kNDBiLTQxYmQtYmEzNy1mZWIyMmQ3ZWZlYzQucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.haK9GiVFsVR4HOuTNwSdqZ_2fViEyj1RqSPkLUV1qCY&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/1596486e-d40b-41bd-ba37-feb22d7efec4.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy8xNTk2NDg2ZS1kNDBiLTQxYmQtYmEzNy1mZWIyMmQ3ZWZlYzQucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.RNkmGhKrkxIiavud6E-YHOU4arUpVn9jsg6gJv35osA&w=1024"
+        }
+        },
+        "section": {
+        "id": "66822591fe8b0edd2723157b"
+        },
+        "variant_properties": [
+        {
+            "id": "66822591fe8b0edd2723157a",
+            "name": "Property 1",
+            "value": "Double"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9862",
+        "name": "Image Container / Featured Link / Vertical",
+        "created": 1721411992,
+        "updated": 1719805264,
+        "image": {
+        "width": 345,
+        "height": 336,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/c9055463-a0fc-43a6-94e9-914cba0e4d30.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/c9055463-a0fc-43a6-94e9-914cba0e4d30.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9jOTA1NTQ2My1hMGZjLTQzYTYtOTRlOS05MTRjYmEwZTRkMzAucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.BTwLC8xcyE-niWGqYMFvcF6VjhByrkTquN-IGwAo56w&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/c9055463-a0fc-43a6-94e9-914cba0e4d30.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9jOTA1NTQ2My1hMGZjLTQzYTYtOTRlOS05MTRjYmEwZTRkMzAucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.tLE9rEBAMpKAsuJGtunDOe9BcFmUGO-b7phhb2SWAow&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/c9055463-a0fc-43a6-94e9-914cba0e4d30.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy9jOTA1NTQ2My1hMGZjLTQzYTYtOTRlOS05MTRjYmEwZTRkMzAucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.ZA0n9Yp6XP15Qbi2QmLJzk4db4PqLFvVTTDCgivbIk0&w=1024"
+        }
+        },
+        "section": {
+        "id": "6682254e11e426d547df4fc6"
+        },
+        "variant_properties": [
+        {
+            "id": "6682254e11e426d547df4fc5",
+            "name": "Property 1",
+            "value": "Vertical"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    },
+    {
+        "id": "669aa998063bad3e8ebd9864",
+        "name": "Image Container / Featured Link / Horizontal",
+        "created": 1721411992,
+        "updated": 1719805264,
+        "image": {
+        "width": 780,
+        "height": 118,
+        "original_url": "https://public-cdn.zeplin.dev/669aa99836c7f2ad93ce967a/components/7d05b7ca-b40e-4b48-8038-d014f63acb6f.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wdWJsaWMtY2RuLnplcGxpbi5kZXYvNjY5YWE5OTgzNmM3ZjJhZDkzY2U5NjdhLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3MjQzNzQwNDJ9fX1dfQ__&Key-Pair-Id=APKAJKD6BRIMESUCGIPA&Signature=BR3eSAeM2A3unK5KdPG4wD3oKjJ0BEeyU3WuyeZ5795TxaSZq69p4-d-8Gq5MLdwO8noIIgLM8IgGKCMfUuAPpB6JL~JsMFY8BlqDWpQQWzRnHuzI9LszXHpHrz3PksQ5fPGTEnG9E8V3rtwpU0OLriAlNiIdOiQGWvBmxpzrP8j~XWnPfx1wt4--rtW-6e50t8WLTVAXXx7PjQTuC~ee4qHXsCkVVdpxEHgq03aPYhko-w6cAKxMfPCYV1YFJ2E4BrcBqE3BTOsY7MRVKXjUbFzOlGNO~VXJSobKUh2HojDJ3zG-OzgDSMrZO4I5YZF~C5Spi12G-EvHUlRYKwD-A__",
+        "thumbnails": {
+            "small": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/7d05b7ca-b40e-4b48-8038-d014f63acb6f.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy83ZDA1YjdjYS1iNDBlLTRiNDgtODAzOC1kMDE0ZjYzYWNiNmYucG5nIiwicXVlcnkiOiJ3PTI1NiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.CVv8iFpFgYpKc3IhEn5l6mr4HN1O85BuvnfSssljsaw&w=256",
+            "medium": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/7d05b7ca-b40e-4b48-8038-d014f63acb6f.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy83ZDA1YjdjYS1iNDBlLTRiNDgtODAzOC1kMDE0ZjYzYWNiNmYucG5nIiwicXVlcnkiOiJ3PTUxMiIsImlhdCI6MTcyMTc4MTk4MiwiZXhwIjoxNzI0Mzc0MDQyfQ.0IApth8JyVKtpiz7vr4_dA_1B4449Rt-27qunQ-lgu0&w=512",
+            "large": "https://img.zeplin.io/p/669aa99836c7f2ad93ce967a/components/7d05b7ca-b40e-4b48-8038-d014f63acb6f.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyYXdLZXkiOiI2NjlhYTk5ODM2YzdmMmFkOTNjZTk2N2EvY29tcG9uZW50cy83ZDA1YjdjYS1iNDBlLTRiNDgtODAzOC1kMDE0ZjYzYWNiNmYucG5nIiwicXVlcnkiOiJ3PTEwMjQiLCJpYXQiOjE3MjE3ODE5ODIsImV4cCI6MTcyNDM3NDA0Mn0.vX1yv_cotPoIAxUUsM4lg6cYWcbl011C2D_kaH2Ey7g&w=1024"
+        }
+        },
+        "section": {
+        "id": "6682254e11e426d547df4fc6"
+        },
+        "variant_properties": [
+        {
+            "id": "6682254e11e426d547df4fc5",
+            "name": "Property 1",
+            "value": "Horizontal"
+        }
+        ],
+        "source": {
+        "project": {
+            "id": "669aa99836c7f2ad93ce967a",
+            "name": "(Dev) Guardian One Portal",
+            "platform": "web",
+            "linked_styleguide": {
+            "id": "662a7cb7cdce0eb321be4f68"
+            }
+        }
+        }
+    }
+    ]
 }
