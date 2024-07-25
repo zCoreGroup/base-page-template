@@ -16,8 +16,8 @@ lint:
   script:
     - yarn lint
   only:
-    - development
-
+    - branches
+    - merge_requests
 
 build:
   stage: build
@@ -28,8 +28,8 @@ build:
   script:
     - yarn build
   only:
-    - development
-
+    - branches
+    - merge_requests
 
 test:
   stage: test
@@ -40,4 +40,6 @@ test:
   script:
     - yarn test
   only:
-    - development
+    - branches
+    - merge_requests
+
