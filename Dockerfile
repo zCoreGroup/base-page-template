@@ -1,6 +1,6 @@
 ##--------- Stage: builder  ---------##
 
-FROM registry1.dso.mil/ironbank/opensource/nodejs/debian/nodejs:20.15.0 AS builder
+FROM registry1.dso.mil/ironbank/opensource/nodejs/debian/nodejs:20.16.0 AS builder
 
 ARG ENV
 
@@ -24,7 +24,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 ##--------- Stage: runner ---------##
 # Final image
 
-FROM registry1.dso.mil/ironbank/opensource/nodejs/debian/nodejs:20.15.0 AS runner
+FROM registry1.dso.mil/ironbank/opensource/nodejs/debian/nodejs:20.16.0 AS runner
 
 WORKDIR /app
 
