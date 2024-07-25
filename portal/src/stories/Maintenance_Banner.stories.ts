@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
+import { Maintenance_Banner } from './Maintenance_Banner';
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof Maintenance_Banner> = {
+  component: Maintenance_Banner,
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Maintenance_Banner>;
 
-const ButtonWithHooks = () => {
+const Maintenance_BannerWithHooks = () => {
   const [value, setValue] = useState('Secondary');
   const [isPrimary, setIsPrimary] = useState(false);
 
@@ -21,9 +21,9 @@ const ButtonWithHooks = () => {
     }
   };
 
-  return <Button primary={isPrimary} onClick={handleOnChange} label={value} />;
+  return <Maintenance_Banner primary={isPrimary} onClick={handleOnChange} label={value} />;
 };
 
 export const Primary: Story = {
-  render: () => <ButtonWithHooks />,
+  render: () => <Maintenance_BannerWithHooks />,
 };

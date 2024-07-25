@@ -1,0 +1,11 @@
+.Beacon-Banner {
+  height: 169px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  background-color: var(--schemes-inverse-on-surface);
+}

@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
+import { Menu__stacked } from './Menu__stacked';
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof Menu__stacked> = {
+  component: Menu__stacked,
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Menu__stacked>;
 
-const ButtonWithHooks = () => {
+const Menu__stackedWithHooks = () => {
   const [value, setValue] = useState('Secondary');
   const [isPrimary, setIsPrimary] = useState(false);
 
@@ -21,9 +21,9 @@ const ButtonWithHooks = () => {
     }
   };
 
-  return <Button primary={isPrimary} onClick={handleOnChange} label={value} />;
+  return <Menu__stacked primary={isPrimary} onClick={handleOnChange} label={value} />;
 };
 
 export const Primary: Story = {
-  render: () => <ButtonWithHooks />,
+  render: () => <Menu__stackedWithHooks />,
 };
