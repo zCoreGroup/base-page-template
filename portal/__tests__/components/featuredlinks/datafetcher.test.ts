@@ -64,10 +64,10 @@ describe("FeaturedLinksDataFetcher", () => {
         ];
 
         client.request
-            .mockImplementationOnce(() => {
+        .mockImplementationOnce((request) => {
                 return Promise.resolve([{ links_id: 10 }, { links_id: 20 }, { links_id: 30 }]);
             })
-            .mockImplementationOnce(() => {
+            .mockImplementationOnce((request) => {
                 return Promise.resolve(mockRawLinks);
             });
 
@@ -75,9 +75,9 @@ describe("FeaturedLinksDataFetcher", () => {
 
         const expectedData = {
             links: [
-                { name: "Link 1", url: "http://link1.com" },
-                { name: "Link 2", url: "http://link2.com" },
-                { name: "Link 3", url: "http://link3.com" },
+                { name: "Link 1", imageUrl: "/api/file-proxy/?uuid=image1.jpg", url: "http://link1.com" },
+                { name: "Link 2", imageUrl: "/api/file-proxy/?uuid=image2.jpg", url: "http://link2.com" },
+                { name: "Link 3", imageUrl: "/api/file-proxy/?uuid=image3.jpg", url: "http://link3.com" },
             ],
         };
 
