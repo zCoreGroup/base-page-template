@@ -35,7 +35,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
           <Announcements data={data.announcements} />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Services data={data.services} />
+            <Services data={data.featuredLinks} />
           </Grid>
         </Grid>
         </Container>

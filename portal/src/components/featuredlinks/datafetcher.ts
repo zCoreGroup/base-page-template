@@ -11,7 +11,8 @@ export default class FeaturedLinksDataFetcher extends DirectusDataFetcher {
     const links = rawLinks.map((rawLink) => {
       return {
         name: rawLink.name,
-        url: rawLink.url
+        url: rawLink.url,
+        imageUrl: rawLink.image
       }
     });
 
