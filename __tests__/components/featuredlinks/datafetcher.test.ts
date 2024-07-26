@@ -51,7 +51,6 @@ describe("FeaturedLinksDataFetcher", () => {
             description: "",
             slug: "",
             tagline: null,
-            // announcements: [],
             documentation: [],
             mission: "",
             vision: "",
