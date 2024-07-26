@@ -341,6 +341,9 @@
         },
         "navbar": {
           "$ref": "#/components/schemas/NavbarData"
+        },
+        "services": {
+          "$ref": "#/components/schemas/ServicesData"
         }
       },
       "required": [
@@ -349,7 +352,8 @@
         "announcements",
         "events",
         "footer",
-        "navbar"
+        "navbar",
+        "services"
       ],
       "type": "object"
     },
