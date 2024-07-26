@@ -5,7 +5,6 @@ export type LandingPageData = {
     events: EventsData
     footer: FooterData
     navbar: NavbarData
-    services: ServicesData
 }
 
 export type LandingPageQuery = {
@@ -125,13 +124,4 @@ export type NavbarData = {
     user: User;
 };
 
-export type ServicesLinkData = {
-    name: string,
-    url: string,
-    imageUrl: string
-}
-
-export type ServicesData = {
-    links: ServicesLinkData[]
-}
 
