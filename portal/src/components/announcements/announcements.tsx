@@ -1,4 +1,3 @@
-// components/announcements.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -6,19 +5,29 @@ import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import { AnnouncementsData, Announcement as AnnouncementsItem } from "@/types";
 import CustomIndicator from './customindicator';
+import { chip, containerStyles, title } from './styles';
 
 interface ItemProps {
   item: AnnouncementsItem;
 }
 
+const stripHtml = (html: string): string => {
+  return html.replace(/<\/?[^>]+(>|$)/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
 const Item: React.FC<ItemProps> = ({ item }) => {
+  const bodyStripped = stripHtml(item.body)
   return (
     <Card sx={{ position: 'relative', backgroundColor: '#333' }}>
       <CardMedia
         component="img"
         height="400"
         image={item.image}
-        alt={item.description}
+        alt={stripHtml(bodyStripped)}
       />
       <CardContent sx={{ 
           position: 'absolute', 
@@ -37,7 +46,18 @@ const Item: React.FC<ItemProps> = ({ item }) => {
         }}
       >
         <Typography variant="h6">{item.title}</Typography>
-        <Typography variant="body2">{item.description}</Typography>
+        <Typography 
+          variant="body2" 
+          sx={{
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: 3, // Limits to 3 lines
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }}
+        >
+          {bodyStripped}
+        </Typography>
       </CardContent>
     </Card>
   );
@@ -61,8 +81,8 @@ const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
   };
 
   return (
-    <Box sx={{ padding: '20px' }}>
-      <Typography variant="h6" sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '28px', textAlign: 'left', marginBottom: '20px' }}>
+    <Box sx={{ padding: '0px' }}>
+      <Typography variant="h6" sx={title}>
         Announcements
       </Typography>
       <Carousel
@@ -77,12 +97,12 @@ const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
           margin: "auto",
         }}
       >
-        {data.announcements.map((item, i) => (
+        {data.articles.map((item, i) => (
           <Item key={i} item={item} />
         ))}
       </Carousel>
       <CustomIndicator
-        length={data.announcements.length}
+        length={data.articles.length}
         activeIndex={activeIndex}
         onClick={handleIndicatorClick}
       />

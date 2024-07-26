@@ -37,7 +37,6 @@ const dataFetcher = LandingPageDataFetcher.getInstance();
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(req.url);
   const slug = searchParams.get('slug');
-
   if (!slug) {
     const shortData = await dataFetcher.getAllShort();
     return NextResponse.json(shortData, { status: 200 });

@@ -4,7 +4,7 @@
     "Announcement": {
       "additionalProperties": false,
       "properties": {
-        "description": {
+        "body": {
           "type": "string"
         },
         "image": {
@@ -16,7 +16,7 @@
       },
       "required": [
         "title",
-        "description",
+        "body",
         "image"
       ],
       "type": "object"
@@ -24,7 +24,7 @@
     "AnnouncementsData": {
       "additionalProperties": false,
       "properties": {
-        "announcements": {
+        "articles": {
           "items": {
             "$ref": "#/components/schemas/Announcement"
           },
@@ -32,7 +32,74 @@
         }
       },
       "required": [
-        "announcements"
+        "articles"
+      ],
+      "type": "object"
+    },
+    "Article": {
+      "additionalProperties": false,
+      "properties": {
+        "dateCreated": {
+          "type": "string"
+        },
+        "dateUpdated": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "labels": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "schedule": {
+          "$ref": "#/components/schemas/Schedule"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "userCreated": {
+          "type": "string"
+        },
+        "userUpdated": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "userCreated",
+        "dateCreated",
+        "userUpdated",
+        "dateUpdated",
+        "title",
+        "description",
+        "image",
+        "schedule",
+        "startDate",
+        "endDate",
+        "slug",
+        "labels"
       ],
       "type": "object"
     },
@@ -65,6 +132,21 @@
         "tagline",
         "missionText",
         "visionText"
+      ],
+      "type": "object"
+    },
+    "EventsData": {
+      "additionalProperties": false,
+      "properties": {
+        "events": {
+          "items": {
+            "$ref": "#/components/schemas/Article"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "events"
       ],
       "type": "object"
     },
@@ -245,14 +327,17 @@
         "announcements": {
           "$ref": "#/components/schemas/AnnouncementsData"
         },
+        "banner": {
+          "$ref": "#/components/schemas/BannerData"
+        },
+        "events": {
+          "$ref": "#/components/schemas/EventsData"
+        },
         "featuredLinks": {
           "$ref": "#/components/schemas/FeaturedLinksData"
         },
         "footer": {
           "$ref": "#/components/schemas/FooterData"
-        },
-        "header": {
-          "$ref": "#/components/schemas/BannerData"
         },
         "navbar": {
           "$ref": "#/components/schemas/NavbarData"
@@ -262,9 +347,10 @@
         }
       },
       "required": [
-        "header",
+        "banner",
         "featuredLinks",
         "announcements",
+        "events",
         "footer",
         "navbar",
         "services"
@@ -353,38 +439,19 @@
       ],
       "type": "object"
     },
-    "ServicesData": {
+    "Schedule": {
       "additionalProperties": false,
       "properties": {
-        "links": {
-          "items": {
-            "$ref": "#/components/schemas/ServicesLinkData"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "links"
-      ],
-      "type": "object"
-    },
-    "ServicesLinkData": {
-      "additionalProperties": false,
-      "properties": {
-        "imageUrl": {
+        "label": {
           "type": "string"
         },
-        "name": {
-          "type": "string"
-        },
-        "url": {
+        "startTime": {
           "type": "string"
         }
       },
       "required": [
-        "name",
-        "url",
-        "imageUrl"
+        "label",
+        "startTime"
       ],
       "type": "object"
     },

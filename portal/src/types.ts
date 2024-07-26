@@ -1,7 +1,8 @@
 export type LandingPageData = {
-    header: BannerData
+    banner: BannerData
     featuredLinks: FeaturedLinksData
     announcements: AnnouncementsData
+    events: EventsData
     footer: FooterData
     navbar: NavbarData
     services: ServicesData
@@ -17,13 +18,41 @@ export type LandingPageShort = {
 }
 export type Announcement = {
   title: string
-  description: string
+  body: string
   image: string
+  dateCreated: string
 }
 
 export type AnnouncementsData = {
-  announcements: Announcement[]
+  articles: Announcement[]
 }
+
+export type Schedule = {
+    label: string;
+    startTime: string;
+};
+
+export type Article = {
+    id: number;
+    status: string;
+    userCreated: string;
+    dateCreated: string;
+    userUpdated: string;
+    dateUpdated: string;
+    title: string;
+    description: string;
+    image: string;
+    schedule: Schedule;
+    startDate: string;
+    endDate: string;
+    slug: string;
+    labels: number[];
+}
+
+export type EventsData = {
+  events: Article[]
+}
+
 export type FeaturedLink = {
     name: string
     url: string

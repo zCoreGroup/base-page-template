@@ -1,44 +1,36 @@
-import { DirectusDataFetcher, landing_page, announcement } from "@/lib/directusdatafetcher";
+import { DirectusDataFetcher, landing_page, article } from "@/lib/directusdatafetcher";
 import { Announcement, AnnouncementsData } from "@/types";
 import { readItems } from "@directus/sdk";
 
 export default class AnnouncementsDataFetcher extends DirectusDataFetcher {
   async fetch(query: landing_page): Promise<AnnouncementsData> {
 
-    const linkIds = await this.findAnnouncementIds(query.announcements);
-    const rawAnnouncements = await this.findAnnouncementsByIds(linkIds);
+    const rawAnnouncements = await this.findAnnouncementsLandingPageId(query.id);
 
-    const announcements = rawAnnouncements.map((rawAnnouncement) => {
+    const articles = rawAnnouncements.map((rawAnnouncement) => {
+
       return {
         title: rawAnnouncement.title,
-        description: rawAnnouncement.description,
-        image: this.getFileUrl(rawAnnouncement.image),
+        body: rawAnnouncement.body,
+        image: !!rawAnnouncement.image ? this.getFileUrl(rawAnnouncement.image) : '',
+        dateCreated: rawAnnouncement.date_created
       } as Announcement;
     });
 
     return {
-      announcements: announcements
+      articles: articles
     };
   }
 
-  async findAnnouncementIds(ids : number[]) : Promise<number[]> {
-    const result = await this.client.request(readItems('landing_page_announcements', {
+  async findAnnouncementsLandingPageId(id: number): Promise<article[]> {
+    const result = await this.client.request(readItems('articles', {
       filter: {
-        id: {
-          _in: ids
-        }
-      }
-    }));
-
-    return result.map((joinRow) => joinRow.announcements_id);
-  }
-
-  async findAnnouncementsByIds(ids: number[]): Promise<announcement[]> {
-    const result = await this.client.request(readItems('announcements', {
-      filter: {
-        id: {
-          _in: ids
-        }
+        landing_page: {
+          _eq: id,
+        },
+        category: {
+          _eq: "Announcements",
+        },
       }
     }));
 

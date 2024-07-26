@@ -1,7 +1,15 @@
 import { createDirectus, rest, RestClient, staticToken } from '@directus/sdk';
 import { getPortalConfig } from './portalconfig';
+import { camelCase, mapKeys } from 'lodash';
 
-
+const toCamelCase = (obj: any): any => {
+  if (Array.isArray(obj)) {
+    return obj.map(v => toCamelCase(v));
+  } else if (obj !== null && obj.constructor === Object) {
+    return mapKeys(obj, (_, key) => camelCase(key));
+  }
+  return obj;
+}
 
 export type landing_page = {
     id: number;
@@ -17,9 +25,11 @@ export type landing_page = {
     mission: string;
     vision: string;
     tagline: string | null;
-    announcements: number[];
+    articles: number[];
     featured: number[];
     documentation: number[];
+    events: number[];
+    labels: number[];
 }
 
 export type link = {
@@ -38,41 +48,56 @@ export type landing_page_links = {
     id: number;
     landing_page_id : number;
     links_id : number;
-}
+};
 
-export type announcement = {
+export type article = {
     id: number;
-    landing_page_id : number;
-    announcements_id : number;
+    status: string;
+    sort: number | null;
     user_created: string;
     date_created: string;
     user_updated: string;
-    date_updated: string;
+    category: string;
     title: string;
-    description: string;
-    status: string;
-    image: string;
     body: string;
-}
+    published_date: string;
+    slug: string;
+    image: string;
+    document: number | null;
+    landing_page: number;
+    comments: number[];
+};
 
-export type landing_page_announcements = {
+export type label = {
+    id: string;
+    name: string;
+};
+
+export type events_labels = {
+    id: number;
+    labels_id : string;
+    events_id : string;
+};
+
+export type landing_page_labels = {
     id: number;
     landing_page_id : number;
-    announcements_id : number;
-}
+    labels_id : string;
+};
 
 export type DirectusSchema = {
     landing_page: landing_page[];
     links: link[];
     landing_page_links: landing_page_links[];
-    announcements: announcement[];
-    landing_page_announcements: landing_page_announcements[];
-}
+    articles: article[];
+    labels: label[];
+    events_labels: events_labels[];
+    landing_page_labels: landing_page_labels[];
+};
 
 const portalConfig = getPortalConfig();
 
 export class DirectusDataFetcher {
-
     private static directusClient = createDirectus<DirectusSchema>(portalConfig.directusUrl)
         .with(staticToken(portalConfig.directusStaticToken))
         .with(rest());
@@ -84,4 +109,4 @@ export class DirectusDataFetcher {
     getFileUrl(uuid: string): string {
         return `/api/file-proxy/?uuid=${uuid}`;
     }
-}
+};
