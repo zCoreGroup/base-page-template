@@ -7,6 +7,9 @@
         "body": {
           "type": "string"
         },
+        "dateCreated": {
+          "type": "string"
+        },
         "image": {
           "type": "string"
         },
@@ -17,7 +20,8 @@
       "required": [
         "title",
         "body",
-        "image"
+        "image",
+        "dateCreated"
       ],
       "type": "object"
     },
@@ -153,6 +157,9 @@
     "FeaturedLink": {
       "additionalProperties": false,
       "properties": {
+        "imageUrl": {
+          "type": "string"
+        },
         "name": {
           "type": "string"
         },
@@ -162,7 +169,8 @@
       },
       "required": [
         "name",
-        "url"
+        "url",
+        "imageUrl"
       ],
       "type": "object"
     },
