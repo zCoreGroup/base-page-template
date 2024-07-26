@@ -11,7 +11,6 @@ lint:
   stage: lint
   image: node:20
   before_script:
-    - cd portal
     - yarn install
   script:
     - yarn lint
@@ -23,7 +22,6 @@ build:
   stage: build
   image: node:20
   before_script:
-    - cd portal
     - yarn install
   script:
     - yarn build
@@ -35,7 +33,6 @@ test:
   stage: test
   image: node:20
   before_script:
-    - cd portal
     - yarn install
   script:
     - yarn test
