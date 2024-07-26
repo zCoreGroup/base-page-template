@@ -7,7 +7,8 @@ import Announcements from '@/components/announcements/announcements';
 import Events from '@/components/events/events';
 import Footer from '../../components/footer/footer';
 import Navbar from '../../components/navbar/Navbar';
-import { Container } from '@mui/material';
+import Services from '../../components/services/services'
+import { Container, Grid } from '@mui/material';
 
 
 const fetcher = LandingPageDataFetcher.getInstance();
@@ -28,7 +29,16 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
         <Container>
           <Banner data={data.banner} />
           <FeaturedLinks data={data.featuredLinks} />
+        </Container>
+        <Container>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
           <Announcements data={data.announcements} />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Services data={data.featuredLinks} />
+          </Grid>
+        </Grid>
           <Events data={data.events} />
         </Container>
       </div>

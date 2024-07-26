@@ -55,6 +55,7 @@ export type EventsData = {
 export type FeaturedLink = {
     name: string
     url: string
+    imageUrl: string
 }
 
 export type FeaturedLinksData = {
@@ -122,4 +123,5 @@ export type NavbarData = {
     notificationsCount: number;
     user: User;
 };
+
 
