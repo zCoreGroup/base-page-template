@@ -1,15 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
-import {AppBar, Toolbar, Box, IconButton, Badge, Typography, Grid} from '@mui/material'
+import { AppBar, Toolbar, Box, IconButton, Badge, Typography, Grid } from '@mui/material'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import SearchIcon from '@mui/icons-material/Search'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-import {NavbarData} from '@/types'
-import {m3MobileLabelMedium} from "@/designtokens/typography";
+import { NavbarData } from '@/types'
+import { m3MobileLabelMedium } from '@/designtokens/typography'
 
-const Navbar: React.FC<{ data: NavbarData }> = ({data}) => {
+const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
   return (
-    <AppBar position='static' sx={{backgroundColor: '#303030', height: '72px'}}>
+    <AppBar position='static' sx={{ backgroundColor: '#303030', height: '72px' }}>
       <Toolbar>
         <Grid container alignItems='center' justifyContent='space-between'>
           <Grid item xs={2}>
@@ -25,16 +25,16 @@ const Navbar: React.FC<{ data: NavbarData }> = ({data}) => {
               }}
             >
               {data.leftLinks.map((link, index) => (
-                <a key={index} href={link.url} style={{color: 'inherit', textDecoration: 'none'}}>
-                  <Typography variant='body1' sx={{color: '#e4e2e3', fontSize: m3MobileLabelMedium.font.size}}>
+                <a key={index} href={link.url} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <Typography variant='body1' sx={{ color: '#e4e2e3', fontSize: m3MobileLabelMedium.font.size }}>
                     {link.name}
                   </Typography>
                 </a>
               ))}
-              <Image src={data.logo} alt={data.logoAlt} width={280.7} height={24}/>
+              <Image src={data.logo} alt={data.logoAlt} width={280.7} height={24} />
               {data.rightLinks.map((link, index) => (
-                <a key={index} href={link.url} style={{color: 'inherit', textDecoration: 'none'}}>
-                  <Typography variant='body1' sx={{color: '#e4e2e3', fontSize: '14px'}}>
+                <a key={index} href={link.url} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <Typography variant='body1' sx={{ color: '#e4e2e3', fontSize: '14px' }}>
                     {link.name}
                   </Typography>
                 </a>
@@ -50,16 +50,16 @@ const Navbar: React.FC<{ data: NavbarData }> = ({data}) => {
                 gap: '24px',
               }}
             >
-              <IconButton sx={{color: '#e4e2e3'}}>
-                <SearchIcon/>
+              <IconButton sx={{ color: '#e4e2e3' }}>
+                <SearchIcon />
               </IconButton>
-              <IconButton sx={{color: '#e4e2e3'}}>
+              <IconButton sx={{ color: '#e4e2e3' }}>
                 <Badge badgeContent={data.notificationsCount} color='error'>
-                  <NotificationsIcon/>
+                  <NotificationsIcon />
                 </Badge>
               </IconButton>
-              <IconButton sx={{color: '#e4e2e3'}}>
-                <AccountCircleIcon/>
+              <IconButton sx={{ color: '#e4e2e3' }}>
+                <AccountCircleIcon />
               </IconButton>
             </Box>
           </Grid>
