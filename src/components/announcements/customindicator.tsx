@@ -1,11 +1,11 @@
 // components/customindicator.tsx
-import React from 'react';
-import { Box, Button } from '@mui/material';
+import React from 'react'
+import { Box, Button } from '@mui/material'
 
 interface CustomIndicatorProps {
-  length: number;
-  activeIndex: number;
-  onClick: (index: number) => void;
+  length: number
+  activeIndex: number
+  onClick: (index: number) => void
 }
 
 const CustomIndicator: React.FC<CustomIndicatorProps> = ({ length, activeIndex, onClick }) => {
@@ -30,7 +30,7 @@ const CustomIndicator: React.FC<CustomIndicatorProps> = ({ length, activeIndex, 
         </Button>
       ))}
     </Box>
-  );
-};
+  )
+}
 
-export default CustomIndicator;
+export default CustomIndicator

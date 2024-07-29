@@ -1,7 +1,7 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Navbar from '@/components/navbar/Navbar';
-import { NavbarData } from "@/types";
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import Navbar from '@/components/navbar/Navbar'
+import { NavbarData } from '@/types'
 
 const mockData: NavbarData = {
   leftLinks: [
@@ -17,29 +17,29 @@ const mockData: NavbarData = {
   notificationsCount: 4,
   user: {
     name: '',
-    avatarUrl: ''
-  }
-};
+    avatarUrl: '',
+  },
+}
 
 describe('Navbar', () => {
   test('renders Navbar component with links and logo', () => {
-    render(<Navbar data={mockData} />);
+    render(<Navbar data={mockData} />)
 
     // Check if left links are rendered
-    mockData.leftLinks.forEach(link => {
-      expect(screen.getByText(link.name)).toBeInTheDocument();
-    });
+    mockData.leftLinks.forEach((link) => {
+      expect(screen.getByText(link.name)).toBeInTheDocument()
+    })
 
     // Check if right links are rendered
-    mockData.rightLinks.forEach(link => {
-      expect(screen.getByText(link.name)).toBeInTheDocument();
-    });
+    mockData.rightLinks.forEach((link) => {
+      expect(screen.getByText(link.name)).toBeInTheDocument()
+    })
 
     // Check if logo is rendered
-    const logo = screen.getByAltText(mockData.logoAlt);
-    expect(logo).toBeInTheDocument();
+    const logo = screen.getByAltText(mockData.logoAlt)
+    expect(logo).toBeInTheDocument()
 
     // Check if notification count is rendered
-    expect(screen.getByText(mockData.notificationsCount.toString())).toBeInTheDocument();
-  });
-});
+    expect(screen.getByText(mockData.notificationsCount.toString())).toBeInTheDocument()
+  })
+})

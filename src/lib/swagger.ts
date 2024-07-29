@@ -1,6 +1,6 @@
 // lib/swagger.ts
-import swaggerJsDoc from 'swagger-jsdoc';
-import schemas from '../schemas.json'; // Adjust the path if necessary
+import swaggerJsDoc from 'swagger-jsdoc'
+import schemas from '../schemas.json' // Adjust the path if necessary
 
 const options: swaggerJsDoc.Options = {
   definition: {
@@ -14,8 +14,8 @@ const options: swaggerJsDoc.Options = {
     },
   },
   apis: ['./src/**/*.ts'], // Path to the API docs
-};
+}
 
-const specs = swaggerJsDoc(options);
+const specs = swaggerJsDoc(options)
 
-export { specs };
+export { specs }

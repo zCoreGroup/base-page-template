@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import { ReactNode } from 'react';
-import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
+import { ReactNode } from 'react'
+import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material/styles'
+import { CssBaseline } from '@mui/material'
 
 const theme = createTheme({
   typography: {
     fontFamily: 'Roboto, IBM Plex Mono, Arial',
-  }
-});
+  },
+})
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   return (
@@ -16,5 +16,5 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       <CssBaseline />
       {children}
     </MUIThemeProvider>
-  );
+  )
 }
