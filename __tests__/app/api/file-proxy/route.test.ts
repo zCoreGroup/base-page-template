@@ -58,9 +58,9 @@ describe('requestHandler', () => {
   let req: Partial<NextRequest>
   let fetcherInstance: jest.Mocked<DirectusDataFetcher> & {
     client: {
-      request: jest.Mock;
-    };
-  };
+      request: jest.Mock
+    }
+  }
 
   beforeEach(() => {
     fetcherInstance = {
@@ -69,10 +69,10 @@ describe('requestHandler', () => {
       },
     } as unknown as jest.Mocked<DirectusDataFetcher> & {
       client: {
-        request: jest.Mock;
-      };
-    };
-    (DirectusDataFetcher as jest.MockedClass<typeof DirectusDataFetcher>).mockImplementation(() => fetcherInstance)
+        request: jest.Mock
+      }
+    }
+    ;(DirectusDataFetcher as jest.MockedClass<typeof DirectusDataFetcher>).mockImplementation(() => fetcherInstance)
     req = {
       url: `https://example.com/api?uuid=${mockUuid}`,
     }

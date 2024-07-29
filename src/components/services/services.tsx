@@ -12,8 +12,7 @@ const Services: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
         </Typography>
         <Grid container spacing={3} sx={{ marginTop: '10px' }}>
           {data.links.map((link, index) => (
-            <Grid item xs={6} sm={4} key={index}>
-            </Grid>
+            <Grid item xs={6} sm={4} key={index}></Grid>
           ))}
         </Grid>
 

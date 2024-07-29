@@ -9,8 +9,18 @@ const compat = new FlatCompat({
     baseDirectory: __dirname,
     recommendedConfig: js.configs.recommended,
     allConfig: js.configs.all,
-    ignorePatterns: ["node_modules/", "dist/", "**/.*"],
 });
-const config = [...compat.extends("next/core-web-vitals", "plugin:storybook/recommended")];
+
+const config = [
+    {
+        ignores: [
+            "**/node_modules/**",
+            "**/dist/**",
+            "**/.next/**",
+            "**/.*",
+        ],
+    },
+    ...compat.extends("next/core-web-vitals", "plugin:storybook/recommended"),
+];
 
 export default config;
