@@ -31,9 +31,6 @@ yarn run check-types ||
     false
   )
 
-# Add all the changes
-git add .
-
 # If everything passes... Now we can commit
 echo '🤔🤔🤔🤔... Alright.... Code looks good to me... 🤔🤔🤔🤔'
 
