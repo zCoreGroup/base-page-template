@@ -3,12 +3,12 @@ import { getPortalConfig } from './portalconfig';
 import { camelCase, mapKeys } from 'lodash';
 
 const toCamelCase = (obj: any): any => {
-  if (Array.isArray(obj)) {
-    return obj.map(v => toCamelCase(v));
-  } else if (obj !== null && obj.constructor === Object) {
-    return mapKeys(obj, (_, key) => camelCase(key));
-  }
-  return obj;
+    if (Array.isArray(obj)) {
+        return obj.map(v => toCamelCase(v));
+    } else if (obj !== null && obj.constructor === Object) {
+        return mapKeys(obj, (_, key) => camelCase(key));
+    }
+    return obj;
 }
 
 export type landing_page = {
@@ -30,6 +30,7 @@ export type landing_page = {
     documentation: number[];
     events: number[];
     labels: number[];
+    footer: string;
 }
 
 export type link = {
@@ -46,8 +47,8 @@ export type link = {
 
 export type landing_page_links = {
     id: number;
-    landing_page_id : number;
-    links_id : number;
+    landing_page_id: number;
+    links_id: number;
 };
 
 export type article = {
@@ -75,14 +76,56 @@ export type label = {
 
 export type events_labels = {
     id: number;
-    labels_id : string;
-    events_id : string;
+    labels_id: string;
+    events_id: string;
 };
 
 export type landing_page_labels = {
     id: number;
-    landing_page_id : number;
-    labels_id : string;
+    landing_page_id: number;
+    labels_id: string;
+};
+
+export type footer = {
+    id: string;
+    user_created: string;
+    date_created: string;
+    user_updated: string;
+    date_updated: string;
+    feedback: string;
+    twitter: string;
+    facebook: string;
+    instagram: string;
+    youtube: string;
+    linkedin: string | null;
+    title: number;
+    location: number;
+    flicker: string | null;
+    information: string;
+    information_text: string;
+    image: string | null;
+    labels: number[];
+}
+
+export type location = {
+    id: number;
+    sort: number | null;
+    user_created: string;
+    date_created: string;
+    user_updated: string;
+    date_updated: string;
+    name: string;
+    address: string;
+    coordinates: {
+        type: string;
+        coordinates: [number, number];
+    };
+    city: string;
+    zip: string;
+    state: string;
+    phone: string | null;
+    email: string | null;
+    labels: number[];
 };
 
 export type DirectusSchema = {
@@ -93,6 +136,8 @@ export type DirectusSchema = {
     labels: label[];
     events_labels: events_labels[];
     landing_page_labels: landing_page_labels[];
+    footer: footer[];
+    locations: location[];
 };
 
 const portalConfig = getPortalConfig();

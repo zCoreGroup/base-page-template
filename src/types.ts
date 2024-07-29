@@ -84,9 +84,6 @@ export type FooterData = {
     linkYT: string;
 };
 
-export type FooterQuery = {
-    landingPageId: string;
-};
 export type BannerData = {
     logoSrc: string;
     logoAlt: string;
