@@ -2,71 +2,54 @@ import React from 'react';
 import { Grid, Typography, Box, Link } from '@mui/material';
 import { Facebook, X, Instagram, YouTube } from '@mui/icons-material';
 import { FooterData } from "@/types";
+import { content, contentTitle, footerContentStyle } from './style';
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
+  const informationText = data.informationText.split("\n");
+
   return (
-    <Box sx={{ width: "100%", paddingTop: "1rem", paddingBottom: "1rem", padding: '20px', color: '#ffffff' }}>
-      <Grid container spacing={4} direction="row" justifyContent="center" alignItems="flex-start" sx={{ width: '100%', maxWidth: '1800px' }}>
-        
+    <Box sx={footerContentStyle}>
+      <Grid container spacing={4} direction="row" justifyContent="center" alignItems="flex-start">
+
         <Grid item xs={12} sm={6} md={3}>
           <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
-            <Typography variant="h6" gutterBottom sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '20px' }}>
-              {data.title1}
+            <Typography variant="h6" gutterBottom sx={contentTitle}>
+              Locations
             </Typography>
-            <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px', mb:1 }}>
+            <Typography flexGrow={1} sx={content}>
               {data.streetAddress}
             </Typography>
-            <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px' }}>
-              {data.cityState}
+            <br></br>
+            <Typography flexGrow={1} sx={content}>
+              {data.city}
             </Typography>
-            <br/>
-            <Link href={data.phone} color="inherit" underline="none">
-              <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px', mb: 1}}>{data.phone1}</Typography>
+            <Typography flexGrow={1} sx={content}>
+              {data.state}
+            </Typography>
+            <Typography flexGrow={1} sx={content}>
+              {data.zip}
+            </Typography>
+            <Link href={`tel:${data.phone}`} color="inherit" underline="none">
+              <Typography flexGrow={1} sx={content}>{data.phone}</Typography>
             </Link>
             <Link href={`mailto:${data.email}`} color="inherit" underline="none">
-              <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px'}}>{data.email1}</Typography>
+              <Typography flexGrow={1} sx={content}>{data.email}</Typography>
             </Link>
-          </Box>
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={3}>
-          <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
-            <Typography variant="h6" gutterBottom sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '20px'}}>
-              {data.title2}
+            <Typography variant="h6" gutterBottom sx={contentTitle}>
+              {data.informationTitle}
             </Typography>
-            <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px' }}>
-              {data.hoursMon}
-            </Typography>
-            <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px' }}>
-              {data.hoursSat}
-            </Typography>
-            <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px', mb:1 }}>
-              {data.hoursSun}
-            </Typography>
-            <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px', mb: .5 }}>
-              {data.hours2}
-            </Typography>
-            <Typography variant="body2" flexGrow={1} sx={{ fontSize: '12px' }}>
-              {data.hours3}
-            </Typography>
+            {informationText.map((text) => (
+              <Typography key={text} sx={content}>
+                {text}
+              </Typography>
+            ))}
           </Box>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
           <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
-            <Typography variant="h6" gutterBottom sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '20px' }}>
-              {data.title3}
-            </Typography>
-            <Typography variant="body2" sx={{ fontSize: '12px' }}>
-              {data.feedback}
-            </Typography>
-          </Box>
-        </Grid>
-
-        <Grid item xs={12} sm={6} md={3}>
-          <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
-            <Typography variant="h6" gutterBottom sx={{ color: '#e9542f', fontWeight: 'bold', fontSize: '20px'}}>
-              {data.title4}
+            <Typography variant="h6" gutterBottom sx={contentTitle}>
+              Get Connected
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
               <Link href={data.linkFB} target="_blank" color="inherit">

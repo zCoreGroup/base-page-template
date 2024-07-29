@@ -42,9 +42,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
           <Events data={data.events} />
         </Container>
       </div>
-      <Container style={{ backgroundColor: 'black' }}>
-        <Footer data={data.footer} />
-      </Container>
+      <Footer data={data.footer} />
     </div>
   );
 };
