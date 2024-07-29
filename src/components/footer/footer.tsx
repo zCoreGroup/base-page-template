@@ -27,12 +27,14 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
                     {data.city} {data.state} {data.zip}
                   </Typography>
                 </Link>
-                <Link href={`tel:${data.phone}`} color="inherit" underline="none">
-                  <Typography flexGrow={1} sx={content}>{data.phone}</Typography>
-                </Link>
-                <Link href={`mailto:${data.email}`} color="inherit" underline="none">
-                  <Typography flexGrow={1} sx={content}>{data.email}</Typography>
-                </Link>
+                <Typography flexGrow={1} sx={content}>
+                  <Link href={`mailto:${data.email}`} color="inherit" underline="none">
+                    {data.email}&nbsp;
+                  </Link>
+                  <Link href={`tel:${data.phone}`} color="inherit" underline="none">
+                    {data.phone}
+                  </Link>
+                </Typography>
               </Box>
             </Grid>
             <Grid item>
