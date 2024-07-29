@@ -7,5 +7,5 @@ export const title = {
   fontStyle: 'normal',
   lineHeight: 'normal',
   letterSpacing: 'normal',
-  textAlign: 'left'
+  textAlign: 'left',
 }
