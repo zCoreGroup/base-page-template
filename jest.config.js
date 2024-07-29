@@ -1,7 +1,7 @@
 // jest.config.js
 const customJestConfig = {
   roots: ['<rootDir>', '<rootDir>/src/'],
-  testEnvironment: 'jest-environment-jsdom', // TODO: testing this should fix some issues
+  testEnvironment: 'jest-environment-jsdom',
   modulePathIgnorePatterns: [
     '/node_modules/',
     '.next/',
