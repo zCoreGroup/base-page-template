@@ -40,26 +40,19 @@ mockBannerDataFetcher.fetch = jest.fn().mockResolvedValue({
   visionText: '',
 })
 mockFooterDataFetcher.fetch = jest.fn().mockResolvedValue({
-  title1: '',
   streetAddress: '',
-  cityState: '',
+  city: '',
+  state: '',
+  zip: '',
   phone: '',
   email: '',
-  phone1: '',
-  email1: '',
-  title2: '',
-  hoursMon: '',
-  hoursSat: '',
-  hoursSun: '',
-  hours2: '',
-  hours3: '',
-  title3: '',
-  feedback: '',
-  title4: '',
+  informationTitle: '',
+  informationText: '',
   linkFB: '',
   linkX: '',
   linkIG: '',
   linkYT: '',
+  baseMapImage: '',
 })
 mockFeaturedLinksDataFetcher.fetch = jest.fn().mockResolvedValue({ links: [] })
 mockAnnouncementsDataFetcher.fetch = jest.fn().mockResolvedValue({ articles: [] })
@@ -116,26 +109,19 @@ describe('LandingPageDataFetcher', () => {
       announcements: { articles: [] },
       events: { events: [] },
       footer: {
-        title1: '',
         streetAddress: '',
-        cityState: '',
+        city: '',
+        state: '',
+        zip: '',
         phone: '',
         email: '',
-        phone1: '',
-        email1: '',
-        title2: '',
-        hoursMon: '',
-        hoursSat: '',
-        hoursSun: '',
-        hours2: '',
-        hours3: '',
-        title3: '',
-        feedback: '',
-        title4: '',
+        informationTitle: '',
+        informationText: '',
         linkFB: '',
         linkX: '',
         linkIG: '',
         linkYT: '',
+        baseMapImage: '',
       },
     } as LandingPageData)
 
@@ -160,7 +146,8 @@ describe('LandingPageDataFetcher', () => {
       title: 'Valid Title',
     })
     expect(mockFooterDataFetcher.fetch).toHaveBeenCalledWith({
-      landingPageId: 'valid-slug',
+      slug: 'valid-slug',
+      title: 'Valid Title',
     })
   })
 })
