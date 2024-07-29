@@ -1,5 +1,5 @@
-import {createTheme, ThemeOptions} from "@mui/material/styles";
-import colors from "@/designtokens/colors";
+import { createTheme, ThemeOptions } from '@mui/material/styles'
+import colors from '@/designtokens/colors'
 
 const themeOptions: ThemeOptions = {
   palette: {
