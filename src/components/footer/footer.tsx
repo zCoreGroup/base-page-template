@@ -6,6 +6,8 @@ import { content, contentTitle, footerContentStyle } from './style';
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   const informationText = data.informationText.split("\n");
+  const addressText = encodeURIComponent(data.streetAddress + ', ' + data.city + ', ' + data.state + ' ' + data.zip);
+  const addressHref = `https://www.google.com/maps/search/?api=1&query=${addressText}`
 
   return (
     <Box sx={footerContentStyle}>
@@ -17,18 +19,14 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
                 <Typography variant="h6" gutterBottom sx={contentTitle}>
                   Locations
                 </Typography>
-                <Typography flexGrow={1} sx={content}>
-                  {data.streetAddress}
-                </Typography>
-                <Typography flexGrow={1} sx={content}>
-                  {data.city}
-                </Typography>
-                <Typography flexGrow={1} sx={content}>
-                  {data.state}
-                </Typography>
-                <Typography flexGrow={1} sx={content}>
-                  {data.zip}
-                </Typography>
+                <Link href={addressHref} target="_blank" color="inherit" underline="none">
+                  <Typography flexGrow={1} sx={content}>
+                    {data.streetAddress}
+                  </Typography>
+                  <Typography flexGrow={1} sx={content}>
+                    {data.city} {data.state} {data.zip}
+                  </Typography>
+                </Link>
                 <Link href={`tel:${data.phone}`} color="inherit" underline="none">
                   <Typography flexGrow={1} sx={content}>{data.phone}</Typography>
                 </Link>
