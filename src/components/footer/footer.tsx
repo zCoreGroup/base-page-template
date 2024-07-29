@@ -10,39 +10,54 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   return (
     <Box sx={footerContentStyle}>
       <Grid container spacing={4} direction="row" justifyContent="center" alignItems="flex-start">
-
         <Grid item xs={12} sm={6} md={3}>
+          <Grid container direction="column" spacing={2}>
+            <Grid item>
+              <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
+                <Typography variant="h6" gutterBottom sx={contentTitle}>
+                  Locations
+                </Typography>
+                <Typography flexGrow={1} sx={content}>
+                  {data.streetAddress}
+                </Typography>
+                <Typography flexGrow={1} sx={content}>
+                  {data.city}
+                </Typography>
+                <Typography flexGrow={1} sx={content}>
+                  {data.state}
+                </Typography>
+                <Typography flexGrow={1} sx={content}>
+                  {data.zip}
+                </Typography>
+                <Link href={`tel:${data.phone}`} color="inherit" underline="none">
+                  <Typography flexGrow={1} sx={content}>{data.phone}</Typography>
+                </Link>
+                <Link href={`mailto:${data.email}`} color="inherit" underline="none">
+                  <Typography flexGrow={1} sx={content}>{data.email}</Typography>
+                </Link>
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
+                <Typography variant="h6" gutterBottom sx={contentTitle}>
+                  {data.informationTitle}
+                </Typography>
+                {informationText.map((text) => (
+                  <Typography key={text} sx={content}>
+                    {text}
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={6}>
           <Box display="flex" flexDirection="column" alignItems="flex-start" height="100%">
             <Typography variant="h6" gutterBottom sx={contentTitle}>
-              Locations
+              Base Map
             </Typography>
-            <Typography flexGrow={1} sx={content}>
-              {data.streetAddress}
-            </Typography>
-            <br></br>
-            <Typography flexGrow={1} sx={content}>
-              {data.city}
-            </Typography>
-            <Typography flexGrow={1} sx={content}>
-              {data.state}
-            </Typography>
-            <Typography flexGrow={1} sx={content}>
-              {data.zip}
-            </Typography>
-            <Link href={`tel:${data.phone}`} color="inherit" underline="none">
-              <Typography flexGrow={1} sx={content}>{data.phone}</Typography>
-            </Link>
-            <Link href={`mailto:${data.email}`} color="inherit" underline="none">
-              <Typography flexGrow={1} sx={content}>{data.email}</Typography>
-            </Link>
-            <Typography variant="h6" gutterBottom sx={contentTitle}>
-              {data.informationTitle}
-            </Typography>
-            {informationText.map((text) => (
-              <Typography key={text} sx={content}>
-                {text}
-              </Typography>
-            ))}
+            <Box component="img" src={data.baseMapImage} width="50%" height="auto" alt="Base Map"/>
           </Box>
         </Grid>
 
@@ -67,7 +82,6 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
             </Box>
           </Box>
         </Grid>
-
       </Grid>
     </Box>
   );

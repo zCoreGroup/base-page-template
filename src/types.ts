@@ -74,6 +74,7 @@ export type FooterData = {
     linkX: string;
     linkIG: string;
     linkYT: string;
+    baseMapImage: string;
 };
 
 export type BannerData = {

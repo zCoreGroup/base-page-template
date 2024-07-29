@@ -24,7 +24,8 @@ export default class HeaderDataFetcher extends DirectusDataFetcher {
             linkFB: footer.facebook,
             linkX: footer.twitter,
             linkIG: footer.instagram,
-            linkYT: footer.youtube
+            linkYT: footer.youtube,
+            baseMapImage: baseMapImage
         }
     }
 
