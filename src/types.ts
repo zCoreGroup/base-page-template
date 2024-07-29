@@ -1,3 +1,4 @@
+ 
 export type LandingPageData = {
   banner: BannerData
   featuredLinks: FeaturedLinksData
@@ -85,8 +86,13 @@ export type FooterData = {
 }
 
 export type FooterQuery = {
-  landingPageId: string
-}
+  landingPageId: string 
+};
+ 
+export interface BreadCrumbData { 
+    links: Array<{ text: string; link: string }>; 
+}  
+
 export type BannerData = {
   logoSrc: string
   logoAlt: string

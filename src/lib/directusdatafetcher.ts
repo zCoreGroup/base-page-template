@@ -26,6 +26,8 @@ export type landing_page = {
   vision: string
   tagline: string | null
   articles: number[]
+  breadcrumb: string[]
+  breadcrumbLnk: string[]
   featured: number[]
   documentation: number[]
   events: number[]
