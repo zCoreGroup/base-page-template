@@ -24,6 +24,13 @@ yarn run check-types ||
     false
   )
 
+# Run Trufflehog
+./trufflehog-scan.sh ||
+  (
+    echo 'Trufflehog scan failed. Make the changes required above.'
+    false
+  )
+
 # If everything passes... Now we can commit
 echo '🤔🤔🤔🤔... Alright.... Code looks good to me... 🤔🤔🤔🤔'
 
