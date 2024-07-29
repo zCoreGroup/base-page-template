@@ -65,6 +65,20 @@ The following command can be run:
 yarn generate:schema
 ```
 
+### Install Trufflehog
+
+Trufflehog is a tool that scans for secrets in the codebase. It is recommended to install it locally and run it before pushing code.
+
+```bash
+pip install trufflehog
+```
+
+OR
+
+```bash
+brew install trufflehog
+```
+
 ## Docker
 
 Building the portal with docker copies files from the `/portal` directory with environment variables set via `.env`. This
