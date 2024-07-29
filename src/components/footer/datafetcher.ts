@@ -2,7 +2,7 @@ import { DirectusDataFetcher, footer, landing_page, location } from "@/lib/direc
 import { FooterData } from "@/types";
 import { readItems } from "@directus/sdk";
 
-export default class HeaderDataFetcher extends DirectusDataFetcher {
+export default class FooterDataFetcher extends DirectusDataFetcher {
 
     async fetch(landing_page: landing_page): Promise<FooterData> {
 
@@ -10,6 +10,8 @@ export default class HeaderDataFetcher extends DirectusDataFetcher {
         const footer = await this.getFooter(landing_page.footer);
         const location = await this.getLocation(footer.location);
         console.log(footer, location);
+
+        const baseMapImage = footer.image ? this.getFileUrl(footer.image): "";
 
 
         return {
