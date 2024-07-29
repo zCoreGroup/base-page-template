@@ -4,8 +4,8 @@ stages:
   - test
 
 variables:
-  DIRECTUS_URL: "http://mocked-directus.com"
-  DIRECTUS_STATIC_TOKEN: "mock-static-stoken"
+  DIRECTUS_URL: 'http://mocked-directus.com'
+  DIRECTUS_STATIC_TOKEN: 'mock-static-stoken'
 
 lint:
   stage: lint
@@ -39,4 +39,3 @@ test:
   only:
     - branches
     - merge_requests
-
