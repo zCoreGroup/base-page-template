@@ -96,7 +96,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
               <Typography variant='h6' gutterBottom sx={contentTitle}>
                 Got Feedback?
               </Typography>
-              <Typography sx={content}>We would love to hear from you!</Typography>
+              <Typography sx={content}>{data.feedback}</Typography>
             </Box>
           </Box>
         </Grid>

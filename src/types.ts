@@ -83,6 +83,7 @@ export type FooterData = {
   baseMapImage: string
   quickLinks: FooterLink[]
   guardianPortal: FooterLink[]
+  feedback: string
 }
 
 export type BannerData = {

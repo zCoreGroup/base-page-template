@@ -43,6 +43,7 @@ export default class FooterDataFetcher extends DirectusDataFetcher {
           url: 'https://google.com',
         },
       ],
+      feedback: 'Please send feedback friend'
     }
   }
 
