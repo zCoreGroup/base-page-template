@@ -9,6 +9,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   const informationText = data.informationText.split('\n')
   const addressText = encodeURIComponent(data.streetAddress + ', ' + data.city + ', ' + data.state + ' ' + data.zip)
   const addressHref = `https://www.google.com/maps/search/?api=1&query=${addressText}`
+  const currentYear = new Date().getFullYear().toString();
 
   return (
     <Box sx={footerContentStyle}>
@@ -97,6 +98,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
                 Got Feedback?
               </Typography>
               <Typography sx={content}>{data.feedback}</Typography>
+              <Typography sx={content}>&copy;{currentYear} All rights reserved, USSF Portal</Typography>
             </Box>
           </Box>
         </Grid>

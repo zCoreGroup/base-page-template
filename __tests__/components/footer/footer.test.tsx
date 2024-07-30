@@ -21,7 +21,7 @@ describe('Footer', () => {
     linkYT: 'https://www.youtube.com/user/30SWVandenberg',
     quickLinks: [],
     guardianPortal: [],
-    feedback: ''
+    feedback: '',
   }
 
   it('renders the titles, subtitles, and links correctly', () => {
