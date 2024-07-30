@@ -3,6 +3,7 @@ import { Grid, Typography, Box, Link } from '@mui/material'
 import { Facebook, X, Instagram, YouTube } from '@mui/icons-material'
 import { FooterData } from '@/types'
 import { content, contentTitle, footerContentStyle } from './style'
+import FooterLinks from './FooterLinks'
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   const informationText = data.informationText.split('\n')
@@ -64,32 +65,10 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
         <Grid item xs={12} sm={6} md={3}>
           <Grid container direction='column' spacing={2}>
             <Grid item>
-              <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
-                <Typography variant='h6' gutterBottom sx={contentTitle}>
-                  Quick Links
-                </Typography>
-                {data.quickLinks.map((link) => (
-                  <Typography key={link.url} sx={content}>
-                    <Link href={link.url} target='_blank' color='inherit'>
-                      {link.name}
-                    </Link>
-                  </Typography>
-                ))}
-              </Box>
+              <FooterLinks title='Quick Links' links={data.quickLinks}></FooterLinks>
             </Grid>
             <Grid item>
-              <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
-                <Typography variant='h6' gutterBottom sx={contentTitle}>
-                  Guardian Portal
-                </Typography>
-                {data.guardianPortal.map((link) => (
-                  <Typography key={link.url} sx={content}>
-                    <Link href={link.url} target='_blank' color='inherit'>
-                      {link.name}
-                    </Link>
-                  </Typography>
-                ))}
-              </Box>
+              <FooterLinks title='Guardian Portal' links={data.guardianPortal}></FooterLinks>
             </Grid>
           </Grid>
         </Grid>
