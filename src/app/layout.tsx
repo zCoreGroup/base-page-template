@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Libre_Franklin } from 'next/font/google'
-import ThemeProvider from '../components/themeprovider/themeprovider'
+import ThemeProvider from '../theme/ThemeProvider'
 import './globals.css'
 import '@fontsource/roboto' // Defaults to weight 400
 import '@fontsource/roboto/400.css' // Weight 400 with normal style
