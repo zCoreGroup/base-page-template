@@ -1,7 +1,7 @@
 import { LandingPageData, LandingPageQuery, LandingPageShort } from '../../types'
 import NavbarDataFetcher from '@/components/navbar/datafetcher'
 import BannerDataFetcher from '@/components/banner/datafetcher'
-import FooterDataFetcher from '@/components/footer/datafetcher'
+import FooterDataFetcher from '@/components/footer/dataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher'
 import { DirectusDataFetcher, landing_page } from '@/lib/directusdatafetcher'
 import { readItems } from '@directus/sdk'

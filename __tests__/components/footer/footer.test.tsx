@@ -1,6 +1,6 @@
 import React from 'react'
 import { getByRole, render } from '@testing-library/react'
-import Footer from '@/components/footer/footer'
+import Footer from '@/components/footer/Footer'
 import { FooterData } from '@/types'
 
 describe('Footer', () => {
