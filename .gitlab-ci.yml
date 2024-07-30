@@ -35,6 +35,7 @@ test:
   stage: test
   image: node:20
   before_script:
+    - yarn clean
     - yarn install
   script:
     - yarn test
