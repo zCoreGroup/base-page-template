@@ -30,12 +30,12 @@ const customJestConfig = {
   collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx', 'startup/*.js'],
   coverageDirectory: 'coverage',
   testTimeout: 30000, //30 seconds
-};
+}
 
-const nextJest = require('next/jest');
+const nextJest = require('next/jest')
 
 const createJestConfig = nextJest({
   dir: './',
-});
+})
 
-module.exports = createJestConfig(customJestConfig);
+module.exports = createJestConfig(customJestConfig)

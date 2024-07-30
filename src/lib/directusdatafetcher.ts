@@ -1,15 +1,5 @@
 import { createDirectus, rest, RestClient, staticToken } from '@directus/sdk'
 import { getPortalConfig } from './portalconfig'
-import { camelCase, mapKeys } from 'lodash'
-
-const toCamelCase = (obj: any): any => {
-  if (Array.isArray(obj)) {
-    return obj.map((v) => toCamelCase(v))
-  } else if (obj !== null && obj.constructor === Object) {
-    return mapKeys(obj, (_, key) => camelCase(key))
-  }
-  return obj
-}
 
 export type landing_page = {
   id: number
