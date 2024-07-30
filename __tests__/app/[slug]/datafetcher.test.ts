@@ -1,11 +1,11 @@
-import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import NavbarDataFetcher from '../../../src/components/navbar/datafetcher'
 import BannerDataFetcher from '../../../src/components/banner/datafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
 import AnnouncementsDataFetcher from '../../../src/components/announcements/datafetcher'
 import EventsDataFetcher from '../../../src/components/events/datafetcher'
-import { LandingPageQuery, LandingPageData } from '../../../src/types'
+import { LandingPageQuery, LandingPageData } from '@/types'
+import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 
 jest.mock('../../../src/components/navbar/datafetcher')
 jest.mock('../../../src/components/banner/datafetcher')

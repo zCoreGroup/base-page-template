@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingPageDataFetcher from './dataFetcher'
+
 import { LandingPageData, LandingPageQuery } from '@/types'
 import Banner from '../../components/banner/banner'
 import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
@@ -9,6 +9,7 @@ import { Container, Grid } from '@mui/material'
 import Services from '@/components/services/services'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
+import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 
 const fetcher = LandingPageDataFetcher.getInstance()
 
