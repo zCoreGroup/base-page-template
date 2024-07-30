@@ -53,6 +53,8 @@ mockFooterDataFetcher.fetch = jest.fn().mockResolvedValue({
   linkIG: '',
   linkYT: '',
   baseMapImage: '',
+  quickLinks: [],
+  guardianPortal: [],
 })
 mockFeaturedLinksDataFetcher.fetch = jest.fn().mockResolvedValue({ links: [] })
 mockAnnouncementsDataFetcher.fetch = jest.fn().mockResolvedValue({ articles: [] })
@@ -122,6 +124,8 @@ describe('LandingPageDataFetcher', () => {
         linkIG: '',
         linkYT: '',
         baseMapImage: '',
+        quickLinks: [],
+        guardianPortal: [],
       },
     } as LandingPageData)
 

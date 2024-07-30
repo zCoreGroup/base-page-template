@@ -52,13 +52,46 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} sm={6} md={6}>
+        <Grid item xs={12} sm={6} md={3}>
           <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
             <Typography variant='h6' gutterBottom sx={contentTitle}>
               Base Map
             </Typography>
             <Box component='img' src={data.baseMapImage} width='50%' height='auto' alt='Base Map' />
           </Box>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={3}>
+          <Grid container direction='column' spacing={2}>
+            <Grid item>
+              <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
+                <Typography variant='h6' gutterBottom sx={contentTitle}>
+                  Quick Links
+                </Typography>
+                {data.quickLinks.map((link) => (
+                  <Typography key={link.url} sx={content}>
+                    <Link href={link.url} target='_blank' color='inherit'>
+                      {link.name}
+                    </Link>
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
+                <Typography variant='h6' gutterBottom sx={contentTitle}>
+                  Guardian Portal
+                </Typography>
+                {data.guardianPortal.map((link) => (
+                  <Typography key={link.url} sx={content}>
+                    <Link href={link.url} target='_blank' color='inherit'>
+                      {link.name}
+                    </Link>
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+          </Grid>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
@@ -79,6 +112,12 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
               <Link href={data.linkYT} target='_blank' color='inherit'>
                 <YouTube />
               </Link>
+            </Box>
+            <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%' marginTop={2}>
+              <Typography variant='h6' gutterBottom sx={contentTitle}>
+                Got Feedback?
+              </Typography>
+              <Typography sx={content}>We would love to hear from you!</Typography>
             </Box>
           </Box>
         </Grid>

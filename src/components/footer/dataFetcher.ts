@@ -23,6 +23,26 @@ export default class FooterDataFetcher extends DirectusDataFetcher {
       linkIG: footer.instagram,
       linkYT: footer.youtube,
       baseMapImage: baseMapImage,
+      quickLinks: [
+        {
+          name: 'Test1',
+          url: 'https://google.com',
+        },
+        {
+          name: 'Test2',
+          url: 'https://google.com',
+        },
+      ],
+      guardianPortal: [
+        {
+          name: 'Test1',
+          url: 'https://yahoo.com',
+        },
+        {
+          name: 'Tes2',
+          url: 'https://google.com',
+        },
+      ],
     }
   }
 
