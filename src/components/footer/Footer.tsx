@@ -89,7 +89,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
               <Typography variant='h6' gutterBottom sx={contentTitle}>
                 Get Connected
               </Typography>
-              <Box sx={{ display: 'flex', gap: 1 }}>
+              <Box sx={{ display: 'flex', gap: 3 }}>
                 <Link href={data.linkFB} target='_blank' color='inherit'>
                   <Facebook />
                 </Link>
@@ -108,6 +108,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
               <Typography variant='h6' gutterBottom sx={contentTitle}>
                 Got Feedback?
               </Typography>
+              <br />
               <Typography sx={content}>{data.feedback}</Typography>
               <Typography sx={content}>&copy;{currentYear} All rights reserved, USSF Portal</Typography>
             </Box>
