@@ -10,12 +10,11 @@ export const footerContentStyle = {
   lineHeight: '16px',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center' 
+  alignItems: 'center',
 }
 
 export const contentTitle = {
   fontFamily: 'IBM Plex Mono',
-  fontWeight: 'bold',
   fontSize: '12px',
 }
 

@@ -106,7 +106,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
             </Box>
             <Box display='flex' flexDirection='column' alignItems='flex-start'>
               <Typography variant='h6' gutterBottom sx={contentTitle}>
-                Got Feedback?
+                Got Feedback
               </Typography>
               <br />
               <Typography sx={content}>{data.feedback}</Typography>
