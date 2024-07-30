@@ -2,11 +2,11 @@ import { DirectusDataFetcher, welcome_page } from '@/lib/directusdatafetcher'
 import NavbarDataFetcher from '@/components/navbar/datafetcher'
 import FooterDataFetcher from '@/components/footer/datafetcher'
 import { readItems } from '@directus/sdk'
-import { WelcomePageData } from '@/types'
+import { HomePageData } from '@/types'
 import { DuplicateWelcomePage, WelcomePageNotFound } from '@/lib/errors'
 
-export default class WelcomePageDataFetcher extends DirectusDataFetcher {
-  static instance: WelcomePageDataFetcher
+export default class HomePageDataFetcher extends DirectusDataFetcher {
+  static instance: HomePageDataFetcher
 
   private navbarFetcher: NavbarDataFetcher
   private footerFetcher: FooterDataFetcher
@@ -17,7 +17,7 @@ export default class WelcomePageDataFetcher extends DirectusDataFetcher {
     this.footerFetcher = footerFetcher
   }
 
-  async fetch(): Promise<WelcomePageData> {
+  async fetch(): Promise<HomePageData> {
     const [navbarData, footerData] = await Promise.all([
       this.navbarFetcher.fetchWelcomePageNavbar(),
       this.footerFetcher.fetch({ landingPageId: '' }),
@@ -26,31 +26,17 @@ export default class WelcomePageDataFetcher extends DirectusDataFetcher {
     return {
       navbar: navbarData,
       footer: footerData,
-    } as WelcomePageData
+    } as HomePageData
   }
 
-  // async findWelcomePage(): Promise<welcome_page> {
-  //   const result = await this.client.request(readItems('welcome_page'))
-  //
-  //   if (result.length === 0) {
-  //     throw new WelcomePageNotFound()
-  //   }
-  //
-  //   if (result.length > 1) {
-  //     throw new DuplicateWelcomePage()
-  //   }
-  //
-  //   return result[0]
-  // }
-
-  static getInstance(): WelcomePageDataFetcher {
-    if (WelcomePageDataFetcher.instance == undefined) {
+  static getInstance(): HomePageDataFetcher {
+    if (HomePageDataFetcher.instance == undefined) {
       const navbarFetcher = new NavbarDataFetcher()
       const footerFetcher = new FooterDataFetcher()
 
-      WelcomePageDataFetcher.instance = new WelcomePageDataFetcher(navbarFetcher, footerFetcher)
+      HomePageDataFetcher.instance = new HomePageDataFetcher(navbarFetcher, footerFetcher)
     }
 
-    return WelcomePageDataFetcher.instance
+    return HomePageDataFetcher.instance
   }
 }

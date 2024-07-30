@@ -1,4 +1,4 @@
-export type WelcomePageData = {
+export type HomePageData = {
   navbar: NavbarData
   footer: FooterData
 }

@@ -1,15 +1,21 @@
 import Navbar from '@/components/navbar/Navbar'
-import WelcomePageDataFetcher from '@/app/welcomePageDataFetcher'
-import { WelcomePageData } from '@/types'
+import HomePageDataFetcher from '@/app/homePageDataFetcher'
+import { HomePageData } from '@/types'
+import { Box, Container, Typography } from '@mui/material'
+import Footer from '@/components/footer/footer'
 
-const fetcher = WelcomePageDataFetcher.getInstance()
+const fetcher = HomePageDataFetcher.getInstance()
 
 const Home = async () => {
-  const data: WelcomePageData = await fetcher.fetch()
+  const data: HomePageData = await fetcher.fetch()
   return (
-    <div>
+    <Box sx={{ backgroundColor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar data={data.navbar} />
-    </div>
+      <Typography>Featured Links</Typography>
+      <Container>
+        <Footer data={data.footer} />
+      </Container>
+    </Box>
   )
 }
 
