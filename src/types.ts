@@ -1,5 +1,6 @@
 export type HomePageData = {
   navbar: NavbarData
+  featuredLinks: FeaturedLinksData
   footer: FooterData
 }
 

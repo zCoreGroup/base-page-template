@@ -1,7 +1,7 @@
 // components/FeaturedLinks.test.tsx
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import FeaturedLinks from '@/components/featuredlinks/featuredlinks'
+import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
 import { FeaturedLinksData } from '@/types'
 
 // Sample data for testing

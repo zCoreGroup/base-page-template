@@ -2,7 +2,7 @@
 import React from 'react'
 import { Grid, Typography, Box, Chip } from '@mui/material'
 import { FeaturedLinksData } from '@/types'
-import { chip, containerStyles, title } from './styles'
+import { containerStyles, title } from './styles'
 
 const FeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
   return (
@@ -12,7 +12,14 @@ const FeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
       </Typography>
       <Grid container sx={{ marginTop: '24px', justifyContent: 'center' }}>
         {data.links.map((link, index) => (
-          <Chip label={link.name} component='a' href={link.url} clickable sx={chip} key={index} />
+          <Chip
+            label={link.name}
+            component='a'
+            href={link.url}
+            sx={{ marginRight: '12px', flexGrow: 0 }}
+            clickable
+            key={index}
+          />
         ))}
       </Grid>
     </Box>

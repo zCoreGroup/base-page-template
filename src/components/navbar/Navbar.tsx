@@ -5,7 +5,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications'
 import SearchIcon from '@mui/icons-material/Search'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { NavbarData } from '@/types'
-import { m3MobileLabelMedium } from '@/designtokens/typography'
+import { m3MobileLabelMedium } from '@/design-tokens/typography'
 
 const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
   return (

@@ -1,8 +1,8 @@
-import LandingPageDataFetcher from '../../../src/app/[slug]/datafetcher'
+import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import NavbarDataFetcher from '../../../src/components/navbar/datafetcher'
 import BannerDataFetcher from '../../../src/components/banner/datafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
-import FeaturedLinksDataFetcher from '../../../src/components/featuredlinks/datafetcher'
+import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
 import AnnouncementsDataFetcher from '../../../src/components/announcements/datafetcher'
 import EventsDataFetcher from '../../../src/components/events/datafetcher'
 import { LandingPageQuery, LandingPageData } from '../../../src/types'
@@ -10,7 +10,7 @@ import { LandingPageQuery, LandingPageData } from '../../../src/types'
 jest.mock('../../../src/components/navbar/datafetcher')
 jest.mock('../../../src/components/banner/datafetcher')
 jest.mock('@/components/footer/dataFetcher')
-jest.mock('../../../src/components/featuredlinks/datafetcher')
+jest.mock('@/components/featured-links/dataFetcher')
 jest.mock('../../../src/components/announcements/datafetcher')
 jest.mock('../../../src/components/events/datafetcher')
 

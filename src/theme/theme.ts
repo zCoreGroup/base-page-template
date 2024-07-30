@@ -1,5 +1,5 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles'
-import colors from '@/designtokens/colors'
+import colors from '@/design-tokens/colors'
 
 const themeOptions: ThemeOptions = {
   palette: {
@@ -72,7 +72,19 @@ const themeOptions: ThemeOptions = {
     MuiChip: {
       styleOverrides: {
         root: {
-          borderRadius: 16,
+          backgroundColor: colors.m3SysLightPrimaryContainer,
+          height: 48,
+          width: 160,
+          color: 'white',
+          gap: 8,
+          borderRadius: '6px',
+          fontSize: '12px',
+          '&:hover': {
+            backgroundColor: '#0a1d2b',
+          },
+          '&:focus': {
+            backgroundColor: '#526474',
+          },
         },
       },
     },
