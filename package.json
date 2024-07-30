@@ -10,7 +10,7 @@
     "lint": "eslint --fix .",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\" \"!**/*.stories.{js,jsx,ts,tsx}\" \"!.storybook/**\"",
     "check-format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\" \"!**/*.stories.{js,jsx,ts,tsx}\" \"!.storybook/**\"",
-    "check-lint": "eslint .",
+    "check-lint": "yarn lint-staged",
     "check-types": "tsc --noEmit",
     "format-all": "yarn format && yarn lint",
     "test:unit": "jest",

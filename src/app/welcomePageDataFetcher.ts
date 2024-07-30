@@ -1,9 +1,9 @@
-import {DirectusDataFetcher, welcome_page} from "@/lib/directusdatafetcher";
-import NavbarDataFetcher from "@/components/navbar/datafetcher";
-import FooterDataFetcher from "@/components/footer/datafetcher";
-import {readItems} from "@directus/sdk";
-import {WelcomePageData} from "@/types";
-import {DuplicateWelcomePage, WelcomePageNotFound} from "@/lib/errors";
+import { DirectusDataFetcher, welcome_page } from '@/lib/directusdatafetcher'
+import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import FooterDataFetcher from '@/components/footer/datafetcher'
+import { readItems } from '@directus/sdk'
+import { WelcomePageData } from '@/types'
+import { DuplicateWelcomePage, WelcomePageNotFound } from '@/lib/errors'
 
 export default class WelcomePageDataFetcher extends DirectusDataFetcher {
   static instance: WelcomePageDataFetcher
@@ -11,10 +11,7 @@ export default class WelcomePageDataFetcher extends DirectusDataFetcher {
   private navbarFetcher: NavbarDataFetcher
   private footerFetcher: FooterDataFetcher
 
-  constructor(
-    navbarFetcher: NavbarDataFetcher,
-    footerFetcher: FooterDataFetcher
-  ) {
+  constructor(navbarFetcher: NavbarDataFetcher, footerFetcher: FooterDataFetcher) {
     super()
     this.navbarFetcher = navbarFetcher
     this.footerFetcher = footerFetcher
@@ -23,7 +20,7 @@ export default class WelcomePageDataFetcher extends DirectusDataFetcher {
   async fetch(): Promise<WelcomePageData> {
     const [navbarData, footerData] = await Promise.all([
       this.navbarFetcher.fetchWelcomePageNavbar(),
-      this.footerFetcher.fetch({landingPageId: ''}),
+      this.footerFetcher.fetch({ landingPageId: '' }),
     ])
 
     return {
