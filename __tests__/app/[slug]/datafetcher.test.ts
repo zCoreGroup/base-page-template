@@ -9,7 +9,7 @@ import { LandingPageQuery, LandingPageData } from '../../../src/types'
 
 jest.mock('../../../src/components/navbar/datafetcher')
 jest.mock('../../../src/components/banner/datafetcher')
-jest.mock('../../../src/components/footer/datafetcher')
+jest.mock('../../../src/components/footer/dataFetcher')
 jest.mock('../../../src/components/featuredlinks/datafetcher')
 jest.mock('../../../src/components/announcements/datafetcher')
 jest.mock('../../../src/components/events/datafetcher')
