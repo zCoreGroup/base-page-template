@@ -1,16 +1,16 @@
-import React from 'react';
-import { Grid, Typography, Box, Link } from '@mui/material';
-import { Facebook, Instagram, YouTube } from '@mui/icons-material';
-import X from '@mui/icons-material/X'; // Import X icon
-import { FooterData } from '@/types';
-import { content, contentTitle, footerContentStyle } from './style';
-import FooterLinks from './FooterLinks';
+import React from 'react'
+import { Grid, Typography, Box, Link } from '@mui/material'
+import { Facebook, Instagram, YouTube } from '@mui/icons-material'
+import X from '@mui/icons-material/X' // Import X icon
+import { FooterData } from '@/types'
+import { content, contentTitle, footerContentStyle } from './style'
+import FooterLinks from './FooterLinks'
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
-  const informationText = data.informationText.split('\n');
-  const addressText = encodeURIComponent(data.streetAddress + ', ' + data.city + ', ' + data.state + ' ' + data.zip);
-  const addressHref = `https://www.google.com/maps/search/?api=1&query=${addressText}`;
-  const currentYear = new Date().getFullYear().toString();
+  const informationText = data.informationText.split('\n')
+  const addressText = encodeURIComponent(data.streetAddress + ', ' + data.city + ', ' + data.state + ' ' + data.zip)
+  const addressHref = `https://www.google.com/maps/search/?api=1&query=${addressText}`
+  const currentYear = new Date().getFullYear().toString()
 
   return (
     <Box sx={footerContentStyle}>
@@ -65,14 +65,26 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
-          <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%' gap={{ xs: 2, sm: 3, md: 6 }}>
+          <Box
+            display='flex'
+            flexDirection='column'
+            alignItems='flex-start'
+            height='100%'
+            gap={{ xs: 2, sm: 3, md: 6 }}
+          >
             <FooterLinks title='Quick Links' links={data.quickLinks} />
             <FooterLinks title='Guardian Portal' links={data.guardianPortal} />
           </Box>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
-          <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%' gap={{ xs: 2, sm: 3, md: 6 }}>
+          <Box
+            display='flex'
+            flexDirection='column'
+            alignItems='flex-start'
+            height='100%'
+            gap={{ xs: 2, sm: 3, md: 6 }}
+          >
             <Box display='flex' flexDirection='column' alignItems='flex-start'>
               <Typography variant='h6' gutterBottom sx={contentTitle}>
                 Get Connected
@@ -103,7 +115,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
         </Grid>
       </Grid>
     </Box>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
