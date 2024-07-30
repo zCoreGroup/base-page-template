@@ -1,14 +1,9 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material/styles'
+import { ThemeProvider as MUIThemeProvider } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
-
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Roboto, IBM Plex Mono, Arial',
-  },
-})
+import theme from '@/theme/theme'
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   return (

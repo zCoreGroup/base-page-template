@@ -443,3 +443,5 @@ export const colors = {
   m3SysMoonHighContrastSurfaceBright: 'rgb(71, 71, 71)',
   m3SysMoonHighContrastSurfaceDim: 'rgb(34, 34, 38)',
 }
+
+export default colors

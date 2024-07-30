@@ -5,6 +5,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications'
 import SearchIcon from '@mui/icons-material/Search'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { NavbarData } from '@/types'
+import { m3MobileLabelMedium } from '@/designtokens/typography'
 
 const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
   return (
@@ -25,7 +26,7 @@ const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
             >
               {data.leftLinks.map((link, index) => (
                 <a key={index} href={link.url} style={{ color: 'inherit', textDecoration: 'none' }}>
-                  <Typography variant='body1' sx={{ color: '#e4e2e3', fontSize: '14px' }}>
+                  <Typography variant='body1' sx={{ color: '#e4e2e3', fontSize: m3MobileLabelMedium.font.size }}>
                     {link.name}
                   </Typography>
                 </a>
