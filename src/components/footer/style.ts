@@ -8,6 +8,9 @@ export const footerContentStyle = {
   letterSpacing: '0.5px',
   textTransform: 'uppercase',
   lineHeight: '16px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center' 
 }
 
 export const contentTitle = {
