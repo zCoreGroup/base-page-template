@@ -1,6 +1,10 @@
 import { createDirectus, rest, RestClient, staticToken } from '@directus/sdk'
 import { getPortalConfig } from './portalconfig'
 
+export type welcome_page = {
+
+}
+
 export type landing_page = {
   id: number
   status: string

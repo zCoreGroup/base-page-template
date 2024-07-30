@@ -1,7 +1,7 @@
 import { DirectusDataFetcher } from '@/lib/directusdatafetcher'
 import { FooterData, FooterQuery } from '@/types'
 
-export default class HeaderDataFetcher extends DirectusDataFetcher {
+export default class FooterDataFetcher extends DirectusDataFetcher {
   async fetch(query: FooterQuery): Promise<FooterData> {
     return {
       title1: 'Contact',
