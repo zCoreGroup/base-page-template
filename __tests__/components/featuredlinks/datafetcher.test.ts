@@ -57,6 +57,7 @@ describe('FeaturedLinksDataFetcher', () => {
       articles: [],
       events: [],
       labels: [],
+      footer: '',
     }
 
     const mockRawLinks: link[] = [

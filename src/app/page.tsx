@@ -2,7 +2,7 @@ import Navbar from '@/components/navbar/Navbar'
 import HomePageDataFetcher from '@/app/homePageDataFetcher'
 import { HomePageData } from '@/types'
 import { Box, Container, Typography } from '@mui/material'
-import Footer from '@/components/footer/footer'
+import Footer from '@/components/footer/Footer'
 
 const fetcher = HomePageDataFetcher.getInstance()
 

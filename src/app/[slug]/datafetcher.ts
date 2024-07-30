@@ -1,8 +1,7 @@
 import { LandingPageData, LandingPageQuery, LandingPageShort } from '../../types'
-import { FooterQuery } from '@/types'
 import NavbarDataFetcher from '@/components/navbar/datafetcher'
 import BannerDataFetcher from '@/components/banner/datafetcher'
-import FooterDataFetcher from '@/components/footer/datafetcher'
+import FooterDataFetcher from '@/components/footer/dataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher'
 import { DirectusDataFetcher, landing_page } from '@/lib/directusdatafetcher'
 import { readItems } from '@directus/sdk'
@@ -39,7 +38,6 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
   async fetch(query: LandingPageQuery): Promise<LandingPageData> {
     const landingPage = await this.findLandingPageBySlug(query.slug)
-    const footerQuery = { landingPageId: query.slug } as FooterQuery
 
     const [navbarData, bannerData, featuredLinksData, announcementsData, eventsData, footerData] = await Promise.all([
       this.navbarFetcher.fetch(landingPage),
@@ -47,7 +45,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
       this.featuredLinksFetcher.fetch(landingPage),
       this.announcementsFetcher.fetch(landingPage),
       this.eventsFetcher.fetch(landingPage),
-      this.footerFetcher.fetch(footerQuery),
+      this.footerFetcher.fetch(landingPage),
     ])
 
     return {

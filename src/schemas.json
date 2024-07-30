@@ -192,31 +192,19 @@
     "FooterData": {
       "additionalProperties": false,
       "properties": {
-        "cityState": {
+        "baseMapImage": {
+          "type": "string"
+        },
+        "city": {
           "type": "string"
         },
         "email": {
           "type": "string"
         },
-        "email1": {
+        "informationText": {
           "type": "string"
         },
-        "feedback": {
-          "type": "string"
-        },
-        "hours2": {
-          "type": "string"
-        },
-        "hours3": {
-          "type": "string"
-        },
-        "hoursMon": {
-          "type": "string"
-        },
-        "hoursSat": {
-          "type": "string"
-        },
-        "hoursSun": {
+        "informationTitle": {
           "type": "string"
         },
         "linkFB": {
@@ -234,58 +222,30 @@
         "phone": {
           "type": "string"
         },
-        "phone1": {
+        "state": {
           "type": "string"
         },
         "streetAddress": {
           "type": "string"
         },
-        "title1": {
-          "type": "string"
-        },
-        "title2": {
-          "type": "string"
-        },
-        "title3": {
-          "type": "string"
-        },
-        "title4": {
+        "zip": {
           "type": "string"
         }
       },
       "required": [
-        "title1",
         "streetAddress",
-        "cityState",
+        "city",
+        "state",
+        "zip",
         "phone",
         "email",
-        "phone1",
-        "email1",
-        "title2",
-        "hoursMon",
-        "hoursSat",
-        "hoursSun",
-        "hours2",
-        "hours3",
-        "title3",
-        "feedback",
-        "title4",
+        "informationTitle",
+        "informationText",
         "linkFB",
         "linkX",
         "linkIG",
-        "linkYT"
-      ],
-      "type": "object"
-    },
-    "FooterQuery": {
-      "additionalProperties": false,
-      "properties": {
-        "landingPageId": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "landingPageId"
+        "linkYT",
+        "baseMapImage"
       ],
       "type": "object"
     },
@@ -326,6 +286,22 @@
         "imageUrl",
         "altText",
         "sideLength"
+      ],
+      "type": "object"
+    },
+    "HomePageData": {
+      "additionalProperties": false,
+      "properties": {
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        }
+      },
+      "required": [
+        "navbar",
+        "footer"
       ],
       "type": "object"
     },

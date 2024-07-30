@@ -1,9 +1,7 @@
 import { DirectusDataFetcher, welcome_page } from '@/lib/directusdatafetcher'
 import NavbarDataFetcher from '@/components/navbar/datafetcher'
-import FooterDataFetcher from '@/components/footer/datafetcher'
-import { readItems } from '@directus/sdk'
+import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData } from '@/types'
-import { DuplicateWelcomePage, WelcomePageNotFound } from '@/lib/errors'
 
 export default class HomePageDataFetcher extends DirectusDataFetcher {
   static instance: HomePageDataFetcher
@@ -20,7 +18,27 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
   async fetch(): Promise<HomePageData> {
     const [navbarData, footerData] = await Promise.all([
       this.navbarFetcher.fetchWelcomePageNavbar(),
-      this.footerFetcher.fetch({ landingPageId: '' }),
+      this.footerFetcher.fetch({
+        articles: [],
+        date_created: '',
+        date_updated: '',
+        description: '',
+        documentation: [],
+        events: [],
+        featured: [],
+        footer: '239fec6b-e9cd-4dd6-b9aa-fd2d30e014b3',
+        id: 1,
+        labels: [],
+        logo: '',
+        mission: '',
+        slug: '',
+        status: '',
+        tagline: 'Capacity - Agility - Responsiveness - Resilience',
+        title: '',
+        user_created: '',
+        user_updated: '',
+        vision: '',
+      }),
     ])
 
     return {
