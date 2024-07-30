@@ -11,6 +11,7 @@ lint:
   stage: lint
   image: node:20
   before_script:
+    - yarn clean
     - yarn install
   script:
     - yarn lint
@@ -22,6 +23,7 @@ build:
   stage: build
   image: node:20
   before_script:
+    - yarn clean
     - yarn install
   script:
     - yarn build
