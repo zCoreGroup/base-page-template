@@ -20,6 +20,7 @@ export type landing_page = {
   documentation: number[]
   events: number[]
   labels: number[]
+  footer: string
 }
 
 export type link = {
@@ -75,6 +76,48 @@ export type landing_page_labels = {
   labels_id: string
 }
 
+export type footer = {
+  id: string
+  user_created: string
+  date_created: string
+  user_updated: string
+  date_updated: string
+  feedback: string
+  twitter: string
+  facebook: string
+  instagram: string
+  youtube: string
+  linkedin: string | null
+  title: number
+  location: number
+  flicker: string | null
+  information: string
+  information_text: string
+  image: string | null
+  labels: number[]
+}
+
+export type location = {
+  id: number
+  sort: number | null
+  user_created: string
+  date_created: string
+  user_updated: string
+  date_updated: string
+  name: string
+  address: string
+  coordinates: {
+    type: string
+    coordinates: [number, number]
+  }
+  city: string
+  zip: string
+  state: string
+  phone: string | null
+  email: string | null
+  labels: number[]
+}
+
 export type DirectusSchema = {
   landing_page: landing_page[]
   links: link[]
@@ -83,6 +126,8 @@ export type DirectusSchema = {
   labels: label[]
   events_labels: events_labels[]
   landing_page_labels: landing_page_labels[]
+  footer: footer[]
+  locations: location[]
 }
 
 const portalConfig = getPortalConfig()

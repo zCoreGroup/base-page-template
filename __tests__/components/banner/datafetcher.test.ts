@@ -31,6 +31,7 @@ describe('BannerDataFetcher', () => {
       articles: [],
       events: [],
       labels: [],
+      footer: '',
     }
 
     const expectedBannerData: BannerData = {
@@ -70,6 +71,7 @@ describe('BannerDataFetcher', () => {
       articles: [],
       events: [],
       labels: [],
+      footer: '',
     }
 
     const expectedBannerData: BannerData = {
