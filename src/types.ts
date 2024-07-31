@@ -1,5 +1,6 @@
 export type LandingPageData = {
   banner: BannerData
+  breadcrumbs: any
   featuredLinks: FeaturedLinksData
   announcements: AnnouncementsData
   events: EventsData
@@ -15,6 +16,7 @@ export type LandingPageShort = {
   slug: string
   title: string
 }
+
 export type Announcement = {
   title: string
   body: string
@@ -75,6 +77,15 @@ export type FooterData = {
   linkIG: string
   linkYT: string
   baseMapImage: string
+}
+
+export interface BreadCrumbData {
+  links: BreadCrumb[]
+}
+
+export interface BreadCrumb {
+  text: string
+  link: string
 }
 
 export type BannerData = {

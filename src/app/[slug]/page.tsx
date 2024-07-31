@@ -9,6 +9,7 @@ import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
 import Services from '../../components/services/services'
 import { Container, Grid } from '@mui/material'
+import BreadCrumbs from '@/components/breadcrumbs/breadCrumbs'
 
 const fetcher = LandingPageDataFetcher.getInstance()
 
@@ -24,6 +25,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
       <Navbar data={data.navbar} />
       <div style={{ backgroundColor: '#ebebeb' }}>
         <Container>
+          <BreadCrumbs data={data.breadcrumbs} />
           <Banner data={data.banner} />
           <FeaturedLinks data={data.featuredLinks} />
         </Container>
