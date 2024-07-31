@@ -1,17 +1,18 @@
 import { DirectusDataFetcher, RawFooterLink } from '@/lib/directusdatafetcher'
 import { FooterLink } from '@/types'
-import { readItems } from '@directus/sdk'
+import { readItems, readSingleton } from '@directus/sdk'
 
 export type DefaultFooterContent = {
   quickLinks: FooterLink[]
   portalLinks: FooterLink[]
-  feedback: String
+  feedback: string
 }
 export default class DefaultFooterContentDataFetecher extends DirectusDataFetcher {
   async fetch(): Promise<DefaultFooterContent> {
     return {
       quickLinks: await this.getQuickLinks(),
       portalLinks: await this.getPortalLinks(),
+      feedback: await this.getFeedback(),
     } as DefaultFooterContent
   }
 
@@ -23,6 +24,11 @@ export default class DefaultFooterContentDataFetecher extends DirectusDataFetche
   async getPortalLinks(): Promise<FooterLink[]> {
     const rawLinks = await this.client.request(readItems('portal_links'))
     return this.mapRawLinksToFooterLink(rawLinks)
+  }
+
+  async getFeedback(): Promise<string> {
+    const rawFeedback = await this.client.request(readSingleton('feedback'))
+    return rawFeedback.feedback
   }
 
   private mapRawLinksToFooterLink(rawLinks: RawFooterLink[]): FooterLink[] {

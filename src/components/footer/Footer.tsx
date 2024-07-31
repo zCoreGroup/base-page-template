@@ -1,16 +1,24 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { Grid, Typography, Box, Link } from '@mui/material'
 import { Facebook, Instagram, YouTube } from '@mui/icons-material'
 import X from '@mui/icons-material/X' // Import X icon
 import { FooterData } from '@/types'
 import { content, contentTitle, footerContentStyle } from './style'
 import FooterLinks from './FooterLinks'
+import DOMPurify from 'dompurify'
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   const informationText = data.informationText.split('\n')
   const addressText = encodeURIComponent(data.streetAddress + ', ' + data.city + ', ' + data.state + ' ' + data.zip)
   const addressHref = `https://www.google.com/maps/search/?api=1&query=${addressText}`
   const currentYear = new Date().getFullYear().toString()
+
+  const [htmlContent, setHtmlContent] = useState<string>('')
+  useEffect(() => {
+    const safeFeedback = DOMPurify.sanitize(data.feedback)
+    setHtmlContent(safeFeedback)
+  }, [data])
 
   return (
     <Box sx={footerContentStyle}>
@@ -109,7 +117,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
                 Got Feedback
               </Typography>
               <br />
-              <Typography sx={content}>{data.feedback}</Typography>
+              <Typography sx={content} dangerouslySetInnerHTML={{ __html: htmlContent }} />
               <Typography sx={content}>&copy;{currentYear} All rights reserved, USSF Portal</Typography>
             </Box>
           </Box>

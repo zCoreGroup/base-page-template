@@ -125,6 +125,10 @@ export type RawFooterLink = {
   open_in_new: string
 }
 
+export type Feedback = {
+  feedback: string
+}
+
 export type DirectusSchema = {
   landing_page: landing_page[]
   links: link[]
@@ -137,6 +141,7 @@ export type DirectusSchema = {
   locations: location[]
   quick_links: RawFooterLink[]
   portal_links: RawFooterLink[]
+  feedback: Feedback
 }
 
 const portalConfig = getPortalConfig()

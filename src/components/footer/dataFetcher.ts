@@ -33,7 +33,7 @@ export default class FooterDataFetcher extends DirectusDataFetcher {
       baseMapImage: baseMapImage,
       quickLinks: footerLinks.quickLinks,
       guardianPortal: footerLinks.portalLinks,
-      feedback: 'Please send feedback friend',
+      feedback: footerLinks.feedback,
     }
   }
 
