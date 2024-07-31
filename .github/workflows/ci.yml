@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./portal
+        working-directory: .
 
     strategy:
       matrix:
