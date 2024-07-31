@@ -4,7 +4,7 @@ export const footerContentStyle = {
   paddingBottom: '1rem',
   padding: '20px',
   color: '#1b1c1d',
-  backgroundColor: '#e4e2e3',
+  backgroundColor: 'footer.main',
   letterSpacing: '0.5px',
   textTransform: 'uppercase',
   lineHeight: '16px',
