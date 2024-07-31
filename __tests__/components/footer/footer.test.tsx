@@ -3,6 +3,8 @@ import { getByRole, render } from '@testing-library/react'
 import Footer from '@/components/footer/Footer'
 import { FooterData } from '@/types'
 
+global.crypto.randomUUID = jest.fn().mockImplementation(() => 'mock-uuid-' + Math.random().toString(36).substring(2))
+
 describe('Footer', () => {
   const data: FooterData = {
     streetAddress: '1234 Elm street',

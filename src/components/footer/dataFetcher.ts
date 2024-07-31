@@ -1,5 +1,5 @@
-import { DirectusDataFetcher, footer, landing_page, location, RawFooterLink } from '@/lib/directusdatafetcher'
-import { FooterData, FooterLink } from '@/types'
+import { DirectusDataFetcher, footer, landing_page, location } from '@/lib/directusdatafetcher'
+import { FooterData } from '@/types'
 import { readItems } from '@directus/sdk'
 import DefaultFooterContentDataFetecher from './defaultFooterContentDataFetcher'
 
