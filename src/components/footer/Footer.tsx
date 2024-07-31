@@ -54,7 +54,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
                   {data.informationTitle}
                 </Typography>
                 {informationText.map((text) => (
-                  <Typography key={text} sx={content}>
+                  <Typography key={crypto.randomUUID()} sx={content}>
                     {text}
                   </Typography>
                 ))}
@@ -118,7 +118,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
               </Typography>
               <br />
               <Typography sx={content} dangerouslySetInnerHTML={{ __html: htmlContent }} />
-              <Typography sx={content}>&copy;{currentYear} All rights reserved, USSF Portal</Typography>
+              <Typography sx={content}>&copy;{currentYear} All rights reserved, USSF Guardian One</Typography>
             </Box>
           </Box>
         </Grid>

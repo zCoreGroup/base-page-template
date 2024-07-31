@@ -10,10 +10,17 @@ export default class FooterDataFetcher extends DirectusDataFetcher {
     this.defaultFooterContentFetcher = defaultFooterContentFetcher
   }
 
-  async fetch(landing_page: landing_page): Promise<FooterData> {
-    const footer = await this.getFooter(landing_page.footer)
+  async fetch(landing_page?: landing_page): Promise<FooterData> {
+    const defaultFooterData = await this.defaultFooterContentFetcher.fetch()
+
+    let footer
+    if (landing_page && landing_page.footer) {
+      footer = await this.getFooter(landing_page.footer)
+    } else {
+      footer = await this.getFooter(defaultFooterData.footerId)
+    }
+
     const location = await this.getLocation(footer.location)
-    const footerLinks = await this.defaultFooterContentFetcher.fetch()
 
     const baseMapImage = footer.image ? this.getFileUrl(footer.image) : ''
 
@@ -31,9 +38,9 @@ export default class FooterDataFetcher extends DirectusDataFetcher {
       linkIG: footer.instagram,
       linkYT: footer.youtube,
       baseMapImage: baseMapImage,
-      quickLinks: footerLinks.quickLinks,
-      guardianPortal: footerLinks.portalLinks,
-      feedback: footerLinks.feedback,
+      quickLinks: defaultFooterData.quickLinks,
+      guardianPortal: defaultFooterData.portalLinks,
+      feedback: defaultFooterData.feedback,
     }
   }
 

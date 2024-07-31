@@ -6,6 +6,7 @@ export type DefaultFooterContent = {
   quickLinks: FooterLink[]
   portalLinks: FooterLink[]
   feedback: string
+  footerId: string
 }
 export default class DefaultFooterContentDataFetecher extends DirectusDataFetcher {
   async fetch(): Promise<DefaultFooterContent> {
@@ -13,6 +14,7 @@ export default class DefaultFooterContentDataFetecher extends DirectusDataFetche
       quickLinks: await this.getQuickLinks(),
       portalLinks: await this.getPortalLinks(),
       feedback: await this.getFeedback(),
+      footerId: await this.getDefaultFooterId(),
     } as DefaultFooterContent
   }
 
@@ -29,6 +31,29 @@ export default class DefaultFooterContentDataFetecher extends DirectusDataFetche
   async getFeedback(): Promise<string> {
     const rawFeedback = await this.client.request(readSingleton('feedback'))
     return rawFeedback.feedback
+  }
+
+  async getDefaultFooterId(): Promise<string> {
+    const labelsQuery = await this.client.request(
+      readItems('labels', {
+        filter: {
+          name: {
+            _eq: 'Default',
+          },
+        },
+      })
+    )
+    const defaultLabel = labelsQuery[0]
+    const footerLabelsQuery = await this.client.request(
+      readItems('footer_labels', {
+        filter: {
+          labels_id: {
+            _eq: defaultLabel.id,
+          },
+        },
+      })
+    )
+    return footerLabelsQuery[0].footer_id
   }
 
   private mapRawLinksToFooterLink(rawLinks: RawFooterLink[]): FooterLink[] {
