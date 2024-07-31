@@ -1,13 +1,12 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles'
 import colors from '@/designtokens/colors'
 
-
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface Palette {
-    footer: Palette["primary"];
+    footer: Palette['primary']
   }
   interface PaletteOptions {
-    footer: PaletteOptions["primary"];
+    footer: PaletteOptions['primary']
   }
 }
 
@@ -40,8 +39,8 @@ const themeOptions: ThemeOptions = {
       secondary: colors.m3SysLightOnSurfaceVariant,
     },
     footer: {
-      main: colors.m3SysLightSurfaceContainerHighest 
-    }
+      main: colors.m3SysLightSurfaceContainerHighest,
+    },
   },
   typography: {
     fontFamily: 'LibreFranklin, IBM Plex Mono, Arial, sans-serif',
