@@ -1,6 +1,6 @@
 // components/FeaturedLinks.tsx
 import React from 'react'
-import { Grid, Typography, Box, Chip } from '@mui/material'
+import { Grid, Typography, Box, Button } from '@mui/material'
 import { FeaturedLinksData } from '@/types'
 import { containerStyles, title } from './styles'
 
@@ -12,14 +12,9 @@ const FeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
       </Typography>
       <Grid container sx={{ marginTop: '24px', justifyContent: 'center' }}>
         {data.links.map((link, index) => (
-          <Chip
-            label={link.name}
-            component='a'
-            href={link.url}
-            sx={{ marginRight: '12px', flexGrow: 0 }}
-            clickable
-            key={index}
-          />
+          <Button component='a' href={link.url} key={index} sx={{ marginRight: 2, marginTop: 2 }}>
+            {link.name}
+          </Button>
         ))}
       </Grid>
     </Box>
