@@ -24,7 +24,7 @@ export const colors = {
   m3SysLightOnErrorContainer: 'rgb(255, 255, 255)',
   m3SysLightOutline: 'rgb(116, 119, 124)',
   m3SysLightBackground: 'rgb(238, 238, 238)',
-  m3SysLightOnBackground: 'rgb(27, 28, 29)',
+  m3SysLightOnBackground: '#1b1c1d',
   m3SysLightSurface: 'rgb(251, 249, 250)',
   m3SysLightOnSurface: 'rgb(27, 28, 29)',
   m3SysLightSurfaceVariant: 'rgb(224, 227, 232)',

@@ -40,6 +40,7 @@ const themeOptions: ThemeOptions = {
     },
     footer: {
       main: colors.m3SysLightSurfaceContainerHighest,
+      dark: colors.m3SysLightOnBackground,
     },
   },
   typography: {
