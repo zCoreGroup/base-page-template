@@ -6,27 +6,25 @@ import Footer from '@/components/footer/Footer'
 import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
 import EventCard from '@/components/event-card/EventCard'
 import NewsCardSection, { NewsItem } from '@/components/news-card/NewsCardSection'
+import EventCardSection, { EventItem } from '@/components/event-card/EventCardSection'
 
 const fetcher = HomePageDataFetcher.getInstance()
 
 const Home = async () => {
   const data: HomePageData = await fetcher.fetch()
   const newsItems: NewsItem[] = [
-    { id: '1', title: 'title', description: 'desc', image: '' },
-    {
-      id: '2',
-      title: 'title',
-      description: 'desc',
-      image: '',
-    },
-    { id: '3', title: 'title', description: 'desc', image: '' },
-    {
-      id: '4',
-      title: 'title',
-      description: 'desc',
-      image: '',
-    },
-    { id: '5', title: 'title', description: 'desc', image: '' },
+    { id: '1', title: 'News 1', description: 'News desc 1', image: '' },
+    { id: '2', title: 'News 2', description: 'News desc 2', image: '' },
+    { id: '3', title: 'News 3', description: 'News desc 3', image: '' },
+    { id: '4', title: 'News 4', description: 'News desc 4', image: '' },
+    { id: '5', title: 'News 5', description: 'News desc 5', image: '' },
+  ]
+  const eventItems: EventItem[] = [
+    { id: '1', title: 'Event 1', description: 'Event desc 1', image: '' },
+    { id: '2', title: 'Event 2', description: 'Event desc 2', image: '' },
+    { id: '3', title: 'Event 3', description: 'Event desc 3', image: '' },
+    { id: '4', title: 'Event 4', description: 'Event desc 4', image: '' },
+    { id: '5', title: 'Event 5', description: 'Event desc 5', image: '' },
   ]
   return (
     <Box sx={{ backgroundColor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -39,10 +37,10 @@ const Home = async () => {
               <NewsCardSection newsItems={newsItems} minCardWidth={200} />
             </Grid>
             <Grid item xs={12} md={4}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <EventCard />
-                <EventCard />
-                <EventCard />
+              <Box sx={{ height: 600, pb: 10 }}>
+                {' '}
+                {/* Adjust this height as needed */}
+                <EventCardSection eventItems={eventItems} minCardHeight={200} />
               </Box>
             </Grid>
           </Grid>
