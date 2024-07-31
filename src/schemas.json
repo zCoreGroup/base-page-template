@@ -273,13 +273,17 @@
         "name": {
           "type": "string"
         },
+        "openInNew": {
+          "type": "boolean"
+        },
         "url": {
           "type": "string"
         }
       },
       "required": [
         "name",
-        "url"
+        "url",
+        "openInNew"
       ],
       "type": "object"
     },

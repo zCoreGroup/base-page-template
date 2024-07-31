@@ -1,11 +1,19 @@
-import { DirectusDataFetcher, footer, landing_page, location } from '@/lib/directusdatafetcher'
-import { FooterData } from '@/types'
+import { DirectusDataFetcher, footer, landing_page, location, RawFooterLink } from '@/lib/directusdatafetcher'
+import { FooterData, FooterLink } from '@/types'
 import { readItems } from '@directus/sdk'
+import DefaultFooterContentDataFetecher from './defaultFooterContentDataFetcher'
 
 export default class FooterDataFetcher extends DirectusDataFetcher {
+  private defaultFooterContentFetcher: DefaultFooterContentDataFetecher
+  constructor(defaultFooterContentFetcher: DefaultFooterContentDataFetecher) {
+    super()
+    this.defaultFooterContentFetcher = defaultFooterContentFetcher
+  }
+
   async fetch(landing_page: landing_page): Promise<FooterData> {
     const footer = await this.getFooter(landing_page.footer)
     const location = await this.getLocation(footer.location)
+    const footerLinks = await this.defaultFooterContentFetcher.fetch()
 
     const baseMapImage = footer.image ? this.getFileUrl(footer.image) : ''
 
@@ -23,26 +31,8 @@ export default class FooterDataFetcher extends DirectusDataFetcher {
       linkIG: footer.instagram,
       linkYT: footer.youtube,
       baseMapImage: baseMapImage,
-      quickLinks: [
-        {
-          name: 'Test1',
-          url: 'https://google.com',
-        },
-        {
-          name: 'Test2',
-          url: 'https://google.com',
-        },
-      ],
-      guardianPortal: [
-        {
-          name: 'Test1',
-          url: 'https://yahoo.com',
-        },
-        {
-          name: 'Tes2',
-          url: 'https://google.com',
-        },
-      ],
+      quickLinks: footerLinks.quickLinks,
+      guardianPortal: footerLinks.portalLinks,
       feedback: 'Please send feedback friend',
     }
   }

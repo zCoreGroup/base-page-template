@@ -5,16 +5,56 @@ import { FooterLink } from '@/types'
 
 describe('FooterLinks', () => {
   const links: FooterLink[] = [
-    { name: 'Link 1', url: 'https://example.com/1' },
-    { name: 'Link 2', url: 'https://example.com/2' },
-    { name: 'Link 3', url: 'https://example.com/3' },
-    { name: 'Link 4', url: 'https://example.com/4' },
-    { name: 'Link 5', url: 'https://example.com/5' },
-    { name: 'Link 6', url: 'https://example.com/6' },
-    { name: 'Link 7', url: 'https://example.com/7' },
-    { name: 'Link 8', url: 'https://example.com/8' },
-    { name: 'Link 9', url: 'https://example.com/9' },
-    { name: 'Link 10', url: 'https://example.com/10' },
+    {
+      name: 'Link 1',
+      url: 'https://example.com/1',
+      openInNew: false,
+    },
+    {
+      name: 'Link 2',
+      url: 'https://example.com/2',
+      openInNew: false,
+    },
+    {
+      name: 'Link 3',
+      url: 'https://example.com/3',
+      openInNew: false,
+    },
+    {
+      name: 'Link 4',
+      url: 'https://example.com/4',
+      openInNew: false,
+    },
+    {
+      name: 'Link 5',
+      url: 'https://example.com/5',
+      openInNew: false,
+    },
+    {
+      name: 'Link 6',
+      url: 'https://example.com/6',
+      openInNew: false,
+    },
+    {
+      name: 'Link 7',
+      url: 'https://example.com/7',
+      openInNew: false,
+    },
+    {
+      name: 'Link 8',
+      url: 'https://example.com/8',
+      openInNew: false,
+    },
+    {
+      name: 'Link 9',
+      url: 'https://example.com/9',
+      openInNew: false,
+    },
+    {
+      name: 'Link 10',
+      url: 'https://example.com/10',
+      openInNew: false,
+    },
   ]
 
   it('renders the title', () => {

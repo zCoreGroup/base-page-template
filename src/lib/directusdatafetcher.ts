@@ -118,6 +118,13 @@ export type location = {
   labels: number[]
 }
 
+export type RawFooterLink = {
+  id: string
+  name: string
+  url: string
+  open_in_new: string
+}
+
 export type DirectusSchema = {
   landing_page: landing_page[]
   links: link[]
@@ -128,6 +135,8 @@ export type DirectusSchema = {
   landing_page_labels: landing_page_labels[]
   footer: footer[]
   locations: location[]
+  quick_links: RawFooterLink[]
+  portal_links: RawFooterLink[]
 }
 
 const portalConfig = getPortalConfig()

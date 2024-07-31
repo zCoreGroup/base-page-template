@@ -22,7 +22,7 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => {
         <Grid item xs={6}>
           {column1.map((link) => (
             <Typography key={link.url} style={content}>
-              <Link href={link.url} target='_blank' color='inherit' underline='none'>
+              <Link href={link.url} target={link.openInNew ? '_blank' : '_self'} color='inherit' underline='none'>
                 {link.name}
               </Link>
             </Typography>
@@ -30,8 +30,8 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => {
         </Grid>
         <Grid item xs={6}>
           {column2.map((link) => (
-            <Typography key={link.url}>
-              <Link href={link.url} target='_blank' color='inherit' underline='none'>
+            <Typography key={link.url} style={content}>
+              <Link href={link.url} target={link.openInNew ? '_blank' : '_self'} color='inherit' underline='none'>
                 {link.name}
               </Link>
             </Typography>

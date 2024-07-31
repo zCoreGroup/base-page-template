@@ -65,6 +65,7 @@ export type FeaturedLinksData = {
 export type FooterLink = {
   name: string
   url: string
+  openInNew: boolean
 }
 
 export type FooterData = {
