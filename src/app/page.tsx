@@ -27,7 +27,10 @@ const Home = async () => {
     { id: '5', title: 'Event 5', description: 'Event desc 5', image: '' },
   ]
   return (
-    <Box sx={{ backgroundColor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <Box
+      data-testid={'home-page-main-box'}
+      sx={{ backgroundColor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+    >
       <Navbar data={data.navbar} />
       <Box sx={{ flex: 1, py: 4, backgroundColor: 'white' }}>
         <Container maxWidth={'xl'}>
@@ -38,8 +41,6 @@ const Home = async () => {
             </Grid>
             <Grid item xs={12} md={4}>
               <Box sx={{ height: 600, pb: 10 }}>
-                {' '}
-                {/* Adjust this height as needed */}
                 <EventCardSection eventItems={eventItems} minCardHeight={200} />
               </Box>
             </Grid>

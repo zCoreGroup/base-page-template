@@ -3,6 +3,7 @@ import NavbarDataFetcher from '@/components/navbar/datafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData } from '@/types'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
+import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 
 export default class HomePageDataFetcher extends DirectusDataFetcher {
   static instance: HomePageDataFetcher
@@ -64,7 +65,8 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
     if (HomePageDataFetcher.instance == undefined) {
       const navbarFetcher = new NavbarDataFetcher()
       const featuredLinksFetcher = new FeaturedLinksDataFetcher()
-      const footerFetcher = new FooterDataFetcher()
+      const defaultFooterContentFetcher = new DefaultFooterContentDataFetcher()
+      const footerFetcher = new FooterDataFetcher(defaultFooterContentFetcher)
 
       HomePageDataFetcher.instance = new HomePageDataFetcher(navbarFetcher, featuredLinksFetcher, footerFetcher)
     }

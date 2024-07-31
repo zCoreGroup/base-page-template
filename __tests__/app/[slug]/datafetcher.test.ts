@@ -5,19 +5,22 @@ import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
 import AnnouncementsDataFetcher from '../../../src/components/announcements/datafetcher'
 import EventsDataFetcher from '../../../src/components/events/datafetcher'
 import { LandingPageQuery, LandingPageData } from '@/types'
+import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 
 jest.mock('../../../src/components/navbar/datafetcher')
 jest.mock('../../../src/components/banner/datafetcher')
-jest.mock('@/components/footer/dataFetcher')
-jest.mock('@/components/featured-links/dataFetcher')
+jest.mock('../../../src/components/footer/dataFetcher')
+jest.mock('../../../src/components/footer/defaultFooterContentDataFetcher')
+jest.mock('../../../src/components/featured-links/dataFetcher')
 jest.mock('../../../src/components/announcements/datafetcher')
 jest.mock('../../../src/components/events/datafetcher')
 
 // Mock instances of the data fetchers
 const mockNavbarDataFetcher = new NavbarDataFetcher()
 const mockBannerDataFetcher = new BannerDataFetcher()
-const mockFooterDataFetcher = new FooterDataFetcher()
+const mockDefaultFooterContentDataFetcher = new DefaultFooterContentDataFetcher()
+const mockFooterDataFetcher = new FooterDataFetcher(mockDefaultFooterContentDataFetcher)
 const mockFeaturedLinksDataFetcher = new FeaturedLinksDataFetcher()
 const mockAnnouncementsDataFetcher = new AnnouncementsDataFetcher()
 const mockEventsDataFetcher = new EventsDataFetcher()
@@ -53,6 +56,9 @@ mockFooterDataFetcher.fetch = jest.fn().mockResolvedValue({
   linkIG: '',
   linkYT: '',
   baseMapImage: '',
+  quickLinks: [],
+  guardianPortal: [],
+  feedback: '',
 })
 mockFeaturedLinksDataFetcher.fetch = jest.fn().mockResolvedValue({ links: [] })
 mockAnnouncementsDataFetcher.fetch = jest.fn().mockResolvedValue({ articles: [] })
@@ -122,6 +128,9 @@ describe('LandingPageDataFetcher', () => {
         linkIG: '',
         linkYT: '',
         baseMapImage: '',
+        quickLinks: [],
+        guardianPortal: [],
+        feedback: '',
       },
     } as LandingPageData)
 

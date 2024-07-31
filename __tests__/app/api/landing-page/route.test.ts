@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 
-jest.mock('@/app/[slug]/dataFetcher')
+jest.mock('../../../../src/app/[slug]/dataFetcher')
 jest.mock('next/server', () => ({
   NextRequest: class {
     constructor(public url: string) {}

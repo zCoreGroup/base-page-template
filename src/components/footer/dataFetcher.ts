@@ -1,10 +1,25 @@
 import { DirectusDataFetcher, footer, landing_page, location } from '@/lib/directusdatafetcher'
 import { FooterData } from '@/types'
 import { readItems } from '@directus/sdk'
+import DefaultFooterContentDataFetcher from './defaultFooterContentDataFetcher'
 
 export default class FooterDataFetcher extends DirectusDataFetcher {
-  async fetch(landing_page: landing_page): Promise<FooterData> {
-    const footer = await this.getFooter(landing_page.footer)
+  private defaultFooterContentFetcher: DefaultFooterContentDataFetcher
+  constructor(defaultFooterContentFetcher: DefaultFooterContentDataFetcher) {
+    super()
+    this.defaultFooterContentFetcher = defaultFooterContentFetcher
+  }
+
+  async fetch(landing_page?: landing_page): Promise<FooterData> {
+    const defaultFooterData = await this.defaultFooterContentFetcher.fetch()
+
+    let footer
+    if (landing_page && landing_page.footer) {
+      footer = await this.getFooter(landing_page.footer)
+    } else {
+      footer = await this.getFooter(defaultFooterData.footerId)
+    }
+
     const location = await this.getLocation(footer.location)
 
     const baseMapImage = footer.image ? this.getFileUrl(footer.image) : ''
@@ -23,6 +38,9 @@ export default class FooterDataFetcher extends DirectusDataFetcher {
       linkIG: footer.instagram,
       linkYT: footer.youtube,
       baseMapImage: baseMapImage,
+      quickLinks: defaultFooterData.quickLinks,
+      guardianPortal: defaultFooterData.portalLinks,
+      feedback: defaultFooterData.feedback,
     }
   }
 

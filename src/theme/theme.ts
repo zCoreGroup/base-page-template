@@ -1,6 +1,15 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles'
 import colors from '@/design-tokens/colors'
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    footer: Palette['primary']
+  }
+  interface PaletteOptions {
+    footer: PaletteOptions['primary']
+  }
+}
+
 const themeOptions: ThemeOptions = {
   palette: {
     primary: {
@@ -28,6 +37,10 @@ const themeOptions: ThemeOptions = {
     text: {
       primary: colors.m3SysLightOnSurface,
       secondary: colors.m3SysLightOnSurfaceVariant,
+    },
+    footer: {
+      main: colors.m3SysLightSurfaceContainerHighest,
+      dark: colors.m3SysLightOnBackground,
     },
   },
   typography: {

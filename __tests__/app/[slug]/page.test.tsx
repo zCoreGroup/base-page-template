@@ -10,7 +10,7 @@ import {
   FooterData,
   LandingPageData,
   NavbarData,
-} from '../../../src/types'
+} from '@/types'
 
 // Mock the entire LandingPage component
 jest.mock('../../../src/app/[slug]/page', () => {
@@ -18,7 +18,7 @@ jest.mock('../../../src/app/[slug]/page', () => {
 })
 
 // Mock the LandingPageDataFetcher
-jest.mock('@/app/[slug]/dataFetcher', () => {
+jest.mock('../../../src/app/[slug]/dataFetcher', () => {
   return {
     getInstance: jest.fn(() => ({
       fetch: jest.fn(),

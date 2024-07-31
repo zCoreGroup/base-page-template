@@ -1,13 +1,24 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { Grid, Typography, Box, Link } from '@mui/material'
-import { Facebook, X, Instagram, YouTube } from '@mui/icons-material'
+import { Facebook, Instagram, YouTube } from '@mui/icons-material'
+import X from '@mui/icons-material/X' // Import X icon
 import { FooterData } from '@/types'
 import { content, contentTitle, footerContentStyle } from './style'
+import FooterLinks from './FooterLinks'
+import DOMPurify from 'dompurify'
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
   const informationText = data.informationText.split('\n')
   const addressText = encodeURIComponent(data.streetAddress + ', ' + data.city + ', ' + data.state + ' ' + data.zip)
   const addressHref = `https://www.google.com/maps/search/?api=1&query=${addressText}`
+  const currentYear = new Date().getFullYear().toString()
+
+  const [htmlContent, setHtmlContent] = useState<string>('')
+  useEffect(() => {
+    const safeFeedback = DOMPurify.sanitize(data.feedback)
+    setHtmlContent(safeFeedback)
+  }, [data])
 
   return (
     <Box sx={footerContentStyle}>
@@ -43,7 +54,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
                   {data.informationTitle}
                 </Typography>
                 {informationText.map((text) => (
-                  <Typography key={text} sx={content}>
+                  <Typography key={crypto.randomUUID()} sx={content}>
                     {text}
                   </Typography>
                 ))}
@@ -52,33 +63,62 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} sm={6} md={6}>
+        <Grid item xs={12} sm={6} md={3}>
           <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
             <Typography variant='h6' gutterBottom sx={contentTitle}>
               Base Map
             </Typography>
-            <Box component='img' src={data.baseMapImage} width='50%' height='auto' alt='Base Map' />
+            <Box component='img' src={data.baseMapImage} width='100%' height='auto' alt='Base Map' />
           </Box>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
-          <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
-            <Typography variant='h6' gutterBottom sx={contentTitle}>
-              Get Connected
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <Link href={data.linkFB} target='_blank' color='inherit'>
-                <Facebook />
-              </Link>
-              <Link href={data.linkX} target='_blank' color='inherit'>
-                <X />
-              </Link>
-              <Link href={data.linkIG} target='_blank' color='inherit'>
-                <Instagram />
-              </Link>
-              <Link href={data.linkYT} target='_blank' color='inherit'>
-                <YouTube />
-              </Link>
+          <Box
+            display='flex'
+            flexDirection='column'
+            alignItems='flex-start'
+            height='100%'
+            gap={{ xs: 2, sm: 3, md: 6 }}
+          >
+            <FooterLinks title='Quick Links' links={data.quickLinks} />
+            <FooterLinks title='Guardian Portal' links={data.guardianPortal} />
+          </Box>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={3}>
+          <Box
+            display='flex'
+            flexDirection='column'
+            alignItems='flex-start'
+            height='100%'
+            gap={{ xs: 2, sm: 3, md: 6 }}
+          >
+            <Box display='flex' flexDirection='column' alignItems='flex-start'>
+              <Typography variant='h6' gutterBottom sx={contentTitle}>
+                Get Connected
+              </Typography>
+              <Box sx={{ display: 'flex', gap: 3 }}>
+                <Link href={data.linkFB} target='_blank' color='inherit'>
+                  <Facebook />
+                </Link>
+                <Link href={data.linkX} target='_blank' color='inherit'>
+                  <X />
+                </Link>
+                <Link href={data.linkIG} target='_blank' color='inherit'>
+                  <Instagram />
+                </Link>
+                <Link href={data.linkYT} target='_blank' color='inherit'>
+                  <YouTube />
+                </Link>
+              </Box>
+            </Box>
+            <Box display='flex' flexDirection='column' alignItems='flex-start'>
+              <Typography variant='h6' gutterBottom sx={contentTitle}>
+                Got Feedback
+              </Typography>
+              <br />
+              <Typography sx={content} dangerouslySetInnerHTML={{ __html: htmlContent }} />
+              <Typography sx={content}>&copy;{currentYear} All rights reserved, USSF Guardian One</Typography>
             </Box>
           </Box>
         </Grid>
