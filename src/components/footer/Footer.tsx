@@ -14,7 +14,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
 
   return (
     <Box sx={footerContentStyle}>
-      <Grid container spacing={4} direction='row' justifyContent='center' alignItems='flex-start' maxWidth='90%'>
+      <Grid container spacing={4} direction='row' justifyContent='center' alignItems='flex-start'>
         <Grid item xs={12} sm={6} md={3}>
           <Grid container direction='column' spacing={2}>
             <Grid item>

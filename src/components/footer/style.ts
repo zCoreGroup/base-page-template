@@ -1,8 +1,11 @@
+import spacing from '@/designtokens/spacing'
+
 export const footerContentStyle = {
   width: '100%',
-  paddingTop: '1rem',
-  paddingBottom: '1rem',
-  padding: '20px',
+  paddingTop: spacing.padding.l,
+  paddingBottom: spacing.padding.l,
+  paddingRight: spacing.padding.xxl,
+  paddingLeft: spacing.padding.xxl,
   color: '#1b1c1d',
   backgroundColor: 'footer.main',
   letterSpacing: '0.5px',
