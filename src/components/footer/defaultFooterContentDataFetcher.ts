@@ -56,7 +56,7 @@ export default class DefaultFooterContentDataFetecher extends DirectusDataFetche
     return footerLabelsQuery[0].footer_id
   }
 
-  private mapRawLinksToFooterLink(rawLinks: RawFooterLink[]): FooterLink[] {
+  public mapRawLinksToFooterLink(rawLinks: RawFooterLink[]): FooterLink[] {
     return rawLinks.map(
       (rawLink: RawFooterLink) =>
         ({
