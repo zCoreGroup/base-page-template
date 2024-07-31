@@ -201,6 +201,15 @@
         "email": {
           "type": "string"
         },
+        "feedback": {
+          "type": "string"
+        },
+        "guardianPortal": {
+          "items": {
+            "$ref": "#/components/schemas/FooterLink"
+          },
+          "type": "array"
+        },
         "informationText": {
           "type": "string"
         },
@@ -221,6 +230,12 @@
         },
         "phone": {
           "type": "string"
+        },
+        "quickLinks": {
+          "items": {
+            "$ref": "#/components/schemas/FooterLink"
+          },
+          "type": "array"
         },
         "state": {
           "type": "string"
@@ -245,7 +260,26 @@
         "linkX",
         "linkIG",
         "linkYT",
-        "baseMapImage"
+        "baseMapImage",
+        "quickLinks",
+        "guardianPortal",
+        "feedback"
+      ],
+      "type": "object"
+    },
+    "FooterLink": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url"
       ],
       "type": "object"
     },
