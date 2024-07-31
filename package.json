@@ -31,7 +31,7 @@
     "@fontsource/ibm-plex-mono": "^5.0.13",
     "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.15.20",
-    "@mui/material": "^5.16.0",
+    "@mui/material": "^5.16.6",
     "@testing-library/dom": "^10.2.0",
     "@types/dompurify": "^3.0.5",
     "@types/jest": "^29.5.12",
