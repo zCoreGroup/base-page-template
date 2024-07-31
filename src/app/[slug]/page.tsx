@@ -5,7 +5,7 @@ import Banner from '../../components/banner/banner'
 import FeaturedLinks from '@/components/featuredlinks/featuredlinks'
 import Announcements from '@/components/announcements/announcements'
 import Events from '@/components/events/events'
-import Footer from '../../components/footer/footer'
+import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
 import Services from '../../components/services/services'
 import { Container, Grid } from '@mui/material'
@@ -39,9 +39,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
           <Events data={data.events} />
         </Container>
       </div>
-      <Container style={{ backgroundColor: 'black' }}>
-        <Footer data={data.footer} />
-      </Container>
+      <Footer data={data.footer} />
     </div>
   )
 }
