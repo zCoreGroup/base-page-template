@@ -7,6 +7,8 @@ import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
 import NewsCardSection, { NewsItem } from '@/components/news-card/NewsCardSection'
 import EventCardSection, { EventItem } from '@/components/event-card/EventCardSection'
 
+export const dynamic = 'force-dynamic'
+
 const fetcher = HomePageDataFetcher.getInstance()
 
 const Home = async () => {
