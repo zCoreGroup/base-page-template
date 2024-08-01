@@ -9,7 +9,7 @@ import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
 import Services from '../../components/services/services'
 import { Container, Grid } from '@mui/material'
-import BreadCrumbs from '@/components/breadcrumbs/breadCrumbs'
+import BreadCrumbs from '@/components/breadcrumbs/breadCrumb'
 
 const fetcher = LandingPageDataFetcher.getInstance()
 

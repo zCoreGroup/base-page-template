@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import Breadcrumbs from '@/components/breadcrumbs/breadCrumbs'
+import Breadcrumbs from '@/components/breadcrumbs/breadCrumb'
 import { BreadCrumb, BreadCrumbData } from '@/types'
 
 describe('Breadcrumbs', () => {
