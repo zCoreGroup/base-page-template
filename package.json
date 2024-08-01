@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build-prep": "cp .env.$NODE_ENV .env",
+    "build-prep": "cp .env.$PIPELINE_ENV .env",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix .",
