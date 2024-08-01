@@ -1,14 +1,14 @@
 import { LandingPageData, LandingPageQuery, LandingPageShort } from '../../types'
-import { FooterQuery } from '@/types'
 import NavbarDataFetcher from '@/components/navbar/datafetcher'
 import BannerDataFetcher from '@/components/banner/datafetcher'
-import FooterDataFetcher from '@/components/footer/datafetcher'
+import FooterDataFetcher from '@/components/footer/dataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher'
 import { DirectusDataFetcher, landing_page } from '@/lib/directusdatafetcher'
 import { readItems } from '@directus/sdk'
 import { DuplicateLandingPage, LandingPageNotFound } from '@/lib/errors'
 import AnnouncementsDataFetcher from '@/components/announcements/datafetcher'
 import EventsDataFetcher from '@/components/events/datafetcher'
+import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
   static instance: LandingPageDataFetcher
@@ -39,7 +39,6 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
   async fetch(query: LandingPageQuery): Promise<LandingPageData> {
     const landingPage = await this.findLandingPageBySlug(query.slug)
-    const footerQuery = { landingPageId: query.slug } as FooterQuery
 
     const [navbarData, bannerData, featuredLinksData, announcementsData, eventsData, footerData] = await Promise.all([
       this.navbarFetcher.fetch(landingPage),
@@ -47,7 +46,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
       this.featuredLinksFetcher.fetch(landingPage),
       this.announcementsFetcher.fetch(landingPage),
       this.eventsFetcher.fetch(landingPage),
-      this.footerFetcher.fetch(footerQuery),
+      this.footerFetcher.fetch(landingPage),
     ])
 
     return {
@@ -95,7 +94,8 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
     if (LandingPageDataFetcher.instance === undefined) {
       const navbarFetcher = new NavbarDataFetcher()
       const bannerFetcher = new BannerDataFetcher()
-      const footerFetcher = new FooterDataFetcher()
+      const defaultFooterContentFetcher = new DefaultFooterContentDataFetecher()
+      const footerFetcher = new FooterDataFetcher(defaultFooterContentFetcher)
       const featuredLinksFetcher = new FeaturedLinksDataFetcher()
       const announcementsFetcher = new AnnouncementsDataFetcher()
       const eventsFetcher = new EventsDataFetcher()
