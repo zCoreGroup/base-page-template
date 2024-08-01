@@ -33,16 +33,3 @@ export default class BreadCrumbDataFetcher extends DirectusDataFetcher {
     return result
   }
 }
-//
-//       private async findLinksByIds(ids: number[]): Promise<link[]> {
-//         const result = await this.client.request(readItems('links', {
-//           filter: {
-//             id: {
-//               _in: ids
-//             }
-//           }
-//         }));
-
-//         return result;
-//       }
-//     }
