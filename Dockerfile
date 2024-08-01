@@ -46,4 +46,4 @@ EXPOSE 3000
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
-CMD ["-r","./startup/index.js", "node_modules/.bin/next", "start"]
+CMD ["yarn", "start"]
