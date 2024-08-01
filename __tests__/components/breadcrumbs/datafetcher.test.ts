@@ -51,7 +51,7 @@ describe('BreadCrumbDataFetcher', () => {
         labels: [],
         footer: '',
       }
- 
+
       const mockResult: landing_page[] = [
         { ...query, slug: 'home', title: 'Home' },
         { ...query, slug: 'Vanderberg', title: 'Vanderberg' },

@@ -1,5 +1,5 @@
 import { DirectusDataFetcher, landing_page } from '@/lib/directusdatafetcher'
-import { BreadCrumb, BreadCrumbData } from '@/types' 
+import { BreadCrumb, BreadCrumbData } from '@/types'
 import { readItems } from '@directus/sdk'
 
 export default class BreadCrumbDataFetcher extends DirectusDataFetcher {
