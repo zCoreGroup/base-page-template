@@ -4,7 +4,6 @@ import { HomePageData } from '@/types'
 import { Box, Container, Grid } from '@mui/material'
 import Footer from '@/components/footer/Footer'
 import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
-import EventCard from '@/components/event-card/EventCard'
 import NewsCardSection, { NewsItem } from '@/components/news-card/NewsCardSection'
 import EventCardSection, { EventItem } from '@/components/event-card/EventCardSection'
 

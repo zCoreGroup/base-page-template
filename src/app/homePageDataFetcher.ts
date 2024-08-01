@@ -48,17 +48,29 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
       vision:
         'Unconstrained space launch and test event capacity from the Department of the Air Force’s base of choice',
     }
-    const [navbarData, featuredLinksData, footerData] = await Promise.all([
-      this.navbarFetcher.fetchWelcomePageNavbar(),
-      this.featuredLinksFetcher.fetch(landingPage),
-      this.footerFetcher.fetch(landingPage),
-    ])
+    try {
+      const [navbarData, featuredLinksData, footerData] = await Promise.all([
+        this.fetchWithTimeout(this.navbarFetcher.fetchWelcomePageNavbar(), 5000),
+        this.fetchWithTimeout(this.featuredLinksFetcher.fetch(landingPage), 5000),
+        this.fetchWithTimeout(this.footerFetcher.fetch(landingPage), 5000),
+      ])
 
-    return {
-      navbar: navbarData,
-      featuredLinks: featuredLinksData,
-      footer: footerData,
-    } as HomePageData
+      return {
+        navbar: navbarData,
+        featuredLinks: featuredLinksData,
+        footer: footerData,
+      } as HomePageData
+    } catch (error) {
+      console.error('Error fetching home page data', error)
+      throw error
+    }
+  }
+
+  private async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number) {
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
+    )
+    return Promise.race([promiseFunc, timeoutPromise])
   }
 
   static getInstance(): HomePageDataFetcher {
