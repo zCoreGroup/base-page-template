@@ -9,6 +9,7 @@ import { readItems } from '@directus/sdk'
 import { DuplicateLandingPage, LandingPageNotFound } from '@/lib/errors'
 import AnnouncementsDataFetcher from '@/components/announcements/datafetcher'
 import EventsDataFetcher from '@/components/events/datafetcher'
+import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
   static instance: LandingPageDataFetcher
@@ -101,7 +102,8 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
       const navbarFetcher = new NavbarDataFetcher()
       const breadcrumbFetcher = new BreadCrumbDataFetcher()
       const bannerFetcher = new BannerDataFetcher()
-      const footerFetcher = new FooterDataFetcher()
+      const defaultFooterContentFetcher = new DefaultFooterContentDataFetecher()
+      const footerFetcher = new FooterDataFetcher(defaultFooterContentFetcher)
       const featuredLinksFetcher = new FeaturedLinksDataFetcher()
       const announcementsFetcher = new AnnouncementsDataFetcher()
       const eventsFetcher = new EventsDataFetcher()

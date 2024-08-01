@@ -8,10 +8,12 @@ import EventsDataFetcher from '../../../src/components/events/datafetcher'
 import BreadCrumbDataFetcher from '../../../src/components/breadcrumbs/datafetcher'
 
 import { LandingPageQuery, LandingPageData } from '../../../src/types'
+import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
 
 jest.mock('../../../src/components/navbar/datafetcher')
 jest.mock('../../../src/components/banner/datafetcher')
 jest.mock('../../../src/components/footer/dataFetcher')
+jest.mock('../../../src/components/footer/defaultFooterContentDataFetcher')
 jest.mock('../../../src/components/featuredlinks/datafetcher')
 jest.mock('../../../src/components/announcements/datafetcher')
 jest.mock('../../../src/components/events/datafetcher')
@@ -20,7 +22,8 @@ jest.mock('../../../src/components/events/datafetcher')
 const mockNavbarDataFetcher = new NavbarDataFetcher()
 const mockBreadDataFetcher = new BreadCrumbDataFetcher()
 const mockBannerDataFetcher = new BannerDataFetcher()
-const mockFooterDataFetcher = new FooterDataFetcher()
+const mockDefaultFooterContentDataFetecher = new DefaultFooterContentDataFetecher()
+const mockFooterDataFetcher = new FooterDataFetcher(mockDefaultFooterContentDataFetecher)
 const mockFeaturedLinksDataFetcher = new FeaturedLinksDataFetcher()
 const mockAnnouncementsDataFetcher = new AnnouncementsDataFetcher()
 const mockEventsDataFetcher = new EventsDataFetcher()
@@ -60,6 +63,9 @@ mockFooterDataFetcher.fetch = jest.fn().mockResolvedValue({
   linkIG: '',
   linkYT: '',
   baseMapImage: '',
+  quickLinks: [],
+  guardianPortal: [],
+  feedback: '',
 })
 mockFeaturedLinksDataFetcher.fetch = jest.fn().mockResolvedValue({ links: [] })
 mockAnnouncementsDataFetcher.fetch = jest.fn().mockResolvedValue({ articles: [] })
@@ -133,6 +139,9 @@ describe('LandingPageDataFetcher', () => {
         linkIG: '',
         linkYT: '',
         baseMapImage: '',
+        quickLinks: [],
+        guardianPortal: [],
+        feedback: '',
       },
     } as LandingPageData)
 

@@ -63,6 +63,13 @@ export type FeaturedLink = {
 export type FeaturedLinksData = {
   links: FeaturedLink[]
 }
+
+export type FooterLink = {
+  name: string
+  url: string
+  openInNew: boolean
+}
+
 export type FooterData = {
   streetAddress: string
   city: string
@@ -77,6 +84,9 @@ export type FooterData = {
   linkIG: string
   linkYT: string
   baseMapImage: string
+  quickLinks: FooterLink[]
+  guardianPortal: FooterLink[]
+  feedback: string
 }
 
 export interface BreadCrumbData {

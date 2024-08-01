@@ -3,6 +3,14 @@
 
 echo '🏗️👷 Styling, testing and building your project before committing'
 
+# Build swagger UI schema
+yarn generate:schema ||
+  (
+    echo 'Swagger schema generation failed.'
+    false
+  )
+git add src/schemas.json
+
 # Check Prettier standards
 yarn run check-format ||
   (
