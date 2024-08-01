@@ -1,8 +1,9 @@
 export const container = {
   display: 'flex',
   alignItems: 'center',
+  textTransform: 'capitalize'
 }
-
+ 
 export const link = {
   width: 'auto',
   height: '24px',

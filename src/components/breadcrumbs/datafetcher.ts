@@ -1,6 +1,5 @@
 import { DirectusDataFetcher, landing_page } from '@/lib/directusdatafetcher'
-import { BreadCrumb, BreadCrumbData } from '@/types'
-import { capitalizeFirstLetter } from '@/lib/helpers/helpers'
+import { BreadCrumb, BreadCrumbData } from '@/types' 
 import { readItems } from '@directus/sdk'
 
 export default class BreadCrumbDataFetcher extends DirectusDataFetcher {
@@ -9,7 +8,7 @@ export default class BreadCrumbDataFetcher extends DirectusDataFetcher {
 
     const links = rawBreadCrumbs.map((rawBreadCrumb: { slug: string }) => {
       return {
-        text: capitalizeFirstLetter(rawBreadCrumb.slug),
+        text: rawBreadCrumb.slug,
         link: rawBreadCrumb.slug || '#',
       } as BreadCrumb
     })
