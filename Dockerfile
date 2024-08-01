@@ -2,7 +2,7 @@
 
 FROM registry1.dso.mil/ironbank/opensource/nodejs/debian/nodejs:20.16.0 AS builder
 
-ARG ENV production
+ARG ENV=development
 
 WORKDIR /app
 
