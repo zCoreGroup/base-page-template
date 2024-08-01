@@ -5,6 +5,8 @@ import FooterDataFetcher from '../../../src/components/footer/dataFetcher'
 import FeaturedLinksDataFetcher from '../../../src/components/featuredlinks/datafetcher'
 import AnnouncementsDataFetcher from '../../../src/components/announcements/datafetcher'
 import EventsDataFetcher from '../../../src/components/events/datafetcher'
+import BreadCrumbDataFetcher from '../../../src/components/breadcrumbs/datafetcher'
+
 import { LandingPageQuery, LandingPageData } from '../../../src/types'
 import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
 
@@ -18,6 +20,7 @@ jest.mock('../../../src/components/events/datafetcher')
 
 // Mock instances of the data fetchers
 const mockNavbarDataFetcher = new NavbarDataFetcher()
+const mockBreadDataFetcher = new BreadCrumbDataFetcher()
 const mockBannerDataFetcher = new BannerDataFetcher()
 const mockDefaultFooterContentDataFetecher = new DefaultFooterContentDataFetecher()
 const mockFooterDataFetcher = new FooterDataFetcher(mockDefaultFooterContentDataFetecher)
@@ -25,7 +28,6 @@ const mockFeaturedLinksDataFetcher = new FeaturedLinksDataFetcher()
 const mockAnnouncementsDataFetcher = new AnnouncementsDataFetcher()
 const mockEventsDataFetcher = new EventsDataFetcher()
 
-// Mock methods for each data fetcher
 mockNavbarDataFetcher.fetch = jest.fn().mockResolvedValue({
   leftLinks: [],
   rightLinks: [],
@@ -34,6 +36,11 @@ mockNavbarDataFetcher.fetch = jest.fn().mockResolvedValue({
   notificationsCount: 0,
   user: { name: '', avatarUrl: '' },
 })
+
+mockBreadDataFetcher.fetch = jest.fn().mockResolvedValue({
+  links: [],
+})
+
 mockBannerDataFetcher.fetch = jest.fn().mockResolvedValue({
   logoSrc: '',
   logoAlt: '',
@@ -70,6 +77,7 @@ describe('LandingPageDataFetcher', () => {
   beforeEach(() => {
     fetcher = new LandingPageDataFetcher(
       mockNavbarDataFetcher,
+      mockBreadDataFetcher,
       mockBannerDataFetcher,
       mockFeaturedLinksDataFetcher,
       mockAnnouncementsDataFetcher,
@@ -103,6 +111,9 @@ describe('LandingPageDataFetcher', () => {
         notificationsCount: 0,
         user: { name: '', avatarUrl: '' },
       },
+      breadcrumbs: {
+        links: [],
+      },
       banner: {
         logoSrc: '',
         logoAlt: '',
@@ -135,6 +146,10 @@ describe('LandingPageDataFetcher', () => {
     } as LandingPageData)
 
     expect(mockNavbarDataFetcher.fetch).toHaveBeenCalledWith({
+      slug: 'valid-slug',
+      title: 'Valid Title',
+    })
+    expect(mockBreadDataFetcher.fetch).toHaveBeenCalledWith({
       slug: 'valid-slug',
       title: 'Valid Title',
     })
