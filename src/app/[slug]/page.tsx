@@ -10,6 +10,7 @@ import Services from '@/components/services/services'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
 import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
+import BreadCrumbs from '@/components/breadcrumbs/breadCrumb'
 
 const fetcher = LandingPageDataFetcher.getInstance()
 
@@ -25,6 +26,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
       <Navbar data={data.navbar} />
       <div style={{ backgroundColor: '#ebebeb' }}>
         <Container>
+          <BreadCrumbs data={data.breadcrumbs} />
           <Banner data={data.banner} />
           <FeaturedLinks data={data.featuredLinks} />
         </Container>

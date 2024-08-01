@@ -1,4 +1,12 @@
 // jest.config.js
+
+const nextJest = require('next/jest')
+
+// Create Jest configuration for Next.js
+const createJestConfig = nextJest({
+  dir: './',
+})
+
 const customJestConfig = {
   roots: ['<rootDir>', '<rootDir>/src/'],
   testEnvironment: 'jest-environment-jsdom',
@@ -29,13 +37,24 @@ const customJestConfig = {
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx', 'startup/*.js'],
   coverageDirectory: 'coverage',
-  testTimeout: 30000, //30 seconds
+  testTimeout: 30000, // 30 seconds
+
+  // Add the moduleNameMapper to handle CSS imports
+  moduleNameMapper: {
+    // Handle CSS imports with a proxy to prevent syntax errors
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+
+    // Map fontsource imports to a stub module
+    '^@fontsource/(.*)$': '<rootDir>/__mocks__/styleMock.js',
+  },
+  transform: {
+    // Use babel-jest to transpile JavaScript/TypeScript files
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+  },
+  transformIgnorePatterns: [
+    '/node_modules/(?!@fontsource/)', // Ensure that fontsource is transformed
+  ],
 }
 
-const nextJest = require('next/jest')
-
-const createJestConfig = nextJest({
-  dir: './',
-})
-
+// Export the Jest configuration
 module.exports = createJestConfig(customJestConfig)

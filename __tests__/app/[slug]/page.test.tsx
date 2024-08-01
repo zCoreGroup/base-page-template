@@ -5,6 +5,7 @@ import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import {
   AnnouncementsData,
   BannerData,
+  BreadCrumbData,
   EventsData,
   FeaturedLinksData,
   FooterData,
@@ -30,6 +31,7 @@ describe('LandingPage', () => {
   const mockData: LandingPageData = {
     navbar: {} as NavbarData,
     banner: {} as BannerData,
+    breadcrumbs: {} as BreadCrumbData,
     featuredLinks: {} as FeaturedLinksData,
     announcements: {} as AnnouncementsData,
     events: {} as EventsData,

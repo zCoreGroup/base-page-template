@@ -139,6 +139,37 @@
       ],
       "type": "object"
     },
+    "BreadCrumb": {
+      "additionalProperties": false,
+      "properties": {
+        "link": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "link"
+      ],
+      "type": "object"
+    },
+    "BreadCrumbData": {
+      "additionalProperties": false,
+      "properties": {
+        "links": {
+          "items": {
+            "$ref": "#/components/schemas/BreadCrumb"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "links"
+      ],
+      "type": "object"
+    },
     "EventsData": {
       "additionalProperties": false,
       "properties": {
@@ -356,6 +387,7 @@
         "banner": {
           "$ref": "#/components/schemas/BannerData"
         },
+        "breadcrumbs": {},
         "events": {
           "$ref": "#/components/schemas/EventsData"
         },
@@ -371,6 +403,7 @@
       },
       "required": [
         "banner",
+        "breadcrumbs",
         "featuredLinks",
         "announcements",
         "events",
