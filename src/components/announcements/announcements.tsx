@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useState } from 'react'
 import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material'
 import Carousel from 'react-material-ui-carousel'
@@ -24,7 +23,7 @@ const Item: React.FC<ItemProps> = ({ item }) => {
   const bodyStripped = stripHtml(item.body)
   return (
     <Card sx={{ position: 'relative', backgroundColor: '#333' }}>
-      <CardMedia component='img' height='400' image={item.image} alt={stripHtml(bodyStripped)} />
+      <CardMedia component='img' height='400' image={item.image} alt={bodyStripped} />
       <CardContent
         sx={{
           position: 'absolute',

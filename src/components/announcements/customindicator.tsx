@@ -1,6 +1,6 @@
 // components/customindicator.tsx
 import React from 'react'
-import { Box, Button } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 
 interface CustomIndicatorProps {
   length: number
@@ -14,10 +14,11 @@ const CustomIndicator: React.FC<CustomIndicatorProps> = ({ length, activeIndex, 
       {Array.from({ length }).map((_, index) => (
         <Button
           key={index}
-          onClick={() => onClick(index + 1)}
+          data-testid={`custom-indicator-${index}`}
+          onClick={() => onClick(index)}
           sx={{
-            backgroundColor: activeIndex === index + 1 ? '#e74c3c' : '#fff',
-            color: activeIndex === index + 1 ? '#fff' : '#000',
+            backgroundColor: activeIndex === index ? '#e74c3c' : '#fff',
+            color: activeIndex === index ? '#fff' : '#000',
             borderRadius: '50%',
             width: '30px',
             height: '30px',
@@ -29,6 +30,9 @@ const CustomIndicator: React.FC<CustomIndicatorProps> = ({ length, activeIndex, 
           {index + 1}
         </Button>
       ))}
+      <Typography data-testid='active-index' sx={{ display: 'none' }}>
+        {activeIndex}
+      </Typography>
     </Box>
   )
 }
