@@ -53,9 +53,9 @@ describe('BreadCrumbDataFetcher', () => {
       }
 
       const mockResult: landing_page[] = [
-        { ...query, slug: 'home', title: 'Home' },
+        { ...query, slug: 'Home', title: 'Home' },
         { ...query, slug: 'Vanderberg', title: 'Vanderberg' },
-        { ...query, slug: 'test-page', title: 'Test Page' },
+        { ...query, slug: 'Test-page', title: 'Test Page' },
       ]
 
       // Mock the findLandingPageBreadCrumbsBySlug method
@@ -64,9 +64,9 @@ describe('BreadCrumbDataFetcher', () => {
 
       expect(result).toEqual({
         links: [
-          { text: 'Home', link: 'home' },
+          { text: 'Home', link: 'Home' },
           { text: 'Vanderberg', link: 'Vanderberg' },
-          { text: 'Test-page', link: 'test-page' },
+          { text: 'Test-page', link: 'Test-page' },
         ],
       })
     })
