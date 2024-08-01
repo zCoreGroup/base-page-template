@@ -14,6 +14,11 @@ export type LandingPageData = {
   navbar: NavbarData
 }
 
+export type ProfilePageData = {
+  navbar: NavbarData
+  footer: FooterData
+}
+
 export type LandingPageQuery = {
   slug: string
 }

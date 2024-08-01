@@ -50,7 +50,7 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
     }
     try {
       const [navbarData, featuredLinksData, footerData] = await Promise.all([
-        this.fetchWithTimeout(this.navbarFetcher.fetchWelcomePageNavbar(), 5000),
+        this.fetchWithTimeout(this.navbarFetcher.fetchStaticNavbar(), 5000),
         this.fetchWithTimeout(this.featuredLinksFetcher.fetch(landingPage), 5000),
         this.fetchWithTimeout(this.footerFetcher.fetch(landingPage), 5000),
       ])

@@ -494,6 +494,22 @@
       ],
       "type": "object"
     },
+    "ProfilePageData": {
+      "additionalProperties": false,
+      "properties": {
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        }
+      },
+      "required": [
+        "navbar",
+        "footer"
+      ],
+      "type": "object"
+    },
     "Schedule": {
       "additionalProperties": false,
       "properties": {

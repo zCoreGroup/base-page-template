@@ -82,7 +82,7 @@ describe('HomePageDataFetcher', () => {
     }
 
     // Mock the fetch methods
-    mockNavbarFetcher.fetchWelcomePageNavbar.mockResolvedValue(mockNavbarData)
+    mockNavbarFetcher.fetchStaticNavbar.mockResolvedValue(mockNavbarData)
     mockFeaturedLinksFetcher.fetch.mockResolvedValue(mockFeaturedLinksData)
     mockFooterFetcher.fetch.mockResolvedValue(mockFooterData)
 
@@ -98,7 +98,7 @@ describe('HomePageDataFetcher', () => {
 
   it('should throw an error if data fetching fails', async () => {
     // Mock the fetch methods to throw an error
-    mockNavbarFetcher.fetchWelcomePageNavbar.mockRejectedValue(new Error('Failed to fetch navbar'))
+    mockNavbarFetcher.fetchStaticNavbar.mockRejectedValue(new Error('Failed to fetch navbar'))
 
     await expect(homePageDataFetcher.fetch()).rejects.toThrow('Failed to fetch navbar')
   })

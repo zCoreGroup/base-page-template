@@ -34,7 +34,7 @@ export default class NavbarDataFetcher extends DirectusDataFetcher {
     }
   }
 
-  async fetchWelcomePageNavbar(): Promise<NavbarData> {
+  async fetchStaticNavbar(): Promise<NavbarData> {
     return {
       logo: '/assets/guardian_one_logo_wordMark.png',
       logoAlt: 'Logo',
