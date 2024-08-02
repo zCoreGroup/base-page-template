@@ -1,9 +1,5 @@
 ## :rocket: Release Notes
 
-<div style="text-align: center;">
-  <img src="https://repo.bespin.cce.af.mil/bespin/products/USSF/Licensed/guardian-one/uploads/dbc7af30689934c423fc94c4b2801381/appIcon__playstore_copy.png" width="200">
-</div>
-
 **APP:** USSF Guardian One 
 
 :calendar: **WHEN:** <!-- Prod Release Date -->
