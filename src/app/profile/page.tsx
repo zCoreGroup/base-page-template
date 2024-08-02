@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
   Avatar,
   Box,
@@ -16,6 +16,7 @@ import {
   MenuItem,
   Radio,
   RadioGroup,
+  Skeleton,
   Switch,
   TextField,
   Typography,
@@ -25,10 +26,11 @@ import Navbar from '@/components/navbar/Navbar'
 import colors from '@/design-tokens/colors'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import useSWR from 'swr'
-import { ProfilePageData } from '@/types'
+import { FooterData, FooterLink, NavbarData, ProfilePageData } from '@/types'
 import Footer from '@/components/footer/Footer'
 import Image from 'next/image'
 import { fontSize } from '@mui/system'
+import ProfilePageSkeleton from '@/app/profile/components/ProfilePageSkeleton'
 
 export const dynamic = 'force-dynamic'
 
@@ -92,8 +94,13 @@ const ProfilePage = () => {
     handleClose()
   }
 
-  if (error) return <div>Failed to load</div>
-  if (isLoading) return <div>Loading...</div>
+  if (error) {
+    throw error
+  }
+
+  if (isLoading) {
+    return <ProfilePageSkeleton />
+  }
 
   return (
     <Box
