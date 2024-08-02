@@ -46,7 +46,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
     const [navbarData, breadCrumbData, bannerData, featuredLinksData, announcementsData, eventsData, footerData] =
       await Promise.all([
-        this.navbarFetcher.fetch(landingPage),
+        this.navbarFetcher.fetch(),
         this.breadCrumbFetcher.fetch(landingPage),
         this.bannerFetcher.fetch(landingPage),
         this.featuredLinksFetcher.fetch(landingPage),

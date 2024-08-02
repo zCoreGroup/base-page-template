@@ -1,68 +1,48 @@
-import { DirectusDataFetcher, landing_page } from '@/lib/directusdatafetcher'
+import { DirectusDataFetcher, landing_page, NavigationData } from '@/lib/directusdatafetcher'
 import { NavbarData } from '@/types'
+import { readSingleton } from '@directus/sdk'
 
 export default class NavbarDataFetcher extends DirectusDataFetcher {
-  async fetch(query: landing_page): Promise<NavbarData> {
+  async fetch(): Promise<NavbarData> {
+    const navigationData = await this.getNavigationData()
+
     return {
       logo: '/assets/guardian_one_logo_wordMark.png',
       logoAlt: 'Logo',
-      notificationsCount: 4,
+      notificationsCount: 0,
       user: {
         name: 'User Name',
         avatarUrl: '/assets/avatar.png',
       },
       leftLinks: [
         {
-          name: 'Doctrine',
-          url: 'https://spaceforce.mil',
+          name: navigationData.name1,
+          url: navigationData.link1,
         },
         {
-          name: 'News',
-          url: 'https://spaceforce.mil',
+          name: navigationData.name2,
+          url: navigationData.link2,
         },
       ],
       rightLinks: [
         {
-          name: 'CSO Corner',
-          url: 'https://spaceforce.mil',
+          name: navigationData.name3,
+          url: navigationData.link3,
         },
         {
-          name: 'Multimedia',
-          url: 'https://spaceforce.mil',
+          name: navigationData.name4,
+          url: navigationData.link4,
+        },
+        {
+          name: navigationData.name5,
+          url: navigationData.link5,
         },
       ],
     }
   }
 
-  async fetchWelcomePageNavbar(): Promise<NavbarData> {
-    return {
-      logo: '/assets/guardian_one_logo_wordMark.png',
-      logoAlt: 'Logo',
-      notificationsCount: 4,
-      user: {
-        name: 'User Name',
-        avatarUrl: '/assets/avatar.png',
-      },
-      leftLinks: [
-        {
-          name: 'Doctrine',
-          url: 'https://spaceforce.mil',
-        },
-        {
-          name: 'News',
-          url: 'https://spaceforce.mil',
-        },
-      ],
-      rightLinks: [
-        {
-          name: 'CSO Corner',
-          url: 'https://spaceforce.mil',
-        },
-        {
-          name: 'Multimedia',
-          url: 'https://spaceforce.mil',
-        },
-      ],
-    }
+  async getNavigationData(): Promise<NavigationData> {
+    const navigation = await this.client.request(readSingleton('navigation'))
+    return navigation
   }
 }

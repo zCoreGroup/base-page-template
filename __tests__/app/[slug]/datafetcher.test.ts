@@ -145,10 +145,7 @@ describe('LandingPageDataFetcher', () => {
       },
     } as LandingPageData)
 
-    expect(mockNavbarDataFetcher.fetch).toHaveBeenCalledWith({
-      slug: 'valid-slug',
-      title: 'Valid Title',
-    })
+    expect(mockNavbarDataFetcher.fetch).toHaveBeenCalled()
     expect(mockBreadDataFetcher.fetch).toHaveBeenCalledWith({
       slug: 'valid-slug',
       title: 'Valid Title',
