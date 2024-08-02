@@ -1,5 +1,5 @@
 import { DirectusDataFetcher, welcome_page } from '@/lib/directusdatafetcher'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData } from '@/types'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'

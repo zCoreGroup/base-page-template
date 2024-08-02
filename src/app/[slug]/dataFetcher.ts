@@ -1,5 +1,5 @@
 import { LandingPageData, LandingPageQuery, LandingPageShort } from '@/types'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import BannerDataFetcher from '@/components/banner/datafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'

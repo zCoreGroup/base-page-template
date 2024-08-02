@@ -1,14 +1,14 @@
 // HomePageDataFetcher.test.ts
 
 import HomePageDataFetcher from '@/app/homePageDataFetcher'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData, NavbarData, FeaturedLinksData, FooterData } from '@/types'
 
 // Mock dependencies
-jest.mock('../../src/components/navbar/datafetcher')
+jest.mock('../../src/components/navbar/navbarDataFetcher')
 jest.mock('../../src/components/featured-links/dataFetcher')
 jest.mock('../../src/components/footer/dataFetcher')
 jest.mock('../../src/components/footer/defaultFooterContentDataFetcher')

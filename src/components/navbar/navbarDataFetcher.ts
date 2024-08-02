@@ -1,4 +1,4 @@
-import { DirectusDataFetcher, landing_page, NavigationData } from '@/lib/directusdatafetcher'
+import { DirectusDataFetcher, NavigationData } from '@/lib/directusdatafetcher'
 import { NavbarData } from '@/types'
 import { readSingleton } from '@directus/sdk'
 
