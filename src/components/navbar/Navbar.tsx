@@ -36,7 +36,7 @@ const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
                 </a>
               ))}
               <Image
-                src={'/assets/guardian_one_logo_wordMark.svg'}
+                src={'/assets/guardian_one_logo_wordMark_dark.svg'}
                 alt={data.logoAlt}
                 width={280.7}
                 height={24}
@@ -45,7 +45,10 @@ const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
               />
               {data.rightLinks.map((link, index) => (
                 <a key={index} href={link.url} style={{ color: 'inherit', textDecoration: 'none' }}>
-                  <Typography variant='body1' sx={{ color: colors.m3SysLightInverseSurface, fontSize: '14px' }}>
+                  <Typography
+                    variant='body1'
+                    sx={{ color: colors.m3SysLightInverseSurface, fontSize: m3MobileLabelMedium.font.size }}
+                  >
                     {link.name}
                   </Typography>
                 </a>
@@ -65,7 +68,7 @@ const Navbar: React.FC<{ data: NavbarData }> = ({ data }) => {
                 <SearchIcon />
               </IconButton>
               <IconButton>
-                <Badge badgeContent={data.notificationsCount} color='error'>
+                <Badge badgeContent={data.notificationsCount}>
                   <NotificationsIcon />
                 </Badge>
               </IconButton>

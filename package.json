@@ -28,6 +28,7 @@
     "@emotion/styled": "^11.11.5",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^8.57.0",
+    "@fontsource/libre-franklin": "^5.0.13",
     "@fontsource/ibm-plex-mono": "^5.0.13",
     "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.15.20",
@@ -51,6 +52,7 @@
     "slick-carousel": "^1.8.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-react": "^5.17.14",
+    "swr": "^2.2.5",
     "ts-json-schema-generator": "^2.3.0",
     "typeface-libre-franklin": "^1.1.13",
     "validator": "^13.12.0"

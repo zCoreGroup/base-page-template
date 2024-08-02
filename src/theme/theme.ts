@@ -1,5 +1,6 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles'
 import colors from '@/design-tokens/colors'
+import { Libre_Franklin } from 'next/font/google'
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -44,7 +45,7 @@ const themeOptions: ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: 'LibreFranklin, IBM Plex Mono, Arial, sans-serif',
+    fontFamily: '"Libre Franklin", "IBM Plex Mono", Arial, sans-serif',
   },
   components: {
     MuiAppBar: {
@@ -52,6 +53,7 @@ const themeOptions: ThemeOptions = {
         root: {
           backgroundColor: colors.m3SysLightSurfaceBright,
           height: 72,
+          boxShadow: 'none',
         },
       },
     },
@@ -65,22 +67,37 @@ const themeOptions: ThemeOptions = {
         },
       },
     },
+    MuiBadge: {
+      styleOverrides: {
+        badge: {
+          backgroundColor: colors.m3SysLightPrimaryContainer,
+          color: colors.m3White,
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: colors.m3SysLightPrimaryContainer,
           height: 48,
           width: 160,
           color: 'white',
           gap: 8,
           borderRadius: '6px',
           fontSize: '12px',
-          '&:hover': {
-            backgroundColor: '#0a1d2b',
-          },
+          // '&:hover': {
+          //   backgroundColor: '#425464',
+          // },
           '&:focus': {
             backgroundColor: '#526474',
           },
+        },
+        contained: {
+          backgroundColor: colors.m3SysLightPrimaryContainer,
+          color: colors.m3White,
+        },
+        outlined: {
+          borderColor: colors.m3SysLightPrimaryContainer,
+          color: colors.m3SysLightPrimaryContainer,
         },
       },
     },
