@@ -5,9 +5,9 @@
 
 version: 2
 updates:
-  # Update npm dependencies
-  - package-ecosystem: 'npm'
-    directory: '/' # Location of package.json
+  - package-ecosystem: 'npm' # See documentation for possible values
+    directory: '/' # Location of package manifests
+    open-pull-requests-limit: 25
     schedule:
       interval: 'daily'
 
@@ -15,10 +15,11 @@ updates:
   # - package-ecosystem: 'github-actions'
   #   directory: '/' # Location of GitHub Actions workflows
   #   schedule:
-  #     interval: 'weekly'
+  #     interval: 'daily'
 
-  # Update Docker dependencies (if applicable)
-  - package-ecosystem: 'docker'
-    directory: '/' # Location of Dockerfile
-    schedule:
-      interval: 'daily'
+  # # Update Docker dependencies (if applicable)
+  # - package-ecosystem: 'docker'
+  #   directory: '/' # Location of Dockerfile
+  #   open-pull-requests-limit: 25
+  #   schedule:
+  #     interval: 'daily'
