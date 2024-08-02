@@ -1,14 +1,14 @@
 // HomePageDataFetcher.test.ts
 
 import HomePageDataFetcher from '@/app/homePageDataFetcher'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData, NavbarData, FeaturedLinksData, FooterData } from '@/types'
 
 // Mock dependencies
-jest.mock('../../src/components/navbar/datafetcher')
+jest.mock('../../src/components/navbar/navbarDataFetcher')
 jest.mock('../../src/components/featured-links/dataFetcher')
 jest.mock('../../src/components/footer/dataFetcher')
 jest.mock('../../src/components/footer/defaultFooterContentDataFetcher')
@@ -82,7 +82,7 @@ describe('HomePageDataFetcher', () => {
     }
 
     // Mock the fetch methods
-    mockNavbarFetcher.fetchWelcomePageNavbar.mockResolvedValue(mockNavbarData)
+    mockNavbarFetcher.fetch.mockResolvedValue(mockNavbarData)
     mockFeaturedLinksFetcher.fetch.mockResolvedValue(mockFeaturedLinksData)
     mockFooterFetcher.fetch.mockResolvedValue(mockFooterData)
 
@@ -98,7 +98,7 @@ describe('HomePageDataFetcher', () => {
 
   it('should throw an error if data fetching fails', async () => {
     // Mock the fetch methods to throw an error
-    mockNavbarFetcher.fetchWelcomePageNavbar.mockRejectedValue(new Error('Failed to fetch navbar'))
+    mockNavbarFetcher.fetch.mockRejectedValue(new Error('Failed to fetch navbar'))
 
     await expect(homePageDataFetcher.fetch()).rejects.toThrow('Failed to fetch navbar')
   })

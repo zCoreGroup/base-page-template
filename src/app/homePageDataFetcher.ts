@@ -1,5 +1,5 @@
 import { DirectusDataFetcher, welcome_page } from '@/lib/directusdatafetcher'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData } from '@/types'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
@@ -50,7 +50,7 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
     }
     try {
       const [navbarData, featuredLinksData, footerData] = await Promise.all([
-        this.fetchWithTimeout(this.navbarFetcher.fetchWelcomePageNavbar(), 5000),
+        this.fetchWithTimeout(this.navbarFetcher.fetch(), 5000),
         this.fetchWithTimeout(this.featuredLinksFetcher.fetch(landingPage), 5000),
         this.fetchWithTimeout(this.footerFetcher.fetch(landingPage), 5000),
       ])
