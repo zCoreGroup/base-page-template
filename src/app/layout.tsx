@@ -10,6 +10,7 @@ import '@fontsource/ibm-plex-mono' // Defaults to weight 400
 import '@fontsource/ibm-plex-mono/400.css' // Weight 400 with normal style
 import '@fontsource/ibm-plex-mono/700.css' // Weight 700 with normal style
 import { ReactNode } from 'react'
+import ErrorBoundary from '@/components/ErrorBoundary'
 
 const libreFranklin = Libre_Franklin({ subsets: ['latin'], weight: '400' })
 
@@ -30,7 +31,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={libreFranklin.className} style={{ background: 'black' }}>
         <ThemeProvider>
-          <div className='content'>{children}</div>
+          <ErrorBoundary>
+            <div className='content'>{children}</div>
+          </ErrorBoundary>
         </ThemeProvider>
       </body>
     </html>

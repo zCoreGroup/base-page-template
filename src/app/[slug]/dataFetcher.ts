@@ -10,6 +10,7 @@ import { DuplicateLandingPage, LandingPageNotFound } from '@/lib/errors'
 import AnnouncementsDataFetcher from '@/components/announcements/datafetcher'
 import EventsDataFetcher from '@/components/events/datafetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
+import { fallbackLandingPageData } from '@/lib/fallbackData'
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
   static instance: LandingPageDataFetcher
@@ -42,33 +43,38 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
   }
 
   async fetch(query: LandingPageQuery): Promise<LandingPageData> {
-    const landingPage = await this.findLandingPageBySlug(query.slug)
+    try {
+      const landingPage = await this.findLandingPageBySlug(query.slug)
 
-    const [navbarData, breadCrumbData, bannerData, featuredLinksData, announcementsData, eventsData, footerData] =
-      await Promise.all([
-        this.navbarFetcher.fetch(landingPage),
-        this.breadCrumbFetcher.fetch(landingPage),
-        this.bannerFetcher.fetch(landingPage),
-        this.featuredLinksFetcher.fetch(landingPage),
-        this.announcementsFetcher.fetch(landingPage),
-        this.eventsFetcher.fetch(landingPage),
-        this.footerFetcher.fetch(landingPage),
-      ])
+      const [navbarData, breadCrumbData, bannerData, featuredLinksData, announcementsData, eventsData, footerData] =
+        await Promise.all([
+          this.navbarFetcher.fetch(landingPage),
+          this.breadCrumbFetcher.fetch(landingPage),
+          this.bannerFetcher.fetch(landingPage),
+          this.featuredLinksFetcher.fetch(landingPage),
+          this.announcementsFetcher.fetch(landingPage),
+          this.eventsFetcher.fetch(landingPage),
+          this.footerFetcher.fetch(landingPage),
+        ])
 
-    return {
-      navbar: navbarData,
-      breadcrumbs: breadCrumbData,
-      banner: bannerData,
-      featuredLinks: featuredLinksData,
-      announcements: announcementsData,
-      events: eventsData,
-      footer: footerData,
-    } as LandingPageData
+      return {
+        navbar: navbarData,
+        breadcrumbs: breadCrumbData,
+        banner: bannerData,
+        featuredLinks: featuredLinksData,
+        announcements: announcementsData,
+        events: eventsData,
+        footer: footerData,
+      } as LandingPageData
+    } catch (error) {
+      console.error('Error fetching landing page data:', error)
+      return fallbackLandingPageData
+    }
   }
 
   async getAllShort(): Promise<LandingPageShort[]> {
-    const result = await this.client.request(readItems('landing_page'))
-    const short = {}
+    const apiCall = () => this.client.request(readItems('landing_page'))
+    const result = await this.safeRequest(apiCall, [])
     return result.map(
       (landingPage) =>
         ({
@@ -79,7 +85,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
   }
 
   async findLandingPageBySlug(slug: string): Promise<landing_page> {
-    const result = await this.client.request(
+    const apiCall = () => this.client.request(
       readItems('landing_page', {
         filter: {
           slug: {
@@ -88,6 +94,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
         },
       })
     )
+    const result = await this.safeRequest(apiCall, [])
 
     if (result.length === 0) {
       throw new LandingPageNotFound()
