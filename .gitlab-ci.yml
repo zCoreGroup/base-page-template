@@ -1,44 +1,18 @@
 stages:
-  - lint
-  - build
-  - test
+  - lint-build-test
 
 variables:
   DIRECTUS_URL: 'http://mocked-directus.com'
   DIRECTUS_STATIC_TOKEN: 'mock-static-stoken'
 
-lint:
-  stage: lint
+lint-build-test:
+  stage: lint-build-test
   image: node:20
   before_script:
     - yarn clean
     - yarn install
   script:
-    - yarn lint
-  only:
-    - branches
-    - merge_requests
-
-build:
-  stage: build
-  image: node:20
-  before_script:
-    - yarn clean
-    - yarn install
-  script:
-    - yarn build
-  only:
-    - branches
-    - merge_requests
-
-test:
-  stage: test
-  image: node:20
-  before_script:
-    - yarn clean
-    - yarn install
-  script:
-    - yarn test
+    - yarn lint && yarn build && yarn test
   only:
     - branches
     - merge_requests
