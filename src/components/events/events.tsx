@@ -1,4 +1,4 @@
-// components/events.tsx
+// src/components/events.tsx
 'use client'
 import React, { useState } from 'react'
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
@@ -32,37 +32,41 @@ const Events: React.FC<EventsProps> = ({ data }) => {
       <Typography variant='h6' sx={title}>
         Base Events
       </Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-        }}
-      >
-        {currentCards.map((card, index) => (
-          <Card
-            key={index}
-            sx={{
-              maxWidth: 250,
-              backgroundColor: '#333',
-              color: '#fff',
-              borderRadius: '10px',
-            }}
-          >
-            <CardActionArea href={'#'} target='_blank' rel='noopener noreferrer'>
-              <CardMedia component='img' height='140' image={card.image} alt={card.title} />
-              <CardContent>
-                <Typography gutterBottom variant='h6' component='div' sx={{ color: '#fff', fontSize: '18px' }}>
-                  {card.title}
-                </Typography>
-                <Typography variant='body2' sx={{ color: '#999' }}>
-                  {stripHtmlTags(card.description)}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        ))}
-      </Box>
+      {currentCards.length > 0 ? (
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+          }}
+        >
+          {currentCards.map((card, index) => (
+            <Card
+              key={index}
+              sx={{
+                maxWidth: 250,
+                backgroundColor: '#333',
+                color: '#fff',
+                borderRadius: '10px',
+              }}
+            >
+              <CardActionArea href={'#'} target='_blank' rel='noopener noreferrer'>
+                <CardMedia component='img' height='140' image={card.image} alt={card.title} />
+                <CardContent>
+                  <Typography gutterBottom variant='h6' component='div' sx={{ color: '#fff', fontSize: '18px' }}>
+                    {card.title}
+                  </Typography>
+                  <Typography variant='body2' sx={{ color: '#999' }}>
+                    {stripHtmlTags(card.description)}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          ))}
+        </Box>
+      ) : (
+        <Typography>No events available</Typography>
+      )}
       <CustomIndicator
         length={Math.ceil(data.events.length / cardsPerPage)}
         activeIndex={page}

@@ -1,11 +1,11 @@
 import { DirectusDataFetcher, footer, landing_page, location } from '@/lib/directusdatafetcher'
 import { FooterData } from '@/types'
 import { readItems } from '@directus/sdk'
-import DefaultFooterContentDataFetecher from './defaultFooterContentDataFetcher'
+import DefaultFooterContentDataFetcher from './defaultFooterContentDataFetcher'
 
 export default class FooterDataFetcher extends DirectusDataFetcher {
-  private defaultFooterContentFetcher: DefaultFooterContentDataFetecher
-  constructor(defaultFooterContentFetcher: DefaultFooterContentDataFetecher) {
+  private defaultFooterContentFetcher: DefaultFooterContentDataFetcher
+  constructor(defaultFooterContentFetcher: DefaultFooterContentDataFetcher) {
     super()
     this.defaultFooterContentFetcher = defaultFooterContentFetcher
   }

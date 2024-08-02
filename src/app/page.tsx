@@ -1,73 +1,56 @@
-import Image from 'next/image'
+import Navbar from '@/components/navbar/Navbar'
+import HomePageDataFetcher from '@/app/homePageDataFetcher'
+import { HomePageData } from '@/types'
+import { Box, Container, Grid } from '@mui/material'
+import Footer from '@/components/footer/Footer'
+import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
+import NewsCardSection, { NewsItem } from '@/components/news-card/NewsCardSection'
+import EventCardSection, { EventItem } from '@/components/event-card/EventCardSection'
 
-export default function Home() {
+export const dynamic = 'force-dynamic'
+
+const fetcher = HomePageDataFetcher.getInstance()
+
+const Home = async () => {
+  const data: HomePageData = await fetcher.fetch()
+  const newsItems: NewsItem[] = [
+    { id: '1', title: 'News 1', description: 'News desc 1', image: '' },
+    { id: '2', title: 'News 2', description: 'News desc 2', image: '' },
+    { id: '3', title: 'News 3', description: 'News desc 3', image: '' },
+    { id: '4', title: 'News 4', description: 'News desc 4', image: '' },
+    { id: '5', title: 'News 5', description: 'News desc 5', image: '' },
+  ]
+  const eventItems: EventItem[] = [
+    { id: '1', title: 'Event 1', description: 'Event desc 1', image: '' },
+    { id: '2', title: 'Event 2', description: 'Event desc 2', image: '' },
+    { id: '3', title: 'Event 3', description: 'Event desc 3', image: '' },
+    { id: '4', title: 'Event 4', description: 'Event desc 4', image: '' },
+    { id: '5', title: 'Event 5', description: 'Event desc 5', image: '' },
+  ]
   return (
-    <main>
-      <div>
-        <p>
-          Get started by editing&nbsp;
-          <code>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href='https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            By <Image src='/vercel.svg' alt='Vercel Logo' width={100} height={24} priority />
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <Image src='/next.svg' alt='Next.js Logo' width={180} height={37} priority />
-      </div>
-
-      <div>
-        <a
-          href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href='https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href='https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>Instantly deploy your Next.js site to a shareable URL with Vercel.</p>
-        </a>
-      </div>
-    </main>
+    <Box
+      data-testid={'home-page-main-box'}
+      sx={{ backgroundColor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+    >
+      <Navbar data={data.navbar} />
+      <Box sx={{ flex: 1, py: 4, backgroundColor: 'white' }}>
+        <Container maxWidth={'xl'}>
+          <FeaturedLinks data={data.featuredLinks} />
+          <Grid container spacing={4} sx={{ mt: 4, pt: 4 }}>
+            <Grid item xs={12} md={8}>
+              <NewsCardSection newsItems={newsItems} minCardWidth={200} />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box sx={{ height: 600, pb: 10 }}>
+                <EventCardSection eventItems={eventItems} minCardHeight={200} />
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+      <Footer data={data.footer} />
+    </Box>
   )
 }
+
+export default Home
