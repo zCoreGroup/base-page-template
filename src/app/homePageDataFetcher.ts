@@ -4,6 +4,7 @@ import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData } from '@/types'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
+import { fallbackHomePageData } from '@/lib/fallbackData'
 
 export default class HomePageDataFetcher extends DirectusDataFetcher {
   static instance: HomePageDataFetcher
@@ -46,7 +47,7 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
       user_created: 'c3a4ecb9-07a7-4d67-87f4-0bf3703091ac',
       user_updated: 'c3a4ecb9-07a7-4d67-87f4-0bf3703091ac',
       vision:
-        'Unconstrained space launch and test event capacity from the Department of the Air Force’s base of choice',
+        'Unconstrained space launch and test event capacity from the Department of the Air Force's base of choice',
     }
     try {
       const [navbarData, featuredLinksData, footerData] = await Promise.all([
@@ -62,7 +63,7 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
       } as HomePageData
     } catch (error) {
       console.error('Error fetching home page data', error)
-      throw error
+      return fallbackHomePageData
     }
   }
 
