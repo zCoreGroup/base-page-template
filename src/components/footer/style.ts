@@ -1,4 +1,4 @@
-import spacing from '@/designtokens/spacing'
+import spacing from '@/design-tokens/spacing'
 
 export const footerContentStyle = {
   width: '100%',

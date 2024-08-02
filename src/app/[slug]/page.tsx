@@ -1,14 +1,15 @@
 import React from 'react'
-import LandingPageDataFetcher from './datafetcher'
-import { LandingPageData, LandingPageQuery } from '../../types'
+
+import { LandingPageData, LandingPageQuery } from '@/types'
 import Banner from '../../components/banner/banner'
-import FeaturedLinks from '@/components/featuredlinks/featuredlinks'
+import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
 import Announcements from '@/components/announcements/announcements'
 import Events from '@/components/events/events'
-import Footer from '../../components/footer/Footer'
-import Navbar from '../../components/navbar/Navbar'
-import Services from '../../components/services/services'
 import { Container, Grid } from '@mui/material'
+import Services from '@/components/services/services'
+import Navbar from '@/components/navbar/Navbar'
+import Footer from '@/components/footer/Footer'
+import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import BreadCrumbs from '@/components/breadcrumbs/breadCrumb'
 
 const fetcher = LandingPageDataFetcher.getInstance()

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import LandingPageDataFetcher from '@/app/[slug]/datafetcher'
+import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import { LandingPageQuery } from '@/types'
 
 const dataFetcher = LandingPageDataFetcher.getInstance()

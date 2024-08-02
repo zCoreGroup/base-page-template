@@ -8,7 +8,7 @@ export type DefaultFooterContent = {
   feedback: string
   footerId: string
 }
-export default class DefaultFooterContentDataFetecher extends DirectusDataFetcher {
+export default class DefaultFooterContentDataFetcher extends DirectusDataFetcher {
   async fetch(): Promise<DefaultFooterContent> {
     return {
       quickLinks: await this.getQuickLinks(),

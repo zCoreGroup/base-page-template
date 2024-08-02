@@ -2,7 +2,7 @@ import { DirectusDataFetcher, landing_page, article, label } from '@/lib/directu
 import { Article, EventsData } from '@/types'
 import { readItems } from '@directus/sdk'
 
-// src/events/datafetcher.ts
+// src/events/dataFetcher.ts
 export default class EventsDataFetcher extends DirectusDataFetcher {
   async fetch(query: landing_page): Promise<EventsData> {
     const articles = await this.findEventsByLandingPageId(query.id)

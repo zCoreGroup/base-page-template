@@ -1,20 +1,20 @@
-import LandingPageDataFetcher from '../../../src/app/[slug]/datafetcher'
 import NavbarDataFetcher from '../../../src/components/navbar/datafetcher'
 import BannerDataFetcher from '../../../src/components/banner/datafetcher'
-import FooterDataFetcher from '../../../src/components/footer/dataFetcher'
-import FeaturedLinksDataFetcher from '../../../src/components/featuredlinks/datafetcher'
+import FooterDataFetcher from '@/components/footer/dataFetcher'
+import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
 import AnnouncementsDataFetcher from '../../../src/components/announcements/datafetcher'
 import EventsDataFetcher from '../../../src/components/events/datafetcher'
+import { LandingPageQuery, LandingPageData } from '@/types'
+import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
+import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import BreadCrumbDataFetcher from '../../../src/components/breadcrumbs/datafetcher'
-
-import { LandingPageQuery, LandingPageData } from '../../../src/types'
 import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
 
 jest.mock('../../../src/components/navbar/datafetcher')
 jest.mock('../../../src/components/banner/datafetcher')
 jest.mock('../../../src/components/footer/dataFetcher')
 jest.mock('../../../src/components/footer/defaultFooterContentDataFetcher')
-jest.mock('../../../src/components/featuredlinks/datafetcher')
+jest.mock('../../../src/components/featured-links/dataFetcher')
 jest.mock('../../../src/components/announcements/datafetcher')
 jest.mock('../../../src/components/events/datafetcher')
 
@@ -22,8 +22,8 @@ jest.mock('../../../src/components/events/datafetcher')
 const mockNavbarDataFetcher = new NavbarDataFetcher()
 const mockBreadDataFetcher = new BreadCrumbDataFetcher()
 const mockBannerDataFetcher = new BannerDataFetcher()
-const mockDefaultFooterContentDataFetecher = new DefaultFooterContentDataFetecher()
-const mockFooterDataFetcher = new FooterDataFetcher(mockDefaultFooterContentDataFetecher)
+const mockDefaultFooterContentDataFetcher = new DefaultFooterContentDataFetcher()
+const mockFooterDataFetcher = new FooterDataFetcher(mockDefaultFooterContentDataFetcher)
 const mockFeaturedLinksDataFetcher = new FeaturedLinksDataFetcher()
 const mockAnnouncementsDataFetcher = new AnnouncementsDataFetcher()
 const mockEventsDataFetcher = new EventsDataFetcher()

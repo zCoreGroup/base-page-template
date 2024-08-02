@@ -16,7 +16,7 @@ const customJestConfig = {
     'migrations/',
     '/scripts/',
     'public/',
-    'src/designtokens/',
+    'src/design-tokens/',
     '.storybook/',
     'src/stories/',
   ],

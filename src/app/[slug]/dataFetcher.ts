@@ -1,15 +1,15 @@
-import { LandingPageData, LandingPageQuery, LandingPageShort } from '../../types'
+import { LandingPageData, LandingPageQuery, LandingPageShort } from '@/types'
 import NavbarDataFetcher from '@/components/navbar/datafetcher'
 import BannerDataFetcher from '@/components/banner/datafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
+import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
 import BreadCrumbDataFetcher from '@/components/breadcrumbs/datafetcher'
-import FeaturedLinksDataFetcher from '@/components/featuredlinks/datafetcher'
 import { DirectusDataFetcher, landing_page } from '@/lib/directusdatafetcher'
 import { readItems } from '@directus/sdk'
 import { DuplicateLandingPage, LandingPageNotFound } from '@/lib/errors'
 import AnnouncementsDataFetcher from '@/components/announcements/datafetcher'
 import EventsDataFetcher from '@/components/events/datafetcher'
-import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
+import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 
 export default class LandingPageDataFetcher extends DirectusDataFetcher {
   static instance: LandingPageDataFetcher
@@ -102,7 +102,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
       const navbarFetcher = new NavbarDataFetcher()
       const breadcrumbFetcher = new BreadCrumbDataFetcher()
       const bannerFetcher = new BannerDataFetcher()
-      const defaultFooterContentFetcher = new DefaultFooterContentDataFetecher()
+      const defaultFooterContentFetcher = new DefaultFooterContentDataFetcher()
       const footerFetcher = new FooterDataFetcher(defaultFooterContentFetcher)
       const featuredLinksFetcher = new FeaturedLinksDataFetcher()
       const announcementsFetcher = new AnnouncementsDataFetcher()

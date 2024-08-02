@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import LandingPage from '../../../src/app/[slug]/page'
-import LandingPageDataFetcher from '../../../src/app/[slug]/datafetcher'
+import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import {
   AnnouncementsData,
   BannerData,
@@ -11,7 +11,7 @@ import {
   FooterData,
   LandingPageData,
   NavbarData,
-} from '../../../src/types'
+} from '@/types'
 
 // Mock the entire LandingPage component
 jest.mock('../../../src/app/[slug]/page', () => {
@@ -19,7 +19,7 @@ jest.mock('../../../src/app/[slug]/page', () => {
 })
 
 // Mock the LandingPageDataFetcher
-jest.mock('../../../src/app/[slug]/datafetcher', () => {
+jest.mock('../../../src/app/[slug]/dataFetcher', () => {
   return {
     getInstance: jest.fn(() => ({
       fetch: jest.fn(),

@@ -1,3 +1,9 @@
+export type HomePageData = {
+  navbar: NavbarData
+  featuredLinks: FeaturedLinksData
+  footer: FooterData
+}
+
 export type LandingPageData = {
   banner: BannerData
   breadcrumbs: any

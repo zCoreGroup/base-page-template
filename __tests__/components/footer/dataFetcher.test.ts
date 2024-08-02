@@ -1,5 +1,5 @@
 import FooterDataFetcher from '@/components/footer/dataFetcher'
-import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
+import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 import { DirectusDataFetcher } from '@/lib/directusdatafetcher'
 
 jest.mock('../../../src/lib/directusdatafetcher')
@@ -7,11 +7,11 @@ jest.mock('../../../src/components/footer/defaultFooterContentDataFetcher')
 
 describe('FooterDataFetcher', () => {
   let footerDataFetcher: FooterDataFetcher
-  let defaultFooterContentFetcherMock: jest.Mocked<DefaultFooterContentDataFetecher>
+  let defaultFooterContentFetcherMock: jest.Mocked<DefaultFooterContentDataFetcher>
 
   beforeEach(() => {
     defaultFooterContentFetcherMock =
-      new DefaultFooterContentDataFetecher() as jest.Mocked<DefaultFooterContentDataFetecher>
+      new DefaultFooterContentDataFetcher() as jest.Mocked<DefaultFooterContentDataFetcher>
     footerDataFetcher = new FooterDataFetcher(defaultFooterContentFetcherMock)
   })
 

@@ -1,5 +1,5 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles'
-import colors from '@/designtokens/colors'
+import colors from '@/design-tokens/colors'
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -47,11 +47,11 @@ const themeOptions: ThemeOptions = {
     fontFamily: 'LibreFranklin, IBM Plex Mono, Arial, sans-serif',
   },
   components: {
-    MuiButton: {
+    MuiAppBar: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
-          textTransform: 'none',
+          backgroundColor: colors.m3SysLightSurfaceBright,
+          height: 72,
         },
       },
     },
@@ -65,11 +65,37 @@ const themeOptions: ThemeOptions = {
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: colors.m3SysLightPrimaryContainer,
+          height: 48,
+          width: 160,
+          color: 'white',
+          gap: 8,
+          borderRadius: '6px',
+          fontSize: '12px',
+          '&:hover': {
+            backgroundColor: '#0a1d2b',
+          },
+          '&:focus': {
+            backgroundColor: '#526474',
+          },
+        },
+      },
+    },
     MuiCard: {
       styleOverrides: {
         root: {
           borderRadius: 12,
           boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color: colors.m3SysLightInverseSurface,
         },
       },
     },
@@ -85,7 +111,19 @@ const themeOptions: ThemeOptions = {
     MuiChip: {
       styleOverrides: {
         root: {
-          borderRadius: 16,
+          backgroundColor: colors.m3SysLightPrimaryContainer,
+          height: 48,
+          width: 160,
+          color: 'white',
+          gap: 8,
+          borderRadius: '6px',
+          fontSize: '12px',
+          '&:hover': {
+            backgroundColor: '#0a1d2b',
+          },
+          '&:focus': {
+            backgroundColor: '#526474',
+          },
         },
       },
     },
