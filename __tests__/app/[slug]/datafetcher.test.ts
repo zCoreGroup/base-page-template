@@ -174,4 +174,14 @@ describe('LandingPageDataFetcher', () => {
       title: 'Valid Title',
     })
   })
+
+  it('should return the same instance for the singleton', () => {
+    // Reset the singleton instance to ensure tests are independent
+    ;(LandingPageDataFetcher as any).instance = undefined
+
+    const instance1 = LandingPageDataFetcher.getInstance()
+    const instance2 = LandingPageDataFetcher.getInstance()
+
+    expect(instance1).toBe(instance2) // Check that both instances are the same
+  })
 })
