@@ -1,6 +1,5 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles'
 import colors from '@/design-tokens/colors'
-import { Libre_Franklin } from 'next/font/google'
 
 declare module '@mui/material/styles' {
   interface Palette {

@@ -68,7 +68,6 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
   async getAllShort(): Promise<LandingPageShort[]> {
     const result = await this.client.request(readItems('landing_page'))
-    const short = {}
     return result.map(
       (landingPage) =>
         ({

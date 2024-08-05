@@ -318,46 +318,6 @@
       ],
       "type": "object"
     },
-    "HexagonImageLinkData": {
-      "additionalProperties": false,
-      "properties": {
-        "imageUrl": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "url",
-        "imageUrl",
-        "name"
-      ],
-      "type": "object"
-    },
-    "HexagonImageOverlayData": {
-      "additionalProperties": false,
-      "properties": {
-        "altText": {
-          "type": "string"
-        },
-        "imageUrl": {
-          "type": "string"
-        },
-        "sideLength": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "imageUrl",
-        "altText",
-        "sideLength"
-      ],
-      "type": "object"
-    },
     "HomePageData": {
       "additionalProperties": false,
       "properties": {

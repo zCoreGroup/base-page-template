@@ -4,17 +4,18 @@
     "es2021": true
   },
   "extends": [
+    "next/core-web-vitals",
     "plugin:react/recommended",
-    "plugin:@next/next/recommended",
-    "plugin:testing-library/react",
-    "plugin:jest-dom/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": ["./tsconfig.json"],
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "jest-dom", "testing-library", "unused-imports"],
+  "plugins": ["react", "@typescript-eslint", "testing-library", "unused-imports"],
   "rules": {
     "eqeqeq": "off",
     "comma-dangle": "off",
@@ -24,20 +25,10 @@
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/restrict-plus-operands": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    "no-restricted-imports": "off",
     "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/no-restricted-imports": [
-      "error",
-      {
-        "patterns": [
-          {
-            "group": ["../*"],
-            "message": "Please use absolute paths starting from project root."
-          }
-        ]
-      }
-    ],
     "@typescript-eslint/naming-convention": [
       "error",
       {
@@ -57,5 +48,6 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "ignorePatterns": ["stories/**/*", "src/stories/**/*"]
 }

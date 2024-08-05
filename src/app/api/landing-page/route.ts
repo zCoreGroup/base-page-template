@@ -47,6 +47,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     const landingPage = await dataFetcher.fetch(query)
     return NextResponse.json(landingPage, { status: 200 })
   } catch (error) {
+    console.error('Error fetching landing page data:', error)
     return NextResponse.json({ error: 'Failed to fetch the landing page data' }, { status: 500 })
   }
 }

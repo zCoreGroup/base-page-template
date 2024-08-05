@@ -1,4 +1,4 @@
-import { DirectusDataFetcher, landing_page, article, label } from '@/lib/directusdatafetcher'
+import { DirectusDataFetcher, landing_page, article } from '@/lib/directusdatafetcher'
 import { Article, EventsData } from '@/types'
 import { readItems } from '@directus/sdk'
 
