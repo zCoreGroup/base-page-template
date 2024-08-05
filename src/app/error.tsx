@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
+export default function ErrorPage({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   // TODO: Implement global error view
   useEffect(() => {
     // Log the error to an error reporting service

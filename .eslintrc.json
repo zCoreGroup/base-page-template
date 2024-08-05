@@ -1,13 +1,63 @@
 {
-  "rules": {
-    "@next/next/no-duplicate-head": "off",
-    "storybook/no-uninstalled-addons": "off"
+  "env": {
+    "browser": true,
+    "es2021": true
   },
   "extends": [
-    "next/core-web-vitals",
-    "plugin:storybook/recommended"
+    "plugin:react/recommended",
+    "plugin:@next/next/recommended",
+    "standard-with-typescript",
+    "prettier",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
   ],
-  "plugins": [
-    "storybook"
-  ]
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jest-dom", "testing-library", "unused-imports"],
+  "rules": {
+    "eqeqeq": "off",
+    "comma-dangle": "off",
+    "react/react-in-jsx-scope": "off",
+    "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/restrict-plus-operands": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "no-restricted-imports": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["../*"],
+            "message": "Please use absolute paths starting from project root."
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "classProperty",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE", "snake_case"],
+        "leadingUnderscore": "allow"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

@@ -16,7 +16,6 @@ import {
   MenuItem,
   Radio,
   RadioGroup,
-  Skeleton,
   Switch,
   TextField,
   Typography,
@@ -26,13 +25,10 @@ import Navbar from '@/components/navbar/Navbar'
 import colors from '@/design-tokens/colors'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import useSWR from 'swr'
-import { FooterData, FooterLink, NavbarData, ProfilePageData } from '@/types'
+import { ProfilePageData } from '@/types'
 import Footer from '@/components/footer/Footer'
 import Image from 'next/image'
-import { fontSize } from '@mui/system'
 import ProfilePageSkeleton from '@/app/profile/components/ProfilePageSkeleton'
-
-export const dynamic = 'force-dynamic'
 
 // Fetcher function
 const fetcher = (url: string) => fetch(url).then((res) => res.json())

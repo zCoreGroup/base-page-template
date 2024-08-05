@@ -40,6 +40,7 @@ const defaultFooterData: FooterData = {
 const ProfilePageSkeleton: React.FC = () => {
   return (
     <Box
+      data-testid='profile-page-skeleton'
       sx={{
         display: 'flex',
         flexDirection: 'column',

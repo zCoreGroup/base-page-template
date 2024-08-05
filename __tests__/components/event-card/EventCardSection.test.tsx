@@ -3,6 +3,7 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import EventCardSection, { EventItem } from '@/components/event-card/EventCardSection'
+import Image from 'next/image'
 
 // Define types for the mock components' props
 interface EventCardProps {
@@ -21,7 +22,7 @@ interface CustomIndicatorProps {
 jest.mock('../../../src/components/event-card/EventCard', () => {
   const MockEventCard: React.FC<EventCardProps> = ({ title, description, image }) => (
     <div>
-      <img src={image} alt={title} />
+      <Image src={image} alt={title} />
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
