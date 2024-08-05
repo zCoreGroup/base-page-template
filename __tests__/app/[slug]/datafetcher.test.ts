@@ -1,4 +1,4 @@
-import NavbarDataFetcher from '../../../src/components/navbar/datafetcher'
+import NavbarDataFetcher from '../../../src/components/navbar/navbarDataFetcher'
 import BannerDataFetcher from '../../../src/components/banner/datafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
@@ -10,7 +10,7 @@ import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import BreadCrumbDataFetcher from '../../../src/components/breadcrumbs/datafetcher'
 import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
 
-jest.mock('../../../src/components/navbar/datafetcher')
+jest.mock('../../../src/components/navbar/navbarDataFetcher')
 jest.mock('../../../src/components/banner/datafetcher')
 jest.mock('../../../src/components/footer/dataFetcher')
 jest.mock('../../../src/components/footer/defaultFooterContentDataFetcher')
@@ -145,10 +145,7 @@ describe('LandingPageDataFetcher', () => {
       },
     } as LandingPageData)
 
-    expect(mockNavbarDataFetcher.fetch).toHaveBeenCalledWith({
-      slug: 'valid-slug',
-      title: 'Valid Title',
-    })
+    expect(mockNavbarDataFetcher.fetch).toHaveBeenCalled()
     expect(mockBreadDataFetcher.fetch).toHaveBeenCalledWith({
       slug: 'valid-slug',
       title: 'Valid Title',
@@ -173,5 +170,15 @@ describe('LandingPageDataFetcher', () => {
       slug: 'valid-slug',
       title: 'Valid Title',
     })
+  })
+
+  it('should return the same instance for the singleton', () => {
+    // Reset the singleton instance to ensure tests are independent
+    ;(LandingPageDataFetcher as any).instance = undefined
+
+    const instance1 = LandingPageDataFetcher.getInstance()
+    const instance2 = LandingPageDataFetcher.getInstance()
+
+    expect(instance1).toBe(instance2) // Check that both instances are the same
   })
 })

@@ -2,7 +2,6 @@ import React from 'react'
 
 import { LandingPageData, LandingPageQuery } from '@/types'
 import Banner from '../../components/banner/banner'
-import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
 import Announcements from '@/components/announcements/announcements'
 import Events from '@/components/events/events'
 import { Container, Grid } from '@mui/material'
@@ -28,7 +27,6 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
         <Container>
           <BreadCrumbs data={data.breadcrumbs} />
           <Banner data={data.banner} />
-          <FeaturedLinks data={data.featuredLinks} />
         </Container>
         <Container>
           <Grid container spacing={2}>

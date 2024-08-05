@@ -136,6 +136,29 @@ export type FooterLabels = {
   labels_id: string
 }
 
+export type NavigationData = {
+  id: string
+  link1: string
+  link2: string
+  link3: string
+  link4: string
+  link5: string
+  name1: string
+  name2: string
+  name3: string
+  name4: string
+  name5: string
+}
+
+export type HomeFeaturedLinks = {
+  links: number[]
+}
+
+export type HomeFeaturedLinksLinks = {
+  id: number
+  links_id: number
+}
+
 export type DirectusSchema = {
   landing_page: landing_page[]
   links: link[]
@@ -150,6 +173,9 @@ export type DirectusSchema = {
   portal_links: RawFooterLink[]
   feedback: Feedback
   footer_labels: FooterLabels[]
+  navigation: NavigationData
+  featured_links: HomeFeaturedLinks
+  featured_links_links: HomeFeaturedLinksLinks[]
 }
 
 const portalConfig = getPortalConfig()

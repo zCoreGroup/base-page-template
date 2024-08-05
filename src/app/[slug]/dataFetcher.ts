@@ -1,5 +1,5 @@
 import { LandingPageData, LandingPageQuery, LandingPageShort } from '@/types'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import BannerDataFetcher from '@/components/banner/datafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
@@ -46,7 +46,7 @@ export default class LandingPageDataFetcher extends DirectusDataFetcher {
 
     const [navbarData, breadCrumbData, bannerData, featuredLinksData, announcementsData, eventsData, footerData] =
       await Promise.all([
-        this.navbarFetcher.fetch(landingPage),
+        this.navbarFetcher.fetch(),
         this.breadCrumbFetcher.fetch(landingPage),
         this.bannerFetcher.fetch(landingPage),
         this.featuredLinksFetcher.fetch(landingPage),
