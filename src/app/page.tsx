@@ -35,8 +35,10 @@ const Home = async () => {
       <Navbar data={data.navbar} />
       <Box sx={{ flex: 1, py: 4, backgroundColor: 'white' }}>
         <Container maxWidth={'xl'}>
-          <FeaturedLinks data={data.featuredLinks} />
-          <Grid container spacing={4} sx={{ mt: 4, pt: 4 }}>
+          <Box sx={{ pb: { xs: 10, md: 2 } }}>
+            <FeaturedLinks data={data.featuredLinks} />
+          </Box>
+          <Grid container spacing={4} sx={{ mt: 2, pt: 4 }}>
             <Grid item xs={12} md={8}>
               <NewsCardSection newsItems={newsItems} minCardWidth={200} />
             </Grid>

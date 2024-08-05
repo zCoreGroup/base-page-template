@@ -2,27 +2,27 @@
 
 import HomePageDataFetcher from '@/app/homePageDataFetcher'
 import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
-import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
+import HomeFeaturedLinksDataFetcher from '@/components/home-featured-links/homeFeaturedLinksDataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData, NavbarData, FeaturedLinksData, FooterData } from '@/types'
 
 // Mock dependencies
 jest.mock('../../src/components/navbar/navbarDataFetcher')
-jest.mock('../../src/components/featured-links/dataFetcher')
+jest.mock('../../src/components/home-featured-links/homeFeaturedLinksDataFetcher')
 jest.mock('../../src/components/footer/dataFetcher')
 jest.mock('../../src/components/footer/defaultFooterContentDataFetcher')
 
 describe('HomePageDataFetcher', () => {
   let homePageDataFetcher: HomePageDataFetcher
   let mockNavbarFetcher: jest.Mocked<NavbarDataFetcher>
-  let mockFeaturedLinksFetcher: jest.Mocked<FeaturedLinksDataFetcher>
+  let mockFeaturedLinksFetcher: jest.Mocked<HomeFeaturedLinksDataFetcher>
   let mockFooterFetcher: jest.Mocked<FooterDataFetcher>
   let mockDefaultFooterContentFetcher: jest.Mocked<DefaultFooterContentDataFetcher>
 
   beforeEach(() => {
     mockNavbarFetcher = new NavbarDataFetcher() as jest.Mocked<NavbarDataFetcher>
-    mockFeaturedLinksFetcher = new FeaturedLinksDataFetcher() as jest.Mocked<FeaturedLinksDataFetcher>
+    mockFeaturedLinksFetcher = new HomeFeaturedLinksDataFetcher() as jest.Mocked<HomeFeaturedLinksDataFetcher>
     mockDefaultFooterContentFetcher =
       new DefaultFooterContentDataFetcher() as jest.Mocked<DefaultFooterContentDataFetcher>
     mockFooterFetcher = new FooterDataFetcher(mockDefaultFooterContentFetcher) as jest.Mocked<FooterDataFetcher>
