@@ -35,7 +35,7 @@ const Home = async () => {
       <Navbar data={data.navbar} />
       <Box sx={{ flex: 1, py: 4, backgroundColor: 'white' }}>
         <Container maxWidth={'xl'}>
-          <Box sx={{ pb: { xs: 7, md: 2 } }}>
+          <Box sx={{ pb: { xs: 10, md: 2 } }}>
             <FeaturedLinks data={data.featuredLinks} />
           </Box>
           <Grid container spacing={4} sx={{ mt: 2, pt: 4 }}>
