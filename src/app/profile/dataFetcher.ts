@@ -33,13 +33,6 @@ export default class ProfilePageDataFetcher extends DirectusDataFetcher {
     }
   }
 
-  private async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number) {
-    const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
-    )
-    return Promise.race([promiseFunc, timeoutPromise])
-  }
-
   static getInstance(): ProfilePageDataFetcher {
     if (ProfilePageDataFetcher.instance == undefined) {
       const navbarFetcher = new NavbarDataFetcher()
