@@ -6,7 +6,6 @@
   "extends": [
     "plugin:react/recommended",
     "plugin:@next/next/recommended",
-    "prettier",
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended"
   ],
