@@ -1,20 +1,20 @@
-import { DirectusDataFetcher, welcome_page } from '@/lib/directusdatafetcher'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import { DirectusDataFetcher } from '@/lib/directusdatafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData } from '@/types'
-import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
+import HomeFeaturedLinksDataFetcher from '@/components/home-featured-links/homeFeaturedLinksDataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 
 export default class HomePageDataFetcher extends DirectusDataFetcher {
   static instance: HomePageDataFetcher
 
   private navbarFetcher: NavbarDataFetcher
-  private featuredLinksFetcher: FeaturedLinksDataFetcher
+  private featuredLinksFetcher: HomeFeaturedLinksDataFetcher
   private footerFetcher: FooterDataFetcher
 
   constructor(
     navbarFetcher: NavbarDataFetcher,
-    featuredLinksDataFetcher: FeaturedLinksDataFetcher,
+    featuredLinksDataFetcher: HomeFeaturedLinksDataFetcher,
     footerFetcher: FooterDataFetcher
   ) {
     super()
@@ -50,8 +50,8 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
     }
     try {
       const [navbarData, featuredLinksData, footerData] = await Promise.all([
-        this.fetchWithTimeout(this.navbarFetcher.fetchStaticNavbar(), 5000),
-        this.fetchWithTimeout(this.featuredLinksFetcher.fetch(landingPage), 5000),
+        this.fetchWithTimeout(this.navbarFetcher.fetch(), 5000),
+        this.fetchWithTimeout(this.featuredLinksFetcher.fetch(), 5000),
         this.fetchWithTimeout(this.footerFetcher.fetch(landingPage), 5000),
       ])
 
@@ -76,7 +76,7 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
   static getInstance(): HomePageDataFetcher {
     if (HomePageDataFetcher.instance == undefined) {
       const navbarFetcher = new NavbarDataFetcher()
-      const featuredLinksFetcher = new FeaturedLinksDataFetcher()
+      const featuredLinksFetcher = new HomeFeaturedLinksDataFetcher()
       const defaultFooterContentFetcher = new DefaultFooterContentDataFetcher()
       const footerFetcher = new FooterDataFetcher(defaultFooterContentFetcher)
 

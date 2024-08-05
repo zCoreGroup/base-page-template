@@ -1,11 +1,11 @@
 import ProfilePageDataFetcher from '../../../src/app/profile/dataFetcher'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { NavbarData, FooterData } from '@/types'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 
 // Mock the dependencies
-jest.mock('../../../src/components/navbar/datafetcher')
+jest.mock('../../../src/components/navbar/navbarDataFetcher')
 jest.mock('../../../src/components/footer/dataFetcher')
 jest.mock('../../../src/components/footer/defaultFooterContentDataFetcher')
 
@@ -53,7 +53,7 @@ describe('ProfilePageDataFetcher', () => {
       feedback: 'feedback',
     }
 
-    mockNavbarFetcher.fetchStaticNavbar.mockResolvedValue(mockNavbarData)
+    mockNavbarFetcher.fetch.mockResolvedValue(mockNavbarData)
     mockFooterFetcher.fetch.mockResolvedValue(mockFooterData)
 
     const result = await profilePageDataFetcher.fetch()
@@ -62,19 +62,19 @@ describe('ProfilePageDataFetcher', () => {
       navbar: mockNavbarData,
       footer: mockFooterData,
     })
-    expect(mockNavbarFetcher.fetchStaticNavbar).toHaveBeenCalledTimes(1)
+    expect(mockNavbarFetcher.fetch).toHaveBeenCalledTimes(1)
     expect(mockFooterFetcher.fetch).toHaveBeenCalledTimes(1)
   })
 
   it('should throw an error if navbar fetch fails', async () => {
-    mockNavbarFetcher.fetchStaticNavbar.mockRejectedValue(new Error('Navbar fetch failed'))
+    mockNavbarFetcher.fetch.mockRejectedValue(new Error('Navbar fetch failed'))
     mockFooterFetcher.fetch.mockResolvedValue({} as FooterData)
 
     await expect(profilePageDataFetcher.fetch()).rejects.toThrow('Navbar fetch failed')
   })
 
   it('should throw an error if footer fetch fails', async () => {
-    mockNavbarFetcher.fetchStaticNavbar.mockResolvedValue({} as NavbarData)
+    mockNavbarFetcher.fetch.mockResolvedValue({} as NavbarData)
     mockFooterFetcher.fetch.mockRejectedValue(new Error('Footer fetch failed'))
 
     await expect(profilePageDataFetcher.fetch()).rejects.toThrow('Footer fetch failed')
@@ -82,7 +82,7 @@ describe('ProfilePageDataFetcher', () => {
 
   it('should timeout if a fetch takes too long', async () => {
     jest.useFakeTimers()
-    mockNavbarFetcher.fetchStaticNavbar.mockImplementation(() => new Promise((resolve) => setTimeout(resolve, 6000)))
+    mockNavbarFetcher.fetch.mockImplementation(() => new Promise((resolve) => setTimeout(resolve, 6000)))
     mockFooterFetcher.fetch.mockResolvedValue({} as FooterData)
 
     const fetchPromise = profilePageDataFetcher.fetch()

@@ -1,28 +1,28 @@
 // HomePageDataFetcher.test.ts
 
 import HomePageDataFetcher from '@/app/homePageDataFetcher'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
-import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
+import HomeFeaturedLinksDataFetcher from '@/components/home-featured-links/homeFeaturedLinksDataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData, NavbarData, FeaturedLinksData, FooterData } from '@/types'
 
 // Mock dependencies
-jest.mock('../../src/components/navbar/datafetcher')
-jest.mock('../../src/components/featured-links/dataFetcher')
+jest.mock('../../src/components/navbar/navbarDataFetcher')
+jest.mock('../../src/components/home-featured-links/homeFeaturedLinksDataFetcher')
 jest.mock('../../src/components/footer/dataFetcher')
 jest.mock('../../src/components/footer/defaultFooterContentDataFetcher')
 
 describe('HomePageDataFetcher', () => {
   let homePageDataFetcher: HomePageDataFetcher
   let mockNavbarFetcher: jest.Mocked<NavbarDataFetcher>
-  let mockFeaturedLinksFetcher: jest.Mocked<FeaturedLinksDataFetcher>
+  let mockFeaturedLinksFetcher: jest.Mocked<HomeFeaturedLinksDataFetcher>
   let mockFooterFetcher: jest.Mocked<FooterDataFetcher>
   let mockDefaultFooterContentFetcher: jest.Mocked<DefaultFooterContentDataFetcher>
 
   beforeEach(() => {
     mockNavbarFetcher = new NavbarDataFetcher() as jest.Mocked<NavbarDataFetcher>
-    mockFeaturedLinksFetcher = new FeaturedLinksDataFetcher() as jest.Mocked<FeaturedLinksDataFetcher>
+    mockFeaturedLinksFetcher = new HomeFeaturedLinksDataFetcher() as jest.Mocked<HomeFeaturedLinksDataFetcher>
     mockDefaultFooterContentFetcher =
       new DefaultFooterContentDataFetcher() as jest.Mocked<DefaultFooterContentDataFetcher>
     mockFooterFetcher = new FooterDataFetcher(mockDefaultFooterContentFetcher) as jest.Mocked<FooterDataFetcher>
@@ -82,7 +82,7 @@ describe('HomePageDataFetcher', () => {
     }
 
     // Mock the fetch methods
-    mockNavbarFetcher.fetchStaticNavbar.mockResolvedValue(mockNavbarData)
+    mockNavbarFetcher.fetch.mockResolvedValue(mockNavbarData)
     mockFeaturedLinksFetcher.fetch.mockResolvedValue(mockFeaturedLinksData)
     mockFooterFetcher.fetch.mockResolvedValue(mockFooterData)
 
@@ -98,7 +98,7 @@ describe('HomePageDataFetcher', () => {
 
   it('should throw an error if data fetching fails', async () => {
     // Mock the fetch methods to throw an error
-    mockNavbarFetcher.fetchStaticNavbar.mockRejectedValue(new Error('Failed to fetch navbar'))
+    mockNavbarFetcher.fetch.mockRejectedValue(new Error('Failed to fetch navbar'))
 
     await expect(homePageDataFetcher.fetch()).rejects.toThrow('Failed to fetch navbar')
   })

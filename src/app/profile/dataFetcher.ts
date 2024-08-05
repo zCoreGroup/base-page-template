@@ -1,5 +1,5 @@
 import { DirectusDataFetcher } from '@/lib/directusdatafetcher'
-import NavbarDataFetcher from '@/components/navbar/datafetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import { ProfilePageData } from '@/types'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
@@ -19,7 +19,7 @@ export default class ProfilePageDataFetcher extends DirectusDataFetcher {
   async fetch(): Promise<ProfilePageData> {
     try {
       const [navbarData, footerData] = await Promise.all([
-        this.fetchWithTimeout(this.navbarFetcher.fetchStaticNavbar(), 5000),
+        this.fetchWithTimeout(this.navbarFetcher.fetch(), 5000),
         this.fetchWithTimeout(this.footerFetcher.fetch(), 5000),
       ])
 
