@@ -1,4 +1,3 @@
-// components/FeaturedLinks.tsx
 import React from 'react'
 import { Grid, Typography, Box, Button } from '@mui/material'
 import { FeaturedLinksData } from '@/types'

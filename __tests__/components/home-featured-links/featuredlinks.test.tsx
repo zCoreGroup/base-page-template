@@ -1,4 +1,3 @@
-// components/FeaturedLinks.test.tsx
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import FeaturedLinks from '@/components/home-featured-links/FeaturedLinks'
