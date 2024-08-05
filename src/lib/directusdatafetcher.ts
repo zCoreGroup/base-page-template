@@ -150,6 +150,15 @@ export type NavigationData = {
   name5: string
 }
 
+export type HomeFeaturedLinks = {
+  links: number[]
+}
+
+export type HomeFeaturedLinksLinks = {
+  id: number
+  links_id: number
+}
+
 export type DirectusSchema = {
   landing_page: landing_page[]
   links: link[]
@@ -165,6 +174,8 @@ export type DirectusSchema = {
   feedback: Feedback
   footer_labels: FooterLabels[]
   navigation: NavigationData
+  featured_links: HomeFeaturedLinks
+  featured_links_links: HomeFeaturedLinksLinks[]
 }
 
 const portalConfig = getPortalConfig()
