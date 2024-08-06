@@ -5,10 +5,12 @@ import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 import HomeFeaturedLinksDataFetcher from '@/components/home-featured-links/homeFeaturedLinksDataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
-import { HomePageData, NavbarData, FeaturedLinksData, FooterData } from '@/types'
+import { HomePageData, NavbarData, FeaturedLinksData, FooterData, HeroBannerData } from '@/types'
+import HeroBannerDataFetcher from '@/components/herobanner/dataFetcher'
 
 // Mock dependencies
 jest.mock('../../src/components/navbar/navbarDataFetcher')
+jest.mock('../../src/components/herobanner/dataFetcher')
 jest.mock('../../src/components/home-featured-links/homeFeaturedLinksDataFetcher')
 jest.mock('../../src/components/footer/dataFetcher')
 jest.mock('../../src/components/footer/defaultFooterContentDataFetcher')
@@ -16,18 +18,25 @@ jest.mock('../../src/components/footer/defaultFooterContentDataFetcher')
 describe('HomePageDataFetcher', () => {
   let homePageDataFetcher: HomePageDataFetcher
   let mockNavbarFetcher: jest.Mocked<NavbarDataFetcher>
+  let mockHeroBannerFetcher: jest.Mocked<HeroBannerDataFetcher>
   let mockFeaturedLinksFetcher: jest.Mocked<HomeFeaturedLinksDataFetcher>
   let mockFooterFetcher: jest.Mocked<FooterDataFetcher>
   let mockDefaultFooterContentFetcher: jest.Mocked<DefaultFooterContentDataFetcher>
 
   beforeEach(() => {
     mockNavbarFetcher = new NavbarDataFetcher() as jest.Mocked<NavbarDataFetcher>
+    mockHeroBannerFetcher = new HeroBannerDataFetcher() as jest.Mocked<HeroBannerDataFetcher>
     mockFeaturedLinksFetcher = new HomeFeaturedLinksDataFetcher() as jest.Mocked<HomeFeaturedLinksDataFetcher>
     mockDefaultFooterContentFetcher =
       new DefaultFooterContentDataFetcher() as jest.Mocked<DefaultFooterContentDataFetcher>
     mockFooterFetcher = new FooterDataFetcher(mockDefaultFooterContentFetcher) as jest.Mocked<FooterDataFetcher>
 
-    homePageDataFetcher = new HomePageDataFetcher(mockNavbarFetcher, mockFeaturedLinksFetcher, mockFooterFetcher)
+    homePageDataFetcher = new HomePageDataFetcher(
+      mockNavbarFetcher,
+      mockHeroBannerFetcher,
+      mockFeaturedLinksFetcher,
+      mockFooterFetcher
+    )
   })
 
   it('should fetch and return home page data correctly', async () => {
@@ -80,14 +89,27 @@ describe('HomePageDataFetcher', () => {
       ],
       feedback: 'Feedback text',
     }
-
+    const mockHeroData: HeroBannerData = {
+      images: [
+        {
+          id: '1',
+          source: '/image1.jpg',
+          title: 'Title 1',
+          heading: 'Heading 1',
+          subheading: 'Subheading 1',
+          imgCaption: 'Caption 1',
+        },
+      ],
+    }
     // Mock the fetch methods
     mockNavbarFetcher.fetch.mockResolvedValue(mockNavbarData)
+    mockHeroBannerFetcher.fetch.mockResolvedValue(mockHeroData)
     mockFeaturedLinksFetcher.fetch.mockResolvedValue(mockFeaturedLinksData)
     mockFooterFetcher.fetch.mockResolvedValue(mockFooterData)
 
     const expectedData: HomePageData = {
       navbar: mockNavbarData,
+      heroBanner: mockHeroData,
       featuredLinks: mockFeaturedLinksData,
       footer: mockFooterData,
     }

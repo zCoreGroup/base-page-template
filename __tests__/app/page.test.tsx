@@ -8,6 +8,16 @@ jest.mock('../../src/app/homePageDataFetcher', () => ({
     fetch: jest.fn(() =>
       Promise.resolve({
         navbar: {},
+        heroBanner: {
+          title: 'Test Hero Title',
+          subtitle: 'Test Hero Subtitle',
+          images: [
+            {
+              source: '/test-hero-image.jpg',
+              title: 'Test Hero Image',
+            },
+          ],
+        },
         featuredLinks: {},
         footer: {},
       })
@@ -19,6 +29,12 @@ jest.mock('../../src/app/homePageDataFetcher', () => ({
 jest.mock('../../src/components/navbar/Navbar', () => {
   return function MockNavbar() {
     return <div data-testid='navbar' />
+  }
+})
+
+jest.mock('../../src/components/herobanner/HeroBanner', () => {
+  return function MockHeroBanner() {
+    return <div data-testid='herobanner' />
   }
 })
 
@@ -62,6 +78,7 @@ describe('Home', () => {
 
     // Check if the main components are rendered
     expect(screen.getByTestId('navbar')).toBeInTheDocument()
+    expect(screen.getByTestId('herobanner')).toBeInTheDocument()
     expect(screen.getByTestId('footer')).toBeInTheDocument()
     expect(screen.getByTestId('featured-links')).toBeInTheDocument()
     expect(screen.getByTestId('news-card-section')).toBeInTheDocument()

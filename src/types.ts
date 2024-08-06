@@ -1,5 +1,6 @@
 export type HomePageData = {
   navbar: NavbarData
+  heroBanner: HeroBannerData
   featuredLinks: FeaturedLinksData
   footer: FooterData
 }
@@ -98,6 +99,19 @@ export type FooterData = {
   quickLinks: FooterLink[]
   guardianPortal: FooterLink[]
   feedback: string
+}
+
+export interface HeroBanner {
+  id: string
+  source: string
+  title: string
+  heading: string
+  subheading: string
+  imgCaption: string
+}
+
+export interface HeroBannerData {
+  images: HeroBanner[]
 }
 
 export interface BreadCrumbData {

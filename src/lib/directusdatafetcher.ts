@@ -156,10 +156,19 @@ export type HomeFeaturedLinksLinks = {
   id: number
   links_id: number
 }
+export type hero_banner = {
+  id: string
+  source: string
+  title: string
+  heading: string
+  subheading: string
+  imgCaption: string
+}
 
 export type DirectusSchema = {
   landing_page: landing_page[]
   links: link[]
+  hero_banner: []
   landing_page_links: landing_page_links[]
   articles: article[]
   labels: label[]
