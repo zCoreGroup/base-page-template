@@ -63,7 +63,7 @@ export const bannerSubFieldTitle = {
 
 export const bannerSubFieldText = {
   fontFamily: 'Roboto',
-  fontSize: '12px',
+  fontSize: '0.7rem',
   fontWeight: 'normal',
   fontStretch: 'normal',
   fontStyle: 'normal',
