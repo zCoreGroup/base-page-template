@@ -189,7 +189,7 @@ export class DirectusDataFetcher {
 
   getFileUrl(uuid: string): string {
     if (!uuid) {
-      return '/assets/Logo_of_the_United_States_Space_Force.png'
+      return '/assets/guardian_one_logo_logo.png'
     } else {
       return `/api/file-proxy/?uuid=${uuid}`
     }
