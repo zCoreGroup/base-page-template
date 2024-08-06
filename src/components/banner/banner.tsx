@@ -13,9 +13,17 @@ import {
   container,
 } from './styles'
 
+const LONG_TEXT_THRESHOLD: number = 150
+
 const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
   const missionEmpty = !data.missionText || validator.isEmpty(data.missionText)
   const visionEmpty = !data.visionText || validator.isEmpty(data.visionText)
+
+  const getTextStyle = (text: string) => {
+    const length = text.length
+    const fontSize = length > LONG_TEXT_THRESHOLD ? '10px' : bannerSubFieldText.fontSize
+    return { ...bannerSubFieldText, fontSize }
+  }
 
   return (
     <Box sx={container}>
@@ -39,7 +47,7 @@ const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
                 <Typography variant='h6' sx={bannerSubFieldTitle}>
                   Our Mission
                 </Typography>
-                <Typography variant='body2' sx={bannerSubFieldText}>
+                <Typography variant='body2' sx={getTextStyle(data.missionText)}>
                   {data.missionText}
                 </Typography>
               </Box>
@@ -49,7 +57,7 @@ const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
                 <Typography variant='h6' sx={bannerSubFieldTitle}>
                   Our Vision
                 </Typography>
-                <Typography variant='body2' sx={bannerSubFieldText}>
+                <Typography variant='body2' sx={getTextStyle(data.visionText)}>
                   {data.visionText}
                 </Typography>
               </Box>
