@@ -318,6 +318,53 @@
       ],
       "type": "object"
     },
+    "HeroBanner": {
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "imgCaption": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "subheading": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "title",
+        "heading",
+        "subheading",
+        "imgCaption"
+      ],
+      "type": "object"
+    },
+    "HeroBannerData": {
+      "additionalProperties": false,
+      "properties": {
+        "images": {
+          "items": {
+            "$ref": "#/components/schemas/HeroBanner"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "images"
+      ],
+      "type": "object"
+    },
     "HomePageData": {
       "additionalProperties": false,
       "properties": {
@@ -327,12 +374,16 @@
         "footer": {
           "$ref": "#/components/schemas/FooterData"
         },
+        "heroBanner": {
+          "$ref": "#/components/schemas/HeroBannerData"
+        },
         "navbar": {
           "$ref": "#/components/schemas/NavbarData"
         }
       },
       "required": [
         "navbar",
+        "heroBanner",
         "featuredLinks",
         "footer"
       ],

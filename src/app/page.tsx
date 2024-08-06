@@ -6,6 +6,7 @@ import Footer from '@/components/footer/Footer'
 import FeaturedLinks from '@/components/featured-links/FeaturedLinks'
 import NewsCardSection, { NewsItem } from '@/components/news-card/NewsCardSection'
 import EventCardSection, { EventItem } from '@/components/event-card/EventCardSection'
+import HeroBanner from '@/components/herobanner/HeroBanner'
 
 export const dynamic = 'force-dynamic'
 
@@ -36,6 +37,7 @@ const Home = async () => {
       <Box sx={{ flex: 1, py: 4, backgroundColor: 'white' }}>
         <Container maxWidth={'xl'}>
           <Box sx={{ pb: { xs: 10, md: 2 } }}>
+            <HeroBanner data={data.heroBanner} />
             <FeaturedLinks data={data.featuredLinks} />
           </Box>
           <Grid container spacing={4} sx={{ mt: 2, pt: 4 }}>
