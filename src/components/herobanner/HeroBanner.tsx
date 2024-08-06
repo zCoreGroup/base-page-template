@@ -1,9 +1,7 @@
 'use client'
-
 import React, { useState } from 'react'
 import { Box, Typography } from '@mui/material'
 import * as styles from './styles'
-
 import { HeroBannerData } from '@/types'
 import Image from 'next/image'
 import { useAutoSlide } from './useAutoSlide'
@@ -14,10 +12,8 @@ interface HeroBannerProps {
 
 const getImageStyle = (index: number, activeIndex: number) => (activeIndex === index ? styles.activeThumbnail : {})
 
-const getThumbnailButtonStyle = (index: number, activeIndex: number, totalImages: number) => ({
+const getThumbnailButtonStyle = (index: number, activeIndex: number) => ({
   ...styles.thumbnailButton,
-  zIndex: totalImages - index,
-  marginLeft: index > 0 ? 3 : 0,
   border: activeIndex === index ? '2px solid white' : '1px solid black',
 })
 
@@ -38,20 +34,14 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ data }) => {
         />
       </Box>
       <Box sx={styles.textOverlay}>
-        <Typography variant='h6' sx={styles.title}>
-          {images[activeIndex].title}
-        </Typography>
-        <Typography variant='h5' sx={styles.heading}>
-          {images[activeIndex].heading}
-        </Typography>
-        <Typography variant='body2' sx={styles.subheading}>
-          {images[activeIndex].subheading}
-        </Typography>
+        <Typography sx={styles.title}>{images[activeIndex].title}</Typography>
+        <Typography sx={styles.heading}>{images[activeIndex].heading}</Typography>
+        <Typography sx={styles.subheading}>{images[activeIndex].subheading}</Typography>
       </Box>
       <Box sx={styles.thumbnailContainer}>
         {images.map((image, index) => (
           <Box key={image.id} sx={styles.thumbnailWrapper}>
-            <Box onClick={() => setActiveIndex(index)} sx={getThumbnailButtonStyle(index, activeIndex, images.length)}>
+            <Box onClick={() => setActiveIndex(index)} sx={getThumbnailButtonStyle(index, activeIndex)}>
               <Image
                 src={getProxiedImageUrl(image.source)}
                 alt={`thumbnail ${index}`}
@@ -59,9 +49,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ data }) => {
                 style={{ ...getImageStyle(index, activeIndex), objectFit: 'cover' }}
               />
             </Box>
-            <Typography variant='caption' sx={styles.imgCaption}>
-              {image.imgCaption}
-            </Typography>
+            <Typography sx={styles.imgCaption}>{image.imgCaption}</Typography>
           </Box>
         ))}
       </Box>
