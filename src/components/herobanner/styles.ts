@@ -32,7 +32,7 @@ export const textOverlay = {
 export const title = {
   fontSize: { xs: 10, sm: 12, md: 14 },
   fontWeight: 'bold',
-  color: 'surfaceVariant',
+  color: 'var(--schemes-on-surface-variant)',
   lineHeight: 1.2,
 }
 
@@ -41,11 +41,13 @@ export const heading = {
   fontWeight: 'bold',
   lineHeight: 1.2,
   marginBottom: { xs: -1, sm: -1, md: -2 },
+  color: 'var(--schemes-primary)',
 }
 
 export const subheading = {
   fontSize: { xs: 8, sm: 10, md: 12 },
   lineHeight: 1.2,
+  color: 'var(--schemes-on-background)',
 }
 
 export const thumbnailContainer = {
@@ -84,7 +86,7 @@ export const thumbnailButton = {
 export const imgCaption = {
   fontSize: { xs: 6, sm: 8, md: 12 },
   textAlign: 'center',
-  fontFamily: 'IBMPlexMono',
+  fontFamily: 'IBM PLEX MONO',
   color: 'var(--m-3-black)',
   marginTop: { xs: 0.5, sm: 1 },
 }
