@@ -4,7 +4,7 @@ import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material'
 import Carousel from 'react-material-ui-carousel'
 import { AnnouncementsData, Announcement as AnnouncementsItem } from '@/types'
 import CustomIndicator from './customindicator'
-import { chip, containerStyles, title } from './styles'
+import { title } from './styles'
 
 interface ItemProps {
   item: AnnouncementsItem
@@ -70,7 +70,7 @@ const Announcements: React.FC<AnnouncementsProps> = ({ data }) => {
     setActiveIndex(index)
   }
 
-  const handleCarouselChange = (now?: number | undefined, previous?: number | undefined) => {
+  const handleCarouselChange = (now?: number | undefined) => {
     if (typeof now === 'number' && !isNaN(now)) {
       setActiveIndex(now)
     }

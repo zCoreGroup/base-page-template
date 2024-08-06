@@ -42,7 +42,6 @@ export default class NavbarDataFetcher extends DirectusDataFetcher {
   }
 
   async getNavigationData(): Promise<NavigationData> {
-    const navigation = await this.client.request(readSingleton('navigation'))
-    return navigation
+    return await this.client.request(readSingleton('navigation'))
   }
 }

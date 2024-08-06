@@ -66,6 +66,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
       },
     })
   } catch (error) {
+    console.error('Error fetching file:', error)
     return NextResponse.json({ error: 'Failed to fetch the file' }, { status: 500 })
   }
 }

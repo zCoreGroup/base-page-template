@@ -1,8 +1,6 @@
 import { createDirectus, rest, RestClient, staticToken } from '@directus/sdk'
 import { getPortalConfig } from './portalconfig'
 
-export type welcome_page = {}
-
 export type landing_page = {
   id: number
   status: string
@@ -191,5 +189,12 @@ export class DirectusDataFetcher {
 
   getFileUrl(uuid: string): string {
     return `/api/file-proxy/?uuid=${uuid}`
+  }
+
+  protected async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number) {
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
+    )
+    return Promise.race([promiseFunc, timeoutPromise])
   }
 }

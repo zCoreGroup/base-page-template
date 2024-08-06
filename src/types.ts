@@ -14,6 +14,11 @@ export type LandingPageData = {
   navbar: NavbarData
 }
 
+export type ProfilePageData = {
+  navbar: NavbarData
+  footer: FooterData
+}
+
 export type LandingPageQuery = {
   slug: string
 }
@@ -112,16 +117,7 @@ export type BannerData = {
   missionText: string
   visionText: string
 }
-export type HexagonImageLinkData = {
-  url: string
-  imageUrl: string
-  name: string
-}
-export type HexagonImageOverlayData = {
-  imageUrl: string
-  altText: string
-  sideLength: number
-}
+
 export type NavbarLink = {
   name: string
   url: string

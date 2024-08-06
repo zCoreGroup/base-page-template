@@ -1,9 +1,9 @@
-import { DirectusDataFetcher, welcome_page } from '@/lib/directusdatafetcher'
-import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
+import { DirectusDataFetcher } from '@/lib/directusdatafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
 import { HomePageData } from '@/types'
 import HomeFeaturedLinksDataFetcher from '@/components/home-featured-links/homeFeaturedLinksDataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 
 export default class HomePageDataFetcher extends DirectusDataFetcher {
   static instance: HomePageDataFetcher
@@ -52,7 +52,7 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
       const [navbarData, featuredLinksData, footerData] = await Promise.all([
         this.fetchWithTimeout(this.navbarFetcher.fetch(), 5000),
         this.fetchWithTimeout(this.featuredLinksFetcher.fetch(), 5000),
-        this.fetchWithTimeout(this.footerFetcher.fetch(), 5000),
+        this.fetchWithTimeout(this.footerFetcher.fetch(landingPage), 5000),
       ])
 
       return {
@@ -64,13 +64,6 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
       console.error('Error fetching home page data', error)
       throw error
     }
-  }
-
-  private async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number) {
-    const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
-    )
-    return Promise.race([promiseFunc, timeoutPromise])
   }
 
   static getInstance(): HomePageDataFetcher {

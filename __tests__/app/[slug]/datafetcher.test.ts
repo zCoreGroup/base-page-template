@@ -8,7 +8,6 @@ import { LandingPageQuery, LandingPageData } from '@/types'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
 import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
 import BreadCrumbDataFetcher from '../../../src/components/breadcrumbs/datafetcher'
-import DefaultFooterContentDataFetecher from '@/components/footer/defaultFooterContentDataFetcher'
 
 jest.mock('../../../src/components/navbar/navbarDataFetcher')
 jest.mock('../../../src/components/banner/datafetcher')
