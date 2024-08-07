@@ -197,7 +197,11 @@ export class DirectusDataFetcher {
   }
 
   getFileUrl(uuid: string): string {
-    return `/api/file-proxy/?uuid=${uuid}`
+    if (!uuid) {
+      return '/assets/guardian_one_logo_logo.png'
+    } else {
+      return `/api/file-proxy/?uuid=${uuid}`
+    }
   }
 
   protected async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number) {
