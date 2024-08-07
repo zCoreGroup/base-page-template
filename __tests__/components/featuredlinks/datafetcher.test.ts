@@ -104,7 +104,7 @@ describe('FeaturedLinksDataFetcher', () => {
         return Promise.resolve(mockRawLinks)
       })
 
-    jest.spyOn(fetcher, 'getFileUrl').mockImplementation((uuid: string) => `/api/file-proxy/?uuid=${uuid}`)
+    jest.spyOn(fetcher, 'getFileUrl').mockImplementation((uuid: string) => uuid)
 
     const expectedData = {
       links: [
