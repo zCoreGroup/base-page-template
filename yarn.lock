@@ -3732,10 +3732,10 @@
     form-data "^4.0.0"
     regenerator-runtime "^0.13.7"
 
-"@zeplin/storybook-inspector@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@zeplin/storybook-inspector/-/storybook-inspector-0.2.4.tgz#6abd466970d65439eba6776ddb38553714387ec1"
-  integrity sha512-9CdYnoLcp/hMPZmM6g3jr+mdzza5JqlUUo7p442D7Ob6j3ZiiWhbQEtyhnQy/4T3BOApnCpRgrSSdozfbl2IJQ==
+"@zeplin/storybook-inspector@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@zeplin/storybook-inspector/-/storybook-inspector-0.3.0.tgz#9e66ad2fd9e15ef54570d3484250ef24258a43cb"
+  integrity sha512-IBHxfIo+wUVb/iFLcgLg7JEko5aVB9wRJV12amvV090YfjCDKmOCIPCbf+88b01ZfudBJ+pLHAy8W8EKdIj1uA==
   dependencies:
     lit-html "^2.0.0-rc.3"
     query-string "^7.0.1"
@@ -9556,7 +9556,7 @@ react-docgen@^7.0.0:
     resolve "^1.22.1"
     strip-indent "^4.0.0"
 
-"react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18:
+"react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18, react-dom@^18.3.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.3.1.tgz#c2265d79511b57d479b3dd3fdfa51536494c5cb4"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
@@ -9674,7 +9674,7 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-"react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18:
+"react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18, react@^18.3.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react/-/react-18.3.1.tgz#49ab892009c53933625bd16b2533fc754cab2891"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
@@ -10421,14 +10421,16 @@ stop-iteration-iterator@^1.0.0:
   dependencies:
     internal-slot "^1.0.4"
 
-storybook-zeplin@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/storybook-zeplin/-/storybook-zeplin-2.0.3.tgz#c76728d0d4fc6feb97cea1bef1788e5680de3b61"
-  integrity sha512-RomxqH8hcFSmyTQw71ogWWWHrw/KHp1KTkZh5UONxlDTtnSGe6QGaxg18kCP1ycEKK3C9UoGy8YeaYDCPtlwfw==
+storybook-zeplin@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/storybook-zeplin/-/storybook-zeplin-3.0.0.tgz#d878c79de6381511ccb2784caed89ef8f9d14e00"
+  integrity sha512-koF1TcFvroippkKq6S92zkGoAFzdjjc144NXpgLHJm6pXGJRnl/Y5GDVr4cVQoszSUiOd6LJs9qIlHKpMmsO+g==
   dependencies:
     "@zeplin/sdk" "^1.9.0"
-    "@zeplin/storybook-inspector" "^0.2.4"
+    "@zeplin/storybook-inspector" "^0.3.0"
     query-string "^6.12.1"
+    react "^18.3.1"
+    react-dom "^18.3.1"
     semver "^7.3.5"
 
 storybook@^8.2.7:
