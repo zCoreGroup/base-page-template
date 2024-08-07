@@ -1145,10 +1145,10 @@
     react-confetti "^6.1.0"
     strip-ansi "^7.1.0"
 
-"@directus/sdk@^16.1.0":
-  version "16.1.2"
-  resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-16.1.2.tgz#cd8c45881497a4ae3b6659c6b6bd68dc13e98258"
-  integrity sha512-TlKmS80tH5mmFQA1kRYZ6QuvggE/kP1uMRTTIM3qSTrAsAabaG1oKhRVLM3Qi8HZYL20DWqSSG6AQFjYgbKxFw==
+"@directus/sdk@^17.0.0":
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-17.0.0.tgz#1e99f8afab95945d04025a8f374d206b8e0167d7"
+  integrity sha512-ADKoFrLjWPVVsYNK0EffVFstl/ZHVaQbiUp4NCueKfvFaOSLQ16xSVNj5O//rP5+rU8t1HkjwC6JDh02rao7ZQ==
 
 "@emnapi/runtime@^1.1.1":
   version "1.2.0"
