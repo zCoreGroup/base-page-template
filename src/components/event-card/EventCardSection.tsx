@@ -48,7 +48,7 @@ export default function EventCardSection({ eventItems, minCardHeight }: EventCar
     <>
       <Box ref={containerRef} sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
         {visibleCards.map((item) => (
-          <EventCard data-testid='event-card' key={item.id} {...item} />
+          <EventCard key={item.id} {...item} />
         ))}
       </Box>
       <CustomIndicator length={totalPages} activeIndex={activeIndex + 1} onClick={handleIndicatorClick} />

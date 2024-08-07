@@ -65,6 +65,7 @@ mockFooterDataFetcher.fetch = jest.fn().mockResolvedValue({
   quickLinks: [],
   guardianPortal: [],
   feedback: '',
+  default: false,
 })
 mockFeaturedLinksDataFetcher.fetch = jest.fn().mockResolvedValue({ links: [] })
 mockAnnouncementsDataFetcher.fetch = jest.fn().mockResolvedValue({ articles: [] })
@@ -141,6 +142,7 @@ describe('LandingPageDataFetcher', () => {
         quickLinks: [],
         guardianPortal: [],
         feedback: '',
+        default: false,
       },
     } as LandingPageData)
 

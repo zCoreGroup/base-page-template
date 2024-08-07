@@ -99,6 +99,7 @@ export type FooterData = {
   quickLinks: FooterLink[]
   guardianPortal: FooterLink[]
   feedback: string
+  default: boolean
 }
 
 export interface HeroBanner {

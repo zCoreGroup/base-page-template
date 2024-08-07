@@ -88,6 +88,7 @@ describe('HomePageDataFetcher', () => {
         { name: 'Portal Link 2', url: 'http://portallink2.com', openInNew: false },
       ],
       feedback: 'Feedback text',
+      default: true,
     }
     const mockHeroData: HeroBannerData = {
       images: [

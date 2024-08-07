@@ -1,9 +1,11 @@
+import spacing from '@/design-tokens/spacing'
 export const container = {
   backgroundColor: 'white',
   color: 'black',
-  paddingRight: '26px',
-  paddingLeft: '26px',
-  marginBottom: '24px',
+  paddingRight: spacing.padding.m,
+  paddingLeft: spacing.padding.m,
+  paddingBottom: spacing.padding.m,
+  marginBottom: spacing.spacing.ml,
 }
 export const logo = {
   height: 80,
@@ -16,6 +18,7 @@ export const bannerTitle = {
   fontWeight: 'bold',
   textAlign: 'left',
   flexGrow: 0,
+  marginTop: spacing.spacing.m,
 }
 
 export const tagLine = {
@@ -60,7 +63,7 @@ export const bannerSubFieldTitle = {
 
 export const bannerSubFieldText = {
   fontFamily: 'Roboto',
-  fontSize: '12px',
+  fontSize: '0.7rem',
   fontWeight: 'normal',
   fontStretch: 'normal',
   fontStyle: 'normal',

@@ -61,6 +61,7 @@ describe('Profile API Route', () => {
         quickLinks: [],
         guardianPortal: [],
         feedback: '',
+        default: true,
       },
     }
 
