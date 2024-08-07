@@ -10,6 +10,7 @@ export const link = {
   width: 'auto',
   height: '24px',
   flexGrow: 0,
+  fontFamily: 'Libre Franklin, sans-serif',
   fontSize: '16px',
   fontWeight: 'normal',
   fontStretch: 'normal',
