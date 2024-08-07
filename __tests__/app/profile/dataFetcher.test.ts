@@ -82,11 +82,11 @@ describe('ProfilePageDataFetcher', () => {
 
   it('should timeout if a fetch takes too long', async () => {
     jest.useFakeTimers()
-    mockNavbarFetcher.fetch.mockImplementation(() => new Promise((resolve) => setTimeout(resolve, 6000)))
+    mockNavbarFetcher.fetch.mockImplementation(() => new Promise((resolve) => setTimeout(resolve, 11000)))
     mockFooterFetcher.fetch.mockResolvedValue({} as FooterData)
 
     const fetchPromise = profilePageDataFetcher.fetch()
-    jest.advanceTimersByTime(5001)
+    jest.advanceTimersByTime(10001)
 
     await expect(fetchPromise).rejects.toThrow('Request timed out')
 

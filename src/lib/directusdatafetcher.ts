@@ -200,7 +200,7 @@ export class DirectusDataFetcher {
     return `/api/file-proxy/?uuid=${uuid}`
   }
 
-  protected async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number) {
+  protected async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number = 10000) {
     const timeoutPromise = new Promise((_, reject) =>
       setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
     )

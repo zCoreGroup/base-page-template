@@ -19,8 +19,8 @@ export default class ProfilePageDataFetcher extends DirectusDataFetcher {
   async fetch(): Promise<ProfilePageData> {
     try {
       const [navbarData, footerData] = await Promise.all([
-        this.fetchWithTimeout(this.navbarFetcher.fetch(), 5000),
-        this.fetchWithTimeout(this.footerFetcher.fetch(), 5000),
+        this.fetchWithTimeout(this.navbarFetcher.fetch()),
+        this.fetchWithTimeout(this.footerFetcher.fetch()),
       ])
 
       return {
