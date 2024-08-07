@@ -35,6 +35,7 @@ const defaultFooterData: FooterData = {
   quickLinks: [],
   guardianPortal: [],
   feedback: '',
+  default: true,
 }
 
 const ProfilePageSkeleton: React.FC = () => {

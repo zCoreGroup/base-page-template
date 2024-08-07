@@ -229,6 +229,9 @@
         "city": {
           "type": "string"
         },
+        "default": {
+          "type": "boolean"
+        },
         "email": {
           "type": "string"
         },
@@ -294,7 +297,8 @@
         "baseMapImage",
         "quickLinks",
         "guardianPortal",
-        "feedback"
+        "feedback",
+        "default"
       ],
       "type": "object"
     },

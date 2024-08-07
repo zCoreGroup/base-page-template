@@ -24,6 +24,7 @@ describe('Footer', () => {
     quickLinks: [],
     guardianPortal: [],
     feedback: '',
+    default: false,
   }
 
   it('renders the titles, subtitles, and links correctly', () => {

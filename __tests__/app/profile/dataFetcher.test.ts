@@ -51,6 +51,7 @@ describe('ProfilePageDataFetcher', () => {
       quickLinks: [],
       guardianPortal: [],
       feedback: 'feedback',
+      default: true,
     }
 
     mockNavbarFetcher.fetch.mockResolvedValue(mockNavbarData)
