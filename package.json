@@ -92,7 +92,7 @@
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.3",
     "storybook": "^8.2.7",
-    "storybook-zeplin": "^2.0.3",
+    "storybook-zeplin": "^3.0.0",
     "ts-jest": "^29.2.4",
     "typescript": "5.4.5"
   },
