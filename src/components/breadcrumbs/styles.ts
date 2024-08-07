@@ -1,3 +1,5 @@
+import spacing from '@/design-tokens/spacing'
+
 export const container = {
   display: 'flex',
   alignItems: 'center',
@@ -8,7 +10,6 @@ export const link = {
   width: 'auto',
   height: '24px',
   flexGrow: 0,
-  fontFamily: 'Libre Franklin, sans-serif',
   fontSize: '16px',
   fontWeight: 'normal',
   fontStretch: 'normal',
@@ -16,6 +17,8 @@ export const link = {
   lineHeight: 1.5,
   letterSpacing: '0.05px',
   textAlign: 'left',
-  color: '#1b1c1d',
   textDecoration: 'none',
+  marginTop: spacing.spacing.ml,
+  marginBottom: spacing.spacing.ml,
+  color: 'var(--schemes-on-background)',
 }
