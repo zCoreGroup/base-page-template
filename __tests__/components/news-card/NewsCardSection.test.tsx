@@ -3,6 +3,7 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import NewsCardSection, { NewsItem } from '@/components/news-card/NewsCardSection'
+import Image from 'next/image'
 
 // Define types for the mock components' props
 interface NewsCardProps {
@@ -21,7 +22,7 @@ interface CustomIndicatorProps {
 jest.mock('../../../src/components/news-card/NewsCard', () => {
   const MockNewsCard: React.FC<NewsCardProps> = ({ title, description, image }) => (
     <div>
-      <img src={image} alt={title} />
+      <Image src={image} alt={title} />
       <h3>{title}</h3>
       <p>{description}</p>
     </div>

@@ -1,5 +1,6 @@
 export type HomePageData = {
   navbar: NavbarData
+  heroBanner: HeroBannerData
   featuredLinks: FeaturedLinksData
   footer: FooterData
 }
@@ -12,6 +13,11 @@ export type LandingPageData = {
   events: EventsData
   footer: FooterData
   navbar: NavbarData
+}
+
+export type ProfilePageData = {
+  navbar: NavbarData
+  footer: FooterData
 }
 
 export type LandingPageQuery = {
@@ -95,6 +101,19 @@ export type FooterData = {
   feedback: string
 }
 
+export interface HeroBanner {
+  id: string
+  source: string
+  title: string
+  heading: string
+  subheading: string
+  imgCaption: string
+}
+
+export interface HeroBannerData {
+  images: HeroBanner[]
+}
+
 export interface BreadCrumbData {
   links: BreadCrumb[]
 }
@@ -112,16 +131,7 @@ export type BannerData = {
   missionText: string
   visionText: string
 }
-export type HexagonImageLinkData = {
-  url: string
-  imageUrl: string
-  name: string
-}
-export type HexagonImageOverlayData = {
-  imageUrl: string
-  altText: string
-  sideLength: number
-}
+
 export type NavbarLink = {
   name: string
   url: string

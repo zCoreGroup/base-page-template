@@ -318,43 +318,50 @@
       ],
       "type": "object"
     },
-    "HexagonImageLinkData": {
+    "HeroBanner": {
       "additionalProperties": false,
       "properties": {
-        "imageUrl": {
+        "heading": {
           "type": "string"
         },
-        "name": {
+        "id": {
           "type": "string"
         },
-        "url": {
+        "imgCaption": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "subheading": {
+          "type": "string"
+        },
+        "title": {
           "type": "string"
         }
       },
       "required": [
-        "url",
-        "imageUrl",
-        "name"
+        "id",
+        "source",
+        "title",
+        "heading",
+        "subheading",
+        "imgCaption"
       ],
       "type": "object"
     },
-    "HexagonImageOverlayData": {
+    "HeroBannerData": {
       "additionalProperties": false,
       "properties": {
-        "altText": {
-          "type": "string"
-        },
-        "imageUrl": {
-          "type": "string"
-        },
-        "sideLength": {
-          "type": "number"
+        "images": {
+          "items": {
+            "$ref": "#/components/schemas/HeroBanner"
+          },
+          "type": "array"
         }
       },
       "required": [
-        "imageUrl",
-        "altText",
-        "sideLength"
+        "images"
       ],
       "type": "object"
     },
@@ -367,12 +374,16 @@
         "footer": {
           "$ref": "#/components/schemas/FooterData"
         },
+        "heroBanner": {
+          "$ref": "#/components/schemas/HeroBannerData"
+        },
         "navbar": {
           "$ref": "#/components/schemas/NavbarData"
         }
       },
       "required": [
         "navbar",
+        "heroBanner",
         "featuredLinks",
         "footer"
       ],
@@ -491,6 +502,22 @@
       "required": [
         "name",
         "url"
+      ],
+      "type": "object"
+    },
+    "ProfilePageData": {
+      "additionalProperties": false,
+      "properties": {
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        }
+      },
+      "required": [
+        "navbar",
+        "footer"
       ],
       "type": "object"
     },

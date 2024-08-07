@@ -1,24 +1,28 @@
-import { DirectusDataFetcher, welcome_page } from '@/lib/directusdatafetcher'
-import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
+import { DirectusDataFetcher } from '@/lib/directusdatafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
+import HeroBannerDataFetcher from '@/components/herobanner/dataFetcher'
 import { HomePageData } from '@/types'
 import HomeFeaturedLinksDataFetcher from '@/components/home-featured-links/homeFeaturedLinksDataFetcher'
 import DefaultFooterContentDataFetcher from '@/components/footer/defaultFooterContentDataFetcher'
+import NavbarDataFetcher from '@/components/navbar/navbarDataFetcher'
 
 export default class HomePageDataFetcher extends DirectusDataFetcher {
   static instance: HomePageDataFetcher
 
   private navbarFetcher: NavbarDataFetcher
+  private heroBannerFetcher: HeroBannerDataFetcher
   private featuredLinksFetcher: HomeFeaturedLinksDataFetcher
   private footerFetcher: FooterDataFetcher
 
   constructor(
     navbarFetcher: NavbarDataFetcher,
+    heroBannerFetcher: HeroBannerDataFetcher,
     featuredLinksDataFetcher: HomeFeaturedLinksDataFetcher,
     footerFetcher: FooterDataFetcher
   ) {
     super()
     this.navbarFetcher = navbarFetcher
+    this.heroBannerFetcher = heroBannerFetcher
     this.featuredLinksFetcher = featuredLinksDataFetcher
     this.footerFetcher = footerFetcher
   }
@@ -49,14 +53,16 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
         'Unconstrained space launch and test event capacity from the Department of the Air Force’s base of choice',
     }
     try {
-      const [navbarData, featuredLinksData, footerData] = await Promise.all([
+      const [navbarData, heroBannerData, featuredLinksData, footerData] = await Promise.all([
         this.fetchWithTimeout(this.navbarFetcher.fetch(), 5000),
+        this.fetchWithTimeout(this.heroBannerFetcher.fetch(), 5000),
         this.fetchWithTimeout(this.featuredLinksFetcher.fetch(), 5000),
-        this.fetchWithTimeout(this.footerFetcher.fetch(), 5000),
+        this.fetchWithTimeout(this.footerFetcher.fetch(landingPage), 5000),
       ])
 
       return {
         navbar: navbarData,
+        heroBanner: heroBannerData,
         featuredLinks: featuredLinksData,
         footer: footerData,
       } as HomePageData
@@ -66,21 +72,20 @@ export default class HomePageDataFetcher extends DirectusDataFetcher {
     }
   }
 
-  private async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number) {
-    const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
-    )
-    return Promise.race([promiseFunc, timeoutPromise])
-  }
-
   static getInstance(): HomePageDataFetcher {
     if (HomePageDataFetcher.instance == undefined) {
       const navbarFetcher = new NavbarDataFetcher()
+      const heroBannerFetcher = new HeroBannerDataFetcher()
       const featuredLinksFetcher = new HomeFeaturedLinksDataFetcher()
       const defaultFooterContentFetcher = new DefaultFooterContentDataFetcher()
       const footerFetcher = new FooterDataFetcher(defaultFooterContentFetcher)
 
-      HomePageDataFetcher.instance = new HomePageDataFetcher(navbarFetcher, featuredLinksFetcher, footerFetcher)
+      HomePageDataFetcher.instance = new HomePageDataFetcher(
+        navbarFetcher,
+        heroBannerFetcher,
+        featuredLinksFetcher,
+        footerFetcher
+      )
     }
 
     return HomePageDataFetcher.instance
