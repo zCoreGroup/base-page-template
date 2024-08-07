@@ -41,6 +41,7 @@ export default class FooterDataFetcher extends DirectusDataFetcher {
       quickLinks: defaultFooterData.quickLinks,
       guardianPortal: defaultFooterData.portalLinks,
       feedback: defaultFooterData.feedback,
+      default: footer.default,
     }
   }
 

@@ -34,26 +34,17 @@ export default class DefaultFooterContentDataFetcher extends DirectusDataFetcher
   }
 
   async getDefaultFooterId(): Promise<string> {
-    const labelsQuery = await this.client.request(
-      readItems('labels', {
+    const footers = await this.client.request(
+      readItems('footer', {
         filter: {
-          name: {
-            _eq: 'Default',
+          default: {
+            _eq: true,
           },
         },
       })
     )
-    const defaultLabel = labelsQuery[0]
-    const footerLabelsQuery = await this.client.request(
-      readItems('footer_labels', {
-        filter: {
-          labels_id: {
-            _eq: defaultLabel.id,
-          },
-        },
-      })
-    )
-    return footerLabelsQuery[0].footer_id
+    const defaultFooter = footers[0]
+    return defaultFooter.id
   }
 
   public mapRawLinksToFooterLink(rawLinks: RawFooterLink[]): FooterLink[] {

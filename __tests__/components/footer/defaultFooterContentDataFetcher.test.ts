@@ -69,7 +69,7 @@ describe('DefaultFooterContentDataFetcher', () => {
         { name: 'Portal Link 2', url: 'http://portallink2.com', openInNew: false },
       ],
       feedback: 'Great job!',
-      footerId: 'default-footer-id',
+      footerId: 1,
     }
 
     const result = await fetcher.fetch()

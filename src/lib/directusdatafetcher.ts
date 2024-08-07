@@ -95,6 +95,7 @@ export type footer = {
   information_text: string
   image: string | null
   labels: number[]
+  default: boolean
 }
 
 export type location = {
@@ -127,11 +128,6 @@ export type RawFooterLink = {
 
 export type Feedback = {
   feedback: string
-}
-
-export type FooterLabels = {
-  footer_id: string
-  labels_id: string
 }
 
 export type NavigationData = {
@@ -179,7 +175,6 @@ export type DirectusSchema = {
   quick_links: RawFooterLink[]
   portal_links: RawFooterLink[]
   feedback: Feedback
-  footer_labels: FooterLabels[]
   navigation: NavigationData
   featured_links: HomeFeaturedLinks
   featured_links_links: HomeFeaturedLinksLinks[]
@@ -204,7 +199,7 @@ export class DirectusDataFetcher {
     }
   }
 
-  protected async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number) {
+  protected async fetchWithTimeout(promiseFunc: Promise<any>, timeoutMs: number = 10000) {
     const timeoutPromise = new Promise((_, reject) =>
       setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
     )
