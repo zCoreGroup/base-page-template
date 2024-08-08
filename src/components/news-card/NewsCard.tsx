@@ -4,7 +4,7 @@ import { ArrowForward } from '@mui/icons-material'
 export default function NewsCard() {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image='/images/space_force_command.jpeg' title='Space Force Command Ceremony' />
+      <CardMedia sx={{ height: 250 }} image='/images/space_force_command.jpeg' title='Space Force Command Ceremony' />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>
           Space Force Ceremony
@@ -14,7 +14,7 @@ export default function NewsCard() {
           color='text.secondary'
           sx={{
             display: '-webkit-box',
-            WebkitLineClamp: 7,
+            WebkitLineClamp: 3,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
             textOverflow: 'ellipsis',

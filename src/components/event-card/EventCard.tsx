@@ -5,7 +5,7 @@ export default function EventCard() {
   return (
     <Card sx={{ display: 'flex', maxWidth: 600, height: '100%' }}>
       <Grid container sx={{ height: '100%' }}>
-        <Grid item xs={4} sx={{ height: '100%' }}>
+        <Grid item xs={6} sx={{ height: '100%' }}>
           <CardMedia
             component='img'
             sx={{ height: '100%', objectFit: 'cover' }}
@@ -13,7 +13,7 @@ export default function EventCard() {
             title='Space Force Fly Over Event'
           />
         </Grid>
-        <Grid item xs={8} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography gutterBottom variant='h5' component='div'>
               U.S. Air Force Ceremony
