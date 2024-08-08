@@ -22,7 +22,7 @@ const sampleData: FeaturedLinksData = {
 describe('LandingPageFeaturedLinks', () => {
   it('renders the title', () => {
     render(<LandingPageFeaturedLinks data={sampleData} />)
-    const titleElement = screen.getByText(/Landing Page Featured Links/i)
+    const titleElement = screen.getByText(/Featured Links/i)
     if (!titleElement) throw new Error('Title not found')
   })
 
