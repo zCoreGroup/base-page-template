@@ -1,4 +1,4 @@
-import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
+import FeaturedLinksDataFetcher from '@/components/landingPageFeaturedLinks/datafetcher'
 import { RestClient } from '@directus/sdk'
 import { landing_page, link } from '@/lib/directusdatafetcher'
 

@@ -8,7 +8,7 @@ const LandingPageFeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data 
     <React.Fragment>
       <Box sx={{ paddingLeft: '20px' }}>
         <Typography variant='h6' sx={title}>
-          Landing Page Featured Links
+          Featured Links
         </Typography>
         <Grid container spacing={3} sx={{ marginTop: '1em' }}>
           {data.links.map((link, index) => (
