@@ -1,21 +1,42 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
+import { Button, Card, CardActions, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
+import { ArrowForward } from '@mui/icons-material'
 
 export default function NewsCard() {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image='/images/lizard.jpg' title='green iguana' />
+      <CardMedia sx={{ height: 250 }} image='/images/space_force_command.jpeg' title='Space Force Command Ceremony' />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>
-          Lizard
+          Space Force Ceremony
         </Typography>
-        <Typography variant='body2' color='text.secondary'>
-          Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents
-          except Antarctica
+        <Typography
+          variant='body2'
+          color='text.secondary'
+          sx={{
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+          }}
+        >
+          U.S. Space Force Col. Jack D. Fulmer II, outgoing Space Delta 10 commander, delivers remarks during the Delta
+          10 change of command at Patrick Space Force Base, Florida, Aug. 7, 2024.
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size='small'>Share</Button>
-        <Button size='small'>Learn More</Button>
+      <CardActions sx={{ justifyContent: 'start' }}>
+        <Button
+          sx={{
+            padding: 0,
+            maxWidth: 'fit-content',
+            maxHeight: 'fit-content',
+          }}
+        >
+          Share
+        </Button>
+        <IconButton aria-label={'learn-more-button'}>
+          <ArrowForward />
+        </IconButton>
       </CardActions>
     </Card>
   )

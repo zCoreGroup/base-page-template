@@ -1,30 +1,53 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography, Grid } from '@mui/material'
+import { Button, Card, CardActions, CardContent, CardMedia, Typography, Grid, IconButton } from '@mui/material'
+import { ArrowForward } from '@mui/icons-material'
 
 export default function EventCard() {
   return (
-    <Card sx={{ display: 'flex', maxWidth: 600 }}>
-      <Grid container>
-        <Grid item xs={4}>
+    <Card sx={{ display: 'flex', maxWidth: 600, height: '100%' }}>
+      <Grid container sx={{ height: '100%' }}>
+        <Grid item xs={6} sx={{ height: '100%' }}>
           <CardMedia
             component='img'
             sx={{ height: '100%', objectFit: 'cover' }}
-            image='/images/lizard.jpg'
-            title='green iguana'
+            image='/images/space_force_fly_over.jpeg'
+            title='Space Force Fly Over Event'
           />
         </Grid>
-        <Grid item xs={8}>
-          <CardContent>
+        <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography gutterBottom variant='h5' component='div'>
-              Lizard
+              U.S. Air Force Ceremony
             </Typography>
-            <Typography variant='body2' color='text.secondary'>
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all
-              continents except Antarctica
+            <Typography
+              variant='body2'
+              color='text.secondary'
+              sx={{
+                display: '-webkit-box',
+                WebkitLineClamp: 4, // Limit to 3 lines
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}
+            >
+              MC-130 Commando aircraft fly over the U.S. Air Force Academy Assumption of Command ceremony held at the
+              Academy, Colo., Aug. 2, 2024. Lt. Gen. Tony Bauernfeind, previously U.S. Air Force Special Operations
+              Command’s top general and a command pilot with thousands of hours in the MC-130, became the 22nd Academy
+              superintendent during the ceremony. (U.S. Air Force photo by Trevor Cokley)
             </Typography>
           </CardContent>
-          <CardActions>
-            <Button size='small'>Share</Button>
-            <Button size='small'>Learn More</Button>
+          <CardActions sx={{ justifyContent: 'start' }}>
+            <Button
+              sx={{
+                padding: 0,
+                maxWidth: 'fit-content',
+                maxHeight: 'fit-content',
+              }}
+            >
+              Share
+            </Button>
+            <IconButton aria-label={'learn-more-button'}>
+              <ArrowForward />
+            </IconButton>
           </CardActions>
         </Grid>
       </Grid>
