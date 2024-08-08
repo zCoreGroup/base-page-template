@@ -1,4 +1,4 @@
-import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
+import FeaturedLinksDataFetcher from '@/components/landingPageFeaturedLinks/datafetcher'
 import { RestClient } from '@directus/sdk'
 import { landing_page, link } from '@/lib/directusdatafetcher'
 
@@ -104,7 +104,7 @@ describe('FeaturedLinksDataFetcher', () => {
         return Promise.resolve(mockRawLinks)
       })
 
-    jest.spyOn(fetcher, 'getFileUrl').mockImplementation((uuid: string) => `/api/file-proxy/?uuid=${uuid}`)
+    jest.spyOn(fetcher, 'getFileUrl').mockImplementation((uuid: string) => uuid)
 
     const expectedData = {
       links: [

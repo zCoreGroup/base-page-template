@@ -11,7 +11,7 @@ export default class FeaturedLinksDataFetcher extends DirectusDataFetcher {
       return {
         name: rawLink.name,
         url: rawLink.url,
-        imageUrl: rawLink.image,
+        imageUrl: !!rawLink.image ? this.getFileUrl(rawLink.image) : '',
       }
     })
 

@@ -1,7 +1,7 @@
 import NavbarDataFetcher from '../../../src/components/navbar/navbarDataFetcher'
 import BannerDataFetcher from '../../../src/components/banner/datafetcher'
 import FooterDataFetcher from '@/components/footer/dataFetcher'
-import FeaturedLinksDataFetcher from '@/components/featured-links/dataFetcher'
+import FeaturedLinksDataFetcher from '@/components/landingPageFeaturedLinks/datafetcher'
 import AnnouncementsDataFetcher from '../../../src/components/announcements/datafetcher'
 import EventsDataFetcher from '../../../src/components/events/datafetcher'
 import { LandingPageQuery, LandingPageData } from '@/types'
@@ -13,7 +13,7 @@ jest.mock('../../../src/components/navbar/navbarDataFetcher')
 jest.mock('../../../src/components/banner/datafetcher')
 jest.mock('../../../src/components/footer/dataFetcher')
 jest.mock('../../../src/components/footer/defaultFooterContentDataFetcher')
-jest.mock('../../../src/components/featured-links/dataFetcher')
+jest.mock('../../../src/components/landingPageFeaturedLinks/datafetcher')
 jest.mock('../../../src/components/announcements/datafetcher')
 jest.mock('../../../src/components/events/datafetcher')
 

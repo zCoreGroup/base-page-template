@@ -5,7 +5,7 @@ import Banner from '../../components/banner/banner'
 import Announcements from '@/components/announcements/announcements'
 import Events from '@/components/events/events'
 import { Container, Grid } from '@mui/material'
-import Services from '@/components/services/services'
+import LandingPageFeaturedLinks from '@/components/landingPageFeaturedLinks/landingPageFeaturedLinks'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
 import LandingPageDataFetcher from '@/app/[slug]/dataFetcher'
@@ -34,7 +34,7 @@ const LandingPage = async ({ params }: { params: { slug: string } }) => {
               <Announcements data={data.announcements} />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Services data={data.featuredLinks} />
+              <LandingPageFeaturedLinks data={data.featuredLinks} />
             </Grid>
           </Grid>
           <Events data={data.events} />
