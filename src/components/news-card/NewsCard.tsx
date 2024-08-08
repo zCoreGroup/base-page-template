@@ -4,7 +4,7 @@ import { ArrowForward } from '@mui/icons-material'
 export default function NewsCard() {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image='/images/space_force_command.jpeg' title='green iguana' />
+      <CardMedia sx={{ height: 140 }} image='/images/space_force_command.jpeg' title='Space Force Command Ceremony' />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>
           Space Force Ceremony
@@ -34,7 +34,7 @@ export default function NewsCard() {
         >
           Share
         </Button>
-        <IconButton>
+        <IconButton aria-label={'learn-more-button'}>
           <ArrowForward />
         </IconButton>
       </CardActions>

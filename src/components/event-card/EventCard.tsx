@@ -45,7 +45,7 @@ export default function EventCard() {
             >
               Share
             </Button>
-            <IconButton>
+            <IconButton aria-label={'learn-more-button'}>
               <ArrowForward />
             </IconButton>
           </CardActions>
