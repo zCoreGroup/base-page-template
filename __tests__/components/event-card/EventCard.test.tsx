@@ -9,7 +9,7 @@ describe('EventCard', () => {
     const { getByRole, getAllByText, getByAltText } = render(<EventCard />)
 
     // Check if the title is in the document
-    const titleElements = getAllByText(/Lizard/i)
+    const titleElements = getAllByText(/U.S. Air Force Ceremony/i)
     expect(titleElements.length).toBeGreaterThan(0) // Ensure at least one element matches
     expect(titleElements[0]).toBeTruthy() // Basic truthy check for the first element
 
@@ -17,7 +17,7 @@ describe('EventCard', () => {
     const shareButton = getByRole('button', { name: /share/i })
     expect(shareButton).toBeTruthy() // Basic truthy check
 
-    const learnMoreButton = getByRole('button', { name: /learn more/i })
+    const learnMoreButton = getByRole('button', { name: /learn-more-button/i })
     expect(learnMoreButton).toBeTruthy() // Basic truthy check
   })
 })

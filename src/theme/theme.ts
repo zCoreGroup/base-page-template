@@ -98,6 +98,9 @@ const themeOptions: ThemeOptions = {
           borderColor: colors.m3SysLightPrimaryContainer,
           color: colors.m3SysLightPrimaryContainer,
         },
+        text: {
+          color: colors.m3SysLightPrimaryContainer,
+        },
       },
     },
     MuiCard: {
